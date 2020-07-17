@@ -1,6 +1,10 @@
+/*jslint es6 */
 /// <reference types="Cypress" />
-
-//contacts = require("../../support/Pages/Contacts") ;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const leftNavigation = require("../../Pages/LeftNavigation");
+const env = require("dotenv");
+env.config();
 
 context("Login", () => {
  
@@ -10,11 +14,13 @@ context("Login", () => {
   });
 
   it("Perform login", () => {
-    cy.login("muhammad.ahmed@acquia.com", "6wNQxWeZ1j18mb3");
+   // cy.login("muhammad.ahmed@acquia.com", "6wNQxWeZ1j18mb3");
+   cy.login(Cypress.env('userName'), Cypress.env('password');
   });
 
   it("Add new Contact", () => {
-    cy.get("#mautic_contact_index > .nav-item-name").click();
+    //cy.get("#mautic_contact_index > .nav-item-name").click();
+    leftNavigation.contactsSection.click();
     cy.get('[href="/s/contacts/new"] > :nth-child(1) > .hidden-xs').click();
     cy.get("#lead_title").type("Mr");
     cy.get("#lead_firstname").type("Cypress");
