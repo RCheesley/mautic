@@ -3,40 +3,54 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const leftNavigation = require("../../Pages/LeftNavigation");
-const env = require("dotenv");
-env.config();
+const contacts = require("../../Pages/Contacts");
+const contact = require("../../Pages/Contacts");
+const company = require("../../Pages/Company");
 
 context("Login", () => {
- 
-
   before(() => {
     cy.visit("https://cr.mautic.net/s/login");
   });
 
   it("Perform login", () => {
-   // cy.login("muhammad.ahmed@acquia.com", "6wNQxWeZ1j18mb3");
    cy.login(Cypress.env('userName'), Cypress.env('password');
   });
 
-  it("Add new Contact", () => {
-    //cy.get("#mautic_contact_index > .nav-item-name").click();
-    leftNavigation.contactsSection.click();
-    cy.get('[href="/s/contacts/new"] > :nth-child(1) > .hidden-xs').click();
-    cy.get("#lead_title").type("Mr");
-    cy.get("#lead_firstname").type("Cypress");
-    cy.get("#lead_lastname").type("Tester");
-    cy.get("#lead_email").type("Cypress@test.com");
-    cy.get("#lead_buttons_save_toolbar").click();
-
-  });
-
   it("Add new Company", () => {
-    cy.get("#mautic_company_index > .nav-item-name").click();
-    cy.get("#toolbar > div.std-toolbar.btn-group > a > span > span")
-      .first()
-      .click({ force: true });
-    cy.get("#company_companyname").type("CompanyAddedByCypress");
-    cy.get("#company_buttons_save_toolbar").click();
+    leftNavigation.companySection.click();
+    cy.wait(1000);
+    company.addNewButton.click({ force: true });
+    company.companyName.type("CompanyAddedByCypress");
+    company.saveButton.click();
   });
 
-});
+  it("Add new Contact", () => {
+    leftNavigation.contactsSection.click();
+    cy.wait(1000);
+    contact.addNewButton.click({force: true});
+    contact.title.type("Mr");
+    contact.firstName.type("Cypress");
+    contact.lastName.type("Tester");
+    contact.leadEmail.type("Cypress@test.com");
+    contact.SaveButton.click();
+    contact.closeButton.click({force: true} );
+  });
+
+  it("import new Contacts", () => {
+     leftNavigation.contactsSection.click();
+     cy.wait(1000);
+     contact.importExportDropdownMenu.click({force: true});
+     contact.importButton.click({force: true});
+     const fileName = 'contacts_july-22-2020.csv';
+     const fileType = 'application/csv';
+     const fileInput = 'input[type=file]';
+     cy.upload_file(fileName, fileType, fileInput);
+     cy.get('[name="lead_import[start]"]').click()
+     cy.get('#lead_field_import_company_chosen > .chosen-single > span > .group-name').click();
+     cy.get('#lead_field_import_company_chosen > div > ul > li').eq(45).click({force:true});
+     cy.get('#lead_field_import_buttons_save_toolbar').click();
+   })
+
+  });
+
+

@@ -1,28 +1,37 @@
 "use strict";
 class Contacts {
-    get userName() {
-        return $('[name="email"]');
+    get addNewButton() {
+        return cy.get('[href="/s/contacts/new"] > :nth-child(1) > .hidden-xs');
     }
-    get next() {
-        return $('[name="submit"]');
+    get title() {
+        return cy.get("#lead_title");
     }
-    get password() {
-        return $('[name="passwd"]');
+    get firstName() {
+        return   cy.get("#lead_firstname");
     }
-    get signin() {
-        return $('#idSIButton9');
+    get lastName() {
+        return cy.get("#lead_lastname");
     }
-    get passwordError() {
-        return $('#passwordError');
+    get leadEmail() {
+        return cy.get("#lead_email");
     }
-    get userError() {
-        return $('#usernameError');
+    get SaveButton() {
+        return   cy.get("#lead_buttons_save_toolbar");
     }
     get logout() {
         return $('[data-cy="logoutMenu"]');
     }
-    clickNextButton() {
-        this.next.click();
+    get closeButton() {
+       return  cy.get('[href="/s/contacts"] > :nth-child(1) > .hidden-xs');
+    }
+
+    get importExportDropdownMenu() {
+
+        return  cy.get('.std-toolbar > .dropdown-toggle > .fa');
+    }
+
+    get importButton(){
+        return  cy.get('.std-toolbar > .dropdown-menu > :nth-child(2) > a > :nth-child(1) > span');
     }
 }
 const contact = new Contacts();
