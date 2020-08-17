@@ -36,7 +36,31 @@ context("Login", () => {
     contact.closeButton.click({force: true} );
   });
 
-  it("import new Contacts", () => {
+  it("Delete a new Company", () => {
+    leftNavigation.companySection.click();
+    cy.wait(1000);
+    cy.get('#list-search').clear();
+    cy.get('#list-search').type("C");
+    cy.get('.list-checkbox').eq(0).click();
+    cy.get('tbody > tr > :nth-child(1) > .input-group > .input-group-btn > .btn').eq(0).click();
+    cy.get('td.active > .input-group > .input-group-btn > .pull-left > :nth-child(3) > a > :nth-child(1) > .fa').click();
+    cy.get('.btn-danger').click();
+    cy.wait(1000);
+  });
+
+  it("Search and Delete a Contact", () => {
+    leftNavigation.contactsSection.click();
+    cy.wait(1000);
+    cy.get('#list-search').clear();
+    cy.get('#list-search').type("Cypress");
+    cy.get('.list-checkbox').eq(0).click();
+    cy.get('tbody > tr > :nth-child(1) > .input-group > .input-group-btn > .btn').eq(0).click();
+    cy.get('td.active > .input-group > .input-group-btn > .pull-left > :nth-child(3) > a > :nth-child(1) > .fa').click();
+    cy.get('.btn-danger').click();
+    cy.wait(1000);
+  });
+
+  xit("import new Contacts", () => {
      leftNavigation.contactsSection.click();
      cy.wait(1000);
      contact.importExportDropdownMenu.click({force: true});
