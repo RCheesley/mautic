@@ -36,12 +36,13 @@ context("Login", () => {
     contact.closeButton.click({force: true} );
   });
 
-  it("Delete a new Company", () => {
+  it("Search and Delete Company", () => {
     leftNavigation.companySection.click();
     cy.wait(1000);
     cy.get('#list-search').clear();
     cy.get('#list-search').type("C");
-    cy.get('.list-checkbox').eq(0).click();
+    cy.get('.list-checkbox').eq(0).click({force: true});
+    cy.wait(2000);
     cy.get('tbody > tr > :nth-child(1) > .input-group > .input-group-btn > .btn').eq(0).click();
     cy.get('td.active > .input-group > .input-group-btn > .pull-left > :nth-child(3) > a > :nth-child(1) > .fa').click();
     cy.get('.btn-danger').click();
@@ -53,7 +54,8 @@ context("Login", () => {
     cy.wait(1000);
     cy.get('#list-search').clear();
     cy.get('#list-search').type("Cypress");
-    cy.get('.list-checkbox').eq(0).click();
+    cy.wait(2000);
+    cy.get('.list-checkbox').eq(0).click( {force: true});
     cy.get('tbody > tr > :nth-child(1) > .input-group > .input-group-btn > .btn').eq(0).click();
     cy.get('td.active > .input-group > .input-group-btn > .pull-left > :nth-child(3) > a > :nth-child(1) > .fa').click();
     cy.get('.btn-danger').click();
