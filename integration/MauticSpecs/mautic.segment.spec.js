@@ -4,10 +4,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const leftNavigation = require("../../Pages/LeftNavigation");
 const segments = require("../../Pages/Segments");
+const segment = require("../../Pages/Segments");
 
 context("Segments", () => {
 
-  it("Add new Segment", () => {
+  xit("Add new Segment", () => {
     leftNavigation.SegmentsSection.click();
     cy.wait(1000);
     segments.addNewButton.click({ force: true });
@@ -21,6 +22,17 @@ context("Segments", () => {
     segments.filterField.click();
     segments.filterValue.type("Cypress");
     segments.saveAndCloseButton.click();
+  });
+
+  it("Search and Delete Segment", () => {
+    leftNavigation.SegmentsSection.click();
+    cy.wait(1000);
+    segments.SearchBox.type("Cypress");
+    cy.wait(1000);
+    segments.firstCheckbox.click();
+    segments.firstDropDown.click();
+    segments.deleteOption.click();
+    segment.deleteConfirmation.click();
   });
 
 
