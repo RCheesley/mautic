@@ -7,14 +7,7 @@ const contacts = require("../../Pages/Contacts");
 const contact = require("../../Pages/Contacts");
 const company = require("../../Pages/Company");
 
-context("Login", () => {
-  before(() => {
-    cy.visit("https://cr.mautic.net/s/login");
-  });
-
-  it("Perform login", () => {
-   cy.login(Cypress.env('userName'), Cypress.env('password');
-  });
+context("Contacts", () => {
 
   it("Add new Company", () => {
     leftNavigation.companySection.click();
@@ -76,6 +69,8 @@ context("Login", () => {
      cy.get('#lead_field_import_company_chosen > div > ul > li').eq(45).click({force:true});
      cy.get('#lead_field_import_buttons_save_toolbar').click();
    })
+
+
 
   });
 

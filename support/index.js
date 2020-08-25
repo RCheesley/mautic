@@ -20,5 +20,10 @@ Cypress.Cookies.defaults({
     whitelist: ['28ced7f51a554f149cfb8289fdddb9fb','_ga','_gid','_gat','mautic_referer_id','mtc_id','mtc_sid','mautic_device_id','device_id','sid','id','success']
   })
 
+  it("Perform login", () => {
+    cy.visit("https://cr.mautic.net/s/login");
+    cy.login(Cypress.env('userName'), Cypress.env('password');
+   });
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
