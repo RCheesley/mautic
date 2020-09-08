@@ -7,8 +7,7 @@ const segments = require("../../Pages/Segments");
 const segment = require("../../Pages/Segments");
 
 context("Segments", () => {
-
-  xit("Add new Segment", () => {
+  it("Add new Segment", () => {
     leftNavigation.SegmentsSection.click();
     cy.wait(1000);
     segments.addNewButton.click({ force: true });
@@ -18,7 +17,7 @@ context("Segments", () => {
     cy.wait(1000);
     segments.filterDropDown.click();
     cy.wait(1000);
-    segments.filterSearchBox.type('First')
+    segments.filterSearchBox.type("First");
     segments.filterField.click();
     segments.filterValue.type("Cypress");
     segments.saveAndCloseButton.click();
@@ -34,8 +33,4 @@ context("Segments", () => {
     segments.deleteOption.click();
     segment.deleteConfirmation.click();
   });
-
-
-  });
-
-
+});

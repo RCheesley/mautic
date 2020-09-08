@@ -18,6 +18,11 @@ class LeftNavigation {
         return cy.get('#mautic_segment_index > .nav-item-name');
     }
 
+    get PointsSection() {
+    
+        return cy.get('#mautic_points_root')
+    
+   }
 }
 const leftNavigation = new LeftNavigation();
 module.exports = leftNavigation ;
