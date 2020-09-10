@@ -17,6 +17,10 @@ class LeftNavigation {
         return cy.get("#mautic_form_index");
     }
 
+    get landingPagesSubSection(){
+        return cy.get('#mautic_page_index');
+    }
+
     get StagesSection() {
 
         return cy.get('#mautic_stage_index > .nav-item-name');
