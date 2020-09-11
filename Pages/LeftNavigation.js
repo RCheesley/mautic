@@ -31,6 +31,10 @@ class LeftNavigation {
         return cy.get('#mautic_segment_index > .nav-item-name');
     }
 
+    get CampaignsSection() {
+        return cy.get("#mautic_campaign_index");
+    }
+
     get PointsSection() {
     
         return cy.get('#mautic_points_root')
