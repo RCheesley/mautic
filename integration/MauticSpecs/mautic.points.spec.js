@@ -9,7 +9,7 @@ const points = require("../../Pages/Points");
 
 context("Points", () => {
  
-   xit("Add a Action", () => {
+   it("Add a Action", () => {
     leftNavigation.PointsSection.click();
     points.manageActionSection.click();
     cy.contains('Manage Actions').click()

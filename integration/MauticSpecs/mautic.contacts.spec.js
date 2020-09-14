@@ -55,7 +55,7 @@ context("Contacts", () => {
     cy.wait(1000);
   });
 
-  xit("import new Contacts", () => {
+  it("import new Contacts", () => {
      leftNavigation.contactsSection.click();
      cy.wait(1000);
      contact.importExportDropdownMenu.click({force: true});
