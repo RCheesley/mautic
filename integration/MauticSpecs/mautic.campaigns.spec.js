@@ -29,5 +29,6 @@ context("Campaign", () => {
     cy.wait(2000);
     campaigns.publishToggleYes.click();
     campaigns.saveAndCloseButton.click();
+    cy.wait(5000);
   });
 });
