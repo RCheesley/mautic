@@ -40,6 +40,15 @@ class LeftNavigation {
         return cy.get('#mautic_points_root')
     
    }
+
+   get ChannelsSection(){
+       return cy.get('#mautic_channels_root > .nav-item-name');
+   }
+
+   get EmailsSubSection(){
+       return cy.get('#mautic_email_index');
+   }
+
 }
 const leftNavigation = new LeftNavigation();
 module.exports = leftNavigation ;

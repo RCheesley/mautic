@@ -15,8 +15,8 @@ context("Campaign", () => {
     campaigns.sourceSelector.select("Contact segments",{force: true});
     campaigns.segmentSelectorButton.click();
     campaigns.segmentSelector.select("Test Users",{force: true});
-    campaigns.addSourceCamapignButton.click();
-    campaigns.addStepButtonBottom.click();
+    campaigns.addSourceCamapignButton.click({force: true});
+    campaigns.addStepButtonBottom.click({force: true});
     cy.wait(1000);
     campaigns.actionSelector.click();
     campaigns.listOfActions.select("Send email",{force: true});
