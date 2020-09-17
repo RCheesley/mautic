@@ -60,7 +60,7 @@ class Points {
     }
 
     get sendEmailEvent(){
-        return cy.get('#triggerEvents > div.mb-md > div > ul > li').eq(11);
+        return cy.get('#triggerEvents > div.mb-md > div > ul > li').eq(8);
 
     }
 

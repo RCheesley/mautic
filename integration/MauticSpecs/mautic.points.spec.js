@@ -20,6 +20,7 @@ context("Points", () => {
     points.actionDropDown.click();
     points.opensAnEmailOption.click();
     points.saveAndCloseButton.click();
+    leftNavigation.PointsSection.click();
     cy.wait(1000);
   })
 
@@ -41,6 +42,7 @@ context("Points", () => {
     points.addButton.click();
     cy.wait(1000);
     points.saveAndCloseTriggerButton.click();
+    leftNavigation.PointsSection.click();
   })
 
   });
