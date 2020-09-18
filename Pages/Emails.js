@@ -20,6 +20,10 @@ class Emails{
         return cy.get('#emailform_buttons_save_toolbar');
     }
 
+    get closeButton(){
+        return cy.get('[href="/s/emails"] > :nth-child(1) > .hidden-xs');
+    }
+
 }
 const email = new Emails();
 module.exports = email;

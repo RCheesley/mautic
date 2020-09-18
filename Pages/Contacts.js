@@ -1,7 +1,7 @@
 "use strict";
 class Contacts {
     get addNewButton() {
-        return cy.get('[href="/s/contacts/new"] > :nth-child(1) > .hidden-xs');
+        return cy.get('[href="/s/contacts/new"]');
     }
     get title() {
         return cy.get("#lead_title");
