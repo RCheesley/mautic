@@ -4,11 +4,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const leftNavigation = require("../../Pages/LeftNavigation");
 const landingPages = require("../../Pages/LandingPages");
+const search=require("../../Pages/Search");
 
 context("Create Landing Page", () => {
   it("Create a New Landing Page with embedded form", () => {
     leftNavigation.componentsSection.click();
-    leftNavigation.landingPagesSubSection.click();
+    leftNavigation.landingPagesSubSection.click({force: true});
     cy.wait(2000);
     landingPages.addNewButton.click();
     cy.wait(1000);
@@ -17,5 +18,33 @@ context("Create Landing Page", () => {
     landingPages.applyButton.click();
     cy.wait(4000);
     landingPages.saveAndCloseButton.click();
+  });
+
+  it("Create a New Landing Page for Deletion", () => {
+    leftNavigation.componentsSection.click();
+    leftNavigation.landingPagesSubSection.click({force: true});
+    cy.wait(2000);
+    landingPages.addNewButton.click();
+    cy.wait(1000);
+    landingPages.pageTitle.type('Delete');
+    cy.wait(1000);
+    landingPages.applyButton.click();
+    cy.wait(4000);
+    landingPages.saveAndCloseButton.click();
+  });
+
+  
+  it("Search and Delete Landing Page", () => {
+    leftNavigation.componentsSection.click();
+    leftNavigation.landingPagesSubSection.click();
+    cy.wait(1000);
+    search.searchBox.clear();
+    search.searchBox.type("Delete");
+    search.selectCheckBoxForFirstItem.click({force: true});
+    cy.wait(2000);
+    search.OptionsDropdownForFirstItem.click();
+    search.deleteButtonForFirstItem.click({force: true});
+    search.confirmDeleteButton.click();
+    cy.wait(1000);
   });
 });
