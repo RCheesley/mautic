@@ -3,9 +3,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const leftNavigation = require("../../Pages/LeftNavigation");
-const contacts = require("../../Pages/Contacts");
 const contact = require("../../Pages/Contacts");
 const company = require("../../Pages/Company");
+const search=require("../../Pages/Search");
 
 context("Contacts", () => {
 
@@ -32,26 +32,27 @@ context("Contacts", () => {
   it("Search and Delete Company", () => {
     leftNavigation.companySection.click();
     cy.wait(1000);
-    cy.get('#list-search').clear();
-    cy.get('#list-search').type("C");
-    cy.get('.list-checkbox').eq(0).click({force: true});
+    search.searchBox.clear();
+    search.searchBox.type("CompanyAddedByCypress");
+    search.selectCheckBoxForFirstItem.click({force: true});
     cy.wait(2000);
-    cy.get('tbody > tr > :nth-child(1) > .input-group > .input-group-btn > .btn').eq(0).click();
-    cy.get('td.active > .input-group > .input-group-btn > .pull-left > :nth-child(3) > a > :nth-child(1) > .fa').click();
-    cy.get('.btn-danger').click();
+    search.OptionsDropdownForFirstItem.click();
+    search.deleteButtonForFirstItem.click({force: true});
+    search.confirmDeleteButton.click();
     cy.wait(1000);
   });
 
   it("Search and Delete a Contact", () => {
     leftNavigation.contactsSection.click();
     cy.wait(1000);
-    cy.get('#list-search').clear();
-    cy.get('#list-search').type("Cypress");
+    search.searchBox.clear();
+    search.searchBox.type("Cypress");
+    search.selectCheckBoxForFirstItem.click({force: true});
     cy.wait(2000);
-    cy.get('.list-checkbox').eq(0).click( {force: true});
-    cy.get('tbody > tr > :nth-child(1) > .input-group > .input-group-btn > .btn').eq(0).click();
-    cy.get('td.active > .input-group > .input-group-btn > .pull-left > :nth-child(3) > a > :nth-child(1) > .fa').click();
-    cy.get('.btn-danger').click();
+    search.OptionsDropdownForFirstItem.click();
+    search.deleteButtonForFirstItem.click({force: true});
+    cy.wait(1000);
+    //search.confirmDeleteButton.click();
     cy.wait(1000);
   });
 
@@ -66,8 +67,10 @@ context("Contacts", () => {
      cy.upload_file(fileName, fileType, fileInput);
      cy.get('[name="lead_import[start]"]').click()
      cy.get('#lead_field_import_company_chosen > .chosen-single > span > .group-name').click();
-     cy.get('#lead_field_import_company_chosen > div > ul > li').eq(45).click({force:true});
+    // cy.get('#lead_field_import_company_chosen > div > ul > li').eq(45).click({force:true});
+     cy.get('#lead_field_import_company').select("Company Name",{force: true});
      cy.get('#lead_field_import_buttons_save_toolbar').click();
+     cy.wait(3000);
    })
 
 
