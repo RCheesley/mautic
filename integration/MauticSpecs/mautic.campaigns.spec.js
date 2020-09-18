@@ -7,7 +7,7 @@ const campaigns = require("../../Pages/Campaigns");
 const search=require("../../Pages/Search");
 
 context("Campaign", () => {
-  xit("Add new Campaign", () => {
+  it("Add new Campaign", () => {
     leftNavigation.CampaignsSection.click();
     cy.wait(3000);
     campaigns.addNewButton.click();
