@@ -75,6 +75,10 @@ class Campaigns {
         return    cy.get(':nth-child(3) > .form-group > .choice-wrapper > .btn-group > .btn-yes');
     }
 
+    get closeSummaryPageButton() {
+        return cy.get('.std-toolbar > [href="/s/campaigns"]');
+    }
+
 }
 const campaigns = new Campaigns();
 module.exports = campaigns;
