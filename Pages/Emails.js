@@ -1,5 +1,10 @@
 "use strict";
 class Emails{
+
+    waitforPageLoad (){
+        cy.get('h3.pull-left').should('contain', 'Emails');
+    }
+
     get addNewButton() {
         return cy.get('.std-toolbar > .btn');
     }

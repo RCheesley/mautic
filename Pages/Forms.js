@@ -1,5 +1,8 @@
 "use strict";
 class Forms {
+    waitforPageLoad (){
+        cy.get('h3.pull-left').should('contain', 'Forms');
+    }
     get addNewButton() {
         return cy.get('#toolbar > div.std-toolbar.btn-group > a');
     }

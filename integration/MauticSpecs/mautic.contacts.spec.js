@@ -10,7 +10,8 @@ const search = require("../../Pages/Search");
 context("Contacts", () => {
   it("Add new Company", () => {
     leftNavigation.companySection.click();
-    search.searchBox.should('exist');
+    company.waitforPageLoad();
+   // search.searchBox.should('exist');
     company.addNewButton.click({ force: true });
     company.companyName.type("CompanyAddedByCypress");
     company.saveButton.click();
@@ -18,6 +19,7 @@ context("Contacts", () => {
 
   it("Add new Contact", () => {
     leftNavigation.contactsSection.click();
+    contact.waitforPageLoad();
     contact.addNewButton.click({ force: true });
     contact.title.type("Mr");
     contact.firstName.type("Cypress");
@@ -29,6 +31,7 @@ context("Contacts", () => {
 
   it("Search and Delete Company", () => {
     leftNavigation.companySection.click();
+    company.waitforPageLoad();
     search.searchBox.clear();
     search.searchBox.type("CompanyAddedByCypress");
     search.selectCheckBoxForFirstItem.click({ force: true });
@@ -39,7 +42,8 @@ context("Contacts", () => {
 
   it("Search and Delete a Contact", () => {
     leftNavigation.contactsSection.click();
-    cy.get('.quickadd').should('exist');
+    contact.waitforPageLoad();
+    contact.quickAddButton.should('exist');
     search.searchBox.clear();
     search.searchBox.type("Cypress");
     search.selectCheckBoxForFirstItem.click({ force: true });

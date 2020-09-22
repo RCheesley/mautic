@@ -7,8 +7,10 @@ const campaigns = require("../../Pages/Campaigns");
 const search = require("../../Pages/Search");
 
 context("Campaign", () => {
+ 
   it("Add new Campaign", () => {
     leftNavigation.CampaignsSection.click();
+    campaigns.waitforPageLoad();
     search.searchBox.should('exist');
     campaigns.addNewButton.click();
     campaigns.campaignName.type("Test Campaign");
