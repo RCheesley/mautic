@@ -13,7 +13,7 @@ class Search {
     }
 
     get deleteButtonForFirstItem() {
-        return   cy.get(':nth-child(3) > a > :nth-child(1) > span').eq(0);
+        return   cy.get('td.active > .input-group > .input-group-btn > .pull-left > :nth-child(3) > a > :nth-child(1) > .fa');
     }
 
     get confirmDeleteButton(){
