@@ -22,7 +22,7 @@ Cypress.Cookies.defaults({
 
   it("Perform login", () => {
     cy.visit("https://cr.mautic.net/s/login");
-    cy.login(Cypress.env('userName'), Cypress.env('password');
+    cy.login(Cypress.env('userName'), Cypress.env('password'));
    });
 
    Cypress.on('uncaught:exception', (err, runnable) => {
