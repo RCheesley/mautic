@@ -5,22 +5,20 @@ class Search {
     }
 
     get selectCheckBoxForFirstItem() {
-        return  cy.get('.list-checkbox').eq(0);
+        return  cy.get('.list-checkbox').eq(1);
     }
 
     get OptionsDropdownForFirstItem() {
-        return    cy.get('tbody > tr > :nth-child(1) > .input-group > .input-group-btn > .btn').eq(0);
+        return    cy.get('button[class="btn btn-default btn-sm dropdown-toggle btn-nospin"]').eq(1);
     }
 
     get deleteButtonForFirstItem() {
-        return   cy.get('td.active > .input-group > .input-group-btn > .pull-left > :nth-child(3) > a > :nth-child(1) > .fa');
+        return   cy.get('div[class="input-group-btn open"]>ul>li').eq(2);
     }
 
     get confirmDeleteButton(){
-        return cy.get('.btn-danger');
+        return cy.get('button[class="btn btn-danger"]');
     }
-
-
   
 }
 const search = new Search();
