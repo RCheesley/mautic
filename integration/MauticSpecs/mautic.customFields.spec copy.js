@@ -13,7 +13,7 @@ context("Custom Fields", () => {
   it("add new Booleean custom field for Company", () => {
     settings.settingsMenuButton.click();
     settings.customFieldSection.click();
-    cy.wait(1000);
+    customFields.waitforPageLoad();
     customFields.addNewButton.click();
     customFields.fieldLabel.type("Booleean custom field for Company");
     customFields.ObjectSelectionDropDown.click();
@@ -21,13 +21,11 @@ context("Custom Fields", () => {
     customFields.DataTypeSelectionDropDown.click();
     customFields.DataTypeSelector.select("Boolean",{force: true});
     customFields.SaveAndCloseButton.click();
-    cy.wait(1000);
   })
 
   it("add new Booleean custom field for Contact", () => {
     settings.settingsMenuButton.click();
     settings.customFieldSection.click();
-    cy.wait(1000);
     customFields.addNewButton.click();
     customFields.fieldLabel.type("Booleean custom field for Contact");
     customFields.ObjectSelectionDropDown.click();
@@ -35,13 +33,10 @@ context("Custom Fields", () => {
     customFields.DataTypeSelectionDropDown.click();
     customFields.DataTypeSelector.select("Boolean",{force: true});
     customFields.SaveAndCloseButton.click();
-    cy.wait(1000);
-  })
 
   it("add new Text custom field for Company", () => {
     settings.settingsMenuButton.click();
     settings.customFieldSection.click();
-    cy.wait(1000);
     customFields.addNewButton.click();
     customFields.fieldLabel.type("Text custom field for Contact");
     customFields.ObjectSelectionDropDown.click();
@@ -49,13 +44,11 @@ context("Custom Fields", () => {
     customFields.DataTypeSelectionDropDown.click();
     customFields.DataTypeSelector.select("Text",{force: true});
     customFields.SaveAndCloseButton.click();
-    cy.wait(1000);
   })
 
   it("add new Text custom field for Contact", () => {
     settings.settingsMenuButton.click();
     settings.customFieldSection.click();
-    cy.wait(1000);
     customFields.addNewButton.click();
     customFields.fieldLabel.type("Text custom field for Contact");
     customFields.ObjectSelectionDropDown.click();
@@ -63,7 +56,6 @@ context("Custom Fields", () => {
     customFields.DataTypeSelectionDropDown.click();
     customFields.DataTypeSelector.select("Text",{force: true});
     customFields.SaveAndCloseButton.click();
-    cy.wait(1000);
   })
 
 

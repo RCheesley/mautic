@@ -1,7 +1,10 @@
 "use strict";
 class CustomFields {
+     waitforPageLoad (){
+        cy.get('h3.pull-left').should('contain', 'Custom Fields');
+    }
     get addNewButton() {
-        return  cy.get('.std-toolbar > .btn')
+        return  cy.get('.std-toolbar > .btn');
     }
 
     get fieldLabel() {

@@ -1,5 +1,10 @@
 "use strict";
 class Campaigns {
+
+    waitforPageLoad (){
+        cy.get('h3.pull-left').should('contain', 'Campaigns');
+    }
+
     get addNewButton() {
         return cy.get('#toolbar > div.std-toolbar.btn-group > a');
     }

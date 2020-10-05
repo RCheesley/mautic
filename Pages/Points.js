@@ -1,5 +1,9 @@
 "use strict";
 class Points {
+
+    waitforPageLoad (){
+        cy.get('h3.pull-left').should('contain', 'Points');
+    }
   
     get manageActionSection() {
         return  cy.get('#mautic_point_index > span');

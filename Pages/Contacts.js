@@ -1,7 +1,14 @@
 "use strict";
 class Contacts {
+    waitforPageLoad (){
+        cy.get('h3.pull-left').should('contain', 'Contacts');
+    }
     get addNewButton() {
         return cy.get('[href="/s/contacts/new"]');
+    }
+
+    get quickAddButton() {
+        return cy.get('.quickadd');
     }
     get title() {
         return cy.get("#lead_title");

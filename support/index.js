@@ -17,12 +17,12 @@
 import './commands'
 
 Cypress.Cookies.defaults({
-    whitelist: ['28ced7f51a554f149cfb8289fdddb9fb','_ga','_gid','_gat','mautic_referer_id','mtc_id','mtc_sid','mautic_device_id','device_id','sid','id','success']
+    preserve: ['28ced7f51a554f149cfb8289fdddb9fb','_ga','_gid','_gat','mautic_referer_id','mtc_id','mtc_sid','mautic_device_id','device_id','sid','id','success']
   })
 
   it("Perform login", () => {
     cy.visit("https://cr.mautic.net/s/login");
-    cy.login('muhammad.ahmed@acquia.com','6wNQxWeZ1j18mb3');
+    cy.login(Cypress.env('userName'), Cypress.env('password'));
    });
 
    Cypress.on('uncaught:exception', (err, runnable) => {

@@ -1,5 +1,8 @@
 "use strict";
 class LandingPages {
+    waitforPageLoad (){
+        cy.get('h3.pull-left').should('contain', 'Landing Pages');
+    }
     get addNewButton() {
         return cy.get('#toolbar > div.std-toolbar.btn-group > a');
     }
