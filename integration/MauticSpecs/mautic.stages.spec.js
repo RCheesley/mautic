@@ -8,10 +8,9 @@ const stages = require("../../Pages/Stages");
 
 
 context("Stages", () => {
- 
    it("Add a Stage", () => {
     leftNavigation.StagesSection.click();
-    cy.wait(1000);
+    cy.wait(2000);
     stages.addNewButton.click();
     stages.stageName.type("Stage2");
     stages.stageWeight.type("40");
@@ -23,7 +22,6 @@ context("Stages", () => {
     leftNavigation.StagesSection.click();
     cy.wait(1000);
     cy.get('#list-search').type("Stage");
-    //cy.get('.col-actions > .input-group > .input-group-btn > .btn > .fa').click();
     cy.wait(2000);
     cy.get('.list-checkbox').eq(0).click( {force: true});
     cy.get('tbody > tr > :nth-child(1) > .input-group > .input-group-btn > .btn').eq(0).click();

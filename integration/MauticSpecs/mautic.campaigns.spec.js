@@ -13,11 +13,11 @@ context("Campaign", () => {
     campaigns.waitforPageLoad();
     search.searchBox.should('exist');
     campaigns.addNewButton.click();
-    campaigns.campaignName.type("Test Campaign");
+    campaigns.campaignName.type("TestCampaign");
     campaigns.launchCampaignBuilderButton.click({ force: true });
     campaigns.sourceSelector.select("Contact segments", { force: true });
     campaigns.segmentSelectorButton.click();
-    campaigns.segmentSelector.select("Test Users", { force: true });
+    campaigns.segmentSelector.click();
     campaigns.addSourceCamapignButton.click({ force: true });
     campaigns.addStepButtonBottom.click({ force: true });
     campaigns.actionSelector.click();
@@ -36,33 +36,11 @@ context("Campaign", () => {
     search.selectCheckBoxForFirstItem.should('exist');
   });
 
-  it("Add new Campaign for deletion", () => {
-    leftNavigation.CampaignsSection.click();
-    search.searchBox.should('exist');
-    campaigns.addNewButton.click();
-    campaigns.campaignName.type("Delete");
-    campaigns.launchCampaignBuilderButton.click({ force: true });
-    campaigns.sourceSelector.select("Contact segments", { force: true });
-    campaigns.segmentSelectorButton.click();
-    campaigns.segmentSelector.select("Test Users", { force: true });
-    campaigns.addSourceCamapignButton.click({ force: true });
-    campaigns.addStepButtonBottom.click({ force: true });
-    campaigns.actionSelector.click();
-    campaigns.listOfActions.select("Send email", { force: true });
-    campaigns.sendEmailActionName.type("Test Campaign Email");
-    campaigns.emailTOBeSentSelector.click();
-    campaigns.emailSearchBox.type("Test Email");
-    campaigns.firstEmailinTheSearchList.click();
-    campaigns.addEmailButton.click();
-    campaigns.closeBuilderButton.click();
-    campaigns.saveAndCloseButton.click();
-    campaigns.closeSummaryPageButton.click();
-  });
-
   it("Search and Delete Campaign", () => {
     leftNavigation.CampaignsSection.click();
     search.searchBox.clear();
-    search.searchBox.type("Delete");
+    search.searchBox.type("TestCampaign");
+    cy.wait(2000);
     search.selectCheckBoxForFirstItem.click({ force: true });
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click({ force: true });

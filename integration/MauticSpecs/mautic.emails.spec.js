@@ -23,8 +23,6 @@ context("Emails", () => {
   });
 
   it("Add new Email for deletion", () => {
-   // leftNavigation.ChannelsSection.click();
-   // leftNavigation.EmailsSubSection.click();
     cy.wait(3000);
     emails.addNewButton.click({ force: true });
     cy.wait(2000);
@@ -37,15 +35,15 @@ context("Emails", () => {
   });
 
   it("Search and Delete Email", () => {
-   // leftNavigation.ChannelsSection.click();
-   // leftNavigation.EmailsSubSection.click();
-    cy.wait(1000);
+    leftNavigation.ChannelsSection.click();
+    leftNavigation.EmailsSubSection.click();
     search.searchBox.clear();
     search.searchBox.type("Delete");
+    cy.wait(2000);
     search.selectCheckBoxForFirstItem.click({force: true});
     cy.wait(2000);
     search.OptionsDropdownForFirstItem.click();
-    search.deleteButtonForFirstItem.click({force: true});
+    search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
     cy.wait(1000);
   });

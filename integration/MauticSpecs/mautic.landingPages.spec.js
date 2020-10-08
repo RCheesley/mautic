@@ -32,7 +32,6 @@ context("Create Landing Page", () => {
     cy.wait(4000);
     landingPages.saveAndCloseButton.click();
   });
-
   
   it("Search and Delete Landing Page", () => {
     leftNavigation.componentsSection.click();
@@ -40,10 +39,11 @@ context("Create Landing Page", () => {
     cy.wait(1000);
     search.searchBox.clear();
     search.searchBox.type("Delete");
-    search.selectCheckBoxForFirstItem.click({force: true});
-    cy.wait(2000);
+    cy.wait(1000);
+    search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
-    search.deleteButtonForFirstItem.click({force: true});
+    search.deleteButtonForFirstItem.click();
+    cy.wait(1000);
     search.confirmDeleteButton.click();
     cy.wait(1000);
   });

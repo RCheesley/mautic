@@ -8,7 +8,6 @@ const points = require("../../Pages/Points");
 
 
 context("Points", () => {
- 
    it("Add a Action", () => {
     leftNavigation.PointsSection.click();
     points.manageActionSection.click();
@@ -32,13 +31,14 @@ context("Points", () => {
     points.addNewPointsTriggerButton.click();
     points.triggerName.type("Action");
     points.triggerPoints.type("40");
+    points.publishTrigger.click();
     points.eventsTab.click();
     points.addEventButton.click();
     points.sendEmailEvent.click();
     cy.wait(1000);
     points.eventName.type("Test Trigger");
     points.emailSelector.click();
-    points.firstEmail.click();
+    points.firstEmail.contains("Test Email by Cypress").click();
     points.addButton.click();
     cy.wait(1000);
     points.saveAndCloseTriggerButton.click();

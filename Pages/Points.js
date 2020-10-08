@@ -8,15 +8,10 @@ class Points {
     get manageActionSection() {
         return  cy.get('#mautic_point_index > span');
     }
-
- 
-
     
-
     get addNewActionButton() {
         return   cy.get('#toolbar > div.std-toolbar.btn-group > a > span > span');
     }
-
 
     get actionName() {
         return   cy.get('#point_name');
@@ -44,7 +39,7 @@ class Points {
 
     
     get addNewPointsTriggerButton() {
-        return  cy.get('#toolbar > div.std-toolbar.btn-group > a');
+        return  cy.get('div[class="std-toolbar btn-group"]>a');
     }
   
     get triggerName(){
@@ -64,7 +59,7 @@ class Points {
     }
 
     get sendEmailEvent(){
-        return cy.get('#triggerEvents > div.mb-md > div > ul > li').eq(8);
+        return cy.get('#triggerEvents > div.mb-md > div > ul > li[id="event_email.send"]');
 
     }
 
@@ -78,7 +73,11 @@ class Points {
     }
 
     get firstEmail() {
-        return cy.get('#pointtriggerevent_properties_email_chosen > div > ul > li').eq(2);
+        return cy.get('#pointtriggerevent_properties_email_chosen > div > ul > li');
+    }
+
+    get publishTrigger() {
+        return cy.get('label[class="btn btn-default  btn-yes"]').eq(1);
     }
 
     get addButton() {
