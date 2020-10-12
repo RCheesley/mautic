@@ -12,7 +12,7 @@ context("Emails", () => {
   it("Add new segment Email", () => {
     leftNavigation.ChannelsSection.click();
     leftNavigation.EmailsSubSection.click();
-    cy.wait(3000);
+    emails.waitforPageLoad();
     emails.addNewButton.click({ force: true });
     cy.wait(2000);
     emails.segmentEmailSelector.click();
