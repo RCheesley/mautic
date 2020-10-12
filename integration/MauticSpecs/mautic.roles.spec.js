@@ -6,8 +6,8 @@ const settings = require("../../Pages/Settings");
 const roles = require("../../Pages/Roles");
 const search=require("../../Pages/Search");
 
-context("Rules", () => {
-  it("Add new rule for reading contact", () => {
+context("Roles", () => {
+  it("Add new role for reading contact", () => {
     settings.settingsMenuButton.click();
     settings.rolesSection.click();
     roles.addNewRoleButton.click();
