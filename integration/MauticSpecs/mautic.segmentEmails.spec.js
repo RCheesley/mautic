@@ -24,6 +24,8 @@ context("Emails", () => {
     emails.saveEmailButton.click();
     emails.closeButton.click();
     search.searchBox.clear();
+    search.searchBox.type("testSegmentEmailCypress");
+    cy.wait(2000);
     emails.searchAndSelectEmail.contains('testSegmentEmailCypress').click();
     cy.wait(2000);
     emails.scheduleSegmentEmail.click();
