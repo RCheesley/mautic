@@ -26,6 +26,7 @@ context("Custom Fields", () => {
   it("add new Booleean custom field for Contact", () => {
     settings.settingsMenuButton.click();
     settings.customFieldSection.click();
+    customFields.waitforPageLoad();
     customFields.addNewButton.click();
     customFields.fieldLabel.type("Booleean custom field for Contact");
     customFields.ObjectSelectionDropDown.click();
@@ -37,6 +38,7 @@ context("Custom Fields", () => {
   it("add new Text custom field for Company", () => {
     settings.settingsMenuButton.click();
     settings.customFieldSection.click();
+    customFields.waitforPageLoad();
     customFields.addNewButton.click();
     customFields.fieldLabel.type("Text custom field for Contact");
     customFields.ObjectSelectionDropDown.click();
@@ -49,6 +51,7 @@ context("Custom Fields", () => {
   it("add new Text custom field for Contact", () => {
     settings.settingsMenuButton.click();
     settings.customFieldSection.click();
+    customFields.waitforPageLoad();
     customFields.addNewButton.click();
     customFields.fieldLabel.type("Text custom field for Contact");
     customFields.ObjectSelectionDropDown.click();
