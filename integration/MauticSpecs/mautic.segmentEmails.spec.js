@@ -23,10 +23,12 @@ context("Emails", () => {
     emails.firstSegmentEmailSelector.click();
     emails.saveEmailButton.click();
     emails.closeButton.click();
+    search.searchBox.clear();
     emails.searchAndSelectEmail.contains('testSegmentEmailCypress').click();
     cy.wait(2000);
     emails.scheduleSegmentEmail.click();
     emails.scheduleButton.click();
+    cy.wait(5000);
   });
 
   it("Search and Delete newly added segment Email", () => {
