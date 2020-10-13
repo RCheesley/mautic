@@ -69,5 +69,6 @@ context("Contacts", () => {
       force: true,
     });
     cy.get("#lead_field_import_buttons_save_toolbar").click();
+    cy.wait(5000);
   });
 });
