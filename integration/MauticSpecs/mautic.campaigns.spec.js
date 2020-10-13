@@ -38,6 +38,7 @@ context("Campaign", () => {
 
   it("Search and Delete Campaign", () => {
     leftNavigation.CampaignsSection.click();
+    campaigns.waitforPageLoad();
     search.searchBox.clear();
     search.searchBox.type("TestCampaign");
     cy.wait(2000);
