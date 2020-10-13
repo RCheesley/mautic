@@ -37,6 +37,7 @@ context("Emails", () => {
     leftNavigation.ChannelsSection.click();
     leftNavigation.EmailsSubSection.click();
     cy.wait(3000);
+    emails.waitforPageLoad();
     search.searchBox.clear();
     search.searchBox.type("testSegmentEmailCypress");
     cy.wait(2000);

@@ -11,6 +11,7 @@ context("Create Landing Page", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.landingPagesSubSection.click({force: true});
     cy.wait(2000);
+    landingPages.waitforPageLoad();
     landingPages.addNewButton.click();
     cy.wait(1000);
     landingPages.pageTitle.type('Test Landing Page');
@@ -24,6 +25,7 @@ context("Create Landing Page", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.landingPagesSubSection.click({force: true});
     cy.wait(2000);
+    landingPages.waitforPageLoad();
     landingPages.addNewButton.click();
     cy.wait(1000);
     landingPages.pageTitle.type('Delete');

@@ -11,6 +11,7 @@ context("Create Form", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.formsSubSection.click();
     cy.wait(2000);
+    forms.waitforPageLoad();
     forms.addNewButton.click();
     cy.wait(1000);
     forms.standaloneFormSelector.click();

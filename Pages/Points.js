@@ -1,8 +1,11 @@
 "use strict";
 class Points {
 
-    waitforPageLoad (){
+    waitforActionPageLoad (){
         cy.get('h3.pull-left').should('contain', 'Points');
+    }
+    waitforPointTriggerPageLoad (){
+        cy.get('h3.pull-left').should('contain', 'Point Triggers');
     }
   
     get manageActionSection() {

@@ -1,5 +1,9 @@
 "use strict";
 class Roles {
+
+        waitForPageLoad() {
+            cy.get('h3.pull-left').should('contain', 'Roles'); 
+        }
     get addNewRoleButton() {
         return cy.get('a[href="/s/roles/new"]');
     }

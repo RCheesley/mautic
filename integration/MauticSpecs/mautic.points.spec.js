@@ -13,6 +13,7 @@ context("Points", () => {
     points.manageActionSection.click();
     cy.contains('Manage Actions').click()
     cy.wait(1000);
+    points.waitforActionPageLoad();
     points.addNewActionButton.click();
     points.actionName.type("Action");
     points.pointsToBeChanged.type("40");
@@ -28,6 +29,7 @@ context("Points", () => {
     points.manageTriggerSection.click();
     cy.contains('Manage Triggers').click()
     cy.wait(1000);
+    points.waitforPointTriggerPageLoad();
     points.addNewPointsTriggerButton.click();
     points.triggerName.type("Action");
     points.triggerPoints.type("40");

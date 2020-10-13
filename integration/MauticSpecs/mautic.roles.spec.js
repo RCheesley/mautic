@@ -10,6 +10,7 @@ context("Roles", () => {
   it("Add new role for reading contact", () => {
     settings.settingsMenuButton.click();
     settings.rolesSection.click();
+    roles.waitForPageLoad();
     roles.addNewRoleButton.click();
     roles.roleNameTextBox.click();
     roles.roleNameTextBox.type("testConatctsReadRule");
@@ -24,7 +25,10 @@ context("Roles", () => {
   });
 
   it("Search and Delete newly added role", () => {
+    settings.settingsMenuButton.click();
+    settings.rolesSection.click();
     cy.wait(1000);
+    roles.waitForPageLoad();
     search.searchBox.clear();
     search.searchBox.type("testConatctsReadRule");
     cy.wait(2000);
