@@ -23,7 +23,7 @@ class LeftNavigation {
 
     get StagesSection() {
 
-        return cy.get('#mautic_stage_index > .nav-item-name');
+        return cy.get('#mautic_stage_index');
     }
 
     get SegmentsSection() {

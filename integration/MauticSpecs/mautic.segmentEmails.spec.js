@@ -11,37 +11,40 @@ context("Emails", () => {
 
   it("Add new segment Email", () => {
     leftNavigation.ChannelsSection.click();
-    leftNavigation.EmailsSubSection.click();
-    cy.wait(3000);
+    leftNavigation.EmailsSubSection.click({ force: true });
+    emails.waitforPageLoad();
     emails.addNewButton.click({ force: true });
     cy.wait(2000);
     emails.segmentEmailSelector.click();
     cy.wait(2000);
-    emails.emailSubject.type('Test Email by Cypress');
-    emails.emailInternalName.type('Test Email by Cypress')
-    emails.contactSegmentSelector.click({ force: true });
-    emails.firstSegmentEmailSelector.click({ force: true });
+    emails.emailSubject.type('testSegmentEmailCypress');
+    emails.emailInternalName.type('testSegmentEmailCypress')
+    emails.contactSegmentSelector.click();
+    emails.firstSegmentEmailSelector.click();
     emails.saveEmailButton.click();
-    emails.closeButton.click({force: true});
-    emails.searchAndSelectEmail.contains('Test Email by Cypress').click();
+    emails.closeButton.click();
+    search.searchBox.clear();
+    search.searchBox.type("testSegmentEmailCypress");
+    cy.wait(2000);
+    emails.searchAndSelectEmail.contains('testSegmentEmailCypress').click();
+    cy.wait(2000);
     emails.scheduleSegmentEmail.click();
-    emails.scheduleButton.click({force: true});
+    emails.scheduleButton.click();
+    cy.wait(5000);
   });
 
   it("Search and Delete newly added segment Email", () => {
     leftNavigation.ChannelsSection.click();
     leftNavigation.EmailsSubSection.click();
     cy.wait(3000);
-    cy.wait(1000);
+    emails.waitforPageLoad();
     search.searchBox.clear();
-    search.searchBox.type("Test Email by Cypress");
-    search.selectCheckBoxForFirstItem.click({force: true});
+    search.searchBox.type("testSegmentEmailCypress");
     cy.wait(2000);
+    search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
-    cy.wait(2000);
     search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
-    cy.wait(1000);
   });
 
   });

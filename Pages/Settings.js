@@ -1,7 +1,7 @@
 "use strict";
 class Settings {
     get settingsMenuButton() {
-        return cy.get('.navbar-right > :nth-child(2) > a > .fa');
+        return cy.get('i[class="fa fa-cog fs-16"]');
     }
 
     get customFieldSection() {
@@ -32,7 +32,7 @@ class Settings {
     }
 
     get rolesSection() {
-        return cy.get('#mautic_role_index > .nav-item-name');
+        return cy.get('a[id="mautic_role_index"]');
     }
 
     get webhookSection() {

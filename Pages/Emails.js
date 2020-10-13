@@ -22,7 +22,7 @@ class Emails{
     }
 
     get contactSegmentSelector() {
-        return  cy.get('input[class="chosen-search-input default"]').eq(1);
+        return  cy.get('#emailform_lists_chosen');
     }
 
     get segmentEmailSelector() {
@@ -30,7 +30,7 @@ class Emails{
     }
 
     get firstSegmentEmailSelector() {
-        return  cy.get('div[id="emailform_lists_chosen"]>div>ul>li').eq(1);
+        return  cy.get('#emailform_lists_chosen>div>ul>li').eq(0);
     }
 
     get saveEmailButton() {
@@ -42,11 +42,11 @@ class Emails{
     }
 
     get searchAndSelectEmail(){
-        return cy.get('table[class="table table-hover table-striped table-bordered email-list"]>tbody>tr>td>div>a');
+        return cy.get('table[class="table table-hover table-striped table-bordered email-list"]>tbody>tr>td>div>a').eq(0);
     }
 
     get scheduleSegmentEmail(){
-        return cy.get('[data-header="Schedule Test Email by Cypress"] > :nth-child(1) > .hidden-xs');
+        return cy.get('[data-header="Schedule testSegmentEmailCypress"] > :nth-child(1)');
     }
 
     get scheduleSegmentCalender(){

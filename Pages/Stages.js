@@ -1,7 +1,7 @@
 "use strict";
 class Stages {
     get addNewButton() {
-        return  cy.get('.std-toolbar > .btn')
+        return  cy.get('i[class="fa fa-plus"]');
     }
 
     get stageName() {
@@ -15,8 +15,6 @@ class Stages {
     get saveAndCloseButton() {
         return   cy.get('#stage_buttons_save_toolbar');
     }
-
-
   
 }
 const stages = new Stages();

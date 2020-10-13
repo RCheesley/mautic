@@ -36,25 +36,26 @@ context("Contacts", () => {
     search.searchBox.type("CompanyAddedByCypress");
     search.selectCheckBoxForFirstItem.click({ force: true });
     search.OptionsDropdownForFirstItem.click();
-    search.deleteButtonForFirstItem.click({ force: true });
+    search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
   });
 
   it("Search and Delete a Contact", () => {
     leftNavigation.contactsSection.click();
     contact.waitforPageLoad();
-    contact.quickAddButton.should('exist');
     search.searchBox.clear();
     search.searchBox.type("Cypress");
+    cy.wait(2000);
     search.selectCheckBoxForFirstItem.click({ force: true });
     search.OptionsDropdownForFirstItem.click();
-    search.deleteButtonForFirstItem.click({ force: true });
+    search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
   });
 
   it("import new Contacts", () => {
     leftNavigation.contactsSection.click();
     contact.importExportDropdownMenu.click({ force: true });
+    cy.wait(2000);
     contact.importButton.click({ force: true });
     const fileName = "contacts_july-22-2020.csv";
     const fileType = "application/csv";
@@ -68,5 +69,6 @@ context("Contacts", () => {
       force: true,
     });
     cy.get("#lead_field_import_buttons_save_toolbar").click();
+    cy.wait(5000);
   });
 });

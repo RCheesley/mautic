@@ -10,6 +10,7 @@ context("Segments", () => {
   it("Add new Segment", () => {
     leftNavigation.SegmentsSection.click();
     cy.wait(1000);
+    segments.waitForPageLoad();
     segments.addNewButton.click({ force: true });
     cy.wait(1000);
     segments.segmentName.type("Cypress");
@@ -26,6 +27,7 @@ context("Segments", () => {
   it("Search and Delete Segment", () => {
     leftNavigation.SegmentsSection.click();
     cy.wait(1000);
+    segments.waitForPageLoad();
     segments.SearchBox.type("Cypress");
     cy.wait(1000);
     segments.firstCheckbox.click();

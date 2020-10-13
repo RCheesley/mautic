@@ -12,8 +12,9 @@ context("Emails", () => {
     leftNavigation.ChannelsSection.click();
     leftNavigation.EmailsSubSection.click();
     cy.wait(3000);
+    emails.waitforPageLoad();
     emails.addNewButton.click({ force: true });
-    cy.wait(2000);
+    cy.wait(5000);
     emails.templateEmailSelector.click();
     cy.wait(2000);
     emails.emailSubject.type('Test Email by Cypress');
@@ -23,9 +24,10 @@ context("Emails", () => {
   });
 
   it("Add new Email for deletion", () => {
-   // leftNavigation.ChannelsSection.click();
-   // leftNavigation.EmailsSubSection.click();
+    leftNavigation.ChannelsSection.click();
+    leftNavigation.EmailsSubSection.click({force: true});
     cy.wait(3000);
+    emails.waitforPageLoad();
     emails.addNewButton.click({ force: true });
     cy.wait(2000);
     emails.templateEmailSelector.click();
@@ -37,15 +39,16 @@ context("Emails", () => {
   });
 
   it("Search and Delete Email", () => {
-   // leftNavigation.ChannelsSection.click();
-   // leftNavigation.EmailsSubSection.click();
-    cy.wait(1000);
+    leftNavigation.ChannelsSection.click();
+    leftNavigation.EmailsSubSection.click();
+    emails.waitforPageLoad();
     search.searchBox.clear();
     search.searchBox.type("Delete");
+    cy.wait(2000);
     search.selectCheckBoxForFirstItem.click({force: true});
     cy.wait(2000);
     search.OptionsDropdownForFirstItem.click();
-    search.deleteButtonForFirstItem.click({force: true});
+    search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
     cy.wait(1000);
   });
