@@ -17,7 +17,8 @@
 import './commands'
 
 Cypress.Cookies.defaults({
-    preserve: ['28ced7f51a554f149cfb8289fdddb9fb','_ga','_gid','_gat','mautic_referer_id','mtc_id','mtc_sid','mautic_device_id','device_id','sid','id','success']
+    preserve: ['28ced7f51a554f149cfb8289fdddb9fb','sid','success']
+   // preserve: ['28ced7f51a554f149cfb8289fdddb9fb','_ga','_gid','_gat','mautic_referer_id','mtc_id','mtc_sid','mautic_device_id','device_id','sid','id','success']
   })
 
   it("Perform login", () => {
