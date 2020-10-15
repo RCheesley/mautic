@@ -32,9 +32,13 @@ context("Segments", () => {
     cy.wait(1000);
     segments.searchAndSelectSegment.click().contains("Cypress");
     segment.editSegment.click();
-    segments.firstDropDown.click();
-    segments.deleteOption.click();
-    segment.deleteConfirmation.click();
+    segments.filterTab.click();
+    cy.wait(1000);
+    segments.filterDropDown.click();
+    cy.wait(1000);
+    segments.filterSearchBox.type("Last name");
+    segments.filterField.click();
+    
   });
 
   it("Search and Delete Segment", () => {
