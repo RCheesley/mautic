@@ -23,12 +23,12 @@ Cypress.Cookies.defaults({
   })
 
   before("Perform login", () => {
-    cy.visit("https://mufeez-beta.dev.mautic.net/s/login");
+    cy.visit("/s/login");
     cy.login(Cypress.env('userName'), Cypress.env('password'));
    });
 
    beforeEach("Visit HomePage", () => {
-    cy.visit("https://mufeez-beta.dev.mautic.net/");
+    cy.visit("");
    });
 
    Cypress.on('uncaught:exception', (err, runnable) => {
