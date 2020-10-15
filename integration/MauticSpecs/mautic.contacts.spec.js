@@ -29,6 +29,32 @@ context("Contacts", () => {
     contact.closeButton.click({ force: true });
   });
 
+  it("Edit newly added contact", () => {
+    leftNavigation.contactsSection.click();
+    contact.waitforPageLoad();
+    search.searchBox.clear();
+    search.searchBox.type("Cypress");
+    cy.wait(2000);
+    contact.searchAndClickForFirstElement.click().contains("Cypress");
+    contact.editContact.click();
+    contact.leadCity.type("Pune");
+    contact.lastName.type("Contact");
+    contact.SaveButton.click();
+    contact.closeButton.click({ force: true });
+  });
+
+  it("Edit newly added Company", () => {
+    leftNavigation.companySection.click();
+    company.waitforPageLoad();
+    search.searchBox.clear();
+    search.searchBox.type("CompanyAddedByCypress");
+    cy.wait(2000);
+    company.searchAndClickForFirstElement.click().contains("CompanyAddedByCypress");
+    company.companyCity.type("Pune");
+    company.companyZipCode.type("412308");
+    company.saveButton.click();
+  });
+
   it("Search and Delete Company", () => {
     leftNavigation.companySection.click();
     company.waitforPageLoad();
