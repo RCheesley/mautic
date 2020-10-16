@@ -55,6 +55,14 @@ class Segments {
         return cy.get('.btn-danger');
     }
 
+    get leadListFilter(){
+        return cy.get('#leadlist_filters_1_glue');
+    }
+
+    get secondFilterTextBox(){
+        return cy.get('#leadlist_filters_1_properties_filter');
+    }
+
 }
 const segment = new Segments();
 module.exports = segment;

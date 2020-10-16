@@ -11,7 +11,6 @@ context("Contacts", () => {
   it("Add new Company", () => {
     leftNavigation.companySection.click();
     company.waitforPageLoad();
-   // search.searchBox.should('exist');
     company.addNewButton.click({ force: true });
     company.companyName.type("CompanyAddedByCypress");
     company.saveButton.click();

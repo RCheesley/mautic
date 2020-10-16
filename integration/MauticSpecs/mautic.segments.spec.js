@@ -28,6 +28,7 @@ context("Segments", () => {
     leftNavigation.SegmentsSection.click();
     cy.wait(1000);
     segments.waitForPageLoad();
+    segments.SearchBox.click().clear();
     segments.SearchBox.type("Cypress");
     cy.wait(1000);
     segments.firstCheckbox.click();
