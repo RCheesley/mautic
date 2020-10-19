@@ -8,7 +8,7 @@ class Contacts {
     }
 
     get searchAndClickForFirstElement() {
-        return cy.get('table[class="table table-hover table-striped table-bordered"]>tbody>tr>td>a>div');
+        return cy.get('#leadTable>tbody>tr>td>a>div');
     }
 
     get quickAddButton() {
