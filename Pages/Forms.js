@@ -40,15 +40,15 @@ class Forms {
     }
 
     get contactFieldDropdown() {
-        return cy.get("#formfield_leadField_chosen > .chosen-single > span");
+        return cy.get("#formfield_mappedField_chosen>a>span");
     }
 
     get contactFieldSearchBox() {
-        return cy.get("#formfield_leadField_chosen > div > div > input")
+        return cy.get('div[class="chosen-container chosen-container-single chosen-with-drop chosen-container-active"]>div>div>input');
     }
 
     get contactFieldSearchFirstResult(){
-        return cy.get("#formfield_leadField_chosen > div > ul > li:nth-child(2)")
+        return cy.get('div[class="chosen-container chosen-container-single chosen-with-drop chosen-container-active"]>div>ul>li');
     }
 
     get addFieldButton(){
