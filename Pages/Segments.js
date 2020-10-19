@@ -27,6 +27,10 @@ class Segments {
         return     cy.get('#available_segment_filters_chosen > div > ul > li.active-result.group-option.segment-filter.user');
     }
 
+    get editSegment(){
+        return     cy.get('a[href*="/s/segments/edit"]');
+    }
+
     get filterValue(){
         return   cy.get('#leadlist_filters_1_properties_filter');
     }
@@ -37,6 +41,10 @@ class Segments {
 
     get SearchBox() {
         return cy.get('#list-search');
+    }
+
+    get searchAndSelectSegment() {
+        return cy.get('table[class="table table-hover table-striped table-bordered"]>tbody>tr>td>div>a');
     }
 
     get firstCheckbox(){
@@ -53,6 +61,14 @@ class Segments {
 
     get deleteConfirmation(){
         return cy.get('.btn-danger');
+    }
+
+    get leadListFilter(){
+        return cy.get('#leadlist_filters_1_glue');
+    }
+
+    get secondFilterTextBox(){
+        return cy.get('#leadlist_filters_1_properties_filter');
     }
 
 }

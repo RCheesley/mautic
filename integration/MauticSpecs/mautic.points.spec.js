@@ -4,8 +4,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const leftNavigation = require("../../Pages/LeftNavigation");
 const points = require("../../Pages/Points");
-
-
+const search = require("../../Pages/Search");
 
 context("Points", () => {
    it("Add a Action", () => {
@@ -22,6 +21,32 @@ context("Points", () => {
     points.saveAndCloseButton.click();
     leftNavigation.PointsSection.click();
     cy.wait(1000);
+  })
+
+  it("Edit a newly added action", () => {
+    leftNavigation.PointsSection.click();
+    points.manageActionSection.click();
+    search.searchBox.clear();
+    search.searchBox.type("Action");
+    cy.wait(1000);
+    points.searchAndGetFirstResult.click();
+    points.pointsToBeChanged.clear().type("10");
+    points.saveAndCloseButton.click();
+    leftNavigation.PointsSection.click();
+  })
+
+  it("Delete a newly added action", () => {
+    leftNavigation.PointsSection.click();
+    points.manageActionSection.click();
+    search.searchBox.clear();
+    search.searchBox.type("Action");
+    cy.wait(1000);
+    points.searchAndSelectFirstCheckBox.click();
+    points.editOptionsForFirstSelection.click();
+    points.deletePointsOption.click();
+    points.confirmWindowDelete.click();
+    cy.wait(1000);
+    points.checkNoResultFoundMessage.should('contain','No Results Found');
   })
 
   it("Add a Trigger", () => {

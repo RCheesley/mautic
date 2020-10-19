@@ -84,6 +84,85 @@ class Campaigns {
         return cy.get('.std-toolbar > [href="/s/campaigns"]');
     }
 
+    get searchAndSelectCampaign() {
+        return cy.get('#campaignTable>tbody>tr>td>div>a[href]');
+    }
+
+    get editCampaign() {
+        return cy.get('div[class="std-toolbar btn-group"]>a[href*="/s/campaigns/edit"]');
+    }
+
+    get campaignWarningMessage() {
+        return cy.get('div[class="alert alert-danger"]>p');
+    }
+
+    get addCampaignEvent() {
+        return cy.get('#CampaignCanvas>div[class^="jtk-endpoint jtk-endpoint-anchor-bottom"]');
+    }
+
+    get selectActionButton() {
+        return cy.get('button[class="btn btn-lg btn-default btn-nospin text-primary"]');
+    }
+
+    get actionsDropDown() {
+        return cy.get('#ActionList_chosen');
+    }
+
+    get typeActionTextbox() {
+        return cy.get('#ActionList_chosen>div>div>input');
+    }
+
+    get typeActionTextbox_selectFirstOption() {
+        return cy.get('ul[class="chosen-results"]>li').get(0);
+    }
+
+    get selectDecisionButton() {
+        return cy.get('div[class="hidden-xs panel-footer text-center"]>button[data-type="Decision"]');
+    }
+
+    get decisionListOption() {
+        return cy.get('#DecisionList_chosen');
+    }
+
+    get decisionListOption_TextBox() {
+        return cy.get('#DecisionList_chosen>div>div>input');
+    }
+
+    get decisionListOption_SelectFirstOption() {
+        return cy.get('div[class="chosen-drop"]>ul>li');
+    }
+
+    get addButton() {
+        return cy.get('div[class="modal-form-buttons"]>button[class*="save"]');
+    }
+
+    get decisionActionAddition() {
+        return cy.get('#CampaignCanvas>div[class^="jtk-endpoint jtk-endpoint-anchor-yes"]');
+    }
+
+    get selectAction() {
+        return cy.get('div[class="jtk-endpoint jtk-endpoint-anchor-yes CampaignEvent_newe9043c68e9fe267a773e25fda05ae3a86dfb8e99 jtk-draggable jtk-droppable"]');
+    }
+
+    get actionsSearchBox() {
+        return cy.get('#ActionList_chosen>div>div');
+    }
+
+    get selectSearchedAction() {
+        return cy.get('#ActionList_chosen>div>ul>li');
+    }
+
+    get addPointsTextbox() {
+        return cy.get('#campaignevent_properties_points');
+    }
+
+    get applyChangedBuilder() {
+        return cy.get('div[class="btns-builder"]>button[onClick="Mautic.saveCampaignFromBuilder();"]');
+    }
+
+    get closeChangedBuilder() {
+        return cy.get('div[class="btns-builder"]>button[onClick="Mautic.closeCampaignBuilder();"]');
+    }
 }
 const campaigns = new Campaigns();
 module.exports = campaigns;

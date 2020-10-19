@@ -7,8 +7,16 @@ class Contacts {
         return cy.get('[href="/s/contacts/new"]');
     }
 
+    get searchAndClickForFirstElement() {
+        return cy.get('#leadTable>tbody>tr>td>a>div');
+    }
+
     get quickAddButton() {
         return cy.get('.quickadd');
+    }
+
+    get editContact(){
+        return cy.get('i[class="fa fa-pencil-square-o"]');
     }
     get title() {
         return cy.get("#lead_title");
@@ -21,6 +29,9 @@ class Contacts {
     }
     get leadEmail() {
         return cy.get("#lead_email");
+    }
+    get leadCity() {
+        return cy.get("#lead_city");
     }
     get SaveButton() {
         return   cy.get("#lead_buttons_save_toolbar");
