@@ -34,9 +34,11 @@ context("Contacts", () => {
     search.searchBox.clear();
     search.searchBox.type("Cypress");
     cy.wait(2000);
-    contact.searchAndClickForFirstElement.click().contains("Cypress");
+    contact.searchAndClickForFirstElement.contains("Cypress").click();
+    cy.wait(1000);
     contact.editContact.click();
     contact.leadCity.type("Pune");
+    contact.lastName.clear();
     contact.lastName.type("Contact");
     contact.SaveButton.click();
     contact.closeButton.click({ force: true });
@@ -48,7 +50,7 @@ context("Contacts", () => {
     search.searchBox.clear();
     search.searchBox.type("CompanyAddedByCypress");
     cy.wait(2000);
-    company.searchAndClickForFirstElement.click().contains("CompanyAddedByCypress");
+    company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
     company.companyCity.type("Pune");
     company.companyZipCode.type("412308");
     company.saveButton.click();
