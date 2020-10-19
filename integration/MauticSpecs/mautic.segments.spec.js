@@ -24,6 +24,23 @@ context("Segments", () => {
     segments.saveAndCloseButton.click();
   });
 
+  it("Edit newly added segment", () => {
+    leftNavigation.SegmentsSection.click();
+    cy.wait(1000);
+    segments.waitForPageLoad();
+    segments.SearchBox.type("Cypress");
+    cy.wait(1000);
+    segments.searchAndSelectSegment.click().contains("Cypress");
+    segment.editSegment.click();
+    segments.filterTab.click();
+    cy.wait(1000);
+    segments.filterDropDown.click();
+    cy.wait(1000);
+    segments.filterSearchBox.type("Last name");
+    segments.filterField.click();
+    
+  });
+
   it("Search and Delete Segment", () => {
     leftNavigation.SegmentsSection.click();
     cy.wait(1000);

@@ -67,7 +67,6 @@ class Points {
     }
 
     get eventName() {
-
         return cy.get('#pointtriggerevent_name')
     }
 
@@ -89,6 +88,34 @@ class Points {
 
     get saveAndCloseTriggerButton() {
         return cy.get('#pointtrigger_buttons_save_toolbar');
+    }
+
+    get searchAndGetFirstResult() {
+        return cy.get('#pointTable>tbody>tr>td>div>a');
+    }
+
+    get searchAndSelectFirstCheckBox() {
+        return cy.get('#pointTable>tbody>tr>td>div>span>input');
+    }
+
+    get editOptionsForFirstSelection() {
+        return cy.get('#pointTable>tbody>tr>td>div>div>button');
+    }
+
+    get deletePointsOption() {
+        return cy.get('a[href*="/s/points/delete"]');
+    }
+
+    get deletePointsOption() {
+        return cy.get('a[href*="/s/points/delete"]');
+    }
+
+    get confirmWindowDelete() {
+        return cy.get('div[class="modal-body text-center"]>button[class*="danger"]');
+    }
+
+    get checkNoResultFoundMessage() {
+        return cy.get('#app-content>div>div>div>div>h4');
     }
 }
 
