@@ -46,6 +46,10 @@ class Company {
     get saveButton() {
         return   cy.get("#company_buttons_save_toolbar");
     }
+
+    get searchAndClickForFirstElement() {
+        return   cy.get('#companyTable>tbody>tr>td>div>a');
+    }
   
 }
 const company = new Company();
