@@ -28,7 +28,7 @@ class Segments {
     }
 
     get editSegment(){
-        return     cy.get('a[href*="/s/segments/edit/4"]');
+        return     cy.get('a[href*="/s/segments/edit"]');
     }
 
     get filterValue(){
