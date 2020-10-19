@@ -30,7 +30,8 @@ context("Segments", () => {
     segments.waitForPageLoad();
     segments.SearchBox.type("Cypress");
     cy.wait(1000);
-    segments.searchAndSelectSegment.click().contains("Cypress");
+    segments.searchAndSelectSegment.contains("Cypress").click();
+    cy.wait(1000);
     segment.editSegment.click();
     segments.filterTab.click();
     cy.wait(1000);
@@ -38,7 +39,9 @@ context("Segments", () => {
     cy.wait(1000);
     segments.filterSearchBox.type("Last name");
     segments.filterField.click();
-    
+    segments.leadListFilter.select("or");
+    segments.secondFilterTextBox.type("Test");
+    segments.saveAndCloseButton.click();
   });
 
   it("Search and Delete Segment", () => {
