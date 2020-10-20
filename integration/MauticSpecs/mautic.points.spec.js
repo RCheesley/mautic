@@ -65,7 +65,7 @@ context("Points", () => {
     cy.wait(1000);
     points.eventName.type("Test Trigger");
     points.emailSelector.click();
-    points.firstEmail.contains("Test Email by Cypress").click();
+    points.firstEmail.contains("Test").click();
     points.addButton.click();
     cy.wait(1000);
     points.saveAndCloseTriggerButton.click();
