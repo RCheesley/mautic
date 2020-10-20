@@ -94,20 +94,28 @@ class Points {
         return cy.get('#pointTable>tbody>tr>td>div>a');
     }
 
+    get searchAndGetFirstResultTriggerTable() {
+        return cy.get('#triggerTable>tbody>tr>td>div>a');
+    }
+
     get searchAndSelectFirstCheckBox() {
         return cy.get('#pointTable>tbody>tr>td>div>span>input');
+    }
+
+    get searchAndSelectFirstCheckBoxForTrigger() {
+        return cy.get('#triggerTable>tbody>tr>td>div>span>input');
     }
 
     get editOptionsForFirstSelection() {
         return cy.get('#pointTable>tbody>tr>td>div>div>button');
     }
 
-    get deletePointsOption() {
-        return cy.get('a[href*="/s/points/delete"]');
+    get editOptionsForFirstSelectionForTrigger() {
+        return cy.get('#triggerTable >tbody>tr>td>div>div>button');
     }
 
-    get deletePointsOption() {
-        return cy.get('a[href*="/s/points/delete"]');
+    get deleteOption() {
+        return cy.get('a[href*="/delete"]');
     }
 
     get confirmWindowDelete() {
