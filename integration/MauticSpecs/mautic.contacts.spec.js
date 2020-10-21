@@ -35,7 +35,7 @@ context("Contacts", () => {
     search.searchBox.type("Cypress");
     cy.wait(2000);
     contact.searchAndClickForFirstElement.contains("Cypress").click();
-    cy.wait(1000);
+    cy.wait(2000);
     contact.editContact.click();
     contact.leadCity.type("Pune");
     contact.lastName.clear();

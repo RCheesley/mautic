@@ -31,7 +31,7 @@ context("Segments", () => {
     segments.SearchBox.type("Cypress");
     cy.wait(1000);
     segments.searchAndSelectSegment.contains("Cypress").click();
-    cy.wait(1000);
+    cy.wait(2000);
     segment.editSegment.click();
     segments.filterTab.click();
     cy.wait(1000);
