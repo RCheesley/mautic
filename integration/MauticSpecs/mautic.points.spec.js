@@ -43,7 +43,7 @@ context("Points", () => {
     cy.wait(1000);
     points.searchAndSelectFirstCheckBox.click();
     points.editOptionsForFirstSelection.click();
-    points.deletePointsOption.click();
+    points.deleteOption.click();
     points.confirmWindowDelete.click();
     cy.wait(1000);
     points.checkNoResultFoundMessage.should('contain','No Results Found');
@@ -65,13 +65,45 @@ context("Points", () => {
     cy.wait(1000);
     points.eventName.type("Test Trigger");
     points.emailSelector.click();
-    points.firstEmail.contains("Test Email by Cypress").click();
+    points.firstEmail.contains("Test").click();
     points.addButton.click();
     cy.wait(1000);
     points.saveAndCloseTriggerButton.click();
     leftNavigation.PointsSection.click();
   })
 
+  it("Edit newly added Trigger", () => {
+    leftNavigation.PointsSection.click();
+    points.manageTriggerSection.click();
+    cy.contains('Manage Triggers').click()
+    cy.wait(1000);
+    points.waitforPointTriggerPageLoad();
+    search.searchBox.clear();
+    search.searchBox.type("Action");
+    cy.wait(1000);
+    points.searchAndGetFirstResultTriggerTable.contains("Action").click();
+    points.triggerPoints.clear();
+    points.triggerPoints.type("50");
+    points.saveAndCloseTriggerButton.click();
+    leftNavigation.PointsSection.click();
+  })
+
+  it("Delete newly added Trigger", () => {
+    leftNavigation.PointsSection.click();
+    points.manageTriggerSection.click();
+    cy.contains('Manage Triggers').click()
+    cy.wait(1000);
+    points.waitforPointTriggerPageLoad();
+    search.searchBox.clear();
+    search.searchBox.type("Action");
+    cy.wait(1000);
+    points.searchAndSelectFirstCheckBoxForTrigger.click();
+    points.editOptionsForFirstSelectionForTrigger.click();
+    points.deleteOption.click();
+    points.confirmWindowDelete.click();
+    cy.wait(1000);
+    points.checkNoResultFoundMessage.should('contain','No Results Found');
+  })
   });
 
 

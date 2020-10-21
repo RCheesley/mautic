@@ -42,7 +42,7 @@ class Emails{
     }
 
     get searchAndSelectEmail(){
-        return cy.get('table[class="table table-hover table-striped table-bordered email-list"]>tbody>tr>td>div>a').eq(0);
+        return cy.get('table[class="table table-hover table-striped table-bordered email-list"]>tbody>tr>td>div>a');
     }
 
     get scheduleSegmentEmail(){
@@ -55,6 +55,18 @@ class Emails{
 
     get scheduleButton(){
         return cy.get('.modal-form-buttons > .btn-save');
+    }
+
+    get emailEditButton(){
+        return cy.get('a[href*="emails/edit"]');
+    }
+
+    get selectAuroraTheme(){
+        return cy.get('#email-container>div>div>div>div>a[data-theme="aurora"]');
+    }
+
+    get checkNoResultFoundMessage() {
+        return cy.get('#app-content>div>div>div>div>h4');
     }
 
 }
