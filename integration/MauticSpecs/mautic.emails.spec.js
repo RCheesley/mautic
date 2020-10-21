@@ -17,36 +17,38 @@ context("Emails", () => {
     cy.wait(5000);
     emails.templateEmailSelector.click();
     cy.wait(2000);
-    emails.emailSubject.type('Test Email by Cypress');
-    emails.emailInternalName.type('Test Email by Cypress')
+    emails.emailSubject.type('TestEmailCypress');
+    emails.emailInternalName.type('TestEmailCypress')
     emails.saveEmailButton.click();
     emails.closeButton.click({force: true});
+    cy.wait(1000);
   });
 
-  it("Add new Email for deletion", () => {
-    leftNavigation.ChannelsSection.click();
-    leftNavigation.EmailsSubSection.click({force: true});
-    cy.wait(3000);
-    emails.waitforPageLoad();
-    emails.addNewButton.click({ force: true });
-    cy.wait(2000);
-    emails.templateEmailSelector.click();
-    cy.wait(2000);
-    emails.emailSubject.type('Delete');
-    emails.emailInternalName.type('Delete')
-    emails.saveEmailButton.click();
-    emails.closeButton.click({force: true});
-  });
-
-  it("Search and Delete Email", () => {
+  it("Edit newly added email", () => {
     leftNavigation.ChannelsSection.click();
     leftNavigation.EmailsSubSection.click();
     emails.waitforPageLoad();
     search.searchBox.clear();
-    search.searchBox.type("Delete");
+    search.searchBox.type("TestEmailCypress");
     cy.wait(2000);
-    search.selectCheckBoxForFirstItem.click({force: true});
+    emails.searchAndSelectEmail.contains("TestEmailCypress").click();
+    cy.wait(1000);
+    emails.emailEditButton.click();
+    cy.wait(1000);
+    emails.emailSubject.clear();
+    emails.emailSubject.type('TestEmail');
+    emails.saveEmailButton.click();
+    emails.closeButton.click({force: true});
+  });
+
+  it("Search and delete newly added email", () => {
+    leftNavigation.ChannelsSection.click();
+    leftNavigation.EmailsSubSection.click();
+    emails.waitforPageLoad();
+    search.searchBox.clear();
+    search.searchBox.type("TestEmailCypress");
     cy.wait(2000);
+    search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
