@@ -14,6 +14,18 @@ class Stages {
 
     get saveAndCloseButton() {
         return   cy.get('#stage_buttons_save_toolbar');
+    }    
+    
+    get searchAndClickOnFirstElement() {
+        return   cy.get('#stageTable>tbody>tr>td>div>a');
+    }
+
+    get searchAndClickOnFirstCheckbox() {
+        return   cy.get('#stageTable>tbody>tr>td>div>span>input');
+    }
+
+    get waitforPageLoad(){
+        cy.get('div[class="content-body"]>div>div>div>h3').should('contain', 'Stage');
     }
   
 }
