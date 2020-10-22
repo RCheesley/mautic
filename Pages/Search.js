@@ -4,6 +4,10 @@ class Search {
         return  cy.get('#list-search');
     }
 
+    get searchForm() {
+        return  cy.get('input[id="form-search"]');
+    }
+
     get selectCheckBoxForFirstItem() {
         return  cy.get('.list-checkbox').eq(0);
     }
@@ -22,6 +26,10 @@ class Search {
 
     get selectAndClickFirstItemsOption(){
         return cy.get('#stageTable>tbody>tr>td>div>div>button');
+    }
+
+    get checkNoResultFoundMessage() {
+        return cy.get('#app-content>div>div>div>div>h4');
     }
   
 }
