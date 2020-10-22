@@ -62,14 +62,14 @@ before("Perform login", () => {
   segments.waitForPageLoad();
   segments.addNewButton.click({ force: true });
   cy.wait(1000);
-  segments.segmentName.type("TestContact");
+  segments.segmentName.type("TestSegment");
   segments.filterTab.click();
   cy.wait(1000);
   segments.filterDropDown.click();
   cy.wait(1000);
   segments.filterSearchBox.type("First");
   segments.filterField.click();
-  segments.filterValue.type("Test");
+  segments.filterValue.type("TestContact");
   segments.saveAndCloseButton.click();
 });
 
@@ -105,7 +105,7 @@ after("Delete Test Data", () => {
   cy.wait(1000);
   segments.waitForPageLoad();
   segments.SearchBox.click().clear();
-  segments.SearchBox.type("TestUsers");
+  segments.SearchBox.type("TestSegment");
   cy.wait(2000);
   segments.firstCheckbox.click();
   segments.firstDropDown.click();
