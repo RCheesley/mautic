@@ -59,6 +59,14 @@ class Forms {
         return cy.get("#mauticform_buttons_save_toolbar");
     }
 
+    get searchAndSelectFirstItem() {
+        return cy.get('#formTable>tbody>tr>td>div>a');
+    }
+
+    get editForm() {
+        return cy.get('a[href*="forms/edit"]');
+    }
+
 }
 const form = new Forms();
 module.exports = form;
