@@ -35,7 +35,7 @@ before("Perform login", () => {
   contact.waitforPageLoad();
   contact.addNewButton.click({ force: true });
   contact.title.type("Mr");
-  contact.firstName.type("Test");
+  contact.firstName.type("TestContact");
   contact.lastName.type("User1");
   contact.leadEmail.type("Testuser1@mailtest.mautic.com");
   contact.SaveButton.click();
@@ -62,7 +62,7 @@ before("Perform login", () => {
   segments.waitForPageLoad();
   segments.addNewButton.click({ force: true });
   cy.wait(1000);
-  segments.segmentName.type("TestUsers");
+  segments.segmentName.type("TestContact");
   segments.filterTab.click();
   cy.wait(1000);
   segments.filterDropDown.click();
@@ -79,7 +79,7 @@ after("Delete Test Data", () => {
   leftNavigation.contactsSection.click();
   contact.waitforPageLoad();
   search.searchBox.clear();
-  search.searchBox.type("User1");
+  search.searchBox.type("TestContact");
   cy.wait(2000);
   search.selectCheckBoxForFirstItem.click({ force: true });
   search.OptionsDropdownForFirstItem.click();
