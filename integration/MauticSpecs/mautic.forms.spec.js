@@ -43,6 +43,7 @@ context("Create Form", () => {
     form.contactFieldSearchFirstResult.click();
     form.addFieldButton.click();
     form.saveFormButton.click();
+    form.waitforFormCreation();
   });
 
   it("Edit newly added form", () => {
@@ -69,7 +70,7 @@ context("Create Form", () => {
     form.contactFieldSearchFirstResult.click();
     form.addFieldButton.click();
     form.saveFormButton.click();
-    cy.wait(1000);
+    form.waitforFormCreation();
   });
 
   it("Search and delete newly added form", () => {
