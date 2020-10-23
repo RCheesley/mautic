@@ -16,10 +16,8 @@ context("Create Landing Page", () => {
     landingPages.addNewButton.click();
     landingPages.waitforNewPageLandingCreationLogo;
     landingPages.pageTitle.type(landingPageName);
-    landingPages.applyButton.click();
-    cy.wait(3000);
     landingPages.saveAndCloseButton.click();
-    cy.wait(3000);
+    landingPages.waitforLandingPageCreation();
   });
 
   it("Edit newly added landing page", () => {
@@ -35,7 +33,7 @@ context("Create Landing Page", () => {
     landingPages.waitforEditLandingPage;
     landingPages.selectSkylineTheme.click();
     landingPages.saveAndCloseButton.click();
-    cy.wait(3000);
+    landingPages.waitforLandingPageCreation();
   });
   
   it("Search and delete newly added Landing Page", () => {
