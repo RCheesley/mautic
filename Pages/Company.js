@@ -3,6 +3,11 @@ class Company {
     waitforPageLoad (){
         cy.get('h3.pull-left').should('contain', 'Companies');
     }
+
+    waitforCompanyCreation(){
+        cy.get('#companyTable>tbody>tr>td>div>a').should('be.visible');
+    }
+
     get addNewButton() {
         return cy.get("#toolbar > div.std-toolbar.btn-group > a > span > span")
         .first();
