@@ -69,6 +69,10 @@ class Emails{
         return cy.get('#app-content>div>div>div>div>h4');
     }
 
+    waitforEmailCreation(){
+        cy.get('span[class="tt-u label label-success"]').should('be.visible');
+    }
+
 }
 const email = new Emails();
 module.exports = email;
