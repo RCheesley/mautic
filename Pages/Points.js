@@ -125,6 +125,14 @@ class Points {
     get checkNoResultFoundMessage() {
         return cy.get('#app-content>div>div>div>div>h4');
     }
+
+    get waitforActionToBeCreated(){
+        cy.get('#pointTable>tbody>tr>td>div>a').should('be.visible');
+    }
+
+    get waitforTriggerToBeCreated(){
+        cy.get('#triggerTable>tbody>tr>td>div>a').should('be.visible');
+    }
 }
 
 const points = new Points();
