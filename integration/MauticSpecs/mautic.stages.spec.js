@@ -14,6 +14,7 @@ context("Add new a stage", () => {
     stages.stageName.type("TestStage");
     stages.stageWeight.type("40");
     stages.saveAndCloseButton.click();
+    stages.waitforStageCreation();
   })
 
   it("Edit newly added Stage", () => {
@@ -26,7 +27,7 @@ context("Add new a stage", () => {
     stages.stageWeight.clear();
     stages.stageWeight.type("50");
     stages.saveAndCloseButton.click();
-    cy.wait(1000);
+    stages.waitforStageCreation();
   })
 
   it("search and delete newly added stage", () => {
