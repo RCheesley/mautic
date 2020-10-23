@@ -27,6 +27,10 @@ class Stages {
     get waitforPageLoad(){
         cy.get('div[class="content-body"]>div>div>div>h3').should('contain', 'Stage');
     }
+
+    waitforStageCreation(){
+        cy.get('#stageTable>tbody>tr>td>div>a').should('be.visible');
+    }
   
 }
 const stages = new Stages();
