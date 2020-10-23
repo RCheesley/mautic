@@ -22,6 +22,7 @@ context("Segments", () => {
     segments.filterField.click();
     segments.filterValue.type("Cypress");
     segments.saveAndCloseButton.click();
+    segment.waitforSegmentCreation();
   });
 
   it("Edit newly added segment", () => {
@@ -42,6 +43,7 @@ context("Segments", () => {
     segments.leadListFilter.select("or");
     segments.secondFilterTextBox.type("Test");
     segments.saveAndCloseButton.click();
+    segment.waitforSegmentUpdate();
   });
 
   it("Search and Delete Segment", () => {
