@@ -68,6 +68,10 @@ class LandingPages {
         return cy.get('a[href*="pages/edit"]');
     }
 
+    waitforLandingPageCreation(){
+        cy.get('span[class="tt-u label label-success"]').should('be.visible');
+    }
+
 }
 const landingPages = new LandingPages();
 module.exports = landingPages;
