@@ -67,6 +67,10 @@ class Forms {
         return cy.get('a[href*="forms/edit"]');
     }
 
+    waitforFormCreation(){
+        cy.get('span[class="tt-u label label-success"]').should('be.visible');
+    }
+
 }
 const form = new Forms();
 module.exports = form;
