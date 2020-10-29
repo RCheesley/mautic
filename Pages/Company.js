@@ -59,6 +59,10 @@ class Company {
     get searchAndClickForFirstElement() {
         return   cy.get('#companyTable>tbody>tr>td>div>a');
     }
+
+    waitTillSearchResultGetsDisplayed(){
+        cy.get('#companyTable>tbody>tr>td>a').should('not.be.empty');
+    }
   
 }
 const company = new Company();
