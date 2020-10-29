@@ -9,7 +9,7 @@ const search = require("../../Pages/Search");
 context("Add new a stage", () => {
    it("Add a Stage", () => {
     leftNavigation.StagesSection.click();
-    cy.wait(2000);
+    stages.checkNoResultFoundMessage.should('contain','No Results Found');
     stages.addNewButton.click();
     stages.stageName.type("TestStage");
     stages.stageWeight.type("40");
@@ -39,6 +39,7 @@ context("Add new a stage", () => {
     search.selectAndClickFirstItemsOption.click();
     search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
+    stages.checkNoResultFoundMessage.should('contain','No Results Found');
   })
 
   });
