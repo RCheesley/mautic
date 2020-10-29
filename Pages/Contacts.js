@@ -15,8 +15,12 @@ class Contacts {
         return cy.get('.quickadd');
     }
 
+    waitForContactOpen(){
+        return  cy.get('div[class="std-toolbar btn-group"]>a[href*="edit"]').should('be.visible');
+    }
+
     get editContact(){
-        return cy.get('i[class="fa fa-pencil-square-o"]');
+        return cy.get('div[class="std-toolbar btn-group"]>a[href*="edit"]');
     }
     get title() {
         return cy.get("#lead_title");
@@ -33,6 +37,11 @@ class Contacts {
     get leadCity() {
         return cy.get("#lead_city");
     }
+
+    waitForContactEditPageOpen(){
+        return  cy.get('#lead_city').should('be.visible');
+    }
+
     get SaveButton() {
         return   cy.get("#lead_buttons_save_toolbar");
     }
@@ -44,7 +53,6 @@ class Contacts {
     }
 
     get importExportDropdownMenu() {
-
         return  cy.get('.std-toolbar > .dropdown-toggle > .fa');
     }
 
