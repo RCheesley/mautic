@@ -14,7 +14,7 @@ context("Emails", () => {
     cy.wait(3000);
     emails.waitforPageLoad();
     emails.addNewButton.click({ force: true });
-    cy.wait(5000);
+    emails.waitforEmailSelectorPageGetsLoaded();
     emails.templateEmailSelector.click();
     cy.wait(2000);
     emails.emailSubject.type('TestEmailCypress');
