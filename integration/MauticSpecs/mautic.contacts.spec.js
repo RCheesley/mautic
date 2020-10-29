@@ -14,6 +14,7 @@ context("Contacts", () => {
     company.addNewButton.click({ force: true });
     company.companyName.type("CompanyAddedByCypress");
     company.saveButton.click();
+    company.waitforCompanyCreation();
   });
 
   it("Add new Contact", () => {
@@ -21,20 +22,21 @@ context("Contacts", () => {
     contact.waitforPageLoad();
     contact.addNewButton.click({ force: true });
     contact.title.type("Mr");
-    contact.firstName.type("Cypress");
+    contact.firstName.type("ContactAddedCypress");
     contact.lastName.type("Tester");
     contact.leadEmail.type("Cypress@test.com");
     contact.SaveButton.click();
     contact.closeButton.click({ force: true });
+    contact.waitForContactCreation();
   });
 
   it("Edit newly added contact", () => {
     leftNavigation.contactsSection.click();
     contact.waitforPageLoad();
     search.searchBox.clear();
-    search.searchBox.type("Cypress");
+    search.searchBox.type("ContactAddedCypress");
     cy.wait(2000);
-    contact.searchAndClickForFirstElement.contains("Cypress").click();
+    contact.searchAndClickForFirstElement.contains("ContactAddedCypress").click();
     cy.wait(2000);
     contact.editContact.click();
     contact.leadCity.type("Pune");
@@ -42,6 +44,7 @@ context("Contacts", () => {
     contact.lastName.type("Contact");
     contact.SaveButton.click();
     contact.closeButton.click({ force: true });
+    contact.waitForContactCreation();
   });
 
   it("Edit newly added Company", () => {
@@ -54,6 +57,7 @@ context("Contacts", () => {
     company.companyCity.type("Pune");
     company.companyZipCode.type("412308");
     company.saveButton.click();
+    company.waitforCompanyCreation();
   });
 
   it("Search and Delete Company", () => {
@@ -71,7 +75,7 @@ context("Contacts", () => {
     leftNavigation.contactsSection.click();
     contact.waitforPageLoad();
     search.searchBox.clear();
-    search.searchBox.type("Cypress");
+    search.searchBox.type("ContactAddedCypress");
     cy.wait(2000);
     search.selectCheckBoxForFirstItem.click({ force: true });
     search.OptionsDropdownForFirstItem.click();

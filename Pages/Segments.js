@@ -71,6 +71,13 @@ class Segments {
         return cy.get('#leadlist_filters_1_properties_filter');
     }
 
+    waitforSegmentCreation(){
+        cy.get('#leadListTable>tbody>tr>td>div>a').should('be.visible');
+    }
+
+    waitforSegmentUpdate(){
+        cy.get('span[class="tt-u label label-success"]').should('be.visible');
+    }
 }
 const segment = new Segments();
 module.exports = segment;

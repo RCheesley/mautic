@@ -21,7 +21,7 @@ context("Emails", () => {
     emails.emailInternalName.type('TestEmailCypress')
     emails.saveEmailButton.click();
     emails.closeButton.click({force: true});
-    cy.wait(1000);
+    emails.waitforEmailCreation();
   });
 
   it("Edit newly added email", () => {
@@ -39,6 +39,7 @@ context("Emails", () => {
     emails.emailSubject.type('TestEmail');
     emails.saveEmailButton.click();
     emails.closeButton.click({force: true});
+    emails.waitforEmailCreation();
   });
 
   it("Search and delete newly added email", () => {

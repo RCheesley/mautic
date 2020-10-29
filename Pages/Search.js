@@ -4,6 +4,10 @@ class Search {
         return  cy.get('#list-search');
     }
 
+    get searchForm() {
+        return  cy.get('input[id="form-search"]');
+    }
+
     get selectCheckBoxForFirstItem() {
         return  cy.get('.list-checkbox').eq(0);
     }
@@ -13,11 +17,19 @@ class Search {
     }
 
     get deleteButtonForFirstItem() {
-        return   cy.get('div[class="input-group-btn open"]>ul>li>a').contains("Delete");
+        return   cy.get('a[href*="delete"]');
     }
 
     get confirmDeleteButton(){
         return cy.get('button[class="btn btn-danger"]');
+    }
+
+    get selectAndClickFirstItemsOption(){
+        return cy.get('#stageTable>tbody>tr>td>div>div>button');
+    }
+
+    get checkNoResultFoundMessage() {
+        return cy.get('#app-content>div>div>div>div>h4');
     }
   
 }
