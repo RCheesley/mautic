@@ -63,6 +63,10 @@ class Contacts {
     waitForContactCreation(){
         return  cy.get('div[class="mt-sm points-panel text-center"]>h1').should('be.visible');
     }
+
+    waitTillSearchResultGetsDisplayed(){
+        cy.get('#leadTable>tbody>tr>td>a').should('not.be.empty');
+    }
 }
 const contact = new Contacts();
 module.exports = contact;
