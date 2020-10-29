@@ -73,6 +73,10 @@ class Emails{
         cy.get('span[class="tt-u label label-success"]').should('be.visible');
     }
 
+    waitforEmailSelectorPageGetsLoaded(){
+        cy.get('button[class="btn btn-lg btn-default btn-nospin text-success"]').should('be.visible');
+    }
+
 }
 const email = new Emails();
 module.exports = email;
