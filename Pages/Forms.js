@@ -40,7 +40,7 @@ class Forms {
     }
 
     get contactFieldDropdown() {
-        return cy.get("#formfield_mappedField_chosen>a>span");
+        return cy.get("#formfield_leadField_chosen>a>span");
     }
 
     get contactFieldSearchBox() {
@@ -48,7 +48,7 @@ class Forms {
     }
 
     get contactFieldSearchFirstResult(){
-        return cy.get('div[class="chosen-container chosen-container-single chosen-with-drop chosen-container-active"]>div>ul>li');
+        return cy.get('div[class="chosen-container chosen-container-single chosen-with-drop chosen-container-active"]>div>ul>li').eq(1);
     }
 
     get addFieldButton(){
