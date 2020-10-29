@@ -24,6 +24,10 @@ class Company {
         return  cy.get('#company_companycity');
     }
 
+    waitforCompanyEditPageOpen(){
+        cy.get('#company_companycity').should('be.visible');
+    }
+
     get companyAddressOne() {
         return  cy.get('#company_companyaddress1');
     }
