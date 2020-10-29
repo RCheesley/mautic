@@ -1,8 +1,8 @@
 "use strict";
 class Segments {
-      waitForPageLoad(){
+    waitForPageLoad(){
         cy.get('h3.pull-left').should('contain', 'Contact Segments');
-      }
+    }
     get addNewButton() {
         return cy.get('.std-toolbar > .btn');
     }
