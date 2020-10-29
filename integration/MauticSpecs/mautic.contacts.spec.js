@@ -17,6 +17,32 @@ context("Contacts", () => {
     company.waitforCompanyCreation();
   });
 
+  it("Edit newly added Company", () => {
+    leftNavigation.companySection.click();
+    company.waitforPageLoad();
+    search.searchBox.clear();
+    search.searchBox.type("CompanyAddedByCypress");
+    cy.wait(1000);
+    company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
+    company.waitforCompanyEditPageOpen();
+    company.companyCity.type("Pune");
+    company.companyZipCode.type("412308");
+    company.saveButton.click();
+    company.waitforCompanyCreation();
+  });
+
+  it("Search and Delete Company", () => {
+    leftNavigation.companySection.click();
+    company.waitforPageLoad();
+    search.searchBox.clear();
+    search.searchBox.type("CompanyAddedByCypress");
+    cy.wait(1000);
+    search.selectCheckBoxForFirstItem.click({ force: true });
+    search.OptionsDropdownForFirstItem.click();
+    search.deleteButtonForFirstItem.click();
+    search.confirmDeleteButton.click();
+  });
+
   it("Add new Contact", () => {
     leftNavigation.contactsSection.click();
     contact.waitforPageLoad();
@@ -37,8 +63,9 @@ context("Contacts", () => {
     search.searchBox.type("ContactAddedCypress");
     cy.wait(2000);
     contact.searchAndClickForFirstElement.contains("ContactAddedCypress").click();
-    cy.wait(2000);
+    contact.waitForContactOpen();
     contact.editContact.click();
+    contact.waitForContactEditPageOpen();
     contact.leadCity.type("Pune");
     contact.lastName.clear();
     contact.lastName.type("Contact");
@@ -47,36 +74,12 @@ context("Contacts", () => {
     contact.waitForContactCreation();
   });
 
-  it("Edit newly added Company", () => {
-    leftNavigation.companySection.click();
-    company.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("CompanyAddedByCypress");
-    cy.wait(2000);
-    company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
-    company.companyCity.type("Pune");
-    company.companyZipCode.type("412308");
-    company.saveButton.click();
-    company.waitforCompanyCreation();
-  });
-
-  it("Search and Delete Company", () => {
-    leftNavigation.companySection.click();
-    company.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("CompanyAddedByCypress");
-    search.selectCheckBoxForFirstItem.click({ force: true });
-    search.OptionsDropdownForFirstItem.click();
-    search.deleteButtonForFirstItem.click();
-    search.confirmDeleteButton.click();
-  });
-
   it("Search and Delete a Contact", () => {
     leftNavigation.contactsSection.click();
     contact.waitforPageLoad();
     search.searchBox.clear();
     search.searchBox.type("ContactAddedCypress");
-    cy.wait(2000);
+    cy.wait(1000);
     search.selectCheckBoxForFirstItem.click({ force: true });
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
