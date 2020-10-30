@@ -23,7 +23,7 @@ context("Contacts", () => {
     search.searchBox.clear();
     search.searchBox.type("CompanyAddedByCypress");
     company.waitTillSearchResultGetsDisplayed();
-    cy.wait(1000);
+    cy.wait(2000);
     company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
     company.waitforCompanyEditPageOpen();
     company.companyCity.type("Pune");
