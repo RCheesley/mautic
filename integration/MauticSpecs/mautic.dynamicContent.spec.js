@@ -44,6 +44,7 @@ context("Create dynamic content", () => {
     dynamicContent.waitforPageLoad();
     search.searchBox.clear();
     search.searchBox.type(dynamicContentText);
+    dynamicContent.waitTillSearchedElementGetsVisible();
     cy.wait(1000);
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
