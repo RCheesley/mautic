@@ -1,8 +1,18 @@
 "use strict";
 class Segments {
+
     waitForPageLoad(){
         cy.get('h3.pull-left').should('contain', 'Contact Segments');
     }
+
+    waitTillSearchedElementGetsVisible(){
+        return cy.get('#leadListTable>tbody>tr>td>div>a').should('be.visible');
+    }
+
+    waitTillClickedSegmentGetsOpen(){
+        return cy.get('a[href*="/s/segments/edit"]').should('be.visible');
+    }
+
     get addNewButton() {
         return cy.get('.std-toolbar > .btn');
     }
