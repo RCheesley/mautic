@@ -61,6 +61,10 @@ class Emails{
         return cy.get('a[href*="emails/edit"]');
     }
 
+    waitTillEditMailPageGetsVisible(){
+        cy.get('a[href*="emails/edit"]').should('be.visible');
+    }
+
     get selectAuroraTheme(){
         return cy.get('#email-container>div>div>div>div>a[data-theme="aurora"]');
     }
@@ -75,6 +79,18 @@ class Emails{
 
     waitforEmailSelectorPageGetsLoaded(){
         cy.get('button[class="btn btn-lg btn-default btn-nospin text-success"]').should('be.visible');
+    }
+
+    waitforSelectedEmailGetsOpen(){
+        cy.get('#emailform_subject').should('be.visible');
+    }
+
+    waitTillSearchedElementGetsVisible(){
+        cy.get('table[class="table table-hover table-striped table-bordered email-list"]>tbody>tr>td>div>a').should('be.visible');
+    }
+
+    get checkNoResultFoundMessage() {
+        return cy.get('#app-content>div>div>div>div>h4');
     }
 
 }
