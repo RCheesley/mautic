@@ -36,11 +36,9 @@ context("Create Form", () => {
     form.fieldTypeDropDown.click();
     form.fieldTypeSearch.type('Email');
     form.firstResultOfFieldTypeSearch.click();
+    cy.wait(1000);
     form.fieldLabel.type("Email");
     form.contactFieldTab.click();
-    form.contactFieldDropdown.click();
-    form.contactFieldSearchBox.type("Email");
-    form.contactFieldSearchFirstResult.click();
     form.addFieldButton.click();
     form.saveFormButton.click();
     form.waitforFormCreation();
@@ -79,7 +77,7 @@ context("Create Form", () => {
     cy.wait(1000);
     search.searchForm.clear();
     search.searchForm.type(testFormName);
-    cy.wait(1000);
+    cy.wait(2000);
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
