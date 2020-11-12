@@ -5,6 +5,30 @@ class CustomObject {
         return  cy.get('a[href*="/new"]');
     }
 
+    get addNewCustomObjectInstance() {
+        return  cy.get('a[href*="item/new"]');
+    }
+
+    get addNewInstanceWithCustomObject() {
+        return  cy.get('#custom_item_name');
+    }
+
+    get typeNumberForInstanceCreated() {
+        return  cy.get('input[id*="custom_item_custom_field_values"]');
+    }
+
+    get typeAndSearchObjectCreated() {
+        return  cy.get('div[id*="custom_item_custom_field_values_"]>ul>li');
+    }
+
+    get selectSearchedPropertyOfCustomObject() {
+        return  cy.get('div[id*="custom_item_custom_field_values_"]>div>ul>li');
+    }
+
+    get saveAndCloseInstanceCreated() {
+        return   cy.get('#custom_item_buttons_save_toolbar');
+    }
+
     waitforNewObjectGetsLoaded(){
         cy.get('div[class="content-body"]>div>div>div>h3').should('contain', 'New Custom Object').should('be.visible');
     }
@@ -120,9 +144,17 @@ class CustomObject {
     get clickOnFirstDropdown() {
         return   cy.get('button[class="btn btn-default btn-sm dropdown-toggle btn-nospin"]');
     }
+
+    get selectCreatedCustomObject() {
+        return   cy.get('#mautic_custom_object_list_child>li>a>span');
+    }
     
     waitforPageLoad(){
         cy.get('div[class="content-body"]>div>div>div>h3').should('contain', 'Custom Objects').should('be.visible');
+    }
+
+    waitForCustomObjectPageLoad(){
+        cy.get('div[class="content-body"]>div>div>div>h3').should('be.visible');
     }
 
     waitforCustomebject(){
@@ -131,6 +163,10 @@ class CustomObject {
 
     waitTillClickedCustomObjectGetsLoaded(){
         cy.get('#custom_object_buttons_save_toolbar').should('be.visible');
+    }
+
+    waitTillClickedInstanceCustomObjectGetsOpened(){
+        cy.get('#custom_item_buttons_save_toolbar').should('be.visible');
     }
   
 }
