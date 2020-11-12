@@ -55,6 +55,10 @@ class LeftNavigation {
        return cy.get('#mautic_email_index');
    }
 
+   get customObjectSection(){
+    return cy.get('a[data-target="#mautic_custom_object_list_child"]');
+}
+
 }
 const leftNavigation = new LeftNavigation();
 module.exports = leftNavigation ;
