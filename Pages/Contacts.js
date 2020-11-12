@@ -60,6 +60,38 @@ class Contacts {
         return  cy.get('.std-toolbar > .dropdown-menu > :nth-child(2) > a > :nth-child(1) > span');
     }
 
+    get clickOnCustomObject(){
+        return  cy.get('a[href*="custom-object"]');
+    }
+
+    get clickOnLinkExisting(){
+        return  cy.get('a[href*="filterEntity"]');
+    }
+
+    get clickOnDropdwonForLinkObject(){
+        return  cy.get('table[id*="custom-items-"]>tbody>tr>td>div>div>button');
+    }
+
+    get clickOnLinkObject(){
+        return  cy.get('table[id*="custom-items-"]>tbody>tr>td>div>div>ul>li');
+    }
+
+    get checkNoResultFoundMessage() {
+        return cy.get('div[id*="custom-item-"]>div>h4');
+    }
+
+    get closeThePopUpWindow() {
+        return cy.get('#customItemLookupModal>div>div>div>button');
+    }
+
+    get customObjectTable() {
+        return cy.get('table[id*="custom-items-"]>tbody>tr>td>div>a');
+    }
+
+    waitTillLinkPopupOpen(){
+        cy.get('#customItemLookupModal-label').should('be.visible');
+    }
+
     waitForContactCreation(){
         return  cy.get('div[class="mt-sm points-panel text-center"]>h1').should('be.visible');
     }
