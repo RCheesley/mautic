@@ -14,7 +14,11 @@ class Stages {
 
     get saveAndCloseButton() {
         return   cy.get('#stage_buttons_save_toolbar');
-    }    
+    }
+    
+    get checkNoResultFoundMessage() {
+        return cy.get('#app-content>div>div>div>div>h4');
+    }
     
     get searchAndClickOnFirstElement() {
         return   cy.get('#stageTable>tbody>tr>td>div>a');

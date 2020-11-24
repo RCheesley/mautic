@@ -1,18 +1,18 @@
 "use strict";
 class LandingPages {
-    get waitforPageLoad (){
+    waitforPageLoad (){
         cy.get('h3.pull-left').should('contain', 'Landing Pages');
     }
 
-    get waitforPageLoadForLandingPage(){
+    waitforPageLoadForLandingPage(){
         cy.get('h3.pull-left');
     }
 
-    get waitforEditLandingPage(){
+    waitforEditLandingPage(){
         cy.get('h3.pull-left').should('contain', 'Edit Page');
     }
 
-    get waitforNewPageLandingCreationLogo (){
+    waitforNewPageLandingCreationLogo (){
         cy.get('h3.pull-left').should('contain', 'New Page');
     }
 

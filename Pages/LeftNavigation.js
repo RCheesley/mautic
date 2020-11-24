@@ -36,18 +36,28 @@ class LeftNavigation {
     }
 
     get PointsSection() {
-    
         return cy.get('#mautic_points_root')
-    
    }
 
    get ChannelsSection(){
        return cy.get('#mautic_channels_root > .nav-item-name');
    }
 
+   get reportSection(){
+    return cy.get('#mautic_report_index');
+    }
+
+    get dynamicContentSection(){
+        return cy.get('#mautic_dynamicContent_index');
+    }
+
    get EmailsSubSection(){
        return cy.get('#mautic_email_index');
    }
+
+   get customObjectSection(){
+    return cy.get('a[data-target="#mautic_custom_object_list_child"]');
+}
 
 }
 const leftNavigation = new LeftNavigation();

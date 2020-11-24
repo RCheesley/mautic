@@ -26,10 +26,18 @@ Cypress.Cookies.defaults({
   preserve: [Cypress.env("instanceId"),'_ga','_gid','_gat','mautic_referer_id','mtc_id','mtc_sid','mautic_device_id','device_id','sid','id','success','__Secure-3PAPISID','SAPISID','APISID','__Secure-3PSID','SID','SSID','HSID','NID','1P_JAR','ANID','SIDCC','OTZ'],
 });
 
-before("Perform login", () => {
-  cy.visit("/s/login");
-  cy.login(Cypress.env("userName"), Cypress.env("password"));
 
+ before("Perform login", () => {
+  cy.visit("/");
+  cy.location().then((loc) => {
+    console.log(loc)
+    if(loc.pathname.includes('login')){
+      cy.log("Logging in");
+      cy.login(Cypress.env("userName"), Cypress.env("password"));
+      cy.log('Login successful')
+    }
+  })
+  
   //adding sample contacts to be used across test
   leftNavigation.contactsSection.click();
   contact.waitforPageLoad();
@@ -48,7 +56,7 @@ before("Perform login", () => {
   cy.wait(3000);
   emails.waitforPageLoad();
   emails.addNewButton.click({ force: true });
-  cy.wait(5000);
+  emails.waitforEmailSelectorPageGetsLoaded();
   emails.templateEmailSelector.click();
   cy.wait(2000);
   emails.emailSubject.type("Test Email");

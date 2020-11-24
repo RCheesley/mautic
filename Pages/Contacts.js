@@ -15,8 +15,12 @@ class Contacts {
         return cy.get('.quickadd');
     }
 
+    waitForContactOpen(){
+        return  cy.get('div[class="std-toolbar btn-group"]>a[href*="edit"]').should('be.visible');
+    }
+
     get editContact(){
-        return cy.get('i[class="fa fa-pencil-square-o"]');
+        return cy.get('div[class="std-toolbar btn-group"]>a[href*="edit"]');
     }
     get title() {
         return cy.get("#lead_title");
@@ -33,6 +37,11 @@ class Contacts {
     get leadCity() {
         return cy.get("#lead_city");
     }
+
+    waitForContactEditPageOpen(){
+        return  cy.get('#lead_city').should('be.visible');
+    }
+
     get SaveButton() {
         return   cy.get("#lead_buttons_save_toolbar");
     }
@@ -44,7 +53,6 @@ class Contacts {
     }
 
     get importExportDropdownMenu() {
-
         return  cy.get('.std-toolbar > .dropdown-toggle > .fa');
     }
 
@@ -52,8 +60,44 @@ class Contacts {
         return  cy.get('.std-toolbar > .dropdown-menu > :nth-child(2) > a > :nth-child(1) > span');
     }
 
+    get clickOnCustomObject(){
+        return  cy.get('a[href*="custom-object"]');
+    }
+
+    get clickOnLinkExisting(){
+        return  cy.get('a[href*="filterEntity"]');
+    }
+
+    get clickOnDropdwonForLinkObject(){
+        return  cy.get('table[id*="custom-items-"]>tbody>tr>td>div>div>button');
+    }
+
+    get clickOnLinkObject(){
+        return  cy.get('table[id*="custom-items-"]>tbody>tr>td>div>div>ul>li');
+    }
+
+    get checkNoResultFoundMessage() {
+        return cy.get('div[id*="custom-item-"]>div>h4');
+    }
+
+    get closeThePopUpWindow() {
+        return cy.get('#customItemLookupModal>div>div>div>button');
+    }
+
+    get customObjectTable() {
+        return cy.get('table[id*="custom-items-"]>tbody>tr>td>div>a');
+    }
+
+    waitTillLinkPopupOpen(){
+        cy.get('#customItemLookupModal-label').should('be.visible');
+    }
+
     waitForContactCreation(){
         return  cy.get('div[class="mt-sm points-panel text-center"]>h1').should('be.visible');
+    }
+
+    waitTillSearchResultGetsDisplayed(){
+        cy.get('#leadTable>tbody>tr>td>a').should('not.be.empty');
     }
 }
 const contact = new Contacts();
