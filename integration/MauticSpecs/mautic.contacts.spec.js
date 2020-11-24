@@ -33,7 +33,7 @@ context("Contacts", () => {
   it("Edit newly added contact", () => {
     leftNavigation.contactsSection.click();
     contact.waitforPageLoad();
-    search.searchBox.clear();
+    search.searchBox.clear({ force: true });
     search.searchBox.type("ContactAddedCypress");
     cy.wait(2000);
     contact.searchAndClickForFirstElement.contains("ContactAddedCypress").click();
@@ -50,7 +50,7 @@ context("Contacts", () => {
   it("Edit newly added Company", () => {
     leftNavigation.companySection.click();
     company.waitforPageLoad();
-    search.searchBox.clear();
+    search.searchBox.clear({ force: true });
     search.searchBox.type("CompanyAddedByCypress");
     cy.wait(2000);
     company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
@@ -63,7 +63,7 @@ context("Contacts", () => {
   it("Search and Delete Company", () => {
     leftNavigation.companySection.click();
     company.waitforPageLoad();
-    search.searchBox.clear();
+    search.searchBox.clear({ force: true });
     search.searchBox.type("CompanyAddedByCypress");
     search.selectCheckBoxForFirstItem.click({ force: true });
     search.OptionsDropdownForFirstItem.click();
@@ -74,7 +74,7 @@ context("Contacts", () => {
   it("Search and Delete a Contact", () => {
     leftNavigation.contactsSection.click();
     contact.waitforPageLoad();
-    search.searchBox.clear();
+    search.searchBox.clear({ force: true });
     search.searchBox.type("ContactAddedCypress");
     cy.wait(2000);
     search.selectCheckBoxForFirstItem.click({ force: true });
