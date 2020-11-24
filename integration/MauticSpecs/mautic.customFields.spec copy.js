@@ -12,7 +12,6 @@ context("Custom Fields", () => {
    
   it("add new Booleean custom field for Company", () => {
     settings.settingsMenuButton.click();
-    settings.customFieldSection.should('be.visible');
     settings.customFieldSection.click();
     customFields.waitforPageLoad();
     customFields.addNewButton.click();
@@ -26,7 +25,6 @@ context("Custom Fields", () => {
 
   it("add new Booleean custom field for Contact", () => {
     settings.settingsMenuButton.click();
-    settings.customFieldSection.should('be.visible');
     settings.customFieldSection.click();
     customFields.waitforPageLoad();
     customFields.addNewButton.click();
