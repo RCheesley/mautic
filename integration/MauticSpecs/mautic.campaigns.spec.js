@@ -44,7 +44,7 @@ context("Campaign", () => {
     search.searchBox.type("TestCampaign");
     cy.wait(2000);
     campaigns.searchAndSelectCampaign.should("be.visible");
-    campaigns.searchAndSelectCampaign.click().contains("TestCampaign");
+    campaigns.searchAndSelectCampaign.eq(0).click().contains("TestCampaign");
     campaigns.editCampaign.click();
     campaigns.launchCampaignBuilderButton.click();
     cy.wait(1000);

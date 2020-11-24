@@ -8,6 +8,7 @@ const search=require("../../Pages/Search");
 
 context("Roles", () => {
   it("Add new role for reading contact", () => {
+    cy.wait(3000);
     settings.settingsMenuButton.click();
     settings.rolesSection.click();
     roles.waitForPageLoad();

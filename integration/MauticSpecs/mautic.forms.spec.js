@@ -10,6 +10,7 @@ var testFormName= "testForm";
 context("Create Form", () => {
 
   it("Create a new form", () => {
+    cy.wait(3000);
     leftNavigation.componentsSection.click();
     leftNavigation.formsSubSection.click();
     cy.wait(2000);
