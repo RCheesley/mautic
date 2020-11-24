@@ -24,6 +24,10 @@ class Company {
         return  cy.get('#company_companycity');
     }
 
+    waitforCompanyEditPageOpen(){
+        cy.get('#company_companycity').should('be.visible');
+    }
+
     get companyAddressOne() {
         return  cy.get('#company_companyaddress1');
     }
@@ -54,6 +58,10 @@ class Company {
 
     get searchAndClickForFirstElement() {
         return   cy.get('#companyTable>tbody>tr>td>div>a');
+    }
+
+    waitTillSearchResultGetsDisplayed(){
+        cy.get('#companyTable>tbody>tr>td>a').should('not.be.empty');
     }
   
 }
