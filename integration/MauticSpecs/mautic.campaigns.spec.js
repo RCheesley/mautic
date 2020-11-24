@@ -44,7 +44,7 @@ context("Campaign", () => {
     cy.wait(2000);
     campaigns.searchAndSelectCampaign.click().contains("TestCampaign");
     campaigns.editCampaign.click();
-    campaigns.campaignWarningMessage.should('contain','WARNING: This campaign is currently published. Modifying events or removing contact segments may affect contacts in mid-campaign.');
+   // campaigns.campaignWarningMessage.should('contain','WARNING: This campaign is currently published. Modifying events or removing contact segments may affect contacts in mid-campaign.');
     campaigns.launchCampaignBuilderButton.click();
     cy.wait(1000);
     campaigns.addCampaignEvent.click();
