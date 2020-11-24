@@ -63,7 +63,7 @@ context("Contacts", () => {
     search.searchBox.clear({ force: true });
     search.searchBox.type("ContactAddedCypress");
     contact.waitTillSearchResultGetsDisplayed();
-    cy.wait(1000);
+    cy.wait(2000);
     contact.searchAndClickForFirstElement.contains("ContactAddedCypress").click();
     contact.waitForContactOpen();
     contact.editContact.click();
