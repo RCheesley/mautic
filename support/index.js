@@ -94,7 +94,7 @@ after("Delete Test Data", () => {
   leftNavigation.ChannelsSection.click();
   leftNavigation.EmailsSubSection.click();
   emails.waitforPageLoad();
-  search.searchBox.clear();
+  search.searchBox.clear({ force: true });
   search.searchBox.type("Test");
   cy.wait(2000);
   search.selectCheckBoxForFirstItem.click({ force: true });
