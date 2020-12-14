@@ -10,22 +10,17 @@ const search = require("../../Pages/Search");
 context("Contacts", () => {
   it("Add new Company", () => {
     leftNavigation.companySection.click();
-    company.waitforPageLoad();
+    company.waitforPageLoad()
     company.addNewButton.click({ force: true });
     company.companyName.type("CompanyAddedByCypress");
     company.saveButton.click();
-    company.waitforCompanyCreation();
+    cy.get('.alert-growl').should('contain', 'CompanyAddedByCypress has been created!');
   });
 
   it("Edit newly added Company", () => {
-    leftNavigation.companySection.click();
-    company.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("CompanyAddedByCypress");
-    company.waitTillSearchResultGetsDisplayed();
-    cy.wait(2000);
-    company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
-    company.waitforCompanyEditPageOpen();
+    cy.visit('/s/companies?search=CompanyAddedByCypress');
+    company.waitforPageLoad()
+    cy.get('#companyTable>tbody>tr>td>div>a').contains("CompanyAddedByCypress").click();
     company.companyCity.type("Pune");
     company.companyZipCode.type("412308");
     company.saveButton.click();
@@ -58,53 +53,44 @@ context("Contacts", () => {
   });
 
   it("Edit newly added contact", () => {
-    leftNavigation.contactsSection.click();
+    cy.visit('/s/contacts?search=ContactAddedCypress');
     contact.waitforPageLoad();
-    search.searchBox.clear({ force: true });
-    search.searchBox.type("ContactAddedCypress");
-    contact.waitTillSearchResultGetsDisplayed();
-    cy.wait(2000);
-    contact.searchAndClickForFirstElement.contains("ContactAddedCypress").click();
-    contact.waitForContactOpen();
+    cy.get('#leadTable>tbody>tr>td>a>div').contains("ContactAddedCypress").click();
     contact.editContact.click();
-    contact.waitForContactEditPageOpen();
     contact.leadCity.type("Pune");
-    contact.lastName.clear();
-    contact.lastName.type("Contact");
+    contact.lastName.clear().type("Contact");
     contact.SaveButton.click();
     contact.closeButton.click({ force: true });
     contact.waitForContactCreation();
   });
 
-  it("Search and Delete a Contact", () => {
-    leftNavigation.contactsSection.click();
-    contact.waitforPageLoad();
-    search.searchBox.clear({ force: true });
-    search.searchBox.type("ContactAddedCypress");
-    contact.waitTillSearchResultGetsDisplayed();
-    search.selectCheckBoxForFirstItem.click({ force: true });
-    search.OptionsDropdownForFirstItem.click();
-    search.deleteButtonForFirstItem.click();
-    search.confirmDeleteButton.click();
-  });
-
-  it("import new Contacts", () => {
-    leftNavigation.contactsSection.click();
-    contact.importExportDropdownMenu.click({ force: true });
-    cy.wait(2000);
-    contact.importButton.click({ force: true });
-    const fileName = "contacts_july-22-2020.csv";
-    const fileType = "application/csv";
-    const fileInput = "input[type=file]";
-    cy.upload_file(fileName, fileType, fileInput);
-    cy.get('[name="lead_import[start]"]').click();
-    cy.get(
-      "#lead_field_import_company_chosen > .chosen-single > span > .group-name"
-    ).click();
-    cy.get("#lead_field_import_company").select("Company Name", {
-      force: true,
-    });
-    cy.get("#lead_field_import_buttons_save_toolbar").click();
-    cy.wait(5000);
-  });
+  // it("Search and Delete a Contact", () => {
+  //   leftNavigation.contactsSection.click();
+  //   contact.waitforPageLoad();
+  //   search.searchBox.clear({ force: true });
+  //   search.searchBox.type("ContactAddedCypress");
+  //   contact.waitTillSearchResultGetsDisplayed();
+  //   search.selectCheckBoxForFirstItem.click({ force: true });
+  //   search.OptionsDropdownForFirstItem.click();
+  //   search.deleteButtonForFirstItem.click();
+  //   search.confirmDeleteButton.click();
+  // });
+  //
+  // it("import new Contacts", () => {
+  //   leftNavigation.contactsSection.click();
+  //   contact.importExportDropdownMenu.click({ force: true });
+  //   contact.importButton.click({ force: true });
+  //   const fileName = "contacts_july-22-2020.csv";
+  //   const fileType = "application/csv";
+  //   const fileInput = "input[type=file]";
+  //   cy.upload_file(fileName, fileType, fileInput);
+  //   cy.get('[name="lead_import[start]"]').click();
+  //   cy.get(
+  //     "#lead_field_import_company_chosen > .chosen-single > span > .group-name"
+  //   ).click();
+  //   cy.get("#lead_field_import_company").select("Company Name", {
+  //     force: true,
+  //   });
+  //   cy.get("#lead_field_import_buttons_save_toolbar").click();
+  // });
 });
