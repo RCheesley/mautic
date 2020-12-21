@@ -20,7 +20,8 @@ context("Contacts", () => {
   it("Edit newly added Company", () => {
     cy.visit('/s/companies?search=CompanyAddedByCypress');
     company.waitforPageLoad()
-    cy.get('#companyTable>tbody>tr>td>div>a').contains("CompanyAddedByCypress").click();
+    company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
+    //cy.get('#companyTable>tbody>tr>td>div>a').contains("CompanyAddedByCypress").click();
     company.companyCity.type("Pune");
     company.companyZipCode.type("412308");
     company.saveButton.click();
@@ -30,8 +31,9 @@ context("Contacts", () => {
   it("Search and Delete Company", () => {
     leftNavigation.companySection.click();
     company.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("CompanyAddedByCypress");
+    // search.searchBox.clear();
+    // search.searchBox.type("CompanyAddedByCypress");
+    cy.visit('/s/companies?search=CompanyAddedByCypress');
     company.waitTillSearchResultGetsDisplayed();
     search.selectCheckBoxForFirstItem.click({ force: true });
     search.OptionsDropdownForFirstItem.click();
@@ -55,7 +57,8 @@ context("Contacts", () => {
   it("Edit newly added contact", () => {
     cy.visit('/s/contacts?search=ContactAddedCypress');
     contact.waitforPageLoad();
-    cy.get('#leadTable>tbody>tr>td>a>div').contains("ContactAddedCypress").click();
+    contact.searchAndClickForFirstElement.contains("ContactAddedCypress").click();
+    //cy.get('#leadTable>tbody>tr>td>a>div').contains("ContactAddedCypress").click();
     contact.editContact.click();
     contact.leadCity.type("Pune");
     contact.lastName.clear().type("Contact");
