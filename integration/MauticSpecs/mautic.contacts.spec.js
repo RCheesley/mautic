@@ -20,8 +20,7 @@ context("Contacts", () => {
   it("Edit newly added Company", () => {
     cy.visit('/s/companies?search=CompanyAddedByCypress');
     company.waitforPageLoad()
-    company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
-    //cy.get('#companyTable>tbody>tr>td>div>a').contains("CompanyAddedByCypress").click();
+removing unnecesaary    company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
     company.companyCity.type("Pune");
     company.companyZipCode.type("412308");
     company.saveButton.click();
@@ -31,8 +30,6 @@ context("Contacts", () => {
   it("Search and Delete Company", () => {
     leftNavigation.companySection.click();
     company.waitforPageLoad();
-    // search.searchBox.clear();
-    // search.searchBox.type("CompanyAddedByCypress");
     cy.visit('/s/companies?search=CompanyAddedByCypress');
     company.waitTillSearchResultGetsDisplayed();
     search.selectCheckBoxForFirstItem.click({ force: true });
@@ -58,7 +55,6 @@ context("Contacts", () => {
     cy.visit('/s/contacts?search=ContactAddedCypress');
     contact.waitforPageLoad();
     contact.searchAndClickForFirstElement.contains("ContactAddedCypress").click();
-    //cy.get('#leadTable>tbody>tr>td>a>div').contains("ContactAddedCypress").click();
     contact.editContact.click();
     contact.leadCity.type("Pune");
     contact.lastName.clear().type("Contact");
@@ -67,33 +63,34 @@ context("Contacts", () => {
     contact.waitForContactCreation();
   });
 
-  // it("Search and Delete a Contact", () => {
-  //   leftNavigation.contactsSection.click();
-  //   contact.waitforPageLoad();
-  //   search.searchBox.clear({ force: true });
-  //   search.searchBox.type("ContactAddedCypress");
-  //   contact.waitTillSearchResultGetsDisplayed();
-  //   search.selectCheckBoxForFirstItem.click({ force: true });
-  //   search.OptionsDropdownForFirstItem.click();
-  //   search.deleteButtonForFirstItem.click();
-  //   search.confirmDeleteButton.click();
-  // });
-  //
-  // it("import new Contacts", () => {
-  //   leftNavigation.contactsSection.click();
-  //   contact.importExportDropdownMenu.click({ force: true });
-  //   contact.importButton.click({ force: true });
-  //   const fileName = "contacts_july-22-2020.csv";
-  //   const fileType = "application/csv";
-  //   const fileInput = "input[type=file]";
-  //   cy.upload_file(fileName, fileType, fileInput);
-  //   cy.get('[name="lead_import[start]"]').click();
-  //   cy.get(
-  //     "#lead_field_import_company_chosen > .chosen-single > span > .group-name"
-  //   ).click();
-  //   cy.get("#lead_field_import_company").select("Company Name", {
-  //     force: true,
-  //   });
-  //   cy.get("#lead_field_import_buttons_save_toolbar").click();
-  // });
+  it("Search and Delete a Contact", () => {
+    leftNavigation.contactsSection.click();
+    contact.waitforPageLoad();
+    // search.searchBox.clear({ force: true });
+    // search.searchBox.type("ContactAddedCypress");
+    cy.visit('/s/contacts?search=ContactAddedCypress');
+    contact.waitTillSearchResultGetsDisplayed();
+    search.selectCheckBoxForFirstItem.click({ force: true });
+    search.OptionsDropdownForFirstItem.click();
+    search.deleteButtonForFirstItem.click();
+    search.confirmDeleteButton.click();
+  });
+  
+  it("import new Contacts", () => {
+    leftNavigation.contactsSection.click();
+    contact.importExportDropdownMenu.click({ force: true });
+    contact.importButton.click({ force: true });
+    const fileName = "contacts_july-22-2020.csv";
+    const fileType = "application/csv";
+    const fileInput = "input[type=file]";
+    cy.upload_file(fileName, fileType, fileInput);
+    cy.get('[name="lead_import[start]"]').click();
+    cy.get(
+      "#lead_field_import_company_chosen > .chosen-single > span > .group-name"
+    ).click();
+    cy.get("#lead_field_import_company").select("Company Name", {
+      force: true,
+    });
+    cy.get("#lead_field_import_buttons_save_toolbar").click();
+  });
 });
