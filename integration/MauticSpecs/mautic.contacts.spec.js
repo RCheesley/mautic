@@ -20,7 +20,7 @@ context("Contacts", () => {
   it("Edit newly added Company", () => {
     cy.visit('/s/companies?search=CompanyAddedByCypress');
     company.waitforPageLoad()
-removing unnecesaary    company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
+    company.searchAndClickForFirstElement.contains("CompanyAddedByCypress").click();
     company.companyCity.type("Pune");
     company.companyZipCode.type("412308");
     company.saveButton.click();
