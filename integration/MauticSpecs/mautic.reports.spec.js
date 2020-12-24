@@ -33,10 +33,7 @@ context("Create a report", () => {
   it("Edit newly added report", () => {
     leftNavigation.reportSection.click();
     reports.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type(testReport);
-    reports.waitTillSearchItemGetsVisible();
-    cy.wait(1000);
+    cy.visit('/s/reports?search='+ testReport);
     reports.clickOnFirstelementSearched.contains(testReport).click();
     reports.waitTillCreatedReportOpen();
     reports.editeport.click();
@@ -50,15 +47,11 @@ context("Create a report", () => {
   it("Search and delete newly report", () => {
     leftNavigation.reportSection.click();
     reports.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type(testReport);
-    reports.waitTillSearchItemGetsVisible();
-    cy.wait(1000);
+    cy.visit('/s/reports?search='+ testReport);
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
     reports.checkNoResultFoundMessage.should('contain','No Results Found');
-    cy.wait(3000);
   })
 });
