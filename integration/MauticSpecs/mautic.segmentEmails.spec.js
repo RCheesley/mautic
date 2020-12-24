@@ -29,6 +29,6 @@ context("Segment Emails", () => {
     emails.scheduleButton.click();
     cy.wait(5000);
   });
+  
   });
-
 
