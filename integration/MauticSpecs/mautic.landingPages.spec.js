@@ -7,14 +7,14 @@ const landingPages = require("../../Pages/LandingPages");
 const search=require("../../Pages/Search");
 
 var landingPageName = "TestLandingPage";
+
 context("Create Landing Page", () => {
   it("Create a New Landing Page with embedded form", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.landingPagesSubSection.click({force: true});
-    cy.wait(2000);
-    landingPages.waitforPageLoad;
+    landingPages.waitforPageLoad();
     landingPages.addNewButton.click();
-    landingPages.waitforNewPageLandingCreationLogo;
+    landingPages.waitforNewPageLandingCreationLogo();
     landingPages.pageTitle.type(landingPageName);
     landingPages.saveAndCloseButton.click();
     landingPages.waitforLandingPageCreation();
@@ -23,12 +23,9 @@ context("Create Landing Page", () => {
   it("Edit newly added landing page", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.landingPagesSubSection.click();
-    cy.wait(1000);
-    search.searchBox.clear();
-    search.searchBox.type(landingPageName);
-    cy.wait(1000);
+    cy.visit('/s/pages?search=' + landingPageName)
     landingPages.searchAndSelectFIrstItem.contains(landingPageName).click();
-    cy.wait(2000);
+    landingPages.waitTillClickedPageGetsOpen();
     landingPages.editLandingPage.click();
     landingPages.waitforEditLandingPage;
     landingPages.selectSkylineTheme.click();
@@ -39,10 +36,7 @@ context("Create Landing Page", () => {
   it("Search and delete newly added Landing Page", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.landingPagesSubSection.click();
-    cy.wait(1000);
-    search.searchBox.clear();
-    search.searchBox.type(landingPageName);
-    cy.wait(1000);
+    cy.visit('/s/pages?search=' + landingPageName)
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
