@@ -6,15 +6,16 @@ const settings = require("../../Pages/Settings");
 const roles = require("../../Pages/Roles");
 const search=require("../../Pages/Search");
 
+var readRole = "testConatctsReadRule"
+
 context("Roles", () => {
   it("Add new role for reading contact", () => {
-    cy.wait(3000);
     settings.settingsMenuButton.click();
     settings.rolesSection.click();
     roles.waitForPageLoad();
     roles.addNewRoleButton.click();
     roles.roleNameTextBox.click();
-    roles.roleNameTextBox.type("testConatctsReadRule");
+    roles.roleNameTextBox.type(readRole);
     roles.permissionTab.click();
     roles.apiPermissionTab.click();
     roles.apiAccessGrantedCheckBox.click();
@@ -29,11 +30,8 @@ context("Roles", () => {
   it("Search and Delete newly added role", () => {
     settings.settingsMenuButton.click();
     settings.rolesSection.click({force: true});
-    cy.wait(1000);
     roles.waitForPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("testConatctsReadRule");
-    cy.wait(2000);
+    cy.visit('/s/roles?search='+ readRole);
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
