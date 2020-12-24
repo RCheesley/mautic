@@ -89,6 +89,10 @@ class Emails{
         cy.get('table[class="table table-hover table-striped table-bordered email-list"]>tbody>tr>td>div>a').should('be.visible');
     }
 
+    waitTillCreatedSegmentEmailGetsOpen(){
+        cy.get('canvas[class="chart bar-chart chart-rendered"]').should('be.visible');
+    }
+
     get checkNoResultFoundMessage() {
         return cy.get('#app-content>div>div>div>div>h4');
     }
