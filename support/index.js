@@ -20,6 +20,7 @@ const contact = require("../Pages/Contacts");
 const emails = require("../Pages/Emails");
 const segments = require("../Pages/Segments");
 const segment = require("../Pages/Segments");
+var testContact = "testcontact";
 import "./commands";
 
 Cypress.Cookies.defaults({
@@ -43,9 +44,9 @@ Cypress.Cookies.defaults({
   contact.waitforPageLoad();
   contact.addNewButton.click({ force: true });
   contact.title.type("Mr");
-  contact.firstName.type("TestContact");
+  contact.firstName.type(testContact);
   contact.lastName.type("Data");
-  contact.leadEmail.type("TestContact@mailtest.mautic.com");
+  contact.leadEmail.type(testContact +"@mailtest.mautic.com");
   contact.SaveButton.click();
   contact.closeButton.click({ force: true });
   contact.waitForContactCreation();
@@ -72,7 +73,7 @@ Cypress.Cookies.defaults({
   segments.filterDropDown.click();
   segments.filterSearchBox.type("First");
   segments.filterField.click();
-  segments.filterValue.type("TestContact");
+  segments.filterValue.type("testContact");
   segments.saveAndCloseButton.click();
   segments.waitforSegmentCreation();
 });
@@ -81,9 +82,8 @@ after("Delete Test Data", () => {
   //deleting created contact
   cy.wait(2000);
   leftNavigation.contactsSection.click();
-  leftNavigation.contactsSection.click();
   contact.waitforPageLoad();
-  cy.visit('/s/contacts?search=TestContact');
+  cy.visit('/s/contacts?search='+ testContact);
   search.selectCheckBoxForFirstItem.click({ force: true });
   search.OptionsDropdownForFirstItem.click();
   search.deleteButtonForFirstItem.click();
@@ -101,7 +101,6 @@ after("Delete Test Data", () => {
 
   //deleting created segment
   leftNavigation.SegmentsSection.click();
-
   segments.waitForPageLoad();
   cy.visit('/s/segments?search=TestSegment')
   segments.firstCheckbox.click();
@@ -110,6 +109,9 @@ after("Delete Test Data", () => {
   segment.deleteConfirmation.click();
 });
 
+beforeEach("Visit HomePage", () => {
+  cy.visit("");
+});
 
 Cypress.on("uncaught:exception", (err, runnable) => {
   // returning false here prevents Cypress from
