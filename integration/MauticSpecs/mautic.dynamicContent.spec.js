@@ -25,10 +25,7 @@ context("Create dynamic content", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.dynamicContentSection.click();
     dynamicContent.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type(dynamicContentText);
-    dynamicContent.waitTillSearchedElementGetsVisible();
-    cy.wait(2000);
+    cy.visit('/s/dwc?search='+ dynamicContentText);
     dynamicContent.clickOnFirstSearchedElement.contains(dynamicContentText).click();
     dynamicContent.waitTillDynamicContentCreationFlag();
     dynamicContent.editSelectedContent.click();
@@ -42,10 +39,7 @@ context("Create dynamic content", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.dynamicContentSection.click();
     dynamicContent.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type(dynamicContentText);
-    dynamicContent.waitTillSearchedElementGetsVisible();
-    cy.wait(1000);
+    cy.visit('/s/dwc?search='+ dynamicContentText);
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
