@@ -10,10 +10,8 @@ var testFormName= "testForm";
 context("Create Form", () => {
 
   it("Create a new form", () => {
-    cy.wait(3000);
     leftNavigation.componentsSection.click();
     leftNavigation.formsSubSection.click();
-    cy.wait(2000);
     form.waitforPageLoad();
     form.addNewButton.click();
     cy.wait(1000);
@@ -48,14 +46,11 @@ context("Create Form", () => {
   it("Edit newly added form", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.formsSubSection.click();
-    cy.wait(1000);
-    search.searchForm.clear();
-    search.searchForm.type(testFormName);
-    cy.wait(1000);
+    cy.visit('/s/forms?search=' + testFormName)
     form.searchAndSelectFirstItem.contains(testFormName).click();
-    cy.wait(2000);
+    form.waitTillCreatedFormGetsLoaded();
     form.editForm.click();
-    cy.wait(1000);
+    form.waitTillCreatedFormGetsOpen();
 
     form.fieldsTab.click();
     form.fieldTypeDropDown.click();
@@ -75,10 +70,7 @@ context("Create Form", () => {
   it("Search and delete newly added form", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.formsSubSection.click();
-    cy.wait(1000);
-    search.searchForm.clear();
-    search.searchForm.type(testFormName);
-    cy.wait(2000);
+    cy.visit('/s/forms?search=' + testFormName)
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
