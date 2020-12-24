@@ -6,6 +6,8 @@ const leftNavigation = require("../../Pages/LeftNavigation");
 const campaigns = require("../../Pages/Campaigns");
 const search = require("../../Pages/Search");
 
+var TestCampaign = "TestCampaign";
+
 context("Campaign", () => {
  
   it("Add new Campaign", () => {
@@ -13,7 +15,7 @@ context("Campaign", () => {
     campaigns.waitforPageLoad();
     search.searchBox.should('exist');
     campaigns.addNewButton.click();
-    campaigns.campaignName.type("TestCampaign");
+    campaigns.campaignName.type(TestCampaign);
     campaigns.launchCampaignBuilderButton.click({ force: true });
     campaigns.sourceSelector.select("Contact segments", { force: true });
     campaigns.segmentSelectorButton.click();
@@ -33,18 +35,15 @@ context("Campaign", () => {
     campaigns.saveAndCloseButton.click();
     campaigns.closeSummaryPageButton.click();
     search.searchBox.clear();
-    search.searchBox.type("TestCampaign");
+    search.searchBox.type(TestCampaign);
     search.selectCheckBoxForFirstItem.should('exist');
   });
 
   it("Edit the newly added Campaign", () => {
     leftNavigation.CampaignsSection.click();
     campaigns.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("TestCampaign");
-    cy.wait(2000);
-    campaigns.searchAndSelectCampaign.should("be.visible");
-    campaigns.searchAndSelectCampaign.eq(0).click().contains("TestCampaign");
+    cy.visit('/s/campaigns?search='+ TestCampaign)
+    campaigns.searchAndSelectCampaign.eq(0).click().contains(TestCampaign);
     campaigns.editCampaign.click();
     campaigns.launchCampaignBuilderButton.click();
     cy.wait(1000);
@@ -76,16 +75,4 @@ context("Campaign", () => {
     campaigns.closeSummaryPageButton.click();
   });
 
-  it("Search and Delete Campaign", () => {
-    leftNavigation.CampaignsSection.click();
-    campaigns.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("TestCampaign");
-   cy.wait(2000);
-    search.selectCheckBoxForFirstItem.should("be.visible");
-    search.selectCheckBoxForFirstItem.click({ force: true });
-    search.OptionsDropdownForFirstItem.click();
-    search.deleteButtonForFirstItem.click({ force: true });
-    search.confirmDeleteButton.click();
-  });
 });
