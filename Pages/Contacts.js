@@ -15,6 +15,10 @@ class Contacts {
         return cy.get('.quickadd');
     }
 
+    get getContactPoints() {
+        return cy.get('#leadTable>tbody>tr>td>span[class="label label-default"]');
+    }
+
     waitForContactOpen(){
         return  cy.get('div[class="std-toolbar btn-group"]>a[href*="edit"]').should('be.visible');
     }
@@ -57,7 +61,7 @@ class Contacts {
     }
 
     get importButton(){
-        return  cy.get('.std-toolbar > .dropdown-menu > :nth-child(2) > a > :nth-child(1) > span');
+        return  cy.get('a[href*="import/new"]');
     }
 
     get clickOnCustomObject(){
@@ -98,6 +102,10 @@ class Contacts {
 
     waitTillSearchResultGetsDisplayed(){
         cy.get('#leadTable>tbody>tr>td>a').should('not.be.empty');
+    }
+
+    get createdCustomFieldIsDisplayed(){
+        return cy.get('div[id="core"]>div>div>div>div>div>div>label');
     }
 }
 const contact = new Contacts();
