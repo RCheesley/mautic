@@ -6,6 +6,8 @@ const leftNavigation = require("../../Pages/LeftNavigation");
 const emails = require("../../Pages/Emails");
 const search=require("../../Pages/Search");
 
+var testEmailCypress = "TestEmailCypress";
+
 context("Emails", () => {
 
   it("Add new Email", () => {
@@ -15,9 +17,8 @@ context("Emails", () => {
     emails.addNewButton.click({ force: true });
     emails.waitforEmailSelectorPageGetsLoaded();
     emails.templateEmailSelector.click();
-    cy.wait(2000);
-    emails.emailSubject.type('TestEmailCypress');
-    emails.emailInternalName.type('TestEmailCypress')
+    emails.emailSubject.type(testEmailCypress);
+    emails.emailInternalName.type(testEmailCypress)
     emails.saveEmailButton.click();
     emails.closeButton.click({force: true});
     emails.waitforEmailCreation();
@@ -27,11 +28,8 @@ context("Emails", () => {
     leftNavigation.ChannelsSection.click();
     leftNavigation.EmailsSubSection.click();
     emails.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("TestEmailCypress");
-    emails.waitTillSearchedElementGetsVisible();
-    cy.wait(2000);
-    emails.searchAndSelectEmail.contains("TestEmailCypress").click();
+    cy.visit('/s/emails?search=' + testEmailCypress)
+    emails.searchAndSelectEmail.contains(testEmailCypress).click();
     emails.waitTillEditMailPageGetsVisible();
     emails.emailEditButton.click();
     emails.waitforSelectedEmailGetsOpen();
@@ -46,10 +44,7 @@ context("Emails", () => {
     leftNavigation.ChannelsSection.click();
     leftNavigation.EmailsSubSection.click();
     emails.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("TestEmailCypress");
-    emails.waitTillSearchedElementGetsVisible();
-    cy.wait(1000);
+    cy.visit('/s/emails?search=' + testEmailCypress)
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
