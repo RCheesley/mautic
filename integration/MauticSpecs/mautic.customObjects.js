@@ -10,13 +10,13 @@ const contact = require("../../Pages/Contacts");
 const leftNavigation = require("../../Pages/LeftNavigation");
 
 var carCustomObjectc = "Cars";
-var testContact = "TestContact";
+var testContact = "testcontact";
 var instanceCustomObject = "BMW X1";
 context("Create a custom object", () => {
 
   it("Create a new custom object", () => {
     settings.settingsMenuButton.click();
-    settings.customObjectsSection.click();
+    settings.customObjectsSection.click({force: true});
     customObject.waitforPageLoad();
     customObject.addNewButton.click();
     customObject.waitforNewObjectGetsLoaded();
@@ -89,10 +89,7 @@ context("Create a custom object", () => {
   it("Link newly added custom object to contact", () => {
     leftNavigation.contactsSection.click();
     contact.waitforPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type(testContact);
-    contact.waitTillSearchResultGetsDisplayed();
-    cy.wait(1000);
+    cy.visit('/s/contacts?search='+ testContact);
     contact.searchAndClickForFirstElement.contains(testContact).click();
     contact.waitForContactOpen();
     contact.clickOnCustomObject.contains(carCustomObjectc).click();
@@ -115,3 +112,4 @@ context("Create a custom object", () => {
     search.confirmDeleteButton.click();
   });
 });
+
