@@ -110,6 +110,9 @@ after("Delete Test Data", () => {
   segment.deleteConfirmation.click();
 });
 
+beforeEach("Visit HomePage", () => {
+  cy.visit("");
+});
 
 Cypress.on("uncaught:exception", (err, runnable) => {
   // returning false here prevents Cypress from
