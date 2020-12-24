@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const leftNavigation = require("../../Pages/LeftNavigation");
 const points = require("../../Pages/Points");
 const search = require("../../Pages/Search");
+var testAction = "testAction"
+var testTrigger = "testTrigger"
 
 context("Points", () => {
    it("Add a Action", () => {
@@ -14,10 +16,14 @@ context("Points", () => {
     cy.wait(1000);
     points.waitforActionPageLoad();
     points.addNewActionButton.click();
-    points.actionName.type("Action");
+    points.actionName.type(testAction);
     points.pointsToBeChanged.type("40");
     points.actionDropDown.click();
     points.opensAnEmailOption.click();
+    points.waitTillSelectEmail();
+    points.clickOnTextbox.click();
+    points.typeEmailName.type("Test");
+    points.selectSearchedEmail.click();
     points.saveAndCloseButton.click();
     points.waitforActionToBeCreated;
   })
@@ -25,10 +31,7 @@ context("Points", () => {
   it("Edit a newly added action", () => {
     leftNavigation.PointsSection.click();
     points.manageActionSection.click();
-    search.searchBox.clear();
-    search.searchBox.type("Action");
-    cy.wait(1000);
-    points.searchAndGetFirstResult.should("be.visible");
+    cy.visit('/s/points?search=' + testAction)
     points.searchAndGetFirstResult.click();
     points.pointsToBeChanged.clear().type("10");
     points.saveAndCloseButton.click();
@@ -38,9 +41,7 @@ context("Points", () => {
   it("Delete a newly added action", () => {
     leftNavigation.PointsSection.click();
     points.manageActionSection.click();
-    search.searchBox.clear();
-    search.searchBox.type("Action");
-    cy.wait(1000);
+    cy.visit('/s/points?search=' + testAction)
     points.searchAndSelectFirstCheckBox.click();
     points.editOptionsForFirstSelection.click();
     points.deleteOption.click();
@@ -53,10 +54,9 @@ context("Points", () => {
     leftNavigation.PointsSection.click();
     points.manageTriggerSection.click();
     cy.contains('Manage Triggers').click()
-    cy.wait(1000);
     points.waitforPointTriggerPageLoad();
     points.addNewPointsTriggerButton.click();
-    points.triggerName.type("Action");
+    points.triggerName.type(testTrigger);
     points.triggerPoints.type("40");
     points.publishTrigger.click();
     points.eventsTab.click();
@@ -69,34 +69,28 @@ context("Points", () => {
     points.addButton.click();
     cy.wait(1000);
     points.saveAndCloseTriggerButton.click();
-    points.waitforTriggerToBeCreated;
+    points.waitforTriggerToBeCreated();
   })
 
   it("Edit newly added Trigger", () => {
     leftNavigation.PointsSection.click();
     points.manageTriggerSection.click();
-    cy.contains('Manage Triggers').click()
-    cy.wait(1000);
+    cy.contains('Manage Triggers').click();
     points.waitforPointTriggerPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("Action");
-    cy.wait(1000);
-    points.searchAndGetFirstResultTriggerTable.contains("Action").click();
+    cy.visit('/s/points/triggers?search=' + testTrigger)
+    points.searchAndGetFirstResultTriggerTable.contains(testTrigger).click();
     points.triggerPoints.clear();
     points.triggerPoints.type("50");
     points.saveAndCloseTriggerButton.click();
-    points.waitforTriggerToBeCreated;
+    points.waitforTriggerToBeCreated();
   })
 
   it("Delete newly added Trigger", () => {
     leftNavigation.PointsSection.click();
     points.manageTriggerSection.click();
-    cy.contains('Manage Triggers').click()
-    cy.wait(1000);
+    cy.contains('Manage Triggers').click();
     points.waitforPointTriggerPageLoad();
-    search.searchBox.clear();
-    search.searchBox.type("Action");
-    cy.wait(1000);
+    cy.visit('/s/points/triggers?search=' + testTrigger)
     points.searchAndSelectFirstCheckBoxForTrigger.click();
     points.editOptionsForFirstSelectionForTrigger.click();
     points.deleteOption.click();
