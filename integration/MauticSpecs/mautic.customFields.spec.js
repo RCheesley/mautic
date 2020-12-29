@@ -7,9 +7,11 @@ const customFields = require("../../Pages/CustomFields");
 const contact = require("../../Pages/Contacts");
 const leftNavigation = require("../../Pages/LeftNavigation");
 const company = require("../../Pages/Company");
+const search = require("../../Pages/Search");
 
 var customFieldForContact = "Custom field for Contact"
 var customFieldForCompany = "Custom field for Company"
+var customFieldCompanyName = "Company with custom field"
 
 context("Custom Fields", () => {
    
@@ -48,11 +50,26 @@ context("Custom Fields", () => {
     contact.createdCustomFieldIsDisplayed.should('contain', customFieldForContact)
   });
 
-  it("Verify that created custom field is available in company creation", () => {
+  it("Verify that company is getting created with custom field", () => {
     leftNavigation.companySection.click();
     company.waitforPageLoad();
     company.addNewButton.click({ force: true });
     company.createdCustomFieldIsDisplayed.should('contain', customFieldForCompany)
+    company.selectYesForCompanyLabel.click()
+    company.companyName.type(customFieldCompanyName);
+    company.saveButton.click();
+    cy.get('.alert-growl').should('contain', customFieldCompanyName +' has been created!');
+  });
+
+  it("Search and Delete campany with custom field", () => {
+    leftNavigation.companySection.click();
+    company.waitforPageLoad();
+    cy.visit('/s/companies?search=Company');
+    company.waitTillSearchResultGetsDisplayed();
+    search.selectCheckBoxForFirstItem.click({ force: true });
+    search.OptionsDropdownForFirstItem.click();
+    search.deleteButtonForFirstItem.click();
+    search.confirmDeleteButton.click();
   });
 
   it("Delete the created custom fields", () => {
