@@ -64,6 +64,10 @@ class Company {
         return   cy.get('div[id="company-core"]>div>div>div>div>div>div>label');
     }
 
+    get selectYesForCompanyLabel() {
+        return   cy.get('label[class="btn btn-default  btn-yes"]');
+    }
+
     waitTillSearchResultGetsDisplayed(){
         cy.get('#companyTable>tbody>tr>td>a').should('not.be.empty');
     }
