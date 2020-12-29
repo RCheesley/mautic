@@ -81,12 +81,28 @@ class Segments {
         return cy.get('#leadlist_filters_1_properties_filter');
     }
 
+    get checkConactsUnderSegment(){
+        return cy.get('a[href*="?search=segment"]');
+    }
+
+    get checkDetailContactsUnderSgemnt(){
+        return cy.get('#leadTable>tbody>tr>td>a>div');
+    }
+
     waitforSegmentCreation(){
         cy.get('#leadListTable>tbody>tr>td>div>a').should('be.visible');
     }
 
     waitforSegmentUpdate(){
         cy.get('span[class="tt-u label label-success"]').should('be.visible');
+    }
+
+    waitTillNewSegmentGetsOpen(){
+        cy.get('#leadlist_name').should('be.visible');
+    }
+
+    waitTillFilterOptionGetsLoaded(){
+        cy.get('#leadlist_filters_1_properties_filter').should('be.visible');
     }
 }
 const segment = new Segments();
