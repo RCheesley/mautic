@@ -55,12 +55,55 @@ context("Contacts", () => {
     contact.waitForContactCreation();
   });
 
+  it("Add new Contact for Bidar City", () => {
+    leftNavigation.contactsSection.click();
+    contact.waitforPageLoad();
+    contact.addNewButton.click({ force: true });
+    contact.title.type("Mr");
+    contact.firstName.type("User1");
+    contact.lastName.type("Tester");
+    contact.leadEmail.type("Cypress1@mailtest.mautic.com");
+    contact.leadCity.type('Bidar')
+    contact.SaveButton.click();
+    contact.closeButton.click({ force: true });
+    contact.waitForContactCreation();
+  });
+
+  it("Add new Contact for Bidar City", () => {
+    leftNavigation.contactsSection.click();
+    contact.waitforPageLoad();
+    contact.addNewButton.click({ force: true });
+    contact.title.type("Mr");
+    contact.firstName.type("User2");
+    contact.lastName.type("Tester");
+    contact.leadEmail.type("Cypress2@mailtest.mautic.com");
+    contact.leadCity.type('Bidar')
+    contact.SaveButton.click();
+    contact.closeButton.click({ force: true });
+    contact.waitForContactCreation();
+  });
+
+  it("Add new Contact for Hydrabad City", () => {
+    leftNavigation.contactsSection.click();
+    contact.waitforPageLoad();
+    contact.addNewButton.click({ force: true });
+    contact.title.type("Mr");
+    contact.firstName.type("User3");
+    contact.lastName.type("Tester");
+    contact.leadEmail.type("Cypress3@mailtest.mautic.com");
+    contact.leadCity.type('Hydrabad')
+    contact.SaveButton.click();
+    contact.closeButton.click({ force: true });
+    contact.waitForContactCreation();
+  });
+
   it("Edit newly added contact", () => {
     leftNavigation.contactsSection.click();
     contact.waitforPageLoad();
     cy.visit('/s/contacts?search=' + contactName);
     contact.searchAndClickForFirstElement.contains(contactName).click();
     contact.editContact.click();
+    contact.waitForContactEditPageOpen();
     contact.leadCity.type("Pune");
     contact.lastName.clear().type("Contact");
     contact.SaveButton.click();
