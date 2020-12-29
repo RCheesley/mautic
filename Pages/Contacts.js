@@ -92,6 +92,10 @@ class Contacts {
         return cy.get('table[id*="custom-items-"]>tbody>tr>td>div>a');
     }
 
+    get updateContactPoints() {
+        return cy.get('#lead_points');
+    }
+
     waitTillLinkPopupOpen(){
         cy.get('#customItemLookupModal-label').should('be.visible');
     }
