@@ -7,6 +7,7 @@ const emails = require("../../Pages/Emails");
 const search=require("../../Pages/Search");
 
 var testEmailCypress = "TestEmailCypress";
+var testTriggerEmail = "TestTriggerEmail"
 
 context("Emails", () => {
 
@@ -23,6 +24,21 @@ context("Emails", () => {
     emails.closeButton.click({force: true});
     emails.waitforEmailCreation();
   });
+
+  it("Add new trigger Email", () => {
+    leftNavigation.ChannelsSection.click();
+    leftNavigation.EmailsSubSection.click();
+    emails.waitforPageLoad();
+    emails.addNewButton.click({ force: true });
+    emails.waitforEmailSelectorPageGetsLoaded();
+    emails.templateEmailSelector.click();
+    emails.emailSubject.type(testTriggerEmail);
+    emails.emailInternalName.type(testTriggerEmail)
+    emails.saveEmailButton.click();
+    emails.closeButton.click({force: true});
+    emails.waitforEmailCreation();
+  });
+
 
   it("Edit newly added email", () => {
     leftNavigation.ChannelsSection.click();
