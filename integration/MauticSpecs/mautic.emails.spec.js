@@ -25,7 +25,7 @@ context("Emails", () => {
     emails.waitforEmailCreation();
   });
 
-  it("Add new trigger Email", () => {
+  it("Add new email to be used for trigger", () => {
     leftNavigation.ChannelsSection.click();
     leftNavigation.EmailsSubSection.click();
     emails.waitforPageLoad();
