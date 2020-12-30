@@ -18,13 +18,21 @@ context("Create a report", () => {
     reports.reportName.type(testReport);
     reports.ownerName.click();
     reports.chooseOwnersName.click();
+    reports.clickOnDataSource.click()
+    reports.enterAndSelectDataSource.type("Contacts")
+    reports.selectSearchedDataSource.click();
+    reports.waitTillSelectedDataSourceGetsActive()
     reports.dataTab.click();
-    reports.columnTextBox.type("created by");
-    reports.selectColumnFromSearch.contains("Created").click();
+    reports.columnTextBox.type("First Name");
+    reports.selectColumnFromSearch.contains("First Name").click();
     reports.waitTillSelectedItemGetsAdded();
     reports.columnTextBox.clear();
-    reports.columnTextBox.type("Date created");
-    reports.selectColumnFromSearch.contains("Date").click();
+    reports.columnTextBox.type("City");
+    reports.selectColumnFromSearch.contains("City").click();
+    reports.waitTillSelectedItemGetsAdded();
+    reports.columnTextBox.clear();
+    reports.columnTextBox.type("ID");
+    reports.selectColumnFromSearch.contains("Contact ID").click();
     reports.waitTillSelectedItemGetsAdded();
     reports.saveAndClose.click();
     reports.waitforReportCreation();
@@ -38,8 +46,8 @@ context("Create a report", () => {
     reports.waitTillCreatedReportOpen();
     reports.editeport.click();
     reports.dataTab.click();
-    reports.columnTextBox.type("Date last");
-    reports.selectColumnFromSearch.contains("Date last").click();
+    reports.columnTextBox.type("Date Last Active");
+    reports.selectColumnFromSearch.contains("Date Last Active").click();
     reports.saveAndClose.click();
     reports.waitforReportCreation();
   })
