@@ -53,7 +53,6 @@ context("Points", () => {
     points.editOptionsForFirstSelection.click();
     points.deleteOption.click();
     points.confirmWindowDelete.click();
-    cy.wait(1000);
     points.checkNoResultFoundMessage.should('contain','No Results Found');
   })
 
@@ -131,7 +130,7 @@ context("Points", () => {
      });
    })
 
-   it("Search and delete trigger email", () => {
+   it("Search and delete email created for trigger event", () => {
     leftNavigation.ChannelsSection.click();
     leftNavigation.EmailsSubSection.click();
     emails.waitforPageLoad();
