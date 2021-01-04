@@ -23,6 +23,10 @@ class Contacts {
         return  cy.get('div[class="std-toolbar btn-group"]>a[href*="edit"]').should('be.visible');
     }
 
+    get alertMessage () {
+        return cy.get('.alert-growl');
+    }
+
     get editContact(){
         return cy.get('div[class="std-toolbar btn-group"]>a[href*="edit"]');
     }

@@ -17,7 +17,7 @@ context("Contacts", () => {
     company.addNewButton.click({ force: true });
     company.companyName.type(companyName);
     company.saveButton.click();
-    cy.get('.alert-growl').should('contain', 'CompanyAddedByCypress has been created!');
+    company.alertMessage.should('contain', 'CompanyAddedByCypress has been created!');
   });
 
   it("Edit newly added Company", () => {

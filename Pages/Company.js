@@ -71,6 +71,10 @@ class Company {
     waitTillSearchResultGetsDisplayed(){
         cy.get('#companyTable>tbody>tr>td>a').should('not.be.empty');
     }
+
+    get alertMessage () {
+        return cy.get('.alert-growl');
+    }
   
 }
 const company = new Company();
