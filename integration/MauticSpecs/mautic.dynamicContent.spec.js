@@ -2,16 +2,17 @@
 /// <reference types="Cypress" />
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const leftNavigation = require("../../Pages/LeftNavigation");
 const dynamicContent = require("../../Pages/DynamicContent");
 const search=require("../../Pages/Search");
 
 var dynamicContentText = "testDynamicContent";
-context("Create dynamic content", () => {
+context("Verify that user is able to create and edit dynamic content", () => {
+
+  beforeEach("Visit HomePage", () => {
+    cy.visit("s/dwc");
+  }); 
 
   it("Create new dynamic content", () => {
-    leftNavigation.componentsSection.click();
-    leftNavigation.dynamicContentSection.click();
     dynamicContent.waitforPageLoad();
     dynamicContent.createNewContent.click()
     dynamicContent.waitforCreationPageLoaded();
@@ -22,8 +23,6 @@ context("Create dynamic content", () => {
   });
 
   it("Edit newly added dynamic content", () => {
-    leftNavigation.componentsSection.click();
-    leftNavigation.dynamicContentSection.click();
     dynamicContent.waitforPageLoad();
     cy.visit('/s/dwc?search='+ dynamicContentText);
     dynamicContent.clickOnFirstSearchedElement.contains(dynamicContentText).click();
@@ -36,8 +35,6 @@ context("Create dynamic content", () => {
   });
   
   it("Search and delete newly added dynamic content", () => {
-    leftNavigation.componentsSection.click();
-    leftNavigation.dynamicContentSection.click();
     dynamicContent.waitforPageLoad();
     cy.visit('/s/dwc?search='+ dynamicContentText);
     search.selectCheckBoxForFirstItem.click();

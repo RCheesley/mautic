@@ -2,7 +2,6 @@
 /// <reference types="Cypress" />
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const leftNavigation = require("../../Pages/LeftNavigation");
 const emails = require("../../Pages/Emails");
 const search=require("../../Pages/Search");
 
@@ -12,10 +11,31 @@ var sourceLinks;
 var mailtestUrl = 'https://mailtest.mautic.com/api/v1/mailbox/'
 var segmentEmail = "testSegmentEmailCypress";
 
-context("Segment email verification", () => {
+context("Segment email creation and verify that user has received an email", () => {
+
+  it("Add new segment Email", () => {
+    cy.visit("s/emails");
+    emails.waitforPageLoad();
+    emails.addNewButton.click({ force: true });
+    emails.segmentEmailSelector.click();
+    emails.waitTillSegmentEmailPageGetsLoaded();
+    emails.emailSubject.type(segmentEmail);
+    emails.emailInternalName.type(segmentEmail);
+    emails.contactSegmentSelector.click();
+    emails.firstSegmentEmailSelector.click();
+    emails.saveEmailButton.click();
+    emails.closeButton.click();
+    emails.waitforEmailCreation();
+    cy.visit("/s/emails?search=" + segmentEmail);
+    emails.searchAndSelectEmail.contains(segmentEmail).click();
+    emails.waitTillCreatedSegmentEmailGetsOpen();
+    emails.scheduleSegmentEmail.click();
+    emails.scheduleButton.click();
+    cy.wait(5000);
+  });
 
   it("Verify that user has received the email from segment email", () => {
-    cy.wait(10000);
+    cy.wait(5000);
     cy.request({
       method:'GET',
       url: mailtestUrl + TestContact,
@@ -66,8 +86,7 @@ context("Segment email verification", () => {
    })
 
      it("Search and Delete newly added segment Email", () => {
-      leftNavigation.ChannelsSection.click();
-      leftNavigation.EmailsSubSection.click();
+      cy.visit("s/emails");
       emails.waitforPageLoad();
       cy.visit('/s/emails?search=' + segmentEmail)
       search.selectCheckBoxForFirstItem.should('be.visible');

@@ -2,16 +2,18 @@
 /// <reference types="Cypress" />
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const leftNavigation = require("../../Pages/LeftNavigation");
 const reports = require("../../Pages/Reports");
 const search=require("../../Pages/Search");
 
 var testReport = "testReport";
 
-context("Create a report", () => {
+context("Verify that user is able to create and view created report", () => {
+  
+  beforeEach("Visit HomePage", () => {
+    cy.visit("s/reports");
+  });
 
   it("Create a new report", () => {
-    leftNavigation.reportSection.click();
     reports.waitforPageLoad();
     reports.createNewReport.click();
     reports.waitforNewReportsPage();
@@ -39,7 +41,6 @@ context("Create a report", () => {
   })
 
   it("Edit newly added report", () => {
-    leftNavigation.reportSection.click();
     reports.waitforPageLoad();
     cy.visit('/s/reports?search='+ testReport);
     reports.clickOnFirstelementSearched.contains(testReport).click();
@@ -53,7 +54,6 @@ context("Create a report", () => {
   })
   
   it("Search and delete newly report", () => {
-    leftNavigation.reportSection.click();
     reports.waitforPageLoad();
     cy.visit('/s/reports?search='+ testReport);
     search.selectCheckBoxForFirstItem.click();

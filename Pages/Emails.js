@@ -97,6 +97,10 @@ class Emails{
         return cy.get('#app-content>div>div>div>div>h4');
     }
 
+    waitTillSegmentEmailPageGetsLoaded(){
+        cy.get('div[class*="text-muted"]').should('be.visible').should('contain', 'All Rights Reserved.');
+    }
+
 }
 const email = new Emails();
 module.exports = email;

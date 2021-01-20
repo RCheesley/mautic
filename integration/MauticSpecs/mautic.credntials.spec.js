@@ -2,13 +2,13 @@
 /// <reference types="Cypress" />
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const leftNavigation = require("../../Pages/LeftNavigation");
 const credentials = require("../../Pages/Credentials");
 const search = require("../../Pages/Search");
 
-context("Credentials", () => {
+context("Verify that user is able to create credentials and verify it", () => {
+
   it("Add new credential", () => {
-    cy.visit("/s/credentials");
+    cy.visit("s/credentials");
     credentials.addNewButton.click();
     credentials.oAuth2ClientApiModeSelector.then(() => {
       cy.wait(1000);

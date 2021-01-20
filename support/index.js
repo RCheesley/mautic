@@ -40,7 +40,7 @@ Cypress.Cookies.defaults({
   })
   
   //adding sample contacts to be used across test
-  leftNavigation.contactsSection.click();
+  cy.visit('s/contacts');
   contact.waitforPageLoad();
   contact.addNewButton.click({ force: true });
   contact.title.type("Mr");
@@ -52,8 +52,7 @@ Cypress.Cookies.defaults({
   contact.waitForContactCreation();
 
   //adding sample email to be used across test
-  leftNavigation.ChannelsSection.click();
-  leftNavigation.EmailsSubSection.click();
+  cy.visit('s/emails')
   emails.waitforPageLoad();
   emails.addNewButton.click({ force: true });
   emails.waitforEmailSelectorPageGetsLoaded();
@@ -65,7 +64,7 @@ Cypress.Cookies.defaults({
   emails.waitforEmailCreation();
 
   //adding sample segment to be used across test
-  leftNavigation.SegmentsSection.click();
+  cy.visit('s/segments')
   segments.waitForPageLoad();
   segments.addNewButton.click({ force: true });
   segments.segmentName.type("TestSegment");
@@ -80,8 +79,7 @@ Cypress.Cookies.defaults({
 
 after("Delete Test Data", () => {
   //deleting created contact
-  cy.wait(2000);
-  leftNavigation.contactsSection.click();
+  cy.visit('s/contacts');
   contact.waitforPageLoad();
   cy.visit('/s/contacts?search='+ testContact);
   search.selectCheckBoxForFirstItem.click({ force: true });
@@ -90,8 +88,7 @@ after("Delete Test Data", () => {
   search.confirmDeleteButton.click();
 
   //deleting created Email
-  leftNavigation.ChannelsSection.click();
-  leftNavigation.EmailsSubSection.click();
+  cy.visit('s/emails');
   emails.waitforPageLoad();
   cy.visit('/s/emails?search=Test')
   search.selectCheckBoxForFirstItem.click({ force: true });
@@ -100,7 +97,7 @@ after("Delete Test Data", () => {
   search.confirmDeleteButton.click();
 
   //deleting created segment
-  leftNavigation.SegmentsSection.click();
+  cy.visit('s/segments');
   segments.waitForPageLoad();
   cy.visit('/s/segments?search=TestSegment')
   segments.firstCheckbox.click();
@@ -109,9 +106,7 @@ after("Delete Test Data", () => {
   segment.deleteConfirmation.click();
 });
 
-beforeEach("Visit HomePage", () => {
-  cy.visit("");
-});
+
 
 Cypress.on("uncaught:exception", (err, runnable) => {
   // returning false here prevents Cypress from

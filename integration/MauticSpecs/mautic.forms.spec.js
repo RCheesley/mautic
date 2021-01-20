@@ -7,7 +7,11 @@ const form = require("../../Pages/Forms");
 const search=require("../../Pages/Search");
 
 var testFormName= "testForm";
-context("Create Form", () => {
+context("Verify that user is able to create and edit forms", () => {
+
+  beforeEach("Visit HomePage", () => {
+    cy.visit("s/forms");
+  });
 
   it("Create a new form", () => {
     leftNavigation.componentsSection.click();

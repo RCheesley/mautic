@@ -8,7 +8,12 @@ const search=require("../../Pages/Search");
 
 var landingPageName = "TestLandingPage";
 
-context("Create Landing Page", () => {
+context("Verify that user is able to create and delete landing pages", () => {
+
+  beforeEach("Visit HomePage", () => {
+    cy.visit("s/pages");
+  });
+
   it("Create a New Landing Page with embedded form", () => {
     leftNavigation.componentsSection.click();
     leftNavigation.landingPagesSubSection.click({force: true});
@@ -21,8 +26,6 @@ context("Create Landing Page", () => {
   });
 
   it("Edit newly added landing page", () => {
-    leftNavigation.componentsSection.click();
-    leftNavigation.landingPagesSubSection.click();
     cy.visit('/s/pages?search=' + landingPageName)
     landingPages.searchAndSelectFIrstItem.contains(landingPageName).click();
     landingPages.waitTillClickedPageGetsOpen();
@@ -34,8 +37,6 @@ context("Create Landing Page", () => {
   });
   
   it("Search and delete newly added Landing Page", () => {
-    leftNavigation.componentsSection.click();
-    leftNavigation.landingPagesSubSection.click();
     cy.visit('/s/pages?search=' + landingPageName)
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();

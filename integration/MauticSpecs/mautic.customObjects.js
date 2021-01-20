@@ -2,8 +2,6 @@
 /// <reference types="Cypress" />
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-
-const settings = require("../../Pages/Settings");
 const search =require("../../Pages/Search");
 const customObject =require("../../Pages/CustomObject");
 const contact = require("../../Pages/Contacts");
@@ -12,11 +10,14 @@ const leftNavigation = require("../../Pages/LeftNavigation");
 var carCustomObjectc = "Cars";
 var testContact = "testcontact";
 var instanceCustomObject = "BMW X1";
-context("Create a custom object", () => {
 
+context("Verify that user is able to create custom obejcts and link it to contact", () => {
+
+  beforeEach("Visit HomePage", () => {
+    cy.visit("s/custom/object");
+  });
+  
   it("Create a new custom object", () => {
-    settings.settingsMenuButton.click();
-    settings.customObjectsSection.click({force: true});
     customObject.waitforPageLoad();
     customObject.addNewButton.click();
     customObject.waitforNewObjectGetsLoaded();
@@ -52,8 +53,6 @@ context("Create a custom object", () => {
   });
 
   it("Edit newly added custom object", () => {
-    settings.settingsMenuButton.click();
-    settings.customObjectsSection.click();
     customObject.waitforPageLoad();
     customObject.clickOnCreatedCustomObject.contains(carCustomObjectc).click();
     customObject.waitforCustomebject();
@@ -103,9 +102,8 @@ context("Create a custom object", () => {
   });
 
   it("Search and delete newly added custom object", () => {
-    settings.settingsMenuButton.click();
-    settings.customObjectsSection.click();
     customObject.waitforPageLoad();
+    cy.wait(2000)
     customObject.selectFirstCheckbox.click();
     customObject.clickOnFirstDropdown.click();
     search.deleteButtonForFirstItem.click();

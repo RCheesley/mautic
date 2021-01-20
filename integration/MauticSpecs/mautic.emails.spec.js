@@ -2,18 +2,18 @@
 /// <reference types="Cypress" />
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const leftNavigation = require("../../Pages/LeftNavigation");
 const emails = require("../../Pages/Emails");
 const search=require("../../Pages/Search");
 
 var testEmailCypress = "TestEmailCypress";
-var testTriggerEmail = "TestTriggerEmail"
 
-context("Emails", () => {
+context("Verify that user is able to create and edit email", () => {
+
+  beforeEach("Visit HomePage", () => {
+    cy.visit("s/emails");
+  }); 
 
   it("Add new Email", () => {
-    leftNavigation.ChannelsSection.click();
-    leftNavigation.EmailsSubSection.click();
     emails.waitforPageLoad();
     emails.addNewButton.click({ force: true });
     emails.waitforEmailSelectorPageGetsLoaded();
@@ -25,24 +25,7 @@ context("Emails", () => {
     emails.waitforEmailCreation();
   });
 
-  it("Add new email to be used for trigger", () => {
-    leftNavigation.ChannelsSection.click();
-    leftNavigation.EmailsSubSection.click();
-    emails.waitforPageLoad();
-    emails.addNewButton.click({ force: true });
-    emails.waitforEmailSelectorPageGetsLoaded();
-    emails.templateEmailSelector.click();
-    emails.emailSubject.type(testTriggerEmail);
-    emails.emailInternalName.type(testTriggerEmail)
-    emails.saveEmailButton.click();
-    emails.closeButton.click({force: true});
-    emails.waitforEmailCreation();
-  });
-
-
   it("Edit newly added email", () => {
-    leftNavigation.ChannelsSection.click();
-    leftNavigation.EmailsSubSection.click();
     emails.waitforPageLoad();
     cy.visit('/s/emails?search=' + testEmailCypress)
     emails.searchAndSelectEmail.contains(testEmailCypress).click();
@@ -57,8 +40,6 @@ context("Emails", () => {
   });
 
   it("Search and delete newly added email", () => {
-    leftNavigation.ChannelsSection.click();
-    leftNavigation.EmailsSubSection.click();
     emails.waitforPageLoad();
     cy.visit('/s/emails?search=' + testEmailCypress)
     search.selectCheckBoxForFirstItem.click();

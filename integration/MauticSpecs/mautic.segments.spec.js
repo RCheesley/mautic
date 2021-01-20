@@ -2,7 +2,6 @@
 /// <reference types="Cypress" />
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const leftNavigation = require("../../Pages/LeftNavigation");
 const segments = require("../../Pages/Segments");
 const contact = require("../../Pages/Contacts");
 const search =require("../../Pages/Search");
@@ -14,9 +13,56 @@ var contactOneForBidar = "User1 Tester"
 var contactTwoForBidar = "User2 Tester"
 var contactOneForHydrbad = "User3 Tester"
 
-context("Segments", () => {
+context("Verify that user is able to create segment and test that contacts are getting added as per the selected filter", () => {
+
+  beforeEach("Visit HomePage", () => {
+    cy.visit("s/segments");
+  });
+
+  it("Add new Contact for Bidar City", () => {
+    cy.visit("s/contacts");
+    contact.waitforPageLoad();
+    contact.addNewButton.click({ force: true });
+    contact.title.type("Mr");
+    contact.firstName.type("User1");
+    contact.lastName.type("Tester");
+    contact.leadEmail.type("Cypress1@mailtest.mautic.com");
+    contact.leadCity.type('Bidar')
+    contact.SaveButton.click();
+    contact.closeButton.click({ force: true });
+    contact.waitForContactCreation();
+  });
+
+  it("Add new Contact for Bidar City", () => {
+    cy.visit("s/contacts");
+    contact.waitforPageLoad();
+    contact.addNewButton.click({ force: true });
+    contact.title.type("Mr");
+    contact.firstName.type("User2");
+    contact.lastName.type("Tester");
+    contact.leadEmail.type("Cypress2@mailtest.mautic.com");
+    contact.leadCity.type('Bidar')
+    contact.SaveButton.click();
+    contact.closeButton.click({ force: true });
+    contact.waitForContactCreation();
+  });
+
+  it("Add new Contact for Hydrabad City", () => {
+    cy.visit("s/contacts");
+    contact.waitforPageLoad();
+    contact.addNewButton.click({ force: true });
+    contact.title.type("Mr");
+    contact.firstName.type("User3");
+    contact.lastName.type("Tester");
+    contact.leadEmail.type("Cypress3@mailtest.mautic.com");
+    contact.leadCity.type('Hydrabad')
+    contact.SaveButton.click();
+    contact.closeButton.click({ force: true });
+    contact.waitForContactCreation();
+  });
+
+  
   it("Add new Segment", () => {
-    leftNavigation.SegmentsSection.click();
     segments.waitForPageLoad();
     segments.addNewButton.click({ force: true });
     segments.segmentName.type(cypressSegment);
@@ -32,7 +78,6 @@ context("Segments", () => {
   });
 
   it("Add new Segment for Bidar City", () => {
-    leftNavigation.SegmentsSection.click();
     segments.waitForPageLoad();
     segments.addNewButton.click({ force: true });
     segments.waitTillNewSegmentGetsOpen()
@@ -48,7 +93,6 @@ context("Segments", () => {
   });
 
   it("Add new Segment for Hydrabad City", () => {
-    leftNavigation.SegmentsSection.click();
     segments.waitForPageLoad();
     segments.addNewButton.click({ force: true });
     segments.waitTillNewSegmentGetsOpen()
@@ -65,7 +109,6 @@ context("Segments", () => {
   });
 
   it("Verify that Bidar city segment has two conatcts only", () => {
-    leftNavigation.SegmentsSection.click();
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=' + bidarCity)
     segments.checkConactsUnderSegment.should('contain','View 2 Contacts')
@@ -74,7 +117,6 @@ context("Segments", () => {
   });
 
   it("Verify that hydrabad city segment has one conatct only", () => {
-    leftNavigation.SegmentsSection.click();
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=' + hydrabadCity)
     segments.checkConactsUnderSegment.should('contain','View 1 Contact')
@@ -83,7 +125,6 @@ context("Segments", () => {
   });
 
   it("Edit newly added segment", () => {
-    leftNavigation.SegmentsSection.click();
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=' + cypressSegment)
     segments.searchAndSelectSegment.contains(cypressSegment).click();
@@ -100,7 +141,7 @@ context("Segments", () => {
   });
 
   it("Search and delete a contacts created for Bidar and Hydrabad City", () => {
-    leftNavigation.contactsSection.click();
+    cy.visit('/s/contacts');
     contact.waitforPageLoad();
     cy.visit('/s/contacts?search=User');
     search.selectTheParentCheckBox.click();
@@ -111,7 +152,6 @@ context("Segments", () => {
   });
 
   it("Search and Delete Segment", () => {
-    leftNavigation.SegmentsSection.click();
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=' + cypressSegment)
     segments.firstCheckbox.click();
@@ -121,7 +161,6 @@ context("Segments", () => {
   });
 
   it("Search and Delete Segment", () => {
-    leftNavigation.SegmentsSection.click();
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=' + bidarCity)
     segments.firstCheckbox.click();
@@ -131,7 +170,6 @@ context("Segments", () => {
   });
 
   it("Search and Delete Segment", () => {
-    leftNavigation.SegmentsSection.click();
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=' + hydrabadCity)
     segments.firstCheckbox.click();

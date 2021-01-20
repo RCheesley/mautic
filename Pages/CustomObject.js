@@ -142,7 +142,7 @@ class CustomObject {
     }
 
     get clickOnFirstDropdown() {
-        return   cy.get('button[class="btn btn-default btn-sm dropdown-toggle btn-nospin"]');
+        return   cy.get('#custom-objects-table>tbody>tr>td>div>div>button');
     }
 
     get selectCreatedCustomObject() {

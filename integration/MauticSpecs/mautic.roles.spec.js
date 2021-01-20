@@ -2,16 +2,17 @@
 /// <reference types="Cypress" />
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const settings = require("../../Pages/Settings");
 const roles = require("../../Pages/Roles");
 const search=require("../../Pages/Search");
 
 var readRole = "Standard"
 
-context("Roles", () => {
+context("Verify that user is able to create and delete roles", () => {
+  beforeEach("Visit HomePage", () => {
+    cy.visit("s/roles");
+  });
+
   it("Add new role for reading contact", () => {
-    settings.settingsMenuButton.click();
-    settings.rolesSection.click();
     roles.waitForPageLoad();
     roles.addNewRoleButton.click();
     roles.roleNameTextBox.click();
@@ -30,6 +31,13 @@ context("Roles", () => {
     roles.waitforRoleCreation();
   });
 
+  it("Search and delete newly added role", () => {
+    roles.waitForPageLoad();
+    cy.visit('/s/roles?search='+ readRole);
+    search.selectCheckBoxForFirstItem.click();
+    search.OptionsDropdownForFirstItem.click();
+    search.deleteButtonForFirstItem.click();
+    search.confirmDeleteButton.click();
   });
-
-
+  
+});

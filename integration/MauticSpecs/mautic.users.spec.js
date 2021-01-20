@@ -2,7 +2,6 @@
 /// <reference types="Cypress" />
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const settings = require("../../Pages/Settings");
 const user = require("../../Pages/Users");
 const search=require("../../Pages/Search");
 const roles = require("../../Pages/Roles");
@@ -14,10 +13,30 @@ var readRole = "Standard"
 var firstName = "Test"
 var lastName = "User"
 
-context("Roles", () => {
-  it("Add new role for reading contact", () => {
-    settings.settingsMenuButton.click();
-    user.clickOnUsersTab.click()
+context("Verify that user is able to attach role to the user and logged in successfully as per role privilege", () => {
+
+  it("Add new role with read contacts access", () => {
+    cy.visit("s/roles");
+    roles.waitForPageLoad();
+    roles.addNewRoleButton.click();
+    roles.roleNameTextBox.click();
+    roles.roleNameTextBox.type(readRole);
+    roles.permissionTab.click();
+    roles.apiPermissionTab.click();
+    roles.apiAccessGrantedCheckBox.click();
+    cy.wait(1000);
+    roles.contactPermissionTab.click();
+    roles.contacts_Access_Full.click();
+    roles.contacts_Segments_ViewOthers.click()
+    roles.contacts_Segments_EditOthers.click()
+    roles.contacts_import_View.click()
+    roles.contacts_import_Edit.click()
+    roles.saveAndCloseTab.click();
+    roles.waitforRoleCreation();
+  });
+
+  it("Create new user with role attached above", () => {
+    cy.visit("s/users");
     user.waitForPageLoad()
     user.clickOnCreateNewUserTab.click()
     user.waitTillNewUserCreationPageGetsLoaded()
@@ -52,9 +71,8 @@ context("Roles", () => {
   });
 
   it("Delete the created User", () => {
-    settings.settingsMenuButton.click();
-    user.clickOnUsersTab.click()
-    user.waitForPageLoad()
+    cy.visit("s/users");
+    user.waitForPageLoad();
     cy.visit('/s/users?search=' + lastName)
     user.selectParentCheckBox.click()
     user.selectParentDropdown.click()
@@ -64,8 +82,7 @@ context("Roles", () => {
   });
 
   it("Search and delete newly added role", () => {
-    settings.settingsMenuButton.click();
-    settings.rolesSection.click({force: true});
+    cy.visit("s/roles");
     roles.waitForPageLoad();
     cy.visit('/s/roles?search='+ readRole);
     search.selectCheckBoxForFirstItem.click();
