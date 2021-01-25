@@ -19,7 +19,7 @@ context("Verify that user is able to create segment and test that contacts are g
     cy.visit("s/segments");
   });
 
-  it("Add new Contact for Bidar City", () => {
+  it("Add new contact for Bidar city", () => {
     cy.visit("s/contacts");
     contact.waitforPageLoad();
     contact.addNewButton.click({ force: true });
@@ -33,7 +33,7 @@ context("Verify that user is able to create segment and test that contacts are g
     contact.waitForContactCreation();
   });
 
-  it("Add new Contact for Bidar City", () => {
+  it("Add new contact for Bidar city", () => {
     cy.visit("s/contacts");
     contact.waitforPageLoad();
     contact.addNewButton.click({ force: true });
@@ -47,7 +47,7 @@ context("Verify that user is able to create segment and test that contacts are g
     contact.waitForContactCreation();
   });
 
-  it("Add new Contact for Hydrabad City", () => {
+  it("Add new contact for Hydrabad city", () => {
     cy.visit("s/contacts");
     contact.waitforPageLoad();
     contact.addNewButton.click({ force: true });
@@ -77,7 +77,7 @@ context("Verify that user is able to create segment and test that contacts are g
     segments.waitforSegmentCreation();
   });
 
-  it("Add new Segment for Bidar City", () => {
+  it("Add new segment for Bidar city", () => {
     segments.waitForPageLoad();
     segments.addNewButton.click({ force: true });
     segments.waitTillNewSegmentGetsOpen()
@@ -92,7 +92,7 @@ context("Verify that user is able to create segment and test that contacts are g
     segments.waitforSegmentCreation();
   });
 
-  it("Add new Segment for Hydrabad City", () => {
+  it("Add new segment for Hydrabad city", () => {
     segments.waitForPageLoad();
     segments.addNewButton.click({ force: true });
     segments.waitTillNewSegmentGetsOpen()
@@ -151,7 +151,7 @@ context("Verify that user is able to create segment and test that contacts are g
     search.checkNoResultFoundMessage.should('contain','No Results Found');
   });
 
-  it("Search and Delete Segment", () => {
+  it("Search and delete cypress segment", () => {
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=' + cypressSegment)
     segments.firstCheckbox.click();
@@ -160,7 +160,7 @@ context("Verify that user is able to create segment and test that contacts are g
     segments.deleteConfirmation.click();
   });
 
-  it("Search and Delete Segment", () => {
+  it("Search and delete Bidar city segment", () => {
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=' + bidarCity)
     segments.firstCheckbox.click();
@@ -169,7 +169,7 @@ context("Verify that user is able to create segment and test that contacts are g
     segments.deleteConfirmation.click();
   });
 
-  it("Search and Delete Segment", () => {
+  it("Search and delete Hydrabad city segment", () => {
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=' + hydrabadCity)
     segments.firstCheckbox.click();
