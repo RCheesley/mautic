@@ -53,6 +53,30 @@ class Campaigns {
         return cy.get('#ActionList');
     }
 
+    get nameOfAction(){
+        return cy.get('#campaignevent_name');
+    }
+
+    nameOfActionPopUpVisibility(){
+        return cy.get('#campaignevent_name').should('be.visible')
+    }
+
+    get updateDateField1(){
+        return cy.get('#campaignevent_properties_datefield_1');
+    }
+
+    get addButtonForAction(){
+        return cy.get('div[class="modal-form-buttons"]>button[class*="btn-save"]');
+    }
+
+    get updateDateField2(){
+        return cy.get('#campaignevent_properties_datefield_2');
+    }
+
+    get updateDateField3(){
+        return cy.get('#campaignevent_properties_datefield_3');
+    }
+
     get sendEmailActionName() {
         return cy.get('#campaignevent_name');
     }

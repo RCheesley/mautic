@@ -14,11 +14,9 @@ context("Verify that user is able to create and edit forms", () => {
   });
 
   it("Create a new form", () => {
-    leftNavigation.componentsSection.click();
-    leftNavigation.formsSubSection.click();
     form.waitforPageLoad();
     form.addNewButton.click();
-    cy.wait(1000);
+    form.waitTillFormOptionsGetsLoaded()
     form.standaloneFormSelector.click();
     cy.wait(1000);
     form.formName.type(testFormName);
@@ -48,8 +46,7 @@ context("Verify that user is able to create and edit forms", () => {
   });
 
   it("Edit newly added form", () => {
-    leftNavigation.componentsSection.click();
-    leftNavigation.formsSubSection.click();
+    form.waitforPageLoad();
     cy.visit('/s/forms?search=' + testFormName)
     form.searchAndSelectFirstItem.contains(testFormName).click();
     form.waitTillCreatedFormGetsLoaded();
@@ -72,8 +69,7 @@ context("Verify that user is able to create and edit forms", () => {
   });
 
   it("Search and delete newly added form", () => {
-    leftNavigation.componentsSection.click();
-    leftNavigation.formsSubSection.click();
+    form.waitforPageLoad();
     cy.visit('/s/forms?search=' + testFormName)
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();

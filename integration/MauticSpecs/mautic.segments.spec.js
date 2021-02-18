@@ -74,7 +74,7 @@ context("Verify that user is able to create segment and test that contacts are g
     segments.waitTillFilterOptionGetsLoaded()
     segments.filterValue.type("Cypress");
     segments.saveAndCloseButton.click();
-    segments.waitforSegmentCreation();
+    segments.waitForPageLoad();
   });
 
   it("Add new segment for Bidar city", () => {
@@ -89,7 +89,7 @@ context("Verify that user is able to create segment and test that contacts are g
     segments.waitTillFilterOptionGetsLoaded()
     segments.filterValue.type("Bidar");
     segments.saveAndCloseButton.click();
-    segments.waitforSegmentCreation();
+    segments.waitForPageLoad();
   });
 
   it("Add new segment for Hydrabad city", () => {
@@ -104,7 +104,7 @@ context("Verify that user is able to create segment and test that contacts are g
     segments.waitTillFilterOptionGetsLoaded()
     segments.filterValue.type("Hydrabad");
     segments.saveAndCloseButton.click();
-    segments.waitforSegmentCreation();
+    segments.waitForPageLoad()
     cy.wait(3000);
   });
 

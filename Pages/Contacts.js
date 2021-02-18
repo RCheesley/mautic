@@ -100,6 +100,59 @@ class Contacts {
         return cy.get('#lead_points');
     }
 
+    get numericFieldOne() {
+        return cy.get('#lead_numericfield_1');
+    }
+
+    get numericFieldSecond() {
+        return cy.get('#lead_numericfield_2');
+    }
+
+    get dateFieldOne() {
+        return cy.get('#lead_datefield_1');
+    }
+
+    get dateFieldSecond() {
+        return cy.get('#lead_datefield_2');
+    }
+
+    get dateFieldThird() {
+        return cy.get('#lead_datefield_3');
+    }
+
+    get booleanCustomField_Yes() {
+        return cy.get('label[class="btn btn-default  btn-yes"]');
+    }
+
+    get booleanCustomField_No() {
+        return cy.get('label[class="btn btn-default  btn-no"]');
+    }
+
+    get contactList() {
+        return cy.get('#leadTable>tbody>tr>td>a');
+    }
+
+    get contactDetailsTab_DateField1Value() {
+        return cy.get('#core>div>div>table>tbody>tr>td').eq(7)
+    }
+
+    get contactDetailsTab_DateField2Value() {
+        return cy.get('#core>div>div>table>tbody>tr>td').eq(5)
+    }
+
+    get contactDetailsTab_DateField3Value() {
+        return cy.get('#core>div>div>table>tbody>tr>td').eq(3)
+    }
+
+    get contactDetailsTab_LastDateActive() {
+        return cy.get('#core>div>div>table>tbody>tr>td').eq(43)
+    }
+
+    get getContactDetails() {
+        cy.get('div[class="hr-expand nm"]>span>a').should('be.visible');
+        return cy.get('div[class="hr-expand nm"]>span>a');
+    }
+
     waitTillLinkPopupOpen(){
         cy.get('#customItemLookupModal-label').should('be.visible');
     }

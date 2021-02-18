@@ -4,7 +4,7 @@ class Forms {
         cy.get('h3.pull-left').should('contain', 'Forms');
     }
     get addNewButton() {
-        return cy.get('#toolbar > div.std-toolbar.btn-group > a');
+        return cy.get('a[href*="forms/new"]');
     }
 
     get formName() {
@@ -73,6 +73,10 @@ class Forms {
 
     waitforFormCreation(){
         cy.get('span[class="tt-u label label-success"]').should('be.visible');
+    }
+
+    waitTillFormOptionsGetsLoaded(){
+        cy.get('div[class="modal-body form-select-modal"]').should('be.visible');
     }
 
     waitTillCreatedFormGetsLoaded(){

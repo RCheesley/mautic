@@ -31,7 +31,7 @@ context("Segment email creation and verify that user has received an email", () 
     emails.waitTillCreatedSegmentEmailGetsOpen();
     emails.scheduleSegmentEmail.click();
     emails.scheduleButton.click();
-    cy.wait(5000);
+    cy.wait(5000) // Added wait so that user will receive an email
   });
 
   it("Verify that user has received the email from segment email", () => {
