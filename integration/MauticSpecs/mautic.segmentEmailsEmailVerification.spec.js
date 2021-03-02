@@ -95,5 +95,7 @@ context("Segment email creation and verify that user has received an email", () 
       search.deleteButtonForFirstItem.click();
       search.confirmDeleteButton.click();
     });
+
+   
     
   });

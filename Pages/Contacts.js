@@ -7,6 +7,14 @@ class Contacts {
         return cy.get('[href="/s/contacts/new"]');
     }
 
+    get companySelector(){
+        return cy.get('#lead_companies_chosen > div > ul');
+    }
+
+    get companySearch(){
+        return cy.get('#lead_companies_chosen > ul > li.search-field');
+    }
+
     get searchAndClickForFirstElement() {
         return cy.get('#leadTable>tbody>tr>td>a>div');
     }
