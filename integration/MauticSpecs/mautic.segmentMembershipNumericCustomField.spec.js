@@ -14,7 +14,7 @@ var contactFirstName = "test1"
 var segmentMembershipWithCustomField1 = " segment with numeric custom field and boolean 1"
 var segmentMembershipWithCustomField2 = " segment with numeric custom field and boolean 2"
 
-context("Verify segment membership tests with custom field", () => {
+context("Verify segment membership tests with numeric custom field", () => {
    
   beforeEach("Visit HomePage", () => {
     cy.visit("s/contacts/fields");
@@ -272,3 +272,4 @@ context("Verify segment membership tests with custom field", () => {
   });
 
   });
+

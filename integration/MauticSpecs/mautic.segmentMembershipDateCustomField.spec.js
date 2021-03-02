@@ -14,7 +14,7 @@ var contactFirstName = "test1"
 var segmentMembershipWithCustomField1 = " segment with custom field and boolean 1"
 var segmentMembershipWithCustomField2 = " segment with custom field and boolean 2"
 
-context("Verify segment membership tests with custom field", () => {
+context("Verify segment membership tests with date custom field", () => {
    
   beforeEach("Visit HomePage", () => {
     cy.visit("s/contacts/fields");
@@ -155,6 +155,7 @@ context("Verify segment membership tests with custom field", () => {
     segments.filterField.click({ force: true });
     segments.waitTillFourthOperatorFilterGetsLoaded()
     segments.clickOnFourthFilterProperties.click({ force: true })
+    cy.wait(1000) // Added wait for page rendering
     segments.typeFourthFilterInput.type('Yes')
     segments.selectFourthTypedInput.click()
 
@@ -271,3 +272,4 @@ context("Verify segment membership tests with custom field", () => {
   });
 
   });
+
