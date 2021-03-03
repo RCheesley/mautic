@@ -10,8 +10,10 @@ var bearerToken;
 var apiKey = "";
 var apiSecretValue = "";
 var contactsEndPoint = "api/contacts"
+var createContactEndPoint = "api/contacts/new"
 var count = 0
-var getContactId = "";
+var getContactId = ""
+var getCreatedContactId = ""
 
 context("Verify that user is able to create credentials and update the contact fields using them", function() {
 
@@ -149,6 +151,75 @@ context("Verify that user is able to create credentials and update the contact f
       expect(response.body).to.not.be.null
       expect(response.body.contact).has.property('id',getContactId)
       expect(response.body.contact.fields.core.country).has.property('value',"India")
+    })
+  })
+
+  it("Hit the contact creation endpoint and create a new contact", function() {
+    cy.request({ 
+     method:'POST',
+     url: getHostUrl + createContactEndPoint,
+     headers:{
+       'Content-Type':'application/json',
+       'Connection':'keep-alive',
+       'Authorization': 'Bearer ' + bearerToken
+     },
+     body:
+     {
+      "firstname":"Test2",
+      "lastname":"Contact2",
+      "email":"test2contact2@mailtest.mautic.com"
+     }
+    }).then(function(response){
+      expect(response.body).to.not.be.null
+      getCreatedContactId = response.body.contact.id
+      expect(response).to.have.property('status',201)
+    })
+  })
+
+  it("Hit GET Request and verify that contact is created", function() {
+    cy.request({ 
+     method:'GET',
+     url: getHostUrl + contactsEndPoint + '/' + getCreatedContactId,
+     headers:{
+      'Content-Type':'application/json',
+      'Connection':'keep-alive',
+      'Authorization': 'Bearer ' + bearerToken
+     }
+    }).then(function(response){
+      expect(response).to.have.property('status',200)
+      expect(response.body).to.not.be.null
+      expect(response.body.contact).has.property('id',getCreatedContactId)
+    })
+  })
+
+  it("Delete the created contact and verify that it gets deleted", function() {
+    cy.request({ 
+     method:'DELETE',
+     url: getHostUrl + contactsEndPoint + '/' + getCreatedContactId + '/delete',
+     headers:{
+      'Content-Type':'application/json',
+      'Connection':'keep-alive',
+      'Authorization': 'Bearer ' + bearerToken
+     }
+    }).then(function(response){
+      expect(response).to.have.property('status',200)
+      expect(response.body).to.not.be.null
+      expect(response.body.contact).has.property('id',null)
+    })
+  })
+
+  it("Hit GET Request and verify that contact got deleted", function() {
+    cy.request({ 
+     method:'GET',
+     url: getHostUrl + contactsEndPoint + '/' + getCreatedContactId,
+     failOnStatusCode: false,
+     headers:{
+      'Content-Type':'application/json',
+      'Connection':'keep-alive',
+      'Authorization': 'Bearer ' + bearerToken
+     }
+    }).then(function(response){
+      expect(response).to.have.property('status',404)
     })
   })
 
