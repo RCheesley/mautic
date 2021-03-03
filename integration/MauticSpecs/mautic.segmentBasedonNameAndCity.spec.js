@@ -8,10 +8,10 @@ const segments = require("../../Pages/Segments");
 const search = require("../../Pages/Search");
 
 var contactFirstName = "Segment_Test";
+var companyName = "Acquia"
 context("Verify segment membership based on Name ,City and Company", () => {
 
   it("Add new Company", () => {
-    var companyName = "Acquia";
     cy.visit("s/companies");
     company.waitforPageLoad();
     company.addNewButton.click({ force: true });
@@ -134,7 +134,7 @@ context("Verify segment membership based on Name ,City and Company", () => {
         .should("contain", "Test contact1")
         .should("contain", "Test contact2");
     }
-  );
+  )
 
   it("Search and delete segmentMembershipWithCustomField segment", () => {
     cy.visit("s/segments");
@@ -144,7 +144,7 @@ context("Verify segment membership based on Name ,City and Company", () => {
     segments.firstDropDown.click();
     segments.deleteOption.click();
     segments.deleteConfirmation.click();
-  });
+  })
 
   it("Search and delete newly added contact", () => {
     cy.visit("s/contacts");
@@ -155,5 +155,17 @@ context("Verify segment membership based on Name ,City and Company", () => {
     search.selectParentsOptionsDropdown.click();
     search.selectBatchdeleteButton.click();
     search.confirmDeleteButton.click();
-  });
-});
+  })
+
+  it("Search and delete newly added company", () => {
+    cy.visit("s/companies");
+    company.waitforPageLoad();
+    cy.visit("/s/companies?search=" + companyName);
+    company.waitTillSearchResultGetsDisplayed();
+    search.selectCheckBoxForFirstItem.click({ force: true });
+    search.OptionsDropdownForFirstItem.click();
+    search.deleteButtonForFirstItem.click();
+    search.confirmDeleteButton.click();
+  })
+
+})
