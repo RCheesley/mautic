@@ -76,6 +76,28 @@ context("Verify that user is able to create credentials and update the contact f
       bearerToken = response.body.access_token
     })
   })
+  
+  it("Hit the Auth request with invalid key and Secret and verify that Auth Error is recieved", function() {
+    cy.request({ 
+      method:'POST',
+      url: getHostUrl + appendUrl,
+      failOnStatusCode: false,
+      body:
+      {
+       'grant_type': 'client_credentials',
+       'client_id': 'api3_3f8iroo7dzgg4oocsok0ocowcso0sss4sw888ko0ow4cswgwwcKey',
+       'client_secret': '2ozt6ozkqwow0sgcg448gsoow0skws8cw00sg4osswsw84c88w'
+      },
+      headers:{
+        'Content-Type':'application/json',
+      }
+     }).then(function(response){
+       expect(response).to.have.property('status',400)
+       expect(response.body).to.not.be.null
+       expect(response.body.errors[0].message).to.contain("The client credentials are invalid");
+     })
+
+  });
 
   it("Hit the contacts endpoint and get the contact id", function() {
     cy.request({ 

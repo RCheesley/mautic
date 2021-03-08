@@ -123,7 +123,7 @@ context("Verify segment membership based on Name ,City and Company", () => {
     }
   );
 
-  it("Verify that segmentMembershipWithNameCityAndCompany segment has two contacts only",
+  it("Verify that segmentMembershipWithNameCityAndCompany segment has Four contacts only",
     () => {
       cy.visit("s/segments");
       segments.waitForPageLoad();
@@ -136,7 +136,7 @@ context("Verify segment membership based on Name ,City and Company", () => {
     }
   )
 
-  it("Search and delete segmentMembershipWithCustomField segment", () => {
+  it("Search and delete segmentMembershipWithNameCityAndCompany segment", () => {
     cy.visit("s/segments");
     segments.waitForPageLoad();
     cy.visit("/s/segments?search=segment");
