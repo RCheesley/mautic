@@ -14,15 +14,8 @@ var firstName = "Test"
 var lastName = "User"
 var getHostUrl = Cypress.config().baseUrl
 var appendUrl = "oauth/v2/token"
-var bearerToken;
-var apiKey = "";
-var apiSecretValue = "";
-var contactsEndPoint = "api/contacts"
-var createContactEndPoint = "api/contacts/new"
-var count = 0
-var getContactId = ""
-var getCreatedContactId = ""
 
+context("Verify that user with no access gets bad request response for API request", function() {
 
 it("Add new role with client Applications access", () => {
     cy.visit("s/roles");
@@ -145,5 +138,7 @@ it("Add new role with client Applications access", () => {
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
-  });
+  })
+
+})
 

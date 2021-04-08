@@ -80,12 +80,12 @@ context("Verify segment membership Update based on Name and Company", () => {
     segments.filterField.click();
     segments.waitTillFilterOptionGetsLoaded();
     segments.filterOperator.select("contains");
-    cy.wait(1000); // Added wait for page rendering
+    cy.wait(2000); // Added wait for page rendering
     segments.filterValue.type(companyName, {
       force: true
     });
     segments.saveAndCloseButton.click();
-    segments.waitForPageLoad()
+    segments.waitForPageLoad();
     cy.wait(3000); // Added wait for segment building
   });
 
