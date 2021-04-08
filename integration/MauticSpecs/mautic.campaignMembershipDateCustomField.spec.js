@@ -19,7 +19,7 @@ var date2 = "2021-02-04"
 var date3 = "2021-03-04"
 var segmentMembershipWithCustomField = " segment with date field"
 var campaignMembershipWithUpdateContactAbsoluteDate = "campaignMembershipWithUpdateContactAbsoluteDate"
-var campaignMembershipWithUpdateContactRelativeeDate = "campaignMembershipWithUpdateContactRelativeeDate"
+var campaignMembershipWithUpdateContactRelativeDate = "campaignMembershipWithUpdateContactRelativeDate"
 
 var myCurrentDate=new Date();
 var updatedRelativeDate=new Date(myCurrentDate);
@@ -190,7 +190,7 @@ context("Verify campaign membership with update contact action & updating dates 
     search.searchBox.clear();
     search.searchBox.type(campaignMembershipWithUpdateContactAbsoluteDate);
     search.selectCheckBoxForFirstItem.should('exist');
-    cy.wait(5000) // Added wait to get campaign build and apply actions on contacts
+    cy.wait(10000) // Added wait to get campaign build and apply actions on contacts
   });
 
   it("Verify that in "+ segmentMembershipWithCustomField +" segment contacts date field 1 got updated Only", () => {
@@ -207,12 +207,12 @@ context("Verify campaign membership with update contact action & updating dates 
     contact.contactDetailsTab_LastDateActive.should('contain',' ')
   })
 
-  it("Add new campaign " + campaignMembershipWithUpdateContactRelativeeDate, () => {
+  it("Add new campaign " + campaignMembershipWithUpdateContactRelativeDate, () => {
     cy.visit("s/campaigns");
     campaigns.waitforPageLoad();
     search.searchBox.should('exist');
     campaigns.addNewButton.click();
-    campaigns.campaignName.type(campaignMembershipWithUpdateContactRelativeeDate);
+    campaigns.campaignName.type(campaignMembershipWithUpdateContactRelativeDate);
     campaigns.launchCampaignBuilderButton.click({ force: true });
     campaigns.sourceSelector.select("Contact segments", { force: true });
     campaigns.segmentSelectorButton.click();
@@ -232,9 +232,9 @@ context("Verify campaign membership with update contact action & updating dates 
     campaigns.saveAndCloseButton.click();
     campaigns.closeSummaryPageButton.click();
     search.searchBox.clear();
-    search.searchBox.type(campaignMembershipWithUpdateContactRelativeeDate);
+    search.searchBox.type(campaignMembershipWithUpdateContactRelativeDate);
     search.selectCheckBoxForFirstItem.should('exist');
-    cy.wait(5000) // Added wait to get campaign build and apply actions on contacts
+    cy.wait(10000) // Added wait to get campaign build and apply actions on contacts
   });
 
   it("Verify that in "+ segmentMembershipWithCustomField +" segment contacts date field 2 and 3 got updated Only", () => {
@@ -262,10 +262,10 @@ context("Verify campaign membership with update contact action & updating dates 
     search.confirmDeleteButton.click();
   });
 
-  it("Search and delete "+ campaignMembershipWithUpdateContactRelativeeDate + " Campaign", () => {
+  it("Search and delete "+ campaignMembershipWithUpdateContactRelativeDate + " Campaign", () => {
     cy.visit("s/campaigns");
     campaigns.waitforPageLoad();
-    cy.visit('/s/campaigns?search='+ campaignMembershipWithUpdateContactRelativeeDate)
+    cy.visit('/s/campaigns?search='+ campaignMembershipWithUpdateContactRelativeDate)
     search.selectCheckBoxForFirstItem.click({ force: true });
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click({ force: true });

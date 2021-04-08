@@ -163,7 +163,7 @@ context("Verify segment membership tests with numeric custom field", () => {
     cy.wait(3000) // Added wait for segment building
   })
 
-  it("Verify that"+ segmentMembershipWithCustomField1 +"segment has two contacts only", () => {
+  it("Verify that"+ segmentMembershipWithCustomField1 +"segment has one contact only", () => {
     cy.visit("s/segments");
     segments.waitForPageLoad();
     cy.visit('/s/segments?search=segment')

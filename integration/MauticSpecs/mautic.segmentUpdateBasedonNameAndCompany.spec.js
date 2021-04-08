@@ -85,7 +85,7 @@ context("Verify segment membership Update based on Name and Company", () => {
       force: true
     });
     segments.saveAndCloseButton.click();
-    segments.waitforSegmentCreation();
+    segments.waitForPageLoad()
     cy.wait(3000); // Added wait for segment building
   });
 
