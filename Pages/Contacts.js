@@ -141,19 +141,19 @@ class Contacts {
     }
 
     get contactDetailsTab_DateField1Value() {
-        return cy.get('#core>div>div>table>tbody>tr>td').eq(7)
+        return cy.xpath("(//td//span[contains(text(),'dateField 1')]/following::td)[1]")
     }
 
     get contactDetailsTab_DateField2Value() {
-        return cy.get('#core>div>div>table>tbody>tr>td').eq(5)
+        return cy.xpath("(//td//span[contains(text(),'dateField 2')]/following::td)[1]")
     }
 
     get contactDetailsTab_DateField3Value() {
-        return cy.get('#core>div>div>table>tbody>tr>td').eq(3)
+        return cy.xpath("(//td//span[contains(text(),'dateField 3')]/following::td)[1]")
     }
 
     get contactDetailsTab_LastDateActive() {
-        return cy.get('#core>div>div>table>tbody>tr>td').eq(43)
+        return cy.xpath("(//td//span[contains(text(),'Date Last Active')]/following::td)[1]")
     }
 
     get getContactDetails() {

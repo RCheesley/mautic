@@ -1,6 +1,7 @@
 /*jslint es6 */
 /// <reference types="Cypress" />
 "use strict";
+import 'cypress-xpath'
 Object.defineProperty(exports, "__esModule", { value: true });
 
 const customFields = require("../../Pages/CustomFields");

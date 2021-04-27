@@ -14,7 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-const leftNavigation = require("../Pages/LeftNavigation");
+require('cypress-xpath')
 const search = require("../Pages/Search");
 const contact = require("../Pages/Contacts");
 const emails = require("../Pages/Emails");
