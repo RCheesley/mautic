@@ -82,28 +82,29 @@ after("Delete Test Data", () => {
   cy.visit('s/contacts');
   contact.waitforPageLoad();
   cy.visit('/s/contacts?search='+ testContact);
-  search.selectCheckBoxForFirstItem.click({ force: true });
-  search.OptionsDropdownForFirstItem.click();
-  search.deleteButtonForFirstItem.click();
+  search.selectParentCheckBox.click({ force: true });
+  search.selectParentsOptionsDropdown.click();
+  search.selectBatchdeleteButton.click();
   search.confirmDeleteButton.click();
 
   //deleting created Email
   cy.visit('s/emails');
   emails.waitforPageLoad();
   cy.visit('/s/emails?search=Test')
-  search.selectCheckBoxForFirstItem.click({ force: true });
-  search.OptionsDropdownForFirstItem.click();
-  search.deleteButtonForFirstItem.click();
+  search.selectParentCheckBox.click({ force: true });
+  search.selectParentsOptionsDropdown.click();
+  search.selectBatchdeleteButton.click();
   search.confirmDeleteButton.click();
 
   //deleting created segment
   cy.visit('s/segments');
   segments.waitForPageLoad();
   cy.visit('/s/segments?search=TestSegment')
-  segments.firstCheckbox.click();
-  segments.firstDropDown.click();
-  segments.deleteOption.click();
-  segment.deleteConfirmation.click();
+  search.selectParentCheckBox.click({ force: true });
+  search.selectParentsOptionsDropdown.click();
+  search.selectBatchdeleteButton.click();
+  search.confirmDeleteButton.click();
+  
 });
 
 

@@ -14,6 +14,7 @@ var firstName = "Test"
 var lastName = "User"
 var getHostUrl = Cypress.config().baseUrl
 var appendUrl = "oauth/v2/token"
+var credentialName = "testCredentials"
 
 context("Verify that user with no access gets bad request response for API request", function() {
 
@@ -70,7 +71,7 @@ it("Add new role with client Applications access", () => {
     credentials.addNewButton.click();
     credentials.oAuth2ClientApiModeSelector.then(() => {
       cy.wait(1000);
-      credentials.clientName.type("Test");
+      credentials.clientName.type(credentialName);
       credentials.clientRedirectUI.type("https://on.cypress.io");
       credentials.saveAndCloseButton.click();
     });
@@ -103,8 +104,9 @@ it("Add new role with client Applications access", () => {
     });
   });
 
-  it("Search and Delete Credentials",function(){
-    cy.visit("/s/credentials");
+  it("Search and Delete Credentials",()=>{
+    cy.visit("/s/credentials")
+    cy.visit("/s/credentials?search=" + credentialName);
     search.selectCheckBoxForFirstItem.click({ force: true });
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
