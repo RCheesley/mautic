@@ -1,0 +1,117 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Verify that user is able to create and delete roles",
+    "line": 1,
+    "id": "verify-that-user-is-able-to-create-and-delete-roles",
+    "tags": [],
+    "uri": "Verify that user is able to create and delete roles.feature",
+    "elements": [
+      {
+        "id": "verify-that-user-is-able-to-create-and-delete-roles;add-new-role-for-reading-contact",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Add new role for reading contact",
+        "tags": [
+          {
+            "name": "@role",
+            "line": 3
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 11395000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 565000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 364000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 7158000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 28000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I click on Roles option",
+            "result": {
+              "status": "passed",
+              "duration": 3451000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should be on \"Roles\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 24000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I click New Button On Roles Page",
+            "result": {
+              "status": "passed",
+              "duration": 154000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I should be on \"New Role\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 691000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
