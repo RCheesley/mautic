@@ -14,7 +14,7 @@ Feature: Verify that user is able to create and delete asset
         Then I should be on "Contact Segments" Page
         When I add Sample Segment based on "First Name"
         Then I should see Segment is created
-        And I visit "Emails" page
+        When I visit "Emails" page
         Then I should be on "Emails" Page
         When I add Sample "Template" email
         Then I should see Tempalate is created
