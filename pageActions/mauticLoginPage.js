@@ -1,5 +1,7 @@
 import { Cutils } from "../CommonUtils/Cutils";
-import { login } from "/Users/rohit.sakhawalkar/Documents/GitHub/mc-cs-cypress/cypress/support/commands.js";
+import { LoginPageElements } from "../pageElements/LoginPageElements";
+import { LoginPageElements } from "cypress/pageElements/LoginPageElements";
+
 
 export class mauticLoginPage {
     static openLoginpage() {
@@ -7,18 +9,18 @@ export class mauticLoginPage {
     }
 
     static GoToURL(text) {
-        Cutils.NavigateTo(text);
+        Cutils.navigateTo(text);
     }
 
     static enterUserName() {
-        Cutils.typeText('//input[@id="username"]', Cypress.env("userName"));
+        Cutils.typeText(LoginPageElements.username_xpath, Cypress.env("userName"));
     }
     static enterpassword() {
-        Cutils.typeText('//input[@id="password"]', Cypress.env("password"));
+        Cutils.typeText(LoginPageElements.password_xpath, Cypress.env("password"));
     }
 
     static clickLoginButton() {
-        Cutils.click('//button[text()="login"]')
+        Cutils.click(LoginPageElements.login_Button_xpath);
     }
 
     static isOnPage(text) {

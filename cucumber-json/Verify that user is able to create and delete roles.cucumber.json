@@ -2,20 +2,37 @@
   {
     "keyword": "Feature",
     "name": "Verify that user is able to create and delete roles",
-    "line": 1,
+    "line": 2,
     "id": "verify-that-user-is-able-to-create-and-delete-roles",
-    "tags": [],
+    "tags": [
+      {
+        "name": "@regression",
+        "line": 1
+      },
+      {
+        "name": "@mat",
+        "line": 1
+      }
+    ],
     "uri": "Verify that user is able to create and delete roles.feature",
     "elements": [
       {
         "id": "verify-that-user-is-able-to-create-and-delete-roles;add-new-role-for-reading-contact",
         "keyword": "Scenario",
-        "line": 4,
+        "line": 5,
         "name": "Add new role for reading contact",
         "tags": [
           {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@mat",
+            "line": 1
+          },
+          {
             "name": "@role",
-            "line": 3
+            "line": 4
           }
         ],
         "type": "scenario",
@@ -23,91 +40,84 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
+            "line": 6,
             "name": "I am on Mautic Login Page",
             "result": {
-              "status": "passed",
-              "duration": 11395000000
+              "status": "failed",
+              "duration": 60096000000,
+              "error_message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://csk7.dev.mautic.net/__cypress/runner/cypress_runner.js:158187:13)\n    at https://csk7.dev.mautic.net/__cypress/runner/cypress_runner.js:159171:16\nFrom previous event:\n    at Context.visit (https://csk7.dev.mautic.net/__cypress/runner/cypress_runner.js:159170:61)\nFrom Your Spec Code:\n    at Function.Cutils.openURL (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:9:12)\n    at Function.mauticLoginPage.openLoginpage (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:66:25)\n    at Context.eval (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:122:39)\n    at Context.resolveAndRunStepDefinition (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:12377:9)\n    at Context.eval (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:11718:35)\nFrom Your Spec Code:\n    at Function.Cutils.openURL (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:9:12)\n    at Function.mauticLoginPage.openLoginpage (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:66:25)\n    at Context.eval (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:122:39)\n    at Context.resolveAndRunStepDefinition (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:12377:9)\n    at Context.eval (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:11718:35)"
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 6,
+            "line": 7,
             "name": "I type User Name on Login Page",
             "result": {
-              "status": "passed",
-              "duration": 565000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "I type Password on Login Page",
-            "result": {
-              "status": "passed",
-              "duration": 364000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 8,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
             "name": "I click Login Button",
             "result": {
-              "status": "passed",
-              "duration": 7158000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 9,
+            "line": 10,
             "name": "I should be on \"Dashboard\" Page",
             "result": {
-              "status": "passed",
-              "duration": 28000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 10,
+            "line": 11,
             "name": "I click on Roles option",
             "result": {
-              "status": "passed",
-              "duration": 3451000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 11,
+            "line": 12,
             "name": "I should be on \"Roles\" Page",
             "result": {
-              "status": "passed",
-              "duration": 24000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 12,
+            "line": 13,
             "name": "I click New Button On Roles Page",
             "result": {
-              "status": "passed",
-              "duration": 154000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 13,
+            "line": 14,
             "name": "I should be on \"New Role\" Page",
             "result": {
-              "status": "passed",
-              "duration": 691000000
+              "status": "skipped"
             }
           }
         ]

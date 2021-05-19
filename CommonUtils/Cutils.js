@@ -1,4 +1,4 @@
-import "/Users/rohit.sakhawalkar/Documents/GitHub/mc-cs-cypress/cypress/support/commands.js"
+
 export class Cutils {
     static openURL(text) {
         cy.visit(text)
@@ -6,20 +6,43 @@ export class Cutils {
     static isOnPage(text) {
         return cy.title().should('include', text)
     }
-
     static typeText(locator, text) {
         cy.xpath(locator).type(text)
     }
-
     static click(locator) {
         cy.xpath(locator).click()
     }
-
-    static NavigateTo(text) {
-        cy.visit(text);
+    static waitForTime(value) {
+        cy.wait(value)
     }
+    static navigateTo(text) {
+        cy.visit(text)
+    }
+    static selectValueFromDropDown(locator, value) {
+        cy.xpath(locator).select(value)
+    }
+    static IsVisible(locator) {
+        return cy.xpath(locator).should('be.visible');
+    }
+    static IsNotEmpty(locator) {
+        cy.xpath(locator).should('not.be.empty');
+    }
+    static isContains(text) {
+        cy.should('contain', text);
+    }
+    static formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
 
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
 
+        return [year, month, day].join('-');
+    }
 
 
 }

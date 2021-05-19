@@ -1,3 +1,4 @@
+@regression @mat
 Feature: Verify that user is able to create and delete roles
 
     @role
@@ -11,5 +12,9 @@ Feature: Verify that user is able to create and delete roles
         Then I should be on "Roles" Page
         When I click New Button On Roles Page
         Then I should be on "New Role" Page
+
+
+
+
 
 
