@@ -23,7 +23,5 @@ export class mauticLoginPage {
         Cutils.click(LoginPageElements.login_Button_xpath);
     }
 
-    static isOnPage(text) {
-        return Cutils.isOnPage(text);
-    }
+
 }

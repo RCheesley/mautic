@@ -19,10 +19,6 @@ When(/^I click Login Button$/, () => {
     mauticLoginPage.clickLoginButton();
 });
 
-Then(/^I should be on "([^"]*)" Page$/, (text) => {
-    return mauticLoginPage.isOnPage(text);
-});
-
 When(/^I click on Roles option$/, () => {
     mauticLoginPage.GoToURL("s/roles");
 });

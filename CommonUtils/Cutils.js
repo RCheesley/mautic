@@ -10,7 +10,7 @@ export class Cutils {
         cy.xpath(locator).type(text)
     }
     static click(locator) {
-        cy.xpath(locator).click()
+        cy.xpath(locator).click({ force: true })
     }
     static waitForTime(value) {
         cy.wait(value)
@@ -27,8 +27,8 @@ export class Cutils {
     static IsNotEmpty(locator) {
         cy.xpath(locator).should('not.be.empty');
     }
-    static isContains(text) {
-        cy.should('contain', text);
+    static isContains(locator, text) {
+        cy.xpath(locator).should('contain', text);
     }
     static formatDate(date) {
         var d = new Date(date),
