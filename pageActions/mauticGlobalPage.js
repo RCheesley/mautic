@@ -23,6 +23,9 @@ export class mauticGlobalPage {
             case 'Remote Asset':
                 input_url = '/s/assets?search=remote';
                 break;
+            case 'Companies':
+                input_url = 's/companies';
+                break;
         }
         console.log(input_url);
         Cutils.navigateTo(input_url);
