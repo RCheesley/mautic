@@ -6,7 +6,7 @@ export class mauticSegments {
         mauticGlobalPage.verifyPageTitle('Segments')
         mauticGlobalPage.waitForPageLoad('Contact Segments')
         Cutils.click(mauticSegmentsElemenets.addNewButton)
-        Cutils.typeText(mauticSegmentsElemenets.segmentName)
+        Cutils.typeText(mauticSegmentsElemenets.segmentName, 'TestSegment')
         Cutils.click(mauticSegmentsElemenets.filterTab)
         Cutils.click(mauticSegmentsElemenets.filterDropDown)
         Cutils.typeText(mauticSegmentsElemenets.filterSearchBox, text)

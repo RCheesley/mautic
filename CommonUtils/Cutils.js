@@ -1,4 +1,5 @@
-
+require('cypress-xpath')
+require('cypress-file-upload')
 export class Cutils {
     static openURL(text) {
         cy.visit(text)
@@ -43,6 +44,8 @@ export class Cutils {
 
         return [year, month, day].join('-');
     }
-
+    static uploadFile(locator, fileName) {
+        cy.xpath(locator).attachFile(fileName, { subjectType: 'drag-n-drop' });
+    }
 
 }

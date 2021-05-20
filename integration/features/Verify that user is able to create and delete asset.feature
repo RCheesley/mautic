@@ -19,8 +19,13 @@ Feature: Verify that user is able to create and delete asset
         When I add Sample "Template" email
         Then I should see Tempalate is created
     @asset
-    Scenario: Add new role for reading contact
-
-
+    Scenario: Add new local asset
+        When I visit "Asset" page
+        Then I should be on "Assets" Page
+        When I click Add New Button on Asset page
+        When I type Asset title as "Local Asset"
+        And I Upload File "Test.png"
+        And I click Save and Close Button on Asset page
+        Then I should see Asset file is uploaded
 
 

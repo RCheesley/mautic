@@ -14,6 +14,9 @@ export class mauticGlobalPage {
             case "Segments":
                 input_url = 's/segments';
                 break;
+            case "Asset":
+                input_url = 's/assets';
+                break;
         }
         console.log(input_url);
         Cutils.navigateTo(input_url);
