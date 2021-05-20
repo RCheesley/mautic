@@ -1,14 +1,16 @@
 import { mauticGlobalPage } from "./mauticGlobalPage";
 
 import { Cutils } from "../CommonUtils/Cutils";
+import { mauticEmailsPageElements } from "../pageElements/mauticEmailsPageElements";
+import { mauticEmailsPage } from "cypress/pageActions/mauticEmailsPage";
 
 export class mauticEmailsPage {
     static CreateEmails(text) {
         var input;
         mauticGlobalPage.verifyPageTitle('Emails')
         mauticGlobalPage.waitForPageLoad('Emails')
-        Cutils.click('//a[contains(@href,"new")]//span[text()="New"]')
-        Cutils.IsVisible('//button[@class="btn btn-lg btn-default btn-nospin text-success"]')
+        Cutils.click(mauticEmailsPageElements.addNewButton)
+        Cutils.IsVisible(mauticEmailsPageElements.templateEmailSelector)
         switch (text) {
             case 'Template':
                 input = 'template';
@@ -17,20 +19,20 @@ export class mauticEmailsPage {
                 input = 'list';
         }
         Cutils.click('//button[contains(@onclick, ' + "\'" + input + "\'" + ')][contains(@class,"text-success")]')
-        Cutils.typeText('//input[@id="emailform_subject"]', 'Test Email')
-        Cutils.typeText('//input[@id="emailform_name"]', 'Test Email')
+        Cutils.typeText(mauticEmailsPageElements.emailSubject, 'Test Email')
+        Cutils.typeText(mauticEmailsPageElements.emailInternalName, 'Test Email')
         if (input == 'list') {
-            Cutils.typeText('//div[@id="emailform_lists_chosen"]//input[@class="chosen-search-input default"]', 'TestSegment')
+            Cutils.typeText(mauticEmailsPageElements.emailSegment, 'TestSegment')
         }
-        Cutils.click('//button[@id="emailform_buttons_save_toolbar"]')
+        Cutils.click(mauticEmailsPageElements.saveEmailButton)
         mauticGlobalPage.waitForPageLoad('Test Email')
-        Cutils.click('//span[text()="Close"]')
-        Cutils.IsVisible('//a[contains(text(),"Test Email")]')
+        Cutils.click(mauticEmailsPageElements.closeButton)
+        Cutils.IsVisible(mauticEmailsPageElements.emailEntryRow)
 
 
     }
 
     static isEmailCreated() {
-        return Cutils.IsVisible('//div[contains(@class,alert)]');
+        return Cutils.IsVisible(mauticEmailsPageElements.alert);
     }
 }

@@ -1,27 +1,27 @@
 
 import { Cutils } from "../CommonUtils/Cutils";
+import { mauticContactsPageElements } from "../pageElements/mauticContactsPageElements";
 import { mauticGlobalPage } from "./mauticGlobalPage";
-import { mauticRolesPage } from "./mauticRolesPage";
+import { mauticContactsPage } from "cypress/pageActions/mauticContactsPage";
 export class mauticContactsPage {
 
     static createContact() {
         mauticGlobalPage.verifyPageTitle('Contacts')
         mauticGlobalPage.waitForPageLoad('Contacts');
-        Cutils.click('//a[contains(@href,"new")]//span[text()="New"]')
+        Cutils.click(mauticContactsPageElements.addNewButton)
         mauticGlobalPage.verifyPageTitle('New Contact')
         mauticGlobalPage.waitForPageLoad('New Contact');
-        Cutils.typeText('//input[@id="lead_title"]', 'Mr')
-        Cutils.typeText('//input[@id="lead_firstname"]', 'testContact')
-        Cutils.typeText('//input[@id="lead_lastname"]', 'Data')
-        Cutils.typeText('//input[@id="lead_email"]', 'testContact@mailtest.mautic.com')
-        Cutils.click('//button[@id="lead_buttons_save_toolbar"]')
-        mauticGlobalPage.waitForPageLoad('testContact Data');
-        Cutils.click('//span[text()="Close"]')
-        // contact.closeButton.click({ force: true });
-        // contact.waitForContactCreation();
+        Cutils.typeText(mauticContactsPageElements.title, 'Mr')
+        Cutils.typeText(mauticContactsPageElements.firstName, 'testContact')
+        Cutils.typeText(mauticContactsPageElements.lastName, 'Data')
+        Cutils.typeText(mauticContactsPageElements.leadEmail, 'testContact@mailtest.mautic.com')
+        Cutils.click(mauticContactsPageElements.SaveButton)
+        mauticGlobalPage.waitForPageLoad('testContact Data')
+        Cutils.click(mauticContactsPageElements.closeButton)
+
     }
 
     static isContactCreated() {
-        return Cutils.IsVisible('//div[contains(@class,alert)]')
+        return Cutils.IsVisible(mauticContactsPageElements.alert)
     }
 }

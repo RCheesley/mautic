@@ -1,6 +1,6 @@
 import { Cutils } from "../CommonUtils/Cutils";
-import { LoginPageElements } from "../pageElements/LoginPageElements";
-import { LoginPageElements } from "cypress/pageElements/LoginPageElements";
+import { mauticLoginPageElements } from "../pageElements/mauticLoginPageElements";
+
 
 
 export class mauticLoginPage {
@@ -13,14 +13,14 @@ export class mauticLoginPage {
     }
 
     static enterUserName() {
-        Cutils.typeText(LoginPageElements.username_xpath, Cypress.env("userName"));
+        Cutils.typeText(mauticLoginPageElements.username_xpath, Cypress.env("userName"));
     }
     static enterpassword() {
-        Cutils.typeText(LoginPageElements.password_xpath, Cypress.env("password"));
+        Cutils.typeText(mauticLoginPageElements.password_xpath, Cypress.env("password"));
     }
 
     static clickLoginButton() {
-        Cutils.click(LoginPageElements.login_Button_xpath);
+        Cutils.click(mauticLoginPageElements.login_Button_xpath);
     }
 
 
