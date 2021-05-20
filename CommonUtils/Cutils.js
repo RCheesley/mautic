@@ -8,6 +8,7 @@ export class Cutils {
         return cy.title().should('include', text)
     }
     static typeText(locator, text) {
+        cy.xpath(locator).clear();
         cy.xpath(locator).type(text)
     }
     static click(locator) {
@@ -46,6 +47,13 @@ export class Cutils {
     }
     static uploadFile(locator, fileName) {
         cy.xpath(locator).attachFile(fileName, { subjectType: 'drag-n-drop' });
+    }
+
+    static IsNotVisible(locator) {
+        return cy.xpath(locator).should('not.be.visible');
+    }
+    static IsNotExist(locator) {
+        return cy.xpath(locator).should('not.exist');
     }
 
 }
