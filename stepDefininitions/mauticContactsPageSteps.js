@@ -9,7 +9,7 @@ When(/^I add Contact$/, () => {
 
 
 Then(/^I should see Contact is Created$/, () => {
-    return mauticContactsPage.isContactCreated();
+    return mauticContactsPage.isContactCreatedOld();
 });
 
 

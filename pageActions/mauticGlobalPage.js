@@ -26,6 +26,12 @@ export class mauticGlobalPage {
             case 'Companies':
                 input_url = 's/companies';
                 break;
+            case 'Emails':
+                input_url = 's/emails';
+                break;
+            case 'Dynamic Content':
+                input_url = 's/dwc';
+                break;
         }
         console.log(input_url);
         Cutils.navigateTo(input_url);

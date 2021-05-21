@@ -1,9 +1,17 @@
 require('cypress-xpath')
 require('cypress-file-upload')
+require('cypress-iframe')
 export class Cutils {
+    static getTime;
+    static flag = false;
     //open url
     static openURL(text) {
         cy.visit(text)
+        // if (!this.flag) {
+        //     this.getTime = (new Date).getTime();
+        //     this.flag = true;
+        // }
+
     }
     //check browser tab title
     static isOnPage(text) {
@@ -77,6 +85,16 @@ export class Cutils {
     //normal file upload for input type controller 
     static uploadFileNormal(locator, fileName) {
         cy.xpath(locator).attachFile(fileName);
+    }
+    //use locator as css selector here
+    static typeTextInsideiFrame(locator, text) {
+        cy.wait(5000)
+        //cy.frameLoaded()
+        cy.get('iframe[class="cke_wysiwyg_frame cke_reset"]').then($element => {
+            const $body = $element.contents().find('body')
+            let stripe = cy.wrap($body)
+            stripe.find(locator).click().clear().type(text)
+        })
     }
 
 

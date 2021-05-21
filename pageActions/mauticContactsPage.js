@@ -22,7 +22,7 @@ export class mauticContactsPage {
 
     }
 
-    static isContactCreated() {
+    static isContactCreatedOld() {
         return Cutils.IsVisible(mauticContactsPageElements.alert)
     }
 
