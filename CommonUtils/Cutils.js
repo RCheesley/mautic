@@ -56,4 +56,10 @@ export class Cutils {
         return cy.xpath(locator).should('not.exist');
     }
 
+    static selectValueFromDropDownNonSelect(locator, text) {
+        this.click(locator);
+        this.typeText(locator + '//input', text);
+        this.click(locator + '//li[contains(.,' + "\'" + text + "\'" + ')]')
+    }
+
 }
