@@ -54,6 +54,15 @@ Then(/^I should see Company "([^"]*)" is deleted$/, (text) => {
     return mauticCompaniesPage.isCompanyDeleted(text)
 });
 
+Then(/^I should see CustomeField "([^"]*)" is displayed$/, (text) => {
+    return mauticCompaniesPage.isCustomeFiledCreated(text);
+});
+
+When(/^I select "([^"]*)" value as "([^"]*)"$/, (text1, text2) => {
+    mauticCompaniesPage.selectValyeFOrCustomFiled(text1, text2);
+});
+
+
 
 
 

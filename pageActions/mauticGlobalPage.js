@@ -32,6 +32,9 @@ export class mauticGlobalPage {
             case 'Dynamic Content':
                 input_url = 's/dwc';
                 break;
+            case 'Custom Fields':
+                input_url = 's/contacts/fields';
+                break;
         }
         console.log(input_url);
         Cutils.navigateTo(input_url);

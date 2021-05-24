@@ -7,11 +7,6 @@ export class Cutils {
     //open url
     static openURL(text) {
         cy.visit(text)
-        // if (!this.flag) {
-        //     this.getTime = (new Date).getTime();
-        //     this.flag = true;
-        // }
-
     }
     //check browser tab title
     static isOnPage(text) {
@@ -19,11 +14,13 @@ export class Cutils {
     }
     //type any string
     static typeText(locator, text) {
+        this.IsVisible(locator)
         cy.xpath(locator).clear();
         cy.xpath(locator).type(text)
     }
     //click any element
     static click(locator) {
+        //this.IsVisible(locator)
         cy.xpath(locator).click({ force: true })
     }
     //method for hardcoded wait
@@ -66,6 +63,7 @@ export class Cutils {
     }
     //drag and drop file upload
     static uploadFile(locator, fileName) {
+        this.IsVisible(locator)
         cy.xpath(locator).attachFile(fileName, { subjectType: 'drag-n-drop' });
     }
     // check is element is disappered dynamic wait
@@ -84,6 +82,7 @@ export class Cutils {
     }
     //normal file upload for input type controller 
     static uploadFileNormal(locator, fileName) {
+        this.IsVisible(locator)
         cy.xpath(locator).attachFile(fileName);
     }
     //use locator as css selector here
@@ -95,6 +94,10 @@ export class Cutils {
             let stripe = cy.wrap($body)
             stripe.find(locator).click().clear().type(text)
         })
+    }
+
+    static pageReload() {
+        cy.reload()
     }
 
 

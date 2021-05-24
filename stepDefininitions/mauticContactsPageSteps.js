@@ -101,6 +101,11 @@ Then(/^I should see "([^"]*)" file upload status is "([^"]*)"$/, (fileName, stat
     return mauticContactsPage.isStatusDisplayed(fileName, status);
 });
 
+Then(/^I should see CustomeField "([^"]*)" is displayed on Contact Page$/, (text) => {
+    return mauticContactsPage.isCustomeFiledCreated(text)
+});
+
+
 
 
 

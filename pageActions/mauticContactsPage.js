@@ -108,4 +108,8 @@ export class mauticContactsPage {
         return Cutils.IsVisible('//a[normalize-space(text())=' + "\'" + fileName + "\'" + ']/preceding::td//span[normalize-space(text())=' + "\'" + status + "\'" + ']')
     }
 
+    static isCustomeFiledCreated(text) {
+        return Cutils.IsVisible('//*[text()=' + "\'" + text + "\'" + ']')
+    }
+
 }
