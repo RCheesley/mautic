@@ -41,6 +41,12 @@ export class mauticGlobalPage {
             case 'Landing Pages':
                 input_url = 's/pages';
                 break;
+            case 'Stages':
+                input_url = 's/stages';
+                break;
+            case 'Points':
+                input_url = 's/points';
+                break;
         }
         console.log(input_url);
         Cutils.navigateTo(input_url);
