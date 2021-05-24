@@ -35,6 +35,9 @@ export class mauticGlobalPage {
             case 'Custom Fields':
                 input_url = 's/contacts/fields';
                 break;
+            case 'Custom Objects':
+                input_url = 's/custom/object';
+                break;
         }
         console.log(input_url);
         Cutils.navigateTo(input_url);

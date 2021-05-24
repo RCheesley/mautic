@@ -3,7 +3,7 @@ import { Cutils } from "../CommonUtils/Cutils";
 import { mauticContactsPageElements } from "../pageElements/mauticContactsPageElements";
 import { mauticGlobalPage } from "./mauticGlobalPage";
 import { mauticContactsPage } from "cypress/pageActions/mauticContactsPage";
-import { Cutils } from "cypress/CommonUtils/Cutils";
+
 export class mauticContactsPage {
 
     static createContact() {
@@ -101,6 +101,7 @@ export class mauticContactsPage {
     static clickImportButton() {
         Cutils.click(mauticContactsPageElements.importButton)
     }
+
     static selectMappingOptionForCompanyAs(text) {
         Cutils.selectValueFromDropDownNonSelect(mauticContactsPageElements.companyMapping, text)
     }
@@ -110,6 +111,24 @@ export class mauticContactsPage {
 
     static isCustomeFiledCreated(text) {
         return Cutils.IsVisible('//*[text()=' + "\'" + text + "\'" + ']')
+    }
+
+    static clickTab(text) {
+        Cutils.IsVisible('//ul[contains(@class,"nav-tabs")][not(@role="tablist")]//a[contains(.,' + "\'" + text + "\'" + ')]')
+        Cutils.click('//ul[contains(@class,"nav-tabs")][not(@role="tablist")]//a[contains(.,' + "\'" + text + "\'" + ')]')
+    }
+    static clickLinkExistingButton(text) {
+        Cutils.click('//*[normalize-space(text())="Link existing"]')
+    }
+    static linkItem(text) {
+        Cutils.IsVisible('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
+        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
+        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
+        Cutils.click('//tr[1]//span[text()="Link"]')
+    }
+
+    static isItemLinked(text) {
+        return Cutils.IsVisible('//div[contains(@class,alert-growl-container)]')
     }
 
 }

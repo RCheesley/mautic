@@ -2,6 +2,7 @@
 import { When } from "cypress-cucumber-preprocessor/steps";
 import { mauticContactsPage } from "../pageActions/mauticContactsPage";
 import { mauticContactsPageElements } from "cypress/pageElements/mauticContactsPageElements";
+import { when } from "cypress/types/jquery";
 
 When(/^I add Contact$/, () => {
     mauticContactsPage.createContact();
@@ -104,6 +105,29 @@ Then(/^I should see "([^"]*)" file upload status is "([^"]*)"$/, (fileName, stat
 Then(/^I should see CustomeField "([^"]*)" is displayed on Contact Page$/, (text) => {
     return mauticContactsPage.isCustomeFiledCreated(text)
 });
+
+When(/^I click on "([^"]*)" tab on Contact Page$/, (text) => {
+    mauticContactsPage.clickTab(text);
+});
+
+When(/^I click Link Existing Button$/, () => {
+    mauticContactsPage.clickLinkExistingButton();
+});
+
+When(/^I Link "([^"]*)" as item$/, (text) => {
+    mauticContactsPage.linkItem(text);
+});
+
+Then(/^I should see "([^"]*)" is linked to Contact$/, (text) => {
+    return mauticContactsPage.isItemLinked(text);
+});
+
+
+
+
+
+
+
 
 
 
