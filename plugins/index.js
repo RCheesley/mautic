@@ -20,6 +20,23 @@ module.exports = (on, config) => {
     ...browserify.defaultOptions,
     typescript: resolve.sync('typescript', { baseDir: config.projectRoot }),
   };
-
   on('file:preprocessor', cucumber(options));
+  const file = 'mautic.' + (config.env.fileConfig || "staging");
+
+  return getConfigurationByFile(file);
 };
+
+
+const fs = require('fs-extra');
+const path = require('path');
+
+function getConfigurationByFile(file) {
+  const pathToConfigFile = path.resolve(
+    '..',
+    'mc-cs-cypress/cypress/configFiles',
+    `${file}.json`
+  );
+
+  return fs.readJson(pathToConfigFile);
+}
+
