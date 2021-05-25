@@ -8,4 +8,7 @@ export class mauticEmailsPageElements {
     static closeButton = '//span[text()="Close"]';
     static emailEntryRow = '//a[contains(text(),"Test Email")]';
     static alert = '//div[contains(@class,alert)]';
+    static AddNewButton = '//span[text()="New"]';
+    static filter = '//input[@id="list-search"]';
+    static EditButton = '//span[text()="Edit"]';
 }

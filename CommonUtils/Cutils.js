@@ -1,6 +1,9 @@
 require("cypress-xpath");
 require("cypress-file-upload");
+require("cypress-iframe");
 export class Cutils {
+  static getTime;
+  static flag = false;
   //open url
   static openURL(text) {
     cy.visit(text);
@@ -11,11 +14,18 @@ export class Cutils {
   }
   //type any string
   static typeText(locator, text) {
+    this.IsVisible(locator);
     cy.xpath(locator).clear();
     cy.xpath(locator).type(text);
   }
+  //clear the selected options
+  static clear(locator) {
+    cy.xpath(locator).clear({ force: true });
+  }
+
   //click any element
   static click(locator) {
+    //this.IsVisible(locator)
     cy.xpath(locator).click({ force: true });
   }
   //method for hardcoded wait
@@ -38,16 +48,14 @@ export class Cutils {
   static IsNotEmpty(locator) {
     cy.xpath(locator).should("not.be.empty");
   }
+  //check if element not contais text
+  static isNotContains(locator, text) {
+    cy.xpath(locator).should("not.contain", text);
+  }
   //check if element contais text
   static isContains(locator, text) {
     cy.xpath(locator).should("contain", text);
   }
-
-  //check if element contais text
-  static isNotContains(locator, text) {
-    cy.xpath(locator).should("not.contain", text);
-  }
-
   //returns date in desired format
   static formatDate(date) {
     var d = new Date(date),
@@ -62,16 +70,26 @@ export class Cutils {
   }
   //drag and drop file upload
   static uploadFile(locator, fileName) {
+    this.IsVisible(locator);
     cy.xpath(locator).attachFile(fileName, { subjectType: "drag-n-drop" });
   }
   // check is element is disappered dynamic wait
   static IsNotVisible(locator) {
     return cy.xpath(locator).should("not.be.visible");
   }
+  //scroll to view the element
+  static scrollToView(locator) {
+    cy.xpath(locator).scrollIntoView();
+  }
   //check if element is removed from page
   static IsNotExist(locator) {
     return cy.xpath(locator).should("not.exist");
   }
+  // check if element is enabled
+  static isEnabled(locator) {
+    return cy.xpath(locator).should("be.enabled");
+  }
+
   //select value from dropdown for not select type dropdowns
   static selectValueFromDropDownNonSelect(locator, text) {
     this.click(locator);
@@ -80,22 +98,21 @@ export class Cutils {
   }
   //normal file upload for input type controller
   static uploadFileNormal(locator, fileName) {
+    this.IsVisible(locator);
     cy.xpath(locator).attachFile(fileName);
   }
-  //scroll to view the element
-  static scrollToView(locator) {
-    cy.xpath(locator).scrollIntoView();
+  //use locator as css selector here
+  static typeTextInsideiFrame(locator, text) {
+    cy.wait(5000);
+    //cy.frameLoaded()
+    cy.get('iframe[class="cke_wysiwyg_frame cke_reset"]').then(($element) => {
+      const $body = $element.contents().find("body");
+      let stripe = cy.wrap($body);
+      stripe.find(locator).click().clear().type(text);
+    });
   }
-  // check if element is enabled
-  static isEnabled(locator) {
-    return cy.xpath(locator).should("be.enabled");
-  }
-  // reload the page
-  static reloadPage() {
-    return cy.reload();
-  }
-  //clear the selected options
-  static clear(locator) {
-    cy.xpath(locator).clear({ force: true });
+
+  static pageReload() {
+    cy.reload();
   }
 }

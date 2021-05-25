@@ -1,5 +1,6 @@
 import { mauticDashBoardPageElements } from "../pageElements/mauticDashBoardPageElements";
 import { Cutils } from "../CommonUtils/Cutils";
+import { Cutils } from "cypress/CommonUtils/Cutils";
 
 
 export class mauticDashBoardPage {
@@ -7,5 +8,10 @@ export class mauticDashBoardPage {
         Cutils.click(mauticDashBoardPageElements.SettingsIcon)
         Cutils.IsVisible('//span[text()= ' + "\'" + input + "\'" + ']')
         Cutils.click('//span[text()= ' + "\'" + input + "\'" + ']')
+    }
+
+    static clickOptionOnLeftNavigationBar(text) {
+        Cutils.IsVisible('//*[@class="app-sidebar sidebar-left"]//span[text()=' + "\'" + text + "\'" + ']');
+        Cutils.click('//*[@class="app-sidebar sidebar-left"]//span[text()=' + "\'" + text + "\'" + ']');
     }
 }

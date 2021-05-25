@@ -2,6 +2,7 @@
 import { Cutils } from "../CommonUtils/Cutils";
 import { mauticCompaniesPageElements } from "../pageElements/mauticCompaniesPageElements";
 import { mauticContactsPageElements } from "cypress/pageElements/mauticContactsPageElements";
+import { Cutils } from "cypress/CommonUtils/Cutils";
 export class mauticCompaniesPage {
     static clickAddNewButton() {
         Cutils.click(mauticCompaniesPageElements.addNewButton)
@@ -44,5 +45,11 @@ export class mauticCompaniesPage {
     }
     static isCompanyDeleted(text) {
         return Cutils.IsNotExist('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+    }
+    static isCustomeFiledCreated(text) {
+        return Cutils.IsVisible('//*[text()=' + "\'" + text + "\'" + ']')
+    }
+    static selectValyeFOrCustomFiled(text1, text2) {
+        Cutils.click('//*[text()=' + "\'" + text1 + "\'" + ']/following::span[text()=' + "\'" + text2 + "\'" + ']')
     }
 }

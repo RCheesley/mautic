@@ -1,5 +1,4 @@
 import { Cutils } from "../CommonUtils/Cutils";
-
 export class mauticGlobalPage {
   static goToURL(text) {
     var input_url;
@@ -24,6 +23,27 @@ export class mauticGlobalPage {
         break;
       case "Companies":
         input_url = "s/companies";
+        break;
+      case "Emails":
+        input_url = "s/emails";
+        break;
+      case "Dynamic Content":
+        input_url = "s/dwc";
+        break;
+      case "Custom Fields":
+        input_url = "s/contacts/fields";
+        break;
+      case "Custom Objects":
+        input_url = "s/custom/object";
+        break;
+      case "Landing Pages":
+        input_url = "s/pages";
+        break;
+      case "Stages":
+        input_url = "s/stages";
+        break;
+      case "Points":
+        input_url = "s/points";
         break;
       case "Campaigns":
         input_url = "s/campaigns";

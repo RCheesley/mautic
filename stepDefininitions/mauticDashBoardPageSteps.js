@@ -7,3 +7,10 @@ When(/^I select "([^"]*)" option in settings$/, (text) => {
 });
 
 
+When(/^I click "([^"]*)" option on Dashboard Page$/, (text) => {
+    mauticDashBoardPage.clickOptionOnLeftNavigationBar(text);
+});
+
+
+
+

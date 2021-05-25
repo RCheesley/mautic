@@ -12,6 +12,10 @@
       {
         "name": "@mat",
         "line": 1
+      },
+      {
+        "name": "@roles",
+        "line": 1
       }
     ],
     "uri": "Verify that user is able to create and delete roles.feature",
@@ -19,7 +23,7 @@
       {
         "id": "verify-that-user-is-able-to-create-and-delete-roles;add-new-role-for-reading-contact",
         "keyword": "Scenario",
-        "line": 5,
+        "line": 11,
         "name": "Add new role for reading contact",
         "tags": [
           {
@@ -31,8 +35,12 @@
             "line": 1
           },
           {
-            "name": "@role",
-            "line": 4
+            "name": "@roles",
+            "line": 1
+          },
+          {
+            "name": "@Add_new_role",
+            "line": 10
           }
         ],
         "type": "scenario",
@@ -40,84 +48,308 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 6,
+            "line": 4,
             "name": "I am on Mautic Login Page",
             "result": {
-              "status": "failed",
-              "duration": 60096000000,
-              "error_message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://csk7.dev.mautic.net/__cypress/runner/cypress_runner.js:158187:13)\n    at https://csk7.dev.mautic.net/__cypress/runner/cypress_runner.js:159171:16\nFrom previous event:\n    at Context.visit (https://csk7.dev.mautic.net/__cypress/runner/cypress_runner.js:159170:61)\nFrom Your Spec Code:\n    at Function.Cutils.openURL (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:9:12)\n    at Function.mauticLoginPage.openLoginpage (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:66:25)\n    at Context.eval (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:122:39)\n    at Context.resolveAndRunStepDefinition (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:12377:9)\n    at Context.eval (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:11718:35)\nFrom Your Spec Code:\n    at Function.Cutils.openURL (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:9:12)\n    at Function.mauticLoginPage.openLoginpage (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:66:25)\n    at Context.eval (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:122:39)\n    at Context.resolveAndRunStepDefinition (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:12377:9)\n    at Context.eval (https://csk7.dev.mautic.net/__cypress/tests?p=cypress/integration/features/Verify%20that%20user%20is%20able%20to%20create%20and%20delete%20roles.feature:11718:35)"
+              "status": "passed",
+              "duration": 8147000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 7,
+            "line": 5,
             "name": "I type User Name on Login Page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 673000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 8,
+            "line": 6,
             "name": "I type Password on Login Page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 467000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 9,
+            "line": 7,
             "name": "I click Login Button",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 5756000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 10,
+            "line": 8,
             "name": "I should be on \"Dashboard\" Page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 35000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 11,
-            "name": "I click on Roles option",
+            "line": 12,
+            "name": "I select \"Roles\" option in settings",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 350000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 12,
+            "line": 13,
             "name": "I should be on \"Roles\" Page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 503000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 13,
-            "name": "I click New Button On Roles Page",
+            "line": 14,
+            "name": "I click Add New Button on Roles page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 125000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I type Roles Name as \"Standard\"",
+            "result": {
+              "status": "passed",
+              "duration": 1356000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click on \"Permissions\" tab on Roles Page",
+            "result": {
+              "status": "passed",
+              "duration": 129000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I Give Permission as \"Granted\" for \"API Access\" on \"API Permissions\" section",
+            "result": {
+              "status": "passed",
+              "duration": 509000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I Give Permission as \"Full\" for \"Clients (Applications) - User has access to\" on \"API Permissions\" section",
+            "result": {
+              "status": "passed",
+              "duration": 377000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I Give Permission as \"Full\" for \"Contacts - User has access to\" on \"Contact Permissions\" section",
+            "result": {
+              "status": "passed",
+              "duration": 489000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I Give Permission as \"Full\" for \"Segments - User has access to\" on \"Contact Permissions\" section",
+            "result": {
+              "status": "passed",
+              "duration": 378000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I Give Permission as \"Manage\" for \"Custom Fields - User has access to\" on \"Contact Permissions\" section",
+            "result": {
+              "status": "passed",
+              "duration": 381000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I Give Permission as \"Full\" for \"Import - User has access to\" on \"Contact Permissions\" section",
+            "result": {
+              "status": "passed",
+              "duration": 391000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "I click Save and Close Button on Roles Page",
+            "result": {
+              "status": "passed",
+              "duration": 190000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 14,
-            "name": "I should be on \"New Role\" Page",
+            "line": 24,
+            "name": "I should see \"Standard\" Role is Created on Roles Page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 1878000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "verify-that-user-is-able-to-create-and-delete-roles;search-and-delete-newly-added-role",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "Search and delete newly added role",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@mat",
+            "line": 1
+          },
+          {
+            "name": "@roles",
+            "line": 1
+          },
+          {
+            "name": "@deleterole",
+            "line": 26
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 3452000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 647000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 457000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 4208000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 28000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "I select \"Roles\" option in settings",
+            "result": {
+              "status": "passed",
+              "duration": 320000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "I should be on \"Roles\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 511000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "I search Role as \"Standard\"",
+            "result": {
+              "status": "passed",
+              "duration": 647000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "I delete the \"Standard\" Role Page",
+            "result": {
+              "status": "passed",
+              "duration": 946000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "I should see Role \"Standard\" is deleted",
+            "result": {
+              "status": "passed",
+              "duration": 468000000
             }
           }
         ]

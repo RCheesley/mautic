@@ -2,6 +2,7 @@
 import { When } from "cypress-cucumber-preprocessor/steps";
 import { mauticContactsPage } from "../pageActions/mauticContactsPage";
 import { mauticContactsPageElements } from "cypress/pageElements/mauticContactsPageElements";
+import { when } from "cypress/types/jquery";
 
 When(/^I add Contact$/, () => {
     mauticContactsPage.createContact();
@@ -9,7 +10,7 @@ When(/^I add Contact$/, () => {
 
 
 Then(/^I should see Contact is Created$/, () => {
-    return mauticContactsPage.isContactCreated();
+    return mauticContactsPage.isContactCreatedOld();
 });
 
 
@@ -25,6 +26,7 @@ When(/^I type Contact First Name as "([^"]*)"$/, (text) => {
     mauticContactsPage.typeContactFirstNameaAs(text);
 
 });
+
 
 When(/^I type Conact Last Name as "([^"]*)"$/, (text) => {
     mauticContactsPage.typeContactLastNameaAs(text);
@@ -100,6 +102,34 @@ When(/^I select mapping option for Company as "([^"]*)"$/, (text) => {
 Then(/^I should see "([^"]*)" file upload status is "([^"]*)"$/, (fileName, status) => {
     return mauticContactsPage.isStatusDisplayed(fileName, status);
 });
+
+Then(/^I should see CustomeField "([^"]*)" is displayed on Contact Page$/, (text) => {
+    return mauticContactsPage.isCustomeFiledCreated(text)
+});
+
+When(/^I click on "([^"]*)" tab on Contact Page$/, (text) => {
+    mauticContactsPage.clickTab(text);
+});
+
+When(/^I click Link Existing Button$/, () => {
+    mauticContactsPage.clickLinkExistingButton();
+});
+
+When(/^I Link "([^"]*)" as item$/, (text) => {
+    mauticContactsPage.linkItem(text);
+});
+
+Then(/^I should see "([^"]*)" is linked to Contact$/, (text) => {
+    return mauticContactsPage.isItemLinked(text);
+});
+
+
+
+
+
+
+
+
 
 
 
