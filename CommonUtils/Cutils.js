@@ -80,6 +80,12 @@ export class Cutils {
         this.typeText(locator + '//input', text);
         this.click(locator + '//li[contains(.,' + "\'" + text + "\'" + ')]')
     }
+    //select value from dropdown for not select type dropdowns with keyboard enter key
+    static selectValueFromDropDownNonSelectWithEnterKey(locator, text) {
+        this.click(locator);
+        this.typeText(locator + '//input', text);
+        cy.xpath(locator + '//input').type('{enter}')
+    }
     //normal file upload for input type controller 
     static uploadFileNormal(locator, fileName) {
         this.IsVisible(locator)
