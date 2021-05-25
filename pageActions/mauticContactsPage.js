@@ -53,7 +53,7 @@ export class mauticContactsPage {
         Cutils.click(mauticContactsPageElements.closeButton)
     }
     static isContactCreated(text) {
-        Cutils.IsVisible('//div[contains(@class,alert-growl-container)]//*[text()=' + "\'" + text + "\'" + ']')
+        Cutils.IsVisible('//div[contains(@class,alert-growl-container)]//*[contains(text(), ' + "\'" + text + "\'" + ')]')
         return Cutils.IsVisible('//tr[1]//a//div[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
     static searchContact(text) {

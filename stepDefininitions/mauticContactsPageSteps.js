@@ -27,6 +27,7 @@ When(/^I type Contact First Name as "([^"]*)"$/, (text) => {
 
 });
 
+
 When(/^I type Conact Last Name as "([^"]*)"$/, (text) => {
     mauticContactsPage.typeContactLastNameaAs(text);
 

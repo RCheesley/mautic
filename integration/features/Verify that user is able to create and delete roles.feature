@@ -23,7 +23,7 @@ Feature: Verify that user is able to create and delete roles
         And I click Save and Close Button on Roles Page
         Then I should see "Standard" Role is Created on Roles Page
 
-    @deleterole
+    @delete_role
     Scenario: Search and delete newly added role
         When I select "Roles" option in settings
         Then I should be on "Roles" Page

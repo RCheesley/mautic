@@ -9,6 +9,7 @@ export class mauticSegmentsElemenets {
     static saveAndCloseButton = '//button[@id="leadlist_buttons_save_toolbar"]';
     static alert = '//div[contains(@class,alert)]';
     static segmentHeader = '//a[contains(text(),"TestSegment")]';
-
-
+    static EditButton = '//span[text()="Edit"]';
+    static CloseButton = '//span[text()="Close"]';
+    static filter = '//input[@id="list-search"]';
 }
