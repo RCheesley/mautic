@@ -4,7 +4,7 @@ import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 
 
 Given(/^I am on Mautic Login Page$/, () => {
-    mauticLoginPage.openLoginpage("/");
+    mauticLoginPage.openLoginpage("s/login");
 });
 
 When(/^I type User Name on Login Page$/, () => {

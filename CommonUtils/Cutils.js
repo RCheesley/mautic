@@ -21,7 +21,7 @@ export class Cutils {
     //click any element
     static click(locator) {
         //this.IsVisible(locator)
-        cy.xpath(locator).click({ force: true })
+        cy.xpath(locator).first().click({ force: true })
     }
     //method for hardcoded wait
     static waitForTime(value) {

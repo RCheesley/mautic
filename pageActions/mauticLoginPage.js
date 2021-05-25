@@ -4,8 +4,8 @@ import { mauticLoginPageElements } from "../pageElements/mauticLoginPageElements
 
 
 export class mauticLoginPage {
-    static openLoginpage() {
-        Cutils.openURL('/');
+    static openLoginpage(text) {
+        Cutils.openURL(text);
     }
 
     static GoToURL(text) {

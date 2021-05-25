@@ -47,6 +47,9 @@ export class mauticGlobalPage {
             case 'Points':
                 input_url = 's/points';
                 break;
+            case 'Forms':
+                input_url = 's/forms';
+                break;
         }
         console.log(input_url);
         Cutils.navigateTo(input_url);
