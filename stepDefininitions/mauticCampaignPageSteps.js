@@ -37,6 +37,10 @@ And(/^I add event name "([^"]*)" and channel as "([^"]*)"$/, (args1, args2) => {
   mauticCampaignPage.addContactInDNC(args1, args2);
 });
 
+And(/^I add event name "([^"]*)" and add "([^"]*)" points$/, (args1, args2) => {
+  mauticCampaignPage.adjustContactsPoints(args1, args2);
+});
+
 And(/^I apply changes to builder and close the builder$/, () => {
   mauticCampaignPage.applyChangesToBuilder();
 });
@@ -79,3 +83,19 @@ Then(
     );
   }
 );
+
+Then(/^I check that contact has gained "([^"]*)"$/, (args1) => {
+  mauticCampaignPage.checkContactGainPoints(args1);
+});
+
+When(/^I search campaign "([^"]*)"$/, (args1) => {
+  mauticCampaignPage.searchCampaign(args1);
+});
+
+When(/^I delete campaign "([^"]*)"$/, (args1) => {
+  mauticCampaignPage.deleteCampaign(args1);
+});
+
+Then(/^I should see campaign "([^"]*)" is deleted$/, (args1) => {
+  mauticCampaignPage.isCampaignDeleted(args1);
+});
