@@ -23,5 +23,14 @@ When(/^I click on Roles option$/, () => {
     mauticLoginPage.GoToURL("s/roles");
 });
 
+When(/^I type User Name as "([^"]*)" on Login Page$/, (text) => {
+    mauticLoginPage.enterUserNameCreated(text);
+});
+
+When(/^I type Password as "([^"]*)" on Login Page$/, (text) => {
+    mauticLoginPage.enterpasswordCreated(text);
+});
+
+
 
 

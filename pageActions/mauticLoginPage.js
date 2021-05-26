@@ -22,6 +22,12 @@ export class mauticLoginPage {
     static clickLoginButton() {
         Cutils.click(mauticLoginPageElements.login_Button_xpath);
     }
+    static enterUserNameCreated(text) {
+        Cutils.typeText(mauticLoginPageElements.username_xpath, text);
+    }
+    static enterpasswordCreated(text) {
+        Cutils.typeText(mauticLoginPageElements.password_xpath, text);
+    }
 
 
 }
