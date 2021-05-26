@@ -53,4 +53,5 @@ export class mauticCampaignsPageElements {
   static adjustPoints = '//div[@id="campaignevent_properties"]';
   static contactsPoints = '//div[@class="mt-sm points-panel text-center"]/h1';
   static filter = '//input[@id="list-search"]';
+  static loadingBarActive = '//div[@class="loading-bar active"]';
 }
