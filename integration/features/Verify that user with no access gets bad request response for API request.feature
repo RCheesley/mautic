@@ -1,4 +1,4 @@
-@regression @mat @users
+@regression @mat @credentials_standard
 Feature: Verify that user is able to attach role to the user and logged in successfully as per role privilege
     Background: Login to Application and Create contact / segment / email
         Given I am on Mautic Login Page
@@ -38,29 +38,38 @@ Feature: Verify that user is able to attach role to the user and logged in succe
         And I click Save And Close Button on Users Page
         Then I shoudl see User "Test User" is created on Users Page
 
-    @login_new_user
-    Scenario: logout and login with created user
+    @verify_credentials
+    Scenario: Verify that user is not authorised for this API action
         When I Log out of the Application
         Then I should be on "Mautic" Page
         When I type User Name as "StandardAccount" on Login Page
         And I type Password as "Standard@12345" on Login Page
         And I click Login Button
         Then I should be on "Dashboard" Page
-        Then I should see "Dashboard" option is present on DashBoard Page
-        Then I should see "Calendar" option is present on DashBoard Page
-        Then I should see "Contacts" option is present on DashBoard Page
-        Then I should see "Companies" option is present on DashBoard Page
-        Then I should see "Segments" option is present on DashBoard Page
-        Then I should see "Components" option is present on DashBoard Page
-        Then I should see "Channels" option is present on DashBoard Page
-        Then I should see "Collapse Menu" option is present on DashBoard Page
+        When I select "API Credentials" option in settings
+        Then I should be on "API Credentials" Page
+        When I click Add New Button on API Credentials Page
+        And I select Authorization Protocol As "OAuth 2" on API Credentials Page
+        And I type Credentials Name as "testCredentials" on API Credentials Page
+        And I type Callback URI as "https://on.cypress.io" on API Credentials Page
+        And I click Save And Close Button on API Credentials Page
+        Then I should see "testCredentials" are created on API Credentials Page
+        And I should get HTTP status code "400" with response message as "The grant type is unauthorized for this client_id"
 
+    @delete_user
+    Scenario: Search and Delete Credentials
+        When I select "API Credentials" option in settings
+        Then I should be on "API Credentials" Page
+        When I select Authentication Type as "OAuth 2" on API Credentials Page
+        And I search Credentials "testCredentials" on API Credentials Page
+        And I delete Credentials "testCredentials" on API Credentials Page
+        Then I should see "testCredentials" on API Credentials Page
 
     @delete_user
     Scenario: Search And Delete User
         When I select "Users" option in settings
         Then I should be on "Users" Page
-        When I search user "User, Test" on Users Page
+        When I search user "Test" on Users Page
         And I delete user "User, Test" on Users Page
         Then I should see "Test User" is deleted on Users Page
 
