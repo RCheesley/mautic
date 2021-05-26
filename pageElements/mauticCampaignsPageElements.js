@@ -54,4 +54,12 @@ export class mauticCampaignsPageElements {
   static contactsPoints = '//div[@class="mt-sm points-panel text-center"]/h1';
   static filter = '//input[@id="list-search"]';
   static loadingBarActive = '//div[@class="loading-bar active"]';
+  static selectCompany = '//div[@id="campaignevent_properties_company_chosen"]';
+  static actionsEventsName = '//h5[@class="fw-sb text-primary mb-xs"]';
+  static actionPerformed = "//div//em";
+  static companyNamePresentUnderContacts =
+    '(//div[@class="text-muted mb-1 ellipsis"])[1]';
+  static companiesInContactDetails = '//span[@class="label label-success"]';
+  static companyScore = '//input[@id="campaignevent_properties_score"]';
+  static scoreOnCompanyEdit = '//input[@id="company_score"]';
 }
