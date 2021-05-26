@@ -20,12 +20,12 @@ export class Cutils {
   }
   //clear the selected options
   static clear(locator) {
-    cy.xpath(locator).clear({ force: true });
+    if (cy.xpath(locator).should("not.be.empty") == true) {
+      cy.xpath(locator).clear();
+    }
   }
-
   //click any element
   static click(locator) {
-    //this.IsVisible(locator)
     cy.xpath(locator).click({ force: true });
   }
   //method for hardcoded wait
@@ -111,7 +111,6 @@ export class Cutils {
       stripe.find(locator).click().clear().type(text);
     });
   }
-
   static pageReload() {
     cy.reload();
   }
