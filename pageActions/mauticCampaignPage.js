@@ -144,6 +144,7 @@ export class mauticCampaignPage {
       mauticCampaignsPageElements.includeEventsBySource,
       text
     );
+    Cutils.IsNotExist(mauticCampaignsPageElements.loadingBarActive);
   }
 
   static checkEventsTriggeredSuccessfullyContactHistory(
