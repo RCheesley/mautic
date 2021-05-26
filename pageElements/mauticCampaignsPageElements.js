@@ -49,4 +49,8 @@ export class mauticCampaignsPageElements {
   static eventTypeTriggeredByContact = '(//td[@class="timeline-type"])[1]';
   static eventTimeStampTriggeredByContact =
     '(//td[@class="timeline-timestamp"])[1]';
+  static contactsEngagement = '//h5[contains(text(),"Engagements")]';
+  static adjustPoints = '//div[@id="campaignevent_properties"]';
+  static contactsPoints = '//div[@class="mt-sm points-panel text-center"]/h1';
+  static filter = '//input[@id="list-search"]';
 }
