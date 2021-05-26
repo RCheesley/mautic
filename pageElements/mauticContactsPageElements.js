@@ -16,4 +16,5 @@ export class mauticContactsPageElements {
     static uploadButton = '//button[@id="lead_import_start"]';
     static importButton = '//button[@class="btn btn-primary btn-copy"]';
     static companyMapping = '//div[@id="lead_field_import_company_chosen"]';
+    static ContactPoint = '//input[@id="lead_points"]';
 }

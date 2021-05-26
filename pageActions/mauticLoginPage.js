@@ -4,8 +4,8 @@ import { mauticLoginPageElements } from "../pageElements/mauticLoginPageElements
 
 
 export class mauticLoginPage {
-    static openLoginpage() {
-        Cutils.openURL('/');
+    static openLoginpage(text) {
+        Cutils.openURL(text);
     }
 
     static GoToURL(text) {
@@ -21,6 +21,12 @@ export class mauticLoginPage {
 
     static clickLoginButton() {
         Cutils.click(mauticLoginPageElements.login_Button_xpath);
+    }
+    static enterUserNameCreated(text) {
+        Cutils.typeText(mauticLoginPageElements.username_xpath, text);
+    }
+    static enterpasswordCreated(text) {
+        Cutils.typeText(mauticLoginPageElements.password_xpath, text);
     }
 
 

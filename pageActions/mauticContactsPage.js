@@ -131,4 +131,8 @@ export class mauticContactsPage {
         return Cutils.IsVisible('//div[contains(@class,alert-growl-container)]')
     }
 
+    static typeContactPointAs(text) {
+        Cutils.typeText(mauticContactsPageElements.ContactPoint, text)
+    }
+
 }

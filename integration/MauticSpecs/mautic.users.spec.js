@@ -3,7 +3,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const user = require("../../Pages/Users");
-const search=require("../../Pages/Search");
+const search = require("../../Pages/Search");
 const roles = require("../../Pages/Roles");
 
 var username = "StandardAccount"
@@ -52,7 +52,7 @@ context("Verify that user is able to attach role to the user and logged in succe
     user.saveUser.click()
     user.waitTillUserGetsCreated()
   });
-  
+
   it("logout and login with created user", () => {
     user.clickOnUserName.click()
     user.clickOnLogoutButton.click()
@@ -84,13 +84,13 @@ context("Verify that user is able to attach role to the user and logged in succe
   it("Search and delete newly added role", () => {
     cy.visit("s/roles");
     roles.waitForPageLoad();
-    cy.visit('/s/roles?search='+ readRole);
+    cy.visit('/s/roles?search=' + readRole);
     search.selectCheckBoxForFirstItem.click();
     search.OptionsDropdownForFirstItem.click();
     search.deleteButtonForFirstItem.click();
     search.confirmDeleteButton.click();
   });
 
-  });
+});
 
 

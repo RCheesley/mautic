@@ -1,5 +1,6 @@
 import { Cutils } from "../CommonUtils/Cutils";
 export class mauticGlobalPage {
+
   static goToURL(text) {
     var input_url;
     switch (text) {
@@ -48,9 +49,9 @@ export class mauticGlobalPage {
       case "Campaigns":
         input_url = "s/campaigns";
         break;
-    }
-    console.log(input_url);
-    Cutils.navigateTo(input_url);
+        }
+        console.log(input_url);
+        Cutils.navigateTo(input_url);
   }
 
   static verifyPageTitle(text) {

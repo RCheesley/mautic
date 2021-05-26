@@ -2,6 +2,7 @@ require("cypress-xpath");
 require("cypress-file-upload");
 require("cypress-iframe");
 export class Cutils {
+
   static getTime;
   static flag = false;
   //open url
@@ -62,6 +63,7 @@ export class Cutils {
       month = "" + (d.getMonth() + 1),
       day = "" + d.getDate(),
       year = d.getFullYear();
+
 
     if (month.length < 2) month = "0" + month;
     if (day.length < 2) day = "0" + day;

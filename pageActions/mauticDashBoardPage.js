@@ -14,4 +14,11 @@ export class mauticDashBoardPage {
         Cutils.IsVisible('//*[@class="app-sidebar sidebar-left"]//span[text()=' + "\'" + text + "\'" + ']');
         Cutils.click('//*[@class="app-sidebar sidebar-left"]//span[text()=' + "\'" + text + "\'" + ']');
     }
+    static logOutApplication() {
+        Cutils.click(mauticDashBoardPageElements.userIcon)
+        Cutils.click(mauticDashBoardPageElements.logOut)
+    }
+    static isOptionPresent(text) {
+        return Cutils.IsVisible('//*[@class="app-sidebar sidebar-left"]//span[text()=' + "\'" + text + "\'" + ']')
+    }
 }

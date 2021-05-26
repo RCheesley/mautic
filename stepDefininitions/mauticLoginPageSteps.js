@@ -4,7 +4,7 @@ import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 
 
 Given(/^I am on Mautic Login Page$/, () => {
-    mauticLoginPage.openLoginpage("/");
+    mauticLoginPage.openLoginpage("s/login");
 });
 
 When(/^I type User Name on Login Page$/, () => {
@@ -22,6 +22,15 @@ When(/^I click Login Button$/, () => {
 When(/^I click on Roles option$/, () => {
     mauticLoginPage.GoToURL("s/roles");
 });
+
+When(/^I type User Name as "([^"]*)" on Login Page$/, (text) => {
+    mauticLoginPage.enterUserNameCreated(text);
+});
+
+When(/^I type Password as "([^"]*)" on Login Page$/, (text) => {
+    mauticLoginPage.enterpasswordCreated(text);
+});
+
 
 
 
