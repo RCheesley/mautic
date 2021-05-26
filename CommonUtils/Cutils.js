@@ -89,7 +89,6 @@ export class Cutils {
   static isEnabled(locator) {
     return cy.xpath(locator).should("be.enabled");
   }
-
   //select value from dropdown for not select type dropdowns
   static selectValueFromDropDownNonSelect(locator, text) {
     this.click(locator);
