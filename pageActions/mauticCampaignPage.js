@@ -67,6 +67,14 @@ export class mauticCampaignPage {
     );
     Cutils.click(mauticCampaignsPageElements.addButtonForModel);
   }
+  static adjustContactsPoints(eventName, points) {
+    Cutils.IsVisible(mauticCampaignsPageElements.addNameForEvent);
+    Cutils.typeText(mauticCampaignsPageElements.addNameForEvent, eventName);
+    Cutils.clear(mauticCampaignsPageElements.adjustPoints);
+    Cutils.typeText(mauticCampaignsPageElements.adjustPoints, points);
+    Cutils.click(mauticCampaignsPageElements.addButtonForModel);
+  }
+
   static applyChangesToBuilder() {
     Cutils.IsVisible(mauticCampaignsPageElements.applyChangesToBuilder);
     Cutils.click(mauticCampaignsPageElements.applyChangesToBuilder);
@@ -80,7 +88,7 @@ export class mauticCampaignPage {
   }
   static hardCodedWaitAddedforCampaignGetsPublished() {
     Cutils.waitForTime(10000);
-    Cutils.reloadPage();
+    Cutils.pageReload();
   }
   static selectCampaignTab(text) {
     if (text == "Preview") {
@@ -112,6 +120,7 @@ export class mauticCampaignPage {
   }
 
   static checkThatConatctHasDoNotContactLabel(label) {
+    Cutils.IsVisible(mauticCampaignsPageElements.contactsEngagement);
     if (label == "have") {
       Cutils.IsVisible(mauticCampaignsPageElements.doNotContactLabel);
       Cutils.isContains(
@@ -154,6 +163,39 @@ export class mauticCampaignPage {
     Cutils.isContains(
       mauticCampaignsPageElements.eventTimeStampTriggeredByContact,
       eventTimestamp
+    );
+  }
+  static checkContactGainPoints(points) {
+    Cutils.IsVisible(mauticCampaignsPageElements.contactsPoints);
+    Cutils.isContains(mauticCampaignsPageElements.contactsPoints, points);
+  }
+
+  static searchCampaign(campaignName) {
+    Cutils.IsVisible(mauticCampaignsPageElements.filter);
+    Cutils.typeText(mauticCampaignsPageElements.filter, campaignName);
+  }
+  static deleteCampaign(text) {
+    Cutils.click(
+      "//tr[1]//a[contains(text(), " +
+        "'" +
+        text +
+        "'" +
+        ')]/preceding::td//div//input[@type="checkbox"]'
+    );
+    Cutils.click(
+      "//tr[1]//a[contains(text(), " +
+        "'" +
+        text +
+        "'" +
+        ')]/preceding::td//div[@class="input-group-btn"]'
+    );
+    Cutils.click('//tr[1]//span[text()="Delete"]');
+    Cutils.IsVisible('//button[text()="Delete"]');
+    Cutils.click('//button[text()="Delete"]');
+  }
+  static isCampaignDeleted(text) {
+    return Cutils.IsNotExist(
+      "//tr[1]//a[contains(text(), " + "'" + text + "'" + ")]"
     );
   }
 }
