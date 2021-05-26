@@ -75,6 +75,36 @@ export class mauticCampaignPage {
     Cutils.click(mauticCampaignsPageElements.addButtonForModel);
   }
 
+  static selectCompanyToAdd(eventName, companyName) {
+    Cutils.IsVisible(mauticCampaignsPageElements.addNameForEvent);
+    Cutils.typeText(mauticCampaignsPageElements.addNameForEvent, eventName);
+    Cutils.selectValueFromDropDownNonSelect(
+      mauticCampaignsPageElements.selectCompany,
+      companyName
+    );
+    Cutils.click(mauticCampaignsPageElements.addButtonForModel);
+  }
+
+  static addToCompanyScore(eventName, score) {
+    Cutils.IsVisible(mauticCampaignsPageElements.addNameForEvent);
+    Cutils.typeText(mauticCampaignsPageElements.addNameForEvent, eventName);
+    Cutils.typeText(mauticCampaignsPageElements.companyScore, score);
+    Cutils.click(mauticCampaignsPageElements.addButtonForModel);
+  }
+
+  static clickOnCompanyNameAndCheckScore(companyName, score) {
+    Cutils.IsVisible(mauticCampaignsPageElements.companiesInContactDetails);
+    Cutils.click(
+      mauticCampaignsPageElements.companiesInContactDetails +
+        "/a[contains(text()," +
+        '"' +
+        companyName +
+        '")]'
+    );
+    Cutils.IsVisible(mauticCampaignsPageElements.scoreOnCompanyEdit);
+    Cutils.isContains(mauticCampaignsPageElements.scoreOnCompanyEdit, score);
+  }
+
   static applyChangesToBuilder() {
     Cutils.IsVisible(mauticCampaignsPageElements.applyChangesToBuilder);
     Cutils.click(mauticCampaignsPageElements.applyChangesToBuilder);
@@ -171,6 +201,20 @@ export class mauticCampaignPage {
     Cutils.isContains(mauticCampaignsPageElements.contactsPoints, points);
   }
 
+  static checkCompanyIsPresentInContactsGrid(company) {
+    Cutils.isContains(
+      mauticCampaignsPageElements.companyNamePresentUnderContacts,
+      company
+    );
+  }
+
+  static checkCompanyIsPresentInContactDetailsPage(company) {
+    Cutils.isContains(
+      mauticCampaignsPageElements.companiesInContactDetails,
+      company
+    );
+  }
+
   static searchCampaign(campaignName) {
     Cutils.IsVisible(mauticCampaignsPageElements.filter);
     Cutils.typeText(mauticCampaignsPageElements.filter, campaignName);
@@ -198,5 +242,12 @@ export class mauticCampaignPage {
     return Cutils.IsNotExist(
       "//tr[1]//a[contains(text(), " + "'" + text + "'" + ")]"
     );
+  }
+  static checkThatEventIsTriggeredAndAddedCorrectlyInActionsTab(
+    eventName,
+    action
+  ) {
+    Cutils.isContains(mauticCampaignsPageElements.actionsEventsName, eventName);
+    Cutils.isContains(mauticCampaignsPageElements.actionPerformed, action);
   }
 }
