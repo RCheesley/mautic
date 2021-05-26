@@ -8,8 +8,17 @@ Feature: Campaign regression scenarios
         And I click Login Button
         Then I should be on "Dashboard" Page
 
+    @add_new_company
+    Scenario: Add new company to test the campaign scenarios
+        When I visit "Companies" page
+        Then I should be on "Companies" Page
+        When I click Add New Company Button
+        And I type Company Name as "Acquia"
+        And I click Save and Close Button on Companies Page
+        Then I should see Company is Created as "Acquia"
+
     @Add_new_Contacts
-    Scenario Outline: Add new Contacts to test the campaign scenarios
+    Scenario Outline: Add new contacts to test the campaign scenarios
         When I visit "Contacts" page
         Then I should be on "Contacts" Page
         When I click Add New Button on Contact Page
@@ -29,7 +38,7 @@ Feature: Campaign regression scenarios
             | Mr            | Contact3           | Test1             | Contact3@mailtest.mautic.com | Sangli       |
 
     @create_new_segement
-    Scenario Outline: Add new Segments based on Last Name to test campaign scenario
+    Scenario Outline: Add new segment based on Last Name to test campaign scenario
         When I visit "Segments" page
         Then I should be on "Contact Segments" Page
         When I click Add New Button on Contact Segments page
@@ -44,6 +53,67 @@ Feature: Campaign regression scenarios
             | Segment_Name                 | filter    | filter_condition | filter_value |
             | segmentForCampaignRegression | Last Name | equals           | Test1        |
 
+    @Add_to_company
+    Scenario: Create a campaign with action add to company from the selected segment
+        When I visit "Campaigns" page
+        Then I should be on "Campaigns" Page
+        When I click Add New Button on Campaign page
+        When I type Campaign title as "addToCompany_Campaign_With_Segment"
+        And I click on Launch Campaign builder
+        When I select "Contact segments" as campaign source
+        When I Select "segmentForCampaignRegression" as contact source and click on add
+        When I click on campaign event list
+        And I click on "Action" tab of campaign
+        When I select action as "Add to company action" from actions list
+        And I add event name "Add company in the selected segment's contact" and add company "Acquia"
+        And I apply changes to builder and close the builder
+        Then I publish the campaign and save it
+        And I wait for 10 sec to apply campaign action on segments contacts
+        When I click on "Actions" tab
+        And verify that campaign is executed successfully
+        Then I check that campaign triggered successfully with "Add company in the selected segment's contact" and event "Add contact to company"
+        When I click on "Contacts" tab
+        And I check that company "Acquia" is displayed in grid contact
+        When I click on first contact under campaign contacts
+        Then I check that events triggered successfully Event Name "Add company in the selected segment's contact / addToCompany_Campaign_With_Segment" and Event Type "Campaign action triggered" and Event Timestamp "Today"
+        And I check that "Acquia" is present in contact details page
+        Then I visit "Campaigns" page
+        Then I should be on "Campaigns" Page
+        When I search campaign "addToCompany_Campaign_With_Segment"
+        When I delete campaign "addToCompany_Campaign_With_Segment"
+        Then I should see campaign "addToCompany_Campaign_With_Segment" is deleted
+
+    @Add_to_company_score
+    Scenario: Create a campaign with action add to company score from the selected segment
+        When I visit "Campaigns" page
+        Then I should be on "Campaigns" Page
+        When I click Add New Button on Campaign page
+        When I type Campaign title as "addToCompanyScore_Campaign_With_Segment"
+        And I click on Launch Campaign builder
+        When I select "Contact segments" as campaign source
+        When I Select "segmentForCampaignRegression" as contact source and click on add
+        When I click on campaign event list
+        And I click on "Action" tab of campaign
+        When I select action as "score" from actions list
+        And I add event name "Add to company score in the selected segment's contact company" and add to the company score "10"
+        And I apply changes to builder and close the builder
+        Then I publish the campaign and save it
+        And I wait for 10 sec to apply campaign action on segments contacts
+        When I click on "Actions" tab
+        And verify that campaign is executed successfully
+        Then I check that campaign triggered successfully with "Add to company score in the selected segment's contact company" and event "Score company"
+        When I click on "Contacts" tab
+        And I check that company "Acquia" is displayed in grid contact
+        When I click on first contact under campaign contacts
+        Then I check that events triggered successfully Event Name "Add to company score in the selected segment's contact company / addToCompanyScore_Campaign_With_Segment" and Event Type "Campaign action triggered" and Event Timestamp "Today"
+        And I check that "Acquia" is present in contact details page
+        Then I click on "Acquia" logo and I check that Company’s score is "30"
+        Then I visit "Campaigns" page
+        Then I should be on "Campaigns" Page
+        When I search campaign "addToCompanyScore_Campaign_With_Segment"
+        When I delete campaign "addToCompanyScore_Campaign_With_Segment"
+        Then I should see campaign "addToCompanyScore_Campaign_With_Segment" is deleted
+
     @Add_do_not_contact
     Scenario: Create a campaign with action do not contact from the selected segment
         When I visit "Campaigns" page
@@ -56,12 +126,13 @@ Feature: Campaign regression scenarios
         When I click on campaign event list
         And I click on "Action" tab of campaign
         When I select action as "Add Do Not Contact" from actions list
-        And I add event name "Add to do not contact" and channel as "Email"
+        And I add event name "Add contact's in do not contact" and channel as "Email"
         And I apply changes to builder and close the builder
         Then I publish the campaign and save it
         And I wait for 10 sec to apply campaign action on segments contacts
         When I click on "Actions" tab
         And verify that campaign is executed successfully
+        Then I check that campaign triggered successfully with "Add contact's in do not contact" and event "mautic.campaign.lead.adddnc"
         When I click on "Contacts" tab
         When I click on first contact under campaign contacts
         Then I check that contact "have" do not contact label
@@ -91,6 +162,7 @@ Feature: Campaign regression scenarios
         And I wait for 10 sec to apply campaign action on segments contacts
         When I click on "Actions" tab
         And verify that campaign is executed successfully
+        Then I check that campaign triggered successfully with "Remove contacts from DNC" and event "mautic.campaign.lead.removednc"
         When I click on "Contacts" tab
         When I click on first contact under campaign contacts
         Then I check that contact "does not have" do not contact label
@@ -118,6 +190,7 @@ Feature: Campaign regression scenarios
         And I wait for 10 sec to apply campaign action on segments contacts
         When I click on "Actions" tab
         And verify that campaign is executed successfully
+        Then I check that campaign triggered successfully with "Adjust contact points by 5" and event "Adjust contact points"
         When I click on "Contacts" tab
         When I click on first contact under campaign contacts
         Then I check that contact has gained "5 points"
@@ -147,6 +220,7 @@ Feature: Campaign regression scenarios
         And I wait for 10 sec to apply campaign action on segments contacts
         When I click on "Actions" tab
         And verify that campaign is executed successfully
+        Then I check that campaign triggered successfully with "Adjust contact points by -3" and event "Adjust contact points"
         When I click on "Contacts" tab
         When I click on first contact under campaign contacts
         Then I check that contact has gained "2 points"
