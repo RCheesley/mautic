@@ -41,6 +41,27 @@ And(/^I add event name "([^"]*)" and add "([^"]*)" points$/, (args1, args2) => {
   mauticCampaignPage.adjustContactsPoints(args1, args2);
 });
 
+And(
+  /^I add event name "([^"]*)" and add company "([^"]*)"$/,
+  (args1, args2) => {
+    mauticCampaignPage.selectCompanyToAdd(args1, args2);
+  }
+);
+
+And(
+  /^I add event name "([^"]*)" and add to the company score "([^"]*)"$/,
+  (args1, args2) => {
+    mauticCampaignPage.addToCompanyScore(args1, args2);
+  }
+);
+
+Then(
+  /^I click on "([^"]*)" logo and I check that Company’s score is "([^"]*)"$/,
+  (args1, args2) => {
+    mauticCampaignPage.clickOnCompanyNameAndCheckScore(args1, args2);
+  }
+);
+
 And(/^I apply changes to builder and close the builder$/, () => {
   mauticCampaignPage.applyChangesToBuilder();
 });
@@ -59,6 +80,27 @@ When(/^I click on "([^"]*)" tab$/, (args1) => {
 
 And(/^verify that campaign is executed successfully$/, () => {
   mauticCampaignPage.isCampaignExecutedSuccessfully();
+});
+
+Then(
+  /^I check that campaign triggered successfully with "([^"]*)" and event "([^"]*)"$/,
+  (args1, args2) => {
+    mauticCampaignPage.checkThatEventIsTriggeredAndAddedCorrectlyInActionsTab(
+      args1,
+      args2
+    );
+  }
+);
+
+And(
+  /^I check that company "([^"]*)" is displayed in grid contact$/,
+  (args1) => {
+    mauticCampaignPage.checkCompanyIsPresentInContactsGrid(args1);
+  }
+);
+
+And(/^I check that "([^"]*)" is present in contact details page$/, (args1) => {
+  mauticCampaignPage.checkCompanyIsPresentInContactDetailsPage(args1);
 });
 
 When(/^I click on first contact under campaign contacts$/, () => {
