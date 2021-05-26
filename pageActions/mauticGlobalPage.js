@@ -53,6 +53,10 @@ export class mauticGlobalPage {
             case 'Reports':
                 input_url = 's/reports';
                 break;
+            case 'Point Triggers':
+                input_url = 's/points/triggers';
+                break;
+
         }
         console.log(input_url);
         Cutils.navigateTo(input_url);

@@ -123,6 +123,11 @@ Then(/^I should see "([^"]*)" is linked to Contact$/, (text) => {
     return mauticContactsPage.isItemLinked(text);
 });
 
+When(/^I type Contact Points as "([^"]*)" on Contacts page$/, (text) => {
+    mauticContactsPage.typeContactPointAs(text);
+});
+
+
 
 
 

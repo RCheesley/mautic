@@ -6,6 +6,7 @@
     "env": {
         "environment": "development",
         "TAGS": " not @role1",
-        "remoteUrl": "https://docs.google.com/spreadsheets/d/1WXr9byp_l3QWpNgSIczXtL_udVNyq5FzIhySe5W9PiI/edit?usp=sharing"
+        "remoteUrl": "https://docs.google.com/spreadsheets/d/1WXr9byp_l3QWpNgSIczXtL_udVNyq5FzIhySe5W9PiI/edit?usp=sharing",
+        "mailtestUrl": "https://mailtest.mautic.com/api/v1/mailbox/"
     }
 }
