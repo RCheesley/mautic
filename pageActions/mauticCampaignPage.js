@@ -38,18 +38,11 @@ export class mauticCampaignPage {
     Cutils.click(mauticCampaignsPageElements.campaignEventsList);
   }
   static selectEventToPerform(text) {
-    if (text == "Action") {
-      Cutils.IsVisible(mauticCampaignsPageElements.tabSelectAction);
-      Cutils.click(mauticCampaignsPageElements.tabSelectAction);
-    }
-    if (text == "Condition") {
-      Cutils.IsVisible(mauticCampaignsPageElements.tabSelectCondition);
-      Cutils.click(mauticCampaignsPageElements.tabSelectCondition);
-    }
-    if (text == "Decision") {
-      Cutils.IsVisible(mauticCampaignsPageElements.tabSelectDecision);
-      Cutils.click(mauticCampaignsPageElements.tabSelectDecision);
-    }
+    Cutils.click(
+      '//div[@id="' +
+        text +
+        'GroupSelector"]//div[@class="hidden-xs panel-footer text-center"]/button'
+    );
   }
   static selectActionFromDropDown(text) {
     Cutils.IsVisible(mauticCampaignsPageElements.searchTextBoxForActions);
@@ -67,10 +60,18 @@ export class mauticCampaignPage {
     );
     Cutils.click(mauticCampaignsPageElements.addButtonForModel);
   }
+  static changeContactStage(eventName, stage) {
+    Cutils.IsVisible(mauticCampaignsPageElements.addNameForEvent);
+    Cutils.typeText(mauticCampaignsPageElements.addNameForEvent, eventName);
+    Cutils.selectValueFromDropDownNonSelect(
+      mauticCampaignsPageElements.selectContactStage,
+      stage
+    );
+    Cutils.click(mauticCampaignsPageElements.addButtonForModel);
+  }
   static adjustContactsPoints(eventName, points) {
     Cutils.IsVisible(mauticCampaignsPageElements.addNameForEvent);
     Cutils.typeText(mauticCampaignsPageElements.addNameForEvent, eventName);
-    Cutils.clear(mauticCampaignsPageElements.adjustPoints);
     Cutils.typeText(mauticCampaignsPageElements.adjustPoints, points);
     Cutils.click(mauticCampaignsPageElements.addButtonForModel);
   }
@@ -91,18 +92,22 @@ export class mauticCampaignPage {
     Cutils.typeText(mauticCampaignsPageElements.companyScore, score);
     Cutils.click(mauticCampaignsPageElements.addButtonForModel);
   }
-
-  static clickOnCompanyNameAndCheckScore(companyName, score) {
-    Cutils.IsVisible(mauticCampaignsPageElements.companiesInContactDetails);
-    Cutils.click(
-      mauticCampaignsPageElements.companiesInContactDetails +
-        "/a[contains(text()," +
-        '"' +
-        companyName +
-        '")]'
+  static addAndRemoveSegment(
+    eventName,
+    sourceSegment,
+    removeContactFromSegment
+  ) {
+    Cutils.IsVisible(mauticCampaignsPageElements.addNameForEvent);
+    Cutils.typeText(mauticCampaignsPageElements.addNameForEvent, eventName);
+    Cutils.selectValueFromDropDownNonSelect(
+      mauticCampaignsPageElements.addContactToSelectedSegment,
+      sourceSegment
     );
-    Cutils.IsVisible(mauticCampaignsPageElements.scoreOnCompanyEdit);
-    Cutils.isContains(mauticCampaignsPageElements.scoreOnCompanyEdit, score);
+    Cutils.selectValueFromDropDownNonSelect(
+      mauticCampaignsPageElements.removeContactFromSelectedSegment,
+      removeContactFromSegment
+    );
+    Cutils.click(mauticCampaignsPageElements.addButtonForModel);
   }
 
   static applyChangesToBuilder() {
@@ -117,7 +122,7 @@ export class mauticCampaignPage {
     Cutils.click(mauticCampaignsPageElements.campaignSaveAndClose);
   }
   static hardCodedWaitAddedforCampaignGetsPublished() {
-    Cutils.waitForTime(10000);
+    Cutils.waitForTime(12000);
     Cutils.pageReload();
   }
   static selectCampaignTab(text) {
@@ -135,9 +140,12 @@ export class mauticCampaignPage {
     }
   }
 
-  static isCampaignExecutedSuccessfully() {
+  static isCampaignExecutedSuccessfully(succesPercent) {
     Cutils.IsVisible(mauticCampaignsPageElements.campiganSuccessLabel);
-    Cutils.isContains(mauticCampaignsPageElements.campiganSuccessLabel, "100%");
+    Cutils.isContains(
+      mauticCampaignsPageElements.campiganSuccessLabel,
+      succesPercent
+    );
   }
 
   static selectAndClickOnFirstContactUnderCampaign() {
@@ -196,6 +204,28 @@ export class mauticCampaignPage {
       eventTimestamp
     );
   }
+
+  static checkSecondEventsTriggeredSuccessfullyContactHistory(
+    eventName,
+    eventType,
+    eventTimestamp
+  ) {
+    Cutils.IsVisible(
+      mauticCampaignsPageElements.secondEventNameTriggeredForContact
+    );
+    Cutils.isContains(
+      mauticCampaignsPageElements.secondEventNameTriggeredForContact,
+      eventName
+    );
+    Cutils.isContains(
+      mauticCampaignsPageElements.secondEventTypeTriggeredForContact,
+      eventType
+    );
+    Cutils.isContains(
+      mauticCampaignsPageElements.secondEventTimestampTriggeredForContact,
+      eventTimestamp
+    );
+  }
   static checkContactGainPoints(points) {
     Cutils.IsVisible(mauticCampaignsPageElements.contactsPoints);
     Cutils.isContains(mauticCampaignsPageElements.contactsPoints, points);
@@ -249,5 +279,47 @@ export class mauticCampaignPage {
   ) {
     Cutils.isContains(mauticCampaignsPageElements.actionsEventsName, eventName);
     Cutils.isContains(mauticCampaignsPageElements.actionPerformed, action);
+  }
+
+  static checkCompanyAndScore(companyName, score) {
+    Cutils.isContains(
+      '(//td//div/a[contains(text(),"' + companyName + '")]//following::td)[3]',
+      score
+    );
+  }
+  static checkStage(stage) {
+    Cutils.isContains(
+      mauticCampaignsPageElements.stageNameOnContactDetailsPage,
+      stage
+    );
+  }
+  static noContactsPresent(noContactsPresent) {
+    Cutils.IsVisible(mauticCampaignsPageElements.noContactsFound);
+    Cutils.isContains(
+      mauticCampaignsPageElements.noContactsFound,
+      noContactsPresent
+    );
+  }
+  static checkSegmentContainesExactContacts(segmentName, noOfContacts) {
+    Cutils.isContains(
+      '//table[@id="leadListTable"]//td//div/a[contains(text(),"' +
+        segmentName +
+        '")]//following::td/a',
+      noOfContacts
+    );
+    Cutils.click(
+      '//table[@id="leadListTable"]//td//div/a[contains(text(),"' +
+        segmentName +
+        '")]//following::td/a'
+    );
+  }
+  static clickOnFirstContactUnderSegment() {
+    Cutils.IsVisible(mauticCampaignsPageElements.firstContactUnderSegment);
+    Cutils.click(mauticCampaignsPageElements.firstContactUnderSegment);
+    Cutils.IsVisible(mauticCampaignsPageElements.contactsEngagement);
+  }
+
+  static noResultsFound(text) {
+    return Cutils.isContains('//div[@class="page-list"]//h4', text);
   }
 }
