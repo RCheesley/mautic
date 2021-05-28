@@ -62,4 +62,20 @@ export class mauticCampaignsPageElements {
   static companiesInContactDetails = '//span[@class="label label-success"]';
   static companyScore = '//input[@id="campaignevent_properties_score"]';
   static scoreOnCompanyEdit = '//input[@id="company_score"]';
+  static selectContactStage =
+    '//div[@id="campaignevent_properties_stage_chosen"]';
+  static stageNameOnContactDetailsPage =
+    '//div[@class="mt-sm points-panel text-center"]';
+  static addContactToSelectedSegment =
+    '//div[@id="campaignevent_properties_addToLists_chosen"]';
+  static removeContactFromSelectedSegment =
+    '//div[@id="campaignevent_properties_removeFromLists_chosen"]';
+  static firstContactUnderSegment = '(//table[@id="leadTable"]//td//a/div)[1]';
+  static secondEventNameTriggeredForContact =
+    '(//td[@class="timeline-name"])[2]';
+  static secondEventTypeTriggeredForContact =
+    '(//td[@class="timeline-type"])[2]';
+  static secondEventTimestampTriggeredForContact =
+    '(//td[@class="timeline-timestamp"])[2]';
+  static noContactsFound = '//div[@class="page-list"]//h4';
 }
