@@ -55,6 +55,9 @@ export class mauticGlobalPage {
       case 'Point Triggers':
         input_url = 's/points/triggers';
         break;
+      case "Campaigns":
+        input_url = "s/campaigns";
+        break;
       case 'DashBoard':
         input_url = 's/dashboard';
         break;
