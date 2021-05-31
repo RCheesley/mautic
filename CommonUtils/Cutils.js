@@ -98,6 +98,12 @@ export class Cutils {
     this.typeText(locator + '//input', text);
     cy.xpath(locator + '//input').type('{enter}')
   }
+  //select value from dropdown when text is common in dropdown
+  static selectValueFromDropDownWithThreeParamters(locator, primaryContactType, index, actualText) {
+    this.click(locator);
+    this.typeText(locator + '//input', text);
+    this.click(locator + '//li[text()= ' + "\'" + primaryContactType + "\'" + ']/following::li[' + index + ']//em[normalize-space(text()=' + "\'" + actualText + "\'" + ')]')
+  }
   //normal file upload for input type controller 
   static uploadFileNormal(locator, fileName) {
     this.IsVisible(locator)
