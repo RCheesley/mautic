@@ -4,7 +4,7 @@
     "password": "SL3hmckEVzNq4cb",
     "instanceId": "c200d53e9e4bfb44dcd6a179ee8c965e",
     "env": {
-        "environment": "development",
+        "environment": "staging",
         "TAGS": " not @role1",
         "remoteUrl": "https://docs.google.com/spreadsheets/d/1WXr9byp_l3QWpNgSIczXtL_udVNyq5FzIhySe5W9PiI/edit?usp=sharing",
         "mailtestUrl": "https://mailtest.mautic.com/api/v1/mailbox/"

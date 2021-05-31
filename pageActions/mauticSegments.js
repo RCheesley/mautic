@@ -5,6 +5,7 @@ import { Cutils } from "cypress/CommonUtils/Cutils";
 import { mauticSegmentsElemenets } from "cypress/pageElements/mauticSegmentPageElements";
 
 export class mauticSegments {
+    static fieldType;
     static createSegment(text) {
         mauticGlobalPage.verifyPageTitle('Segments')
         mauticGlobalPage.waitForPageLoad('Contact Segments')
@@ -35,20 +36,27 @@ export class mauticSegments {
         Cutils.click(mauticSegmentsElemenets.filterTab)
     }
     static chooseFilterAs(text) {
-        Cutils.selectValueFromDropDownNonSelect(mauticSegmentsElemenets.filterDropDown, text)
+        this.fieldType = text
+        Cutils.selectValueFromDropDownNonSelectWithEnterKey(mauticSegmentsElemenets.filterDropDown, text)
     }
     static chooseFilterConditionAs(text) {
         Cutils.selectValueFromDropDown(mauticSegmentsElemenets.filterField, text)
     }
     static chooseFilterValueAs(text) {
         Cutils.waitForTime(2000)
-        Cutils.typeText(mauticSegmentsElemenets.filterValue, text)
+        if (this.fieldType == 'Country' || this.fieldType == 'Preferred Locale' || this.fieldType == 'Preferred Timezone' || this.fieldType == 'Stage' || this.fieldType == 'State') {
+            Cutils.selectValueFromDropDownNonSelect(mauticSegmentsElemenets.filterValueDropDown, text)
+        }
+        else {
+            Cutils.typeText(mauticSegmentsElemenets.filterValue, text)
+        }
+
     }
     static clickSaveAndCloseButton() {
         Cutils.click(mauticSegmentsElemenets.saveAndCloseButton)
     }
     static isContactAddedToSegment(text1, text2) {
-        return Cutils.IsVisible('//a[normalize-space(text())="' + text1 + ' (' + text1 + ')"]/following::a[contains(text(),"View ' + text2 + ' Contact")]')
+        return Cutils.IsVisible('//a[normalize-space(text())="' + text1 + ' (' + text1.toLowerCase() + ')"]/following::a[contains(text(),"View ' + text2 + ' Contact")]')
     }
     static isSegmentCreated(text) {
         Cutils.IsVisible('//div[contains(@class,alert-growl-container)]//*[contains(text(), ' + "\'" + text + "\'" + ')]')
@@ -65,7 +73,7 @@ export class mauticSegments {
     }
     static searchContactSegment(text) {
         Cutils.IsVisible(mauticSegmentsElemenets.filter)
-        Cutils.typeText(mauticSegmentsElemenets.filter, text)
+        Cutils.typeText(mauticSegmentsElemenets.filter, text + '{enter}')
     }
     static deleteContactSegment(text) {
         Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')

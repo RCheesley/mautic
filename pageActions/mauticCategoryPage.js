@@ -34,6 +34,7 @@ export class mauticCategoryPage {
         Cutils.click('//button[text()="Delete"]')
     }
     static isEmailCategoryDeleted(text) {
+        Cutils.IsVisible('//div[contains(@class,alert-growl-container)]//*[text()=' + "\'" + text + "\'" + ']')
         return Cutils.IsNotExist('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
 

@@ -17,4 +17,18 @@ export class mauticContactsPageElements {
     static importButton = '//button[@class="btn btn-primary btn-copy"]';
     static companyMapping = '//div[@id="lead_field_import_company_chosen"]';
     static ContactPoint = '//input[@id="lead_points"]';
+    static Company = '//div[@id="lead_companies_chosen"]';
+    static Position = '//input[@id="lead_position"]';
+    static AddressLine1 = '//input[@id="lead_address1"]';
+    static AddressLine2 = '//input[@id="lead_address2"]';
+    static ContactState = '//div[@id="lead_state_chosen"]';
+    static ContactCountry = '//div[@id="lead_country_chosen"]';
+    static ContactMobileNumber = '//input[@id="lead_mobile"]';
+    static ContactPhoneNumber = '//input[@id="lead_phone"]';
+    static ContactFaxNumber = '//input[@id="lead_fax"]';
+    static PreferredLocale = '//div[@id="lead_preferred_locale_chosen"]';
+    static PreferredTimeZone = '//div[@id="lead_timezone_chosen"]';
+    static ContactWebsite = '//input[@id="lead_website"]';
+    static ContactStage = '//div[@id="lead_stage_chosen"]';
+    static ContactTag = '//input[@value="Select or type in a new tag"]';
 }

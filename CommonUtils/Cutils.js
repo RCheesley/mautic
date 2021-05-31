@@ -15,12 +15,13 @@ export class Cutils {
     //type any string
     static typeText(locator, text) {
         this.IsVisible(locator)
+        this.hightLight(locator, 'BlueViolet')
         cy.xpath(locator).clear();
         cy.xpath(locator).type(text)
     }
     //click any element
     static click(locator) {
-        //this.IsVisible(locator)
+        this.hightLight(locator, 'BlueViolet')
         cy.xpath(locator).first().click({ force: true })
     }
     //method for hardcoded wait
@@ -33,18 +34,22 @@ export class Cutils {
     }
     //select from drop down for dropdown with tag select
     static selectValueFromDropDown(locator, value) {
+        this.hightLight(locator, 'BlueViolet')
         cy.xpath(locator).select(value)
     }
     //check if element is visible dynamic wait
     static IsVisible(locator) {
+        this.hightLight(locator, 'green')
         return cy.xpath(locator).should('be.visible');
     }
     //check if element is not empty
     static IsNotEmpty(locator) {
+        this.hightLight(locator, 'green')
         cy.xpath(locator).should('not.be.empty');
     }
     //check if element contais text
     static isContains(locator, text) {
+        this.hightLight(locator, 'green')
         cy.xpath(locator).should('contain', text);
     }
     //returns date in desired format
@@ -64,15 +69,24 @@ export class Cutils {
     //drag and drop file upload
     static uploadFile(locator, fileName) {
         this.IsVisible(locator)
+        this.hightLight(locator, 'BlueViolet')
         cy.xpath(locator).attachFile(fileName, { subjectType: 'drag-n-drop' });
     }
     // check is element is disappered dynamic wait
     static IsNotVisible(locator) {
         return cy.xpath(locator).should('not.be.visible');
     }
+    //scroll to view the element
+    static scrollToView(locator) {
+        cy.xpath(locator).scrollIntoView();
+    }
     //check if element is removed from page
     static IsNotExist(locator) {
         return cy.xpath(locator).should('not.exist');
+    }
+    // check if element is enabled
+    static isEnabled(locator) {
+        return cy.xpath(locator).should("be.enabled");
     }
     //select value from dropdown for not select type dropdowns
     static selectValueFromDropDownNonSelect(locator, text) {
@@ -89,6 +103,7 @@ export class Cutils {
     //normal file upload for input type controller 
     static uploadFileNormal(locator, fileName) {
         this.IsVisible(locator)
+        this.hightLight(locator, 'BlueViolet')
         cy.xpath(locator).attachFile(fileName);
     }
     //use locator as css selector here
@@ -104,6 +119,12 @@ export class Cutils {
 
     static pageReload() {
         cy.reload()
+    }
+
+    static hightLight(locator, color) {
+        cy.xpath(locator).first().then($element => {
+            $element.css('border', '3px dotted ' + color + '')
+        })
     }
 
 
