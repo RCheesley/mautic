@@ -66,6 +66,27 @@ Then(/^I should see email "([^"]*)" is deleted$/, (text) => {
     return mauticEmailsPage.isEmailDeleted(text);
 });
 
+When(/^I send the "([^"]*)" email$/, (text) => {
+    mauticEmailsPage.seneEmail(text);
+});
+
+When(/^I click Schedule button email Page$/, () => {
+    mauticEmailsPage.clickScheduleButton();
+});
+
+Then(/^I should see "([^"]*)" email is Scheduled$/, (text) => {
+    return mauticEmailsPage.isEmailScheduled(text);
+});
+
+Then(/^I should see No Pending Email is displayed$/, () => {
+    return mauticEmailsPage.IsNoPendingEmail();
+});
+
+
+
+
+
+
 
 
 

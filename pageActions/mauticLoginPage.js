@@ -1,10 +1,12 @@
 import { Cutils } from "../CommonUtils/Cutils";
 import { mauticLoginPageElements } from "../pageElements/mauticLoginPageElements";
+import { Cutils } from "cypress/CommonUtils/Cutils";
 
 
 
 export class mauticLoginPage {
     static openLoginpage(text) {
+        Cutils.clearCookies();
         Cutils.openURL(text);
     }
 

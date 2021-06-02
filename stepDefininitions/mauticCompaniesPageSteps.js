@@ -15,9 +15,6 @@ When(/^I click Save and Close Button on Companies Page$/, () => {
     mauticCompaniesPage.clickSaveAndCloseButton()
 });
 
-Then(/^I should see Company is Created$/, () => {
-
-});
 
 Then(/^I should see Company is Created as "([^"]*)"$/, (text) => {
     return mauticCompaniesPage.isCompanyCreated(text);
@@ -61,6 +58,76 @@ Then(/^I should see CustomeField "([^"]*)" is displayed$/, (text) => {
 When(/^I select "([^"]*)" value as "([^"]*)"$/, (text1, text2) => {
     mauticCompaniesPage.selectValyeFOrCustomFiled(text1, text2);
 });
+
+When(/^I type Company Email as "([^"]*)"$/, (text) => {
+    mauticCompaniesPage.typeCompanyEmailAs(text);
+
+});
+
+When(/^I type Address Line 1 as "([^"]*)" on Company Page$/, (text) => {
+    mauticCompaniesPage.typeAddressLine1As(text);
+
+});
+
+When(/^I type Address Line 2 as "([^"]*)" on Company Page$/, (text) => {
+    mauticCompaniesPage.typeAddressLine2As(text);
+
+});
+
+When(/^I select Company State as "([^"]*)" on Company Page$/, (text) => {
+    mauticCompaniesPage.selectCompanyStateAs(text);
+
+});
+
+When(/^I select Company Country as "([^"]*)" on Company Page$/, (text) => {
+    mauticCompaniesPage.selectCompanyCountryAs(text);
+
+});
+
+When(/^I type Company Phone number as "([^"]*)"$/, (text) => {
+    mauticCompaniesPage.typeCompanyPhoneNumberAs(text);
+
+});
+
+When(/^I type Company Website as "([^"]*)"$/, (text) => {
+    mauticCompaniesPage.typeCompanyWebsiteAs(text);
+
+});
+
+When(/^I type Company Points as "([^"]*)"$/, (text) => {
+    mauticCompaniesPage.typeCompanyPointsAs(text);
+
+});
+
+When(/^I click Professional section on Company page$/, () => {
+    mauticCompaniesPage.clickProfessionalSection();
+});
+
+When(/^I type Number of Employees as "([^"]*)"$/, (text) => {
+    mauticCompaniesPage.typeNumberOfEmployeesAs(text);
+
+});
+
+When(/^I type Company Fax as "([^"]*)"$/, (text) => {
+    mauticCompaniesPage.typeCompanyFaxAs(text);
+
+});
+
+When(/^I type Comapny Annual Revenue as "([^"]*)"$/, (text) => {
+    mauticCompaniesPage.typeComapnyAnnualRevenueAs(text);
+
+});
+
+When(/^I select Company Industry as "([^"]*)"$/, (text) => {
+    mauticCompaniesPage.selectCompanyIndustryAs(text);
+
+});
+
+When(/^I type Company Description as "([^"]*)"$/, (text) => {
+    mauticCompaniesPage.typeCompanyDescriptionAs(text);
+
+});
+
 
 
 

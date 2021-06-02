@@ -50,7 +50,7 @@ export class mauticEmailsPage {
                 input = 'list';
         }
         Cutils.IsVisible(mauticEmailsPageElements.templateEmailSelector)
-        Cutils.click('//button[contains(@onclick, ' + "\'" + input + "\'" + ')][contains(@class,"text-success")]')
+        Cutils.click('//div[@class="modal-content"]//div[@class="hidden-xs panel-footer text-center"]//button[contains(@onclick,  ' + "\'" + input + "\'" + ')]')
     }
     static typeEmailSubject(text) {
         Cutils.IsVisible(mauticEmailsPageElements.emailSubject)
@@ -61,7 +61,7 @@ export class mauticEmailsPage {
         Cutils.typeText(mauticEmailsPageElements.emailInternalName, text)
     }
     static typeEmailSegment(text) {
-        Cutils.typeText(mauticEmailsPageElements.emailSegment, text)
+        Cutils.selectValueFromDropDownNonSelectWithEnterKey(mauticEmailsPageElements.emailSegment, text)
     }
     static clickSaveAndCloseButton() {
         Cutils.click(mauticEmailsPageElements.saveEmailButton)
@@ -98,4 +98,26 @@ export class mauticEmailsPage {
     static isEmailDeleted(text) {
         return Cutils.IsNotExist('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
+    static seneEmail(text) {
+        Cutils.IsVisible('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        Cutils.IsVisible(mauticEmailsPageElements.SendEmail)
+        Cutils.click(mauticEmailsPageElements.SendEmail)
+    }
+
+    static clickScheduleButton() {
+        Cutils.IsVisible(mauticEmailsPageElements.ScheduleButton)
+        Cutils.click(mauticEmailsPageElements.ScheduleButton)
+    }
+
+    static isEmailScheduled(text) {
+        Cutils.IsVisible(mauticEmailsPageElements.ScheduleLabel)
+        Cutils.waitForTime(5000)
+        Cutils.pageReload()
+    }
+
+    static IsNoPendingEmail() {
+        Cutils.IsNotExist(mauticEmailsPageElements.ScheduleLabel)
+    }
+
 }

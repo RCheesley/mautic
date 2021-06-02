@@ -123,7 +123,9 @@ export class mauticContactsPage {
     static linkItem(text) {
         Cutils.IsVisible('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
         Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
+        Cutils.scrollToView('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
         Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
+        Cutils.scrollToView('//tr[1]//span[text()="Link"]')
         Cutils.click('//tr[1]//span[text()="Link"]')
     }
 
@@ -176,5 +178,29 @@ export class mauticContactsPage {
     static typeContactTagAs(text) {
         Cutils.typeText(mauticContactsPageElements.ContactTag, text + '{enter}')
     }
-
+    static openContact(text) {
+        Cutils.IsVisible('//tr[1]//a//div[contains(text(), ' + "\'" + text + "\'" + ')]')
+        Cutils.click('//tr[1]//a//div[contains(text(), ' + "\'" + text + "\'" + ')]')
+    }
+    static isLabelDisplayed(text) {
+        return Cutils.IsVisible('//span[normalize-space(text())=' + "\'" + text + "\'" + ']')
+    }
+    static clickEmailBounced() {
+        Cutils.waitForTime(2000)
+        Cutils.doubleClick(mauticContactsPageElements.EmailBounced)
+        Cutils.waitForTime(2000)
+        Cutils.pageReload()
+    }
+    static isContactRemovedFromDoNotContact() {
+        Cutils.IsNotExist(mauticContactsPageElements.EmailBounced)
+    }
+    static typeAttributionAs(text) {
+        Cutils.typeText(mauticContactsPageElements.Attribution, text)
+    }
+    static typeAttributionDateAsToday() {
+        Cutils.typeText(mauticContactsPageElements.AttributionDate, Cutils.formatDate(new Date()))
+    }
+    static typeDateLastActiveAsToday() {
+        Cutils.typeText(mauticContactsPageElements.DateLastActive, Cutils.formatDate(new Date()))
+    }
 }

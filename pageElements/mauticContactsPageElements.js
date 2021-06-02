@@ -31,4 +31,8 @@ export class mauticContactsPageElements {
     static ContactWebsite = '//input[@id="lead_website"]';
     static ContactStage = '//div[@id="lead_stage_chosen"]';
     static ContactTag = '//input[@value="Select or type in a new tag"]';
+    static EmailBounced = '//span[@data-original-title="Re-enable contact"]//i';
+    static Attribution = '//input[@id="lead_attribution"]';
+    static AttributionDate = '//input[@id="lead_attribution_date"]';
+    static DateLastActive = '//input[@id="lead_last_active"]';
 }

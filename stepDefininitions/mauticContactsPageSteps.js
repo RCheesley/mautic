@@ -176,6 +176,36 @@ When(/^I type Contact Tag as "([^"]*)"$/, (text) => {
     mauticContactsPage.typeContactTagAs(text);
 });
 
+When(/^I open the "([^"]*)" Contact$/, (text) => {
+    mauticContactsPage.openContact(text);
+});
+
+Then(/^I should see "([^"]*)" label is displayed$/, (text) => {
+    return mauticContactsPage.isLabelDisplayed(text);
+});
+
+When(/^I click Email Bounced$/, () => {
+    mauticContactsPage.clickEmailBounced();
+});
+
+Then(/^I should see Contact is removed from Do not contact$/, () => {
+    return mauticContactsPage.isContactRemovedFromDoNotContact();
+});
+
+When(/^I type Attribution as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typeAttributionAs(text);
+});
+
+When(/^I type Attribution as Today$/, () => {
+    mauticContactsPage.typeAttributionDateAsToday();
+});
+
+When(/^I type Date Last Active as Today$/, () => {
+    mauticContactsPage.typeDateLastActiveAsToday();
+});
+
+
+
 
 
 

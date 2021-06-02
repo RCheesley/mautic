@@ -16,14 +16,14 @@ Feature: Verify that user is able to create trigger and verify that user has rec
         When I visit "Segments" page
         Then I should be on "Contact Segments" Page
         When I add Sample Segment based on "First Name"
-        Then I should be see Contact Segment "TestSegment" is created
+        Then I should be see Contact Segment "testsegment" is created
         When I visit "Emails" page
         Then I should be on "Emails" Page
         When I click on Add New Email Button
         And I select email type as "Template"
         And I type email Suject as "TestTriggerEmail"
         And I type email Internal name as "TestTriggerEmail"
-        And I type email Segment Name as "TestSegment"
+        And I type email Segment Name as "testsegment"
         And I click Save and Close Button on emails Page
         And I click Close Button on email page
         Then I should see "TestTriggerEmail" email is created
