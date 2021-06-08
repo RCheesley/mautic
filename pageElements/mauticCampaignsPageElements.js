@@ -23,7 +23,7 @@ export class mauticCampaignsPageElements {
   static checkSegmentIsSelected =
     '(//span[@class="campaign-event-name ellipsis"])[2]';
   static campaignEventsList =
-    '(//div[@id="CampaignEvent_lists"]/following::div)[1]';
+    '//div[contains(@class,"jtk-endpoint jtk-endpoint-anchor-leadsource CampaignEvent_lists")]';
   static tabSelectDecision =
     '(//div[@class="hidden-xs panel-footer text-center"]/button[contains(text(),"Select")])[1]';
   static tabSelectAction =
@@ -77,5 +77,46 @@ export class mauticCampaignsPageElements {
     '(//td[@class="timeline-type"])[2]';
   static secondEventTimestampTriggeredForContact =
     '(//td[@class="timeline-timestamp"])[2]';
-  static noContactsFound = '//div[@class="page-list"]//h4';
+  static noContactsFound = "(//h4)[3]";
+  static updateContact_dateField1 =
+    '(//label[contains(text(),"Date Field 1")]/following::input)[1]';
+  static updateContact_dateField2 =
+    '(//label[contains(text(),"Date Field 2")]/following::input)[1]';
+  static updateContact_dateField3 =
+    '(//label[contains(text(),"Date Field 3")]/following::input)[1]';
+  static contactDetails = "//span/a";
+  static contactDetailsDateField1 =
+    '(//td/span[contains(text(),"Date Field 1")]//following::td)[1]';
+  static contactDetailsDateField2 =
+    '(//td/span[contains(text(),"Date Field 2")]//following::td)[1]';
+  static contactDetailsDateField3 =
+    '(//td/span[contains(text(),"Date Field 3")]//following::td)[1]';
+  static contactDetailsLastDateActive =
+    '(//td/span[contains(text(),"Date Last Active")]//following::td)[1]';
+  static contactDetailsDateField4 =
+    '(//td/span[contains(text(),"Date Field 4")]//following::td)[1]';
+  static primaryCompanyCheck = '//h5/span/i[@class="fa fa-check primary"]';
+  static UpdateCompanyFieldCity =
+    '(//label[contains(text(),"City")]/following::input)[1]';
+  static updateCompanyFieldNumberOfEmployee =
+    '(//label[contains(text(),"Number of Employees")]/following::input)[1]';
+  static emailToSend = '//div[@id="campaignevent_properties_email_chosen"]';
+  static searchTextBoxForDecision = '//div[@id="DecisionList_chosen"]';
+  static campaignEventAfterAction =
+    '//div[contains(@class,"jtk-endpoint jtk-endpoint-anchor-bottom")]';
+  static firstEventName = '(//h5[@class="fw-sb text-primary mb-xs"])[2]';
+  static secondEventName = '(//h5[@class="fw-sb text-primary mb-xs"])[3]';
+  static actionPerformedFirstTab = "(//div//em)[2]";
+  static actionPerformedSecondTab = "(//div//em)[3]";
+  static successPercentageOfFirstEvent =
+    '(//span[@title="Success percent"])[2]';
+  static successPercentageOfSecondEvent =
+    '(//span[@title="Success percent"])[3]';
+  static updateCompanyFieldsCountry =
+    '//div[@id="campaignevent_properties_companycountry_chosen"]';
+  static companyDetailsPageCity = '//input[@id="company_companycity"]';
+  static companyDetailsPageCountry =
+    '//div[@id="company_companycountry_chosen"]/a';
+  static companyDetailsProfessionalPage =
+    '//a[contains(text(),"Professional")]';
 }
