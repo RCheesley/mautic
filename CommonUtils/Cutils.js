@@ -2,7 +2,6 @@ require("cypress-xpath");
 require("cypress-file-upload");
 require("cypress-iframe");
 export class Cutils {
-
   static getTime;
   static flag = false;
   //open url
@@ -64,7 +63,6 @@ export class Cutils {
       day = "" + d.getDate(),
       year = d.getFullYear();
 
-
     if (month.length < 2) month = "0" + month;
     if (day.length < 2) day = "0" + day;
 
@@ -95,7 +93,9 @@ export class Cutils {
   static selectValueFromDropDownNonSelect(locator, text) {
     this.click(locator);
     this.typeText(locator + "//input", text);
-    this.click(locator + "//li[contains(.," + "'" + text + "'" + ")]");
+    this.click(
+      "(" + locator + "//li[contains(.," + "'" + text + "'" + ")]" + ")[1]"
+    );
   }
   //normal file upload for input type controller
   static uploadFileNormal(locator, fileName) {
@@ -114,5 +114,17 @@ export class Cutils {
   }
   static pageReload() {
     cy.reload();
+  }
+  //check if element is empty
+  static isEmpty(locator) {
+    cy.xpath(locator).should("be.empty");
+  }
+  //check if input field contains that value
+  static inputFieldContainsValue(locator, text) {
+    cy.xpath(locator).invoke("val").should("include", text);
+  }
+  //check if dropdown field selected that value
+  static dropDownFieldSelectedValue(locator, text) {
+    cy.xpath(locator).invoke("text").should("include", text);
   }
 }
