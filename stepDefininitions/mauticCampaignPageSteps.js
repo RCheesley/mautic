@@ -245,6 +245,10 @@ And(/^I add event name "([^"]*)" and E-mail "([^"]*)"$/, (args1, args2) => {
   mauticCampaignPage.sendEmail(args1, args2);
 });
 
+And(/^I add event name "([^"]*)" and Link "([^"]*)"$/, (args1, args2) => {
+  mauticCampaignPage.selectCustomObjectToLink(args1, args2);
+});
+
 Then(
   /^I check the mailbox of "([^"]*)" and verify that contact has received "([^"]*)" email$/,
   (args1, args2) => {
@@ -290,5 +294,12 @@ Then(
   /^I check that company city is "([^"]*)" and country is "([^"]*)" and no of employee is "([^"]*)"$/,
   (args1, args2, args3) => {
     mauticCampaignPage.checkCompanyDetails(args1, args2, args3);
+  }
+);
+
+And(
+  /^I check that "([^"]*)" object is linked with car "([^"]*)" and car number "([^"]*)" and model "([^"]*)"$/,
+  (args1, args2, args3, args4) => {
+    mauticCampaignPage.checkCustomObjectLinked(args1, args2, args3, args4);
   }
 );
