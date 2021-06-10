@@ -120,6 +120,15 @@ export class mauticCampaignPage {
     );
     Cutils.click(mauticCampaignsPageElements.addButtonForModel);
   }
+
+   static selectCustomObjectToLink(eventName, customObjectName) {
+    Cutils.typeText(mauticCampaignsPageElements.addNameForEvent, eventName);
+    Cutils.typeText(mauticCampaignsPageElements.linkWithCustomObject, customObjectName);
+    Cutils.IsVisible(mauticCampaignsPageElements.seletHighlightedItem);
+    Cutils.click(mauticCampaignsPageElements.seletHighlightedItem);
+    Cutils.click(mauticCampaignsPageElements.addButtonForModel);
+   }
+  
   static ifOpensAnEmail(eventName) {
     Cutils.IsVisible(mauticCampaignsPageElements.addNameForEvent);
     Cutils.typeText(mauticCampaignsPageElements.addNameForEvent, eventName);
@@ -277,6 +286,16 @@ export class mauticCampaignPage {
     Cutils.dropDownFieldSelectedValue(mauticCampaignsPageElements.companyDetailsPageCountry, country)
     Cutils.click(mauticCampaignsPageElements.companyDetailsProfessionalPage);
     Cutils.inputFieldContainsValue(mauticCampaignsPageElements.updateCompanyFieldNumberOfEmployee, noOfEmployee);
+  }
+
+   static checkCustomObjectLinked(customObject, carName, carNumber, carModel) {
+     Cutils.IsVisible(mauticCampaignsPageElements.contactDetailsCustomObject);
+     Cutils.isContains(mauticCampaignsPageElements.contactDetailsCustomObject, customObject);
+     Cutils.click(mauticCampaignsPageElements.contactDetailsCustomObject, customObject);
+     Cutils.IsVisible(mauticCampaignsPageElements.contactDetailsCarName);
+     Cutils.isContains(mauticCampaignsPageElements.contactDetailsCarName, carName);
+     Cutils.isContains(mauticCampaignsPageElements.contactDetailsCarNumber, carNumber);
+     Cutils.isContains(mauticCampaignsPageElements.contactDetailsCarModel, carModel);
   }
 
   static checkCompanyIsPresentInContactsGrid(company) {
