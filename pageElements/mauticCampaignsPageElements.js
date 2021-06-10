@@ -119,4 +119,11 @@ export class mauticCampaignsPageElements {
     '//div[@id="company_companycountry_chosen"]/a';
   static companyDetailsProfessionalPage =
     '//a[contains(text(),"Professional")]';
+  static linkWithCustomObject =
+    '//input[@id="campaignevent_properties_linkCustomItemName"]';
+  static seletHighlightedItem = '//span//div[@class="tt-suggestion"]';
+  static contactDetailsCustomObject = '//a[contains(@href,"#custom-object")]';
+  static contactDetailsCarName = "//td/div/a";
+  static contactDetailsCarNumber = "(//td/div/a/following::td)[2]";
+  static contactDetailsCarModel = "(//td/div/a/following::td)[3]";
 }
