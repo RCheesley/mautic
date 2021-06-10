@@ -7,6 +7,16 @@ Feature: Verify that user is able to create and delete roles
         And I click Login Button
         Then I should be on "Dashboard" Page
 
+    @Add_new_stages
+    Scenario: Create a New Stages with embedded form
+        When I visit "Stages" page
+        Then I should be on "Stages" Page
+        When I click Add New Button on Stages Page
+        And I type Stages Title as "TestStages"
+        And I type Weight as "40" on Stages Page
+        And I click Save and Close Button on Stages Page
+        Then I should see "TestStages" Stages is created
+
     @Add_new_role
     Scenario: Add new role for reading contact
         When I select "Roles" option in settings

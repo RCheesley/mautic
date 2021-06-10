@@ -46,6 +46,7 @@ export class mauticContactsPage {
         Cutils.typeText(mauticContactsPageElements.leadEmail, text)
     }
     static clickSaveButton() {
+        Cutils.scrollToView(mauticContactsPageElements.SaveButton)
         Cutils.click(mauticContactsPageElements.SaveButton)
     }
     static clickCloseButton() {
@@ -101,7 +102,6 @@ export class mauticContactsPage {
     static clickImportButton() {
         Cutils.click(mauticContactsPageElements.importButton)
     }
-
     static selectMappingOptionForCompanyAs(text) {
         Cutils.selectValueFromDropDownNonSelect(mauticContactsPageElements.companyMapping, text)
     }
@@ -123,16 +123,84 @@ export class mauticContactsPage {
     static linkItem(text) {
         Cutils.IsVisible('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
         Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
+        Cutils.scrollToView('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
         Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
+        Cutils.scrollToView('//tr[1]//span[text()="Link"]')
         Cutils.click('//tr[1]//span[text()="Link"]')
     }
 
     static isItemLinked(text) {
         return Cutils.IsVisible('//div[contains(@class,alert-growl-container)]')
     }
-
     static typeContactPointAs(text) {
         Cutils.typeText(mauticContactsPageElements.ContactPoint, text)
     }
-
+    static selectCompanyAs(text) {
+        Cutils.selectValueFromDropDownNonSelectWithEnterKey(mauticContactsPageElements.Company, text)
+        Cutils.waitForTime(2000)
+    }
+    static typePositionAs(text) {
+        Cutils.typeText(mauticContactsPageElements.Position, text)
+    }
+    static typeAddressLine1As(text) {
+        Cutils.typeText(mauticContactsPageElements.AddressLine1, text)
+    }
+    static typeAddressLine2As(text) {
+        Cutils.typeText(mauticContactsPageElements.AddressLine2, text)
+    }
+    static selectContactStateAs(text) {
+        Cutils.selectValueFromDropDownNonSelect(mauticContactsPageElements.ContactState, text)
+    }
+    static selectContactCountryAs(text) {
+        Cutils.selectValueFromDropDownNonSelect(mauticContactsPageElements.ContactCountry, text)
+    }
+    static typeContactMobileNumberAs(text) {
+        Cutils.typeText(mauticContactsPageElements.ContactMobileNumber, text)
+    }
+    static typeContactPhoneNumberAs(text) {
+        Cutils.typeText(mauticContactsPageElements.ContactPhoneNumber, text)
+    }
+    static typeContactFaxNumberAs(text) {
+        Cutils.typeText(mauticContactsPageElements.ContactFaxNumber, text)
+    }
+    static selectPreferredLocaleAs(text) {
+        Cutils.selectValueFromDropDownNonSelect(mauticContactsPageElements.PreferredLocale, text)
+    }
+    static selectPreferredTimezoneAs(text) {
+        Cutils.selectValueFromDropDownNonSelect(mauticContactsPageElements.PreferredTimeZone, text)
+    }
+    static typeContactWebsiteAs(text) {
+        Cutils.typeText(mauticContactsPageElements.ContactWebsite, text)
+    }
+    static selectContactStageAs(text) {
+        Cutils.selectValueFromDropDownNonSelect(mauticContactsPageElements.ContactStage, text)
+    }
+    static typeContactTagAs(text) {
+        Cutils.typeText(mauticContactsPageElements.ContactTag, text + '{enter}')
+    }
+    static openContact(text) {
+        Cutils.IsVisible('//tr[1]//a//div[contains(text(), ' + "\'" + text + "\'" + ')]')
+        Cutils.click('//tr[1]//a//div[contains(text(), ' + "\'" + text + "\'" + ')]')
+    }
+    static isLabelDisplayed(text) {
+        return Cutils.IsVisible('//span[normalize-space(text())=' + "\'" + text + "\'" + ']')
+    }
+    static clickEmailBounced() {
+        Cutils.waitForTime(2000)
+        Cutils.doubleClick(mauticContactsPageElements.EmailBounced)
+        Cutils.waitForTime(2000)
+        Cutils.pageReload()
+    }
+    static isContactRemovedFromDoNotContact() {
+        Cutils.IsNotExist(mauticContactsPageElements.EmailBounced)
+    }
+    static typeAttributionAs(text) {
+        Cutils.typeText(mauticContactsPageElements.Attribution, text)
+    }
+    static typeAttributionDateAsToday() {
+        Cutils.typeText(mauticContactsPageElements.AttributionDate, Cutils.formatDate(new Date()))
+    }
+    static typeDateLastActiveAsToday() {
+        Cutils.typeText(mauticContactsPageElements.DateLastActive, Cutils.formatDate(new Date()))
+    }
 }

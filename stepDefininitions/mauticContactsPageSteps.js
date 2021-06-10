@@ -7,26 +7,19 @@ import { when } from "cypress/types/jquery";
 When(/^I add Contact$/, () => {
     mauticContactsPage.createContact();
 });
-
-
 Then(/^I should see Contact is Created$/, () => {
     return mauticContactsPage.isContactCreatedOld();
 });
-
-
 When(/^I click Add New Button on Contact Page$/, () => {
     mauticContactsPage.clickAddNewButton();
 });
-
 When(/^I type Contact Title as "([^"]*)"$/, (text) => {
     mauticContactsPage.typeTitleAs(text);
 });
-
 When(/^I type Contact First Name as "([^"]*)"$/, (text) => {
     mauticContactsPage.typeContactFirstNameaAs(text);
 
 });
-
 
 When(/^I type Conact Last Name as "([^"]*)"$/, (text) => {
     mauticContactsPage.typeContactLastNameaAs(text);
@@ -126,6 +119,94 @@ Then(/^I should see "([^"]*)" is linked to Contact$/, (text) => {
 When(/^I type Contact Points as "([^"]*)" on Contacts page$/, (text) => {
     mauticContactsPage.typeContactPointAs(text);
 });
+
+When(/^I select Company as "([^"]*)"$/, (text) => {
+    mauticContactsPage.selectCompanyAs(text);
+});
+
+When(/^I type Position as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typePositionAs(text);
+});
+
+When(/^I type Address Line 1 as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typeAddressLine1As(text);
+});
+
+When(/^I type Address Line 2 as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typeAddressLine2As(text);
+});
+
+When(/^I select Contact State as "([^"]*)"$/, (text) => {
+    mauticContactsPage.selectContactStateAs(text);
+});
+
+When(/^I select Contact Country as "([^"]*)"$/, (text) => {
+    mauticContactsPage.selectContactCountryAs(text);
+});
+
+When(/^I type Contact Mobile number as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typeContactMobileNumberAs(text);
+});
+
+When(/^I type Contact Phone number as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typeContactPhoneNumberAs(text);
+});
+
+When(/^I type Contact Fax number as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typeContactFaxNumberAs(text);
+});
+
+When(/^I select Preferred Locale as "([^"]*)"$/, (text) => {
+    mauticContactsPage.selectPreferredLocaleAs(text);
+});
+
+When(/^I select Preferred Timezone as "([^"]*)"$/, (text) => {
+    mauticContactsPage.selectPreferredTimezoneAs(text);
+});
+
+When(/^I type Contact Website as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typeContactWebsiteAs(text);
+});
+
+When(/^I select Contact Stage as "([^"]*)"$/, (text) => {
+    mauticContactsPage.selectContactStageAs(text);
+});
+
+When(/^I type Contact Tag as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typeContactTagAs(text);
+});
+
+When(/^I open the "([^"]*)" Contact$/, (text) => {
+    mauticContactsPage.openContact(text);
+});
+
+Then(/^I should see "([^"]*)" label is displayed$/, (text) => {
+    return mauticContactsPage.isLabelDisplayed(text);
+});
+
+When(/^I click Email Bounced$/, () => {
+    mauticContactsPage.clickEmailBounced();
+});
+
+Then(/^I should see Contact is removed from Do not contact$/, () => {
+    return mauticContactsPage.isContactRemovedFromDoNotContact();
+});
+
+When(/^I type Attribution as "([^"]*)"$/, (text) => {
+    mauticContactsPage.typeAttributionAs(text);
+});
+
+When(/^I type Attribution as Today$/, () => {
+    mauticContactsPage.typeAttributionDateAsToday();
+});
+
+When(/^I type Date Last Active as Today$/, () => {
+    mauticContactsPage.typeDateLastActiveAsToday();
+});
+
+
+
+
 
 
 

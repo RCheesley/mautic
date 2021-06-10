@@ -5,53 +5,66 @@ export class mauticGlobalPage {
     var input_url;
     switch (text) {
       case "Contacts":
-        input_url = "s/contacts";
+        input_url = 's/contacts';
         break;
       case "Emails":
-        input_url = "s/emails";
+        input_url = 's/emails';
         break;
       case "Segments":
-        input_url = "s/segments";
+        input_url = 's/segments';
         break;
       case "Asset":
-        input_url = "s/assets";
+        input_url = 's/assets';
         break;
-      case "Local Asset":
-        input_url = "/s/assets?search=Local";
+      case 'Local Asset':
+        input_url = '/s/assets?search=Local';
         break;
-      case "Remote Asset":
-        input_url = "/s/assets?search=remote";
+      case 'Remote Asset':
+        input_url = '/s/assets?search=remote';
         break;
-      case "Companies":
-        input_url = "s/companies";
+      case 'Companies':
+        input_url = 's/companies';
         break;
-      case "Emails":
-        input_url = "s/emails";
+      case 'Emails':
+        input_url = 's/emails';
         break;
-      case "Dynamic Content":
-        input_url = "s/dwc";
+      case 'Dynamic Content':
+        input_url = 's/dwc';
         break;
-      case "Custom Fields":
-        input_url = "s/contacts/fields";
+      case 'Custom Fields':
+        input_url = 's/contacts/fields';
         break;
-      case "Custom Objects":
-        input_url = "s/custom/object";
+      case 'Custom Objects':
+        input_url = 's/custom/object';
         break;
-      case "Landing Pages":
-        input_url = "s/pages";
+      case 'Landing Pages':
+        input_url = 's/pages';
         break;
-      case "Stages":
-        input_url = "s/stages";
+      case 'Stages':
+        input_url = 's/stages';
         break;
-      case "Points":
-        input_url = "s/points";
+      case 'Points':
+        input_url = 's/points';
+        break;
+      case 'Forms':
+        input_url = 's/forms';
+        break;
+      case 'Reports':
+        input_url = 's/reports';
+        break;
+      case 'Point Triggers':
+        input_url = 's/points/triggers';
         break;
       case "Campaigns":
         input_url = "s/campaigns";
         break;
-        }
-        console.log(input_url);
-        Cutils.navigateTo(input_url);
+      case 'DashBoard':
+        input_url = 's/dashboard';
+        break;
+
+    }
+    console.log(input_url);
+    Cutils.navigateTo(input_url);
   }
 
   static verifyPageTitle(text) {

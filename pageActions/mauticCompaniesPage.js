@@ -52,4 +52,46 @@ export class mauticCompaniesPage {
     static selectValyeFOrCustomFiled(text1, text2) {
         Cutils.click('//*[text()=' + "\'" + text1 + "\'" + ']/following::span[text()=' + "\'" + text2 + "\'" + ']')
     }
+    static typeCompanyEmailAs(text) {
+        Cutils.typeText(mauticCompaniesPageElements.CompanyEmail, text)
+    }
+    static typeAddressLine1As(text) {
+        Cutils.typeText(mauticCompaniesPageElements.AddressLine1, text)
+    }
+    static typeAddressLine2As(text) {
+        Cutils.typeText(mauticCompaniesPageElements.AddressLine2, text)
+    }
+    static selectCompanyStateAs(text) {
+        Cutils.selectValueFromDropDownNonSelect(mauticCompaniesPageElements.CompanyState, text)
+    }
+    static selectCompanyCountryAs(text) {
+        Cutils.selectValueFromDropDownNonSelect(mauticCompaniesPageElements.CompanyCountry, text)
+    }
+    static typeCompanyPhoneNumberAs(text) {
+        Cutils.typeText(mauticCompaniesPageElements.CompanyPhoneNumber, text)
+    }
+    static typeCompanyWebsiteAs(text) {
+        Cutils.typeText(mauticCompaniesPageElements.CompanyWebsite, text)
+    }
+    static typeCompanyPointsAs(text) {
+        Cutils.typeText(mauticCompaniesPageElements.CompanyPoints, text)
+    }
+    static clickProfessionalSection() {
+        Cutils.click(mauticCompaniesPageElements.ProfessionalSection)
+    }
+    static typeNumberOfEmployeesAs(text) {
+        Cutils.typeText(mauticCompaniesPageElements.NumberOfEmployees, text)
+    }
+    static typeCompanyFaxAs(text) {
+        Cutils.typeText(mauticCompaniesPageElements.CompanyFax, text)
+    }
+    static typeComapnyAnnualRevenueAs(text) {
+        Cutils.typeText(mauticCompaniesPageElements.ComapnyAnnualRevenue, text)
+    }
+    static selectCompanyIndustryAs(text) {
+        Cutils.selectValueFromDropDownNonSelect(mauticCompaniesPageElements.CompanyIndustry, text)
+    }
+    static typeCompanyDescriptionAs(text) {
+        Cutils.typeText(mauticCompaniesPageElements.CompanyDescription, text)
+    }
 }

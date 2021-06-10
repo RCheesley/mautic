@@ -12,4 +12,5 @@ export class mauticSegmentsElemenets {
     static EditButton = '//span[text()="Edit"]';
     static CloseButton = '//span[text()="Close"]';
     static filter = '//input[@id="list-search"]';
+    static filterValueDropDown = '//div[contains(@id,"leadlist_filters_")][contains(@id,"_properties_filter_chosen")]';
 }

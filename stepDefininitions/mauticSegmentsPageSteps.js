@@ -71,6 +71,11 @@ Then(/^I should see "([^"]*)" is deleted$/, (text) => {
 });
 
 
+When(/^I choose Filter as "([^"]*)" "([^"]*)" at "([^"]*)" on Contact Segments page$/, (type, filter, index) => {
+    mauticSegments.chooseFilterWithAddtionalParamsAs(type, filter, index);
+});
+
+
 
 
 

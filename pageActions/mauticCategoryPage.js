@@ -20,20 +20,21 @@ export class mauticCategoryPage {
     }
     static isCateogryCreated(text) {
         Cutils.IsVisible('//div[contains(@class,alert-growl-container)]//*[text()=' + "\'" + text + "\'" + ']')
-        return Cutils.IsVisible('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        return Cutils.IsVisible('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
 
     static ClickSaveAndCloseButton() {
         Cutils.click(mauticCategoryPageElements.saveAndCloseButton)
     }
     static deleteEmailCategory(text) {
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
-        Cutils.click('//tr[1]//span[text()="Delete"]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
+        Cutils.click('//tr//span[text()="Delete"]')
         Cutils.IsVisible('//button[text()="Delete"]')
         Cutils.click('//button[text()="Delete"]')
     }
     static isEmailCategoryDeleted(text) {
+        Cutils.IsVisible('//div[contains(@class,alert-growl-container)]//*[text()=' + "\'" + text + "\'" + ']')
         return Cutils.IsNotExist('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
 
