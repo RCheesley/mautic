@@ -97,32 +97,34 @@ Feature: Verify that user is able to create segment and test that contacts are g
         When I search Contact Segment as "<Segment_Name>"
         Then I should be see Contact Segment "<Segment_Name>" is created
         Examples:
-            | Segment_Name                | filter             | filter_condition      | filter_value          |
-            | testaddressline1equals      | Address Line 1     | equals                | 123 Test              |
-            | testaddressline2equals      | Address Line 2     | equals                | test road             |
-            | testcityequals              | City               | equals                | Pune                  |
-            | testcountryequals           | Country            | equals                | India                 |
-            | testfaxequals               | Fax                | equals                | 1023456789            |
-            | testfirstnameequals         | First Name         | equals                | Contact1              |
-            | testlastnameequals          | Last Name          | equals                | Test1                 |
-            | testmobileequals            | Mobile             | equals                | 1234567890            |
-            | testpointsequals            | Points (+/-)       | equals                | 5                     |
-            | testpositionequals          | Position           | equals                | Developer             |
-            | testpreferredlocaleequals   | Preferred Locale   | equals                | Marathi               |
-            | testpreferredtimezoneequals | Preferred Timezone | equals                | Kolkata               |
-            | testprimarycompanyequals    | Primary company    | equals                | CompanyAddedByCypress |
-            | teststageequals             | Stage              | equals                | TestStages            |
-            | teststateequals             | State              | equals                | Maharashtra           |
-            | testtagsincluding           | Tags               | including             | Automation            |
-            | testtitleequals             | Title              | equals                | Mr                    |
-            | testwebsiteequals           | Website            | equals                | http://www.test.com   |
-            | testzipcodeequals           | Zip Code           | equals                | 123456                |
-            | testattributionquals        | Attribution        | equals                | 123                   |
-            | testattributiondatequals    | Attribution Date   | equals                | Today                 |
-            | testemaildomainequals       | Email Domain       | equals                | test.com              |
-            | testdateaddedequals         | Date Added         | greater than or equal | Today                 |
-            | testdateidentifiedequals    | Date Identified    | greater than or equal | Today                 |
-            | testdatelastactiveequals    | Date Last Active   | equals                | Today                 |
+            | Segment_Name                | filter             | filter_condition      | filter_value           |
+            | testaddressline1equals      | Address Line 1     | equals                | 123 Test               |
+            | testaddressline2equals      | Address Line 2     | equals                | test road              |
+            | testcityequals              | City               | equals                | Pune                   |
+            | testcountryequals           | Country            | equals                | India                  |
+            | testfaxequals               | Fax                | equals                | 1023456789             |
+            | testfirstnameequals         | First Name         | equals                | Contact1               |
+            | testlastnameequals          | Last Name          | equals                | Test1                  |
+            | testmobileequals            | Mobile             | equals                | 1234567890             |
+            | testpointsequals            | Points (+/-)       | equals                | 5                      |
+            | testpositionequals          | Position           | equals                | Developer              |
+            | testpreferredlocaleequals   | Preferred Locale   | equals                | Marathi                |
+            | testpreferredtimezoneequals | Preferred Timezone | equals                | Kolkata                |
+            | testprimarycompanyequals    | Primary company    | equals                | CompanyAddedByCypress  |
+            | teststageequals             | Stage              | equals                | TestStages             |
+            | teststateequals             | State              | equals                | Maharashtra            |
+            | testtagsincluding           | Tags               | including             | Automation             |
+            | testtitleequals             | Title              | equals                | Mr                     |
+            | testwebsiteequals           | Website            | equals                | http://www.test.com    |
+            | testzipcodeequals           | Zip Code           | equals                | 123456                 |
+            | testattributionquals        | Attribution        | equals                | 123                    |
+            | testattributiondatequals    | Attribution Date   | equals                | Today                  |
+            | testemaildomainequals       | Email Domain       | equals                | mailtest.mautic.com    |
+            | testdateaddedequals         | Date Added         | greater than or equal | Today                  |
+            | testdateidentifiedequals    | Date Identified    | greater than or equal | Today                  |
+            | testdatelastactiveequals    | Date Last Active   | equals                | Today                  |
+            | testsegmentmembershipequals | Segment Membership | including             | testaddressline1equals |
+
 
 
     @create_new_segement_company
@@ -144,7 +146,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
             | testcompanyaddress2equals  | Address 2           | equals           | test road                    | Primary company | 1        |
             | testannualrevenuequals     | Annual Revenue      | equals           | 123456                       | Primary company | 1        |
             | testcompanycityequal       | City                | equals           | Pune                         | Primary company | 1        |
-            | testcompanyemailequals     | Company Email       | equals           | Pune                         | Primary company | 1        |
+            | testcompanyemailequals     | Company Email       | equals           | CompanyEmail@test.com        | Primary company | 1        |
             | testcompanynameequal       | Company Name        | equals           | CompanyAddedByCypress        | Primary company | 1        |
             | testcountryequal           | Country             | equals           | India                        | Primary company | 1        |
             | testdescriptionequal       | Description         | equals           | test company                 | Primary company | 1        |
@@ -198,7 +200,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
             | testcompanyaddress2equals   | 3                  |
             | testannualrevenuequals      | 3                  |
             | testcompanycityequal        | 3                  |
-            # | testcompanyemailequals | 3                  |#todo
+            | testcompanyemailequals      | 3                  |
             | testcompanynameequal        | 3                  |
             | testcountryequal            | 3                  |
             | testdescriptionequal        | 3                  |
@@ -209,6 +211,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
             | testcompanystateequal       | 3                  |
             | testwebsiteequal            | 3                  |
             | testcompanyzipcodeeequal    | 3                  |
+            | testsegmentmembershipequals | 3                  |
 
     @edit_segement
     Scenario Outline: Edit segment and Verify contacts
@@ -235,6 +238,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
 
         Examples:
             | Segment_Name                |
+            | testsegmentmembershipequals |
             | testaddressline1equals      |
             | testaddressline2equals      |
             | testcityequals              |
@@ -265,7 +269,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
             | testcompanyaddress2equals   |
             | testannualrevenuequals      |
             | testcompanycityequal        |
-            #|testcompanyemailequals|#todo
+            | testcompanyemailequals      |
             | testcompanynameequal        |
             | testcountryequal            |
             | testdescriptionequal        |
@@ -276,6 +280,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
             | testcompanystateequal       |
             | testwebsiteequal            |
             | testcompanyzipcodeeequal    |
+
 
 
     @bounced_email_yes_segement
@@ -368,13 +373,96 @@ Feature: Verify that user is able to create segment and test that contacts are g
         And I click Email Bounced
         Then I should see Contact is removed from Do not contact
 
+    @contact_modified_date_greater_than_or_equal
+    Scenario: Add new Segments based on modified_date_greater_than_or_equal
+        When I visit "Contacts" page
+        Then I should be on "Contacts" Page
+        When I search Contact as "Contact1"
+        And I edit the "Contact1" Contact
+        And I type Conatct email as "Contact12@mailtest.mautic.com"
+        And I click Save Button on Contact Page
+        And I click Close Button on Contact Page
+        Then I should see Contact is Updated as "Contact1"
 
+        When I visit "Segments" page
+        Then I should be on "Contact Segments" Page
+        When I click Add New Button on Contact Segments page
+        And I type Segment Name as "testmodifieddategreaterthanorequal"
+        And I Click on "Filters" tab on Contact Segments page
+        And I choose Filter as "Modified Date" on Contact Segments page
+        And I choose Filter Condition as "greater than or equal" on Contact Segments page
+        And I choose Filter Value as "Today" on Contact Segments page
+        And I click Save and Close Button on Contact Segments page
+        When I search Contact Segment as "testmodifieddategreaterthanorequal"
+        Then I should be see Contact Segment "testmodifieddategreaterthanorequal" is created
+
+        When I visit "Segments" page
+        Then I should be on "Contact Segments" Page
+        When I search Contact Segment as "testmodifieddategreaterthanorequal"
+        Then I should see Segment "testmodifieddategreaterthanorequal" has "3" contacts added to it
+
+
+    @change_contact_stage
+    Scenario: Create a campaign with action change contact's stage from the selected segment
+        When I visit "Campaigns" page
+        Then I should be on "Campaigns" Page
+        When I click Add New Button on Campaign page
+        When I type Campaign title as "changeContactStage_Campaign_With_Segment"
+        And I click on Launch Campaign builder
+        When I select "Contact segments" as campaign source
+        When I Select "test" as contact source and click on add
+        When I click on campaign event list
+        And I click on "Action" tab of campaign
+        When I select action as "stage" from actions list
+        And I add event name "Change Contact's stage to Stage 1" and add stage "Stage 1"
+        And I apply changes to builder and close the builder
+        Then I publish the campaign and save it
+
+        When I visit "Segments" page
+        Then I should be on "Contact Segments" Page
+        When I click Add New Button on Contact Segments page
+        And I type Segment Name as "PartofCampaign"
+        And I Click on "Filters" tab on Contact Segments page
+        And I choose Filter as "Campaign Membership" on Contact Segments page
+        And I choose Filter Condition as "including" on Contact Segments page
+        And I choose Filter Value as "changeContactStage_Campaign_With_Segment" on Contact Segments page
+        And I click Save and Close Button on Contact Segments page
+        When I search Contact Segment as "PartofCampaign"
+        Then I should be see Contact Segment "PartofCampaign" is created
+        When I visit "Segments" page
+        Then I should be on "Contact Segments" Page
+        When I search Contact Segment as "PartofCampaign"
+        Then I should see Segment "PartofCampaign" has "1" contacts added to it
+
+        When I visit "Campaigns" page
+        Then I should be on "Campaigns" Page
+        When I search for campaign "changeContactStage_Campaign_With_Segment"
+        When I delete campaign "changeContactStage_Campaign_With_Segment"
+        Then I should see campaign "changeContactStage_Campaign_With_Segment" is deleted
+
+
+
+    @delete_stages
+    Scenario: search and delete newly added stage
+        When I visit "Stages" page
+        Then I should be on "Stages" Page
+        When I search Stages as "TestStages"
+        And I delete the "TestStages" Stages
+        Then I should see Stages "TestStages" is deleted
+
+    @delete_company
+    Scenario: Search and Delete Company
+        When I visit "Companies" page
+        Then I should be on "Companies" Page
+        When I search Company as "CompanyAddedByCypress"
+        And I delete the "CompanyAddedByCypress" Company
+        Then I should see Company "CompanyAddedByCypress" is deleted
 
     @delete_contacts
     Scenario Outline:Search and Delete Contact
         When I visit "Contacts" page
         Then I should be on "Contacts" Page
-        When I search Company as "<Contact_First_Name>"
+        When I search Contact as "<Contact_First_Name>"
         And I delete the "<Contact_First_Name>" Contact
         Then I should see Contact "<Contact_First_Name>" is deleted
         Examples:

@@ -44,4 +44,10 @@ Then(/^I should see Landing Page "([^"]*)" is deleted$/, (text) => {
 });
 
 
+When(/^I click Builder button on Landing Page$/, () => {
+    mauticLandingPage.clickBuilderbuttonOnLandingPage();
+});
+
+
+
 

@@ -11,15 +11,15 @@ context("Verify that user is able to create and delete asset", () => {
   beforeEach("Visit HomePage", () => {
     cy.visit("s/assets");
   });
-  
+
   it("Add new local asset", () => {
     assets.addNewButton.click();
     const fileName = "Test.png";
     assets.assetTitle.type("Local Asset");
     cy.get("#dropzone").attachFile(fileName, { subjectType: 'drag-n-drop' }).then((loc) => {
-    cy.wait(4000);
-    assets.saveAndCloseButton.click();
-    assets.closeButton.should("be.visible");
+      cy.wait(4000);
+      assets.saveAndCloseButton.click();
+      assets.closeButton.should("be.visible");
     });
   });
 

@@ -53,14 +53,14 @@ Feature: Verify that user is able to attach role to the user and logged in succe
         Then I should see "Segments" option is present on DashBoard Page
         Then I should see "Components" option is present on DashBoard Page
         Then I should see "Channels" option is present on DashBoard Page
-        Then I should see "Collapse Menu" option is present on DashBoard Page
+    #Then I should see "Collapse Menu" option is present on DashBoard Page
 
 
     @delete_user
     Scenario: Search And Delete User
         When I select "Users" option in settings
         Then I should be on "Users" Page
-        When I search user "User, Test" on Users Page
+        When I search user "User" on Users Page
         And I delete user "User, Test" on Users Page
         Then I should see "Test User" is deleted on Users Page
 

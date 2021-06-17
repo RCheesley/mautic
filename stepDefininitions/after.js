@@ -1,5 +1,6 @@
 
-import { After, Status, Before } from "cypress-cucumber-preprocessor";
+import { Cutils } from "../CommonUtils/Cutils";
 afterEach(() => {
+    Cutils.IsNotExist('//div[@class="loading-bar active"]')
     cy.screenshot()
 });

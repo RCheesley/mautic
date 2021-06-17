@@ -38,14 +38,14 @@ export class mauticAssetPage {
         Cutils.click(mauticAssetPagElements.closeButton);
     }
     static deleteAsset(text) {
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
-        Cutils.click('//tr[1]//span[text()="Delete"]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
+        Cutils.click('//tr//span[text()="Delete"]')
         Cutils.IsVisible('//button[text()="Delete"]')
         Cutils.click('//button[text()="Delete"]')
     }
     static isAssetDeleted(text) {
-        return Cutils.IsNotExist('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        return Cutils.IsNotExist('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
 
     static selectStorageAs(text) {

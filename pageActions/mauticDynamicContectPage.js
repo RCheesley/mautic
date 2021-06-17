@@ -25,7 +25,7 @@ export class mauticDynamicContectPage {
     }
     static isDynamicContentCreated(text) {
         Cutils.IsVisible('//div[contains(@class,alert-growl-container)]//*[text()=' + "\'" + text + "\'" + ']')
-        return Cutils.IsVisible('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        return Cutils.IsVisible('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
     static searchDynamicContect(text) {
         Cutils.IsVisible(mauticDynamicContectPageElements.filter)
@@ -38,9 +38,9 @@ export class mauticDynamicContectPage {
         Cutils.click(mauticDynamicContectPageElements.EditButton)
     }
     static deleteDynamicContent(text) {
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
-        Cutils.click('//tr[1]//span[text()="Delete"]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
+        Cutils.click('//tr//span[text()="Delete"]')
         Cutils.IsVisible('//button[text()="Delete"]')
         Cutils.click('//button[text()="Delete"]')
     }

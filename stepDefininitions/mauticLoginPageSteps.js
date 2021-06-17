@@ -32,5 +32,11 @@ When(/^I type Password as "([^"]*)" on Login Page$/, (text) => {
 });
 
 
+When(/^I go to URL "([^"]*)"$/, (text) => {
+    mauticLoginPage.GoToURL(text);
+});
+
+
+
 
 

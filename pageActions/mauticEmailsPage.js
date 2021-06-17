@@ -72,7 +72,7 @@ export class mauticEmailsPage {
     }
     static isEmailCreated(text) {
         Cutils.IsVisible('//div[contains(@class,alert-growl-container)]//*[text()=' + "\'" + text + "\'" + ']')
-        return Cutils.IsVisible('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        return Cutils.IsVisible('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
 
     static searchEmailAs(text) {
@@ -81,16 +81,16 @@ export class mauticEmailsPage {
     }
 
     static editEmail(text) {
-        Cutils.IsVisible('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        Cutils.IsVisible('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]')
         Cutils.IsVisible(mauticEmailsPageElements.EditButton)
         Cutils.click(mauticEmailsPageElements.EditButton)
     }
 
     static deleteEmail(text) {
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
-        Cutils.click('//tr[1]//span[text()="Delete"]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div//input[@type="checkbox"]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]/preceding::td//div[@class="input-group-btn"]')
+        Cutils.click('//tr//span[text()="Delete"]')
         Cutils.IsVisible('//button[text()="Delete"]')
         Cutils.click('//button[text()="Delete"]')
     }
@@ -99,8 +99,8 @@ export class mauticEmailsPage {
         return Cutils.IsNotExist('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
     static seneEmail(text) {
-        Cutils.IsVisible('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
-        Cutils.click('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        Cutils.IsVisible('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]')
+        Cutils.click('//tr//a[contains(text(), ' + "\'" + text + "\'" + ')]')
         Cutils.IsVisible(mauticEmailsPageElements.SendEmail)
         Cutils.click(mauticEmailsPageElements.SendEmail)
     }

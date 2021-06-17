@@ -19,7 +19,7 @@ export class mauticSegments {
         Cutils.IsVisible(mauticSegmentsElemenets.filterValue)
         Cutils.waitForTime(2000)
         Cutils.typeText(mauticSegmentsElemenets.filterValue, 'testContact')
-        Cutils.click(mauticSegmentsElemenets.saveAndCloseButton)
+        this.clickSaveAndCloseButton()
         //Cutils.IsVisible(mauticSegmentsElemenets.segmentHeader)
     }
 
@@ -47,16 +47,38 @@ export class mauticSegments {
         if (text === 'Today') {
             text = Cutils.formatDate(new Date())
         }
-        if (this.fieldType == 'Country' || this.fieldType == 'Industry' || this.fieldType == 'Preferred Locale' || this.fieldType == 'Preferred Timezone' || this.fieldType == 'Stage' || this.fieldType == 'State' || this.fieldType == 'Bounced - Email' || this.fieldType == 'Tags') {
-            Cutils.selectValueFromDropDownNonSelect(mauticSegmentsElemenets.filterValueDropDown, text)
+
+        if (this.fieldType == 'Campaign Membership' || this.fieldType == 'Segment Membership' || this.fieldType == 'Country' || this.fieldType == 'Industry' || this.fieldType == 'Preferred Locale' || this.fieldType == 'Preferred Timezone' || this.fieldType == 'Stage' || this.fieldType == 'State' || this.fieldType == 'Bounced - Email' || this.fieldType == 'Tags') {
+            if (this.fieldType == 'Segment Membership' || this.fieldType == 'Campaign Membership') {
+                Cutils.IsNotExist('//div[@class="loading-bar active"]')
+                Cutils.typeText(mauticSegmentsElemenets.filterValueSegmentMem, text + '{enter}')
+                Cutils.waitForTime(2000)
+            } else {
+                Cutils.IsNotExist('//div[@class="loading-bar active"]')
+                Cutils.waitForTime(1000)
+                Cutils.selectValueFromDropDownNonSelect(mauticSegmentsElemenets.filterValueDropDown, text)
+                Cutils.waitForTime(2000)
+            }
         }
         else {
+            Cutils.IsNotExist('//div[@class="loading-bar active"]')
             Cutils.typeText(mauticSegmentsElemenets.filterValue, text)
+            Cutils.waitForTime(2000)
         }
 
     }
     static clickSaveAndCloseButton() {
         Cutils.click(mauticSegmentsElemenets.saveAndCloseButton)
+        Cutils.waitForTime(2000)
+        //conditonal execution
+        cy.get('body')
+            .then(($body) => {
+                if ($body.find('div.help-block').text().includes('CSRF')) {
+                    Cutils.click(mauticSegmentsElemenets.saveAndCloseButton)
+                }
+            })
+
+
     }
     static isContactAddedToSegment(text1, text2) {
         return Cutils.IsVisible('//a[normalize-space(text())="' + text1 + ' (' + text1.toLowerCase() + ')"]/following::a[contains(text(),"View ' + text2 + ' Contact")]')

@@ -50,4 +50,22 @@ export class mauticLandingPage {
     static isLandingPageDeleted(text) {
         return Cutils.IsNotExist('//tr[1]//a[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
+    static clickBuilderbuttonOnLandingPage() {
+        Cutils.click('//button[@id="page_buttons_builder_toolbar"]')
+        Cutils.IsVisible('//div[@id="bee-plugin-loader-pbar-fg"]')
+        Cutils.waitForTime(10000)
+        cy.get('iframe[onmousewheel]').then($element => {
+            const $dragable = $element.contents().find('span.Heading div.image-drag')
+            const $dropable = $element.contents().find('div.module-empty')
+            let stripe1 = cy.wrap($dragable)
+
+            stripe1.click().trigger('mouseover')
+                .trigger('mousedown', { which: 1 })
+                .trigger('mousemove', { clientX: 505, clientY: 357 })
+            let stripe2 = cy.wrap($dropable)
+            stripe2
+                .trigger('mousemove')
+                .trigger('mouseup', { force: true })
+        })
+    }
 }

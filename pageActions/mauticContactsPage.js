@@ -55,11 +55,11 @@ export class mauticContactsPage {
     }
     static isContactCreated(text) {
         Cutils.IsVisible('//div[contains(@class,alert-growl-container)]//*[contains(text(), ' + "\'" + text + "\'" + ')]')
-        return Cutils.IsVisible('//tr[1]//a//div[contains(text(), ' + "\'" + text + "\'" + ')]')
+        return Cutils.IsVisible('//tr//a//div[contains(text(), ' + "\'" + text + "\'" + ')]')
     }
     static searchContact(text) {
         Cutils.IsVisible(mauticContactsPageElements.filter)
-        Cutils.typeText(mauticContactsPageElements.filter, text)
+        Cutils.typeText(mauticContactsPageElements.filter, text + '{enter}')
     }
 
     static editContact(text) {
