@@ -1,0 +1,15 @@
+{
+  "projectId": "ozaou3",
+  "baseUrl" : "http://your-mautic-instance",
+  "viewportHeight" : 960,
+  "viewportWidth" : 1536,
+  "defaultCommandTimeout": 10000,
+  "execTimeout":	10000,
+  "taskTimeout":	10000	,
+  "requestTimeout":	10000,
+  "responseTimeout": 10000,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  }
+}
