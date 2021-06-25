@@ -4,10 +4,12 @@
   "description": "Mautic Open Source Distribution",
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.1",
-    "cypress": "^7.6.0",
+    "cypress": "^7.5.0",
     "cypress-cucumber-preprocessor": "^4.1.2",
-    "cypress-file-upload": "^5.0.8",
+    "cypress-file-upload": "^4.1.1",
+    "cypress-iframe": "^1.0.1",
     "cypress-xpath": "^1.6.2",
+    "fs-extra": "^10.0.0",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^1.0.1",
     "grunt-contrib-copy": "^0.5.0",
@@ -19,5 +21,15 @@
     "resolve": "^1.20.0",
     "time-grunt": "^1.0.0",
     "typescript": "^4.3.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/stepDefinitions",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
