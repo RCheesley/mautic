@@ -1,0 +1,35 @@
+import { Cutils } from "../CommonUtils/Cutils";
+import { mauticLoginPageElements } from "../pageElements/mauticLoginPageElements";
+import { Cutils } from "cypress/CommonUtils/Cutils";
+
+
+
+export class mauticLoginPage {
+    static openLoginpage(text) {
+        Cutils.clearCookies();
+        Cutils.openURL(text);
+    }
+
+    static GoToURL(text) {
+        Cutils.navigateTo(text);
+    }
+
+    static enterUserName() {
+        Cutils.typeText(mauticLoginPageElements.username_xpath, Cypress.env("userName"));
+    }
+    static enterpassword() {
+        Cutils.typeText(mauticLoginPageElements.password_xpath, Cypress.env("password"));
+    }
+
+    static clickLoginButton() {
+        Cutils.click(mauticLoginPageElements.login_Button_xpath);
+    }
+    static enterUserNameCreated(text) {
+        Cutils.typeText(mauticLoginPageElements.username_xpath, text);
+    }
+    static enterpasswordCreated(text) {
+        Cutils.typeText(mauticLoginPageElements.password_xpath, text);
+    }
+
+
+}

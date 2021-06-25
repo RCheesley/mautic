@@ -1,0 +1,38 @@
+export class mauticContactsPageElements {
+    static addNewButton = '//a[contains(@href,"new")]//span[text()="New"]';
+    static title = '//input[@id="lead_title"]';
+    static firstName = '//input[@id="lead_firstname"]';
+    static lastName = '//input[@id="lead_lastname"]';
+    static leadEmail = '//input[@id="lead_email"]';
+    static SaveButton = '//button[@id="lead_buttons_save_toolbar"]';
+    static closeButton = '//span[text()="Close"]';
+    static alert = '//div[contains(@class,alert)]';
+    static filter = '//input[@id="list-search"]';
+    static contactCity = '//input[@id="lead_city"]';
+    static contactZipCode = '//input[@id="lead_zipcode"]';
+    static EditButton = '//span[text()="Edit"]';
+    static moreOptionMenu = '//button[@class="btn btn-default btn-nospin dropdown-toggle"]';
+    static uploadFile = '//input[@id="lead_import_file"]';
+    static uploadButton = '//button[@id="lead_import_start"]';
+    static importButton = '//button[@class="btn btn-primary btn-copy"]';
+    static companyMapping = '//div[@id="lead_field_import_company_chosen"]';
+    static ContactPoint = '//input[@id="lead_points"]';
+    static Company = '//div[@id="lead_companies_chosen"]';
+    static Position = '//input[@id="lead_position"]';
+    static AddressLine1 = '//input[@id="lead_address1"]';
+    static AddressLine2 = '//input[@id="lead_address2"]';
+    static ContactState = '//div[@id="lead_state_chosen"]';
+    static ContactCountry = '//div[@id="lead_country_chosen"]';
+    static ContactMobileNumber = '//input[@id="lead_mobile"]';
+    static ContactPhoneNumber = '//input[@id="lead_phone"]';
+    static ContactFaxNumber = '//input[@id="lead_fax"]';
+    static PreferredLocale = '//div[@id="lead_preferred_locale_chosen"]';
+    static PreferredTimeZone = '//div[@id="lead_timezone_chosen"]';
+    static ContactWebsite = '//input[@id="lead_website"]';
+    static ContactStage = '//div[@id="lead_stage_chosen"]';
+    static ContactTag = '//input[@value="Select or type in a new tag"]';
+    static EmailBounced = '//span[@data-original-title="Re-enable contact"]//i';
+    static Attribution = '//input[@id="lead_attribution"]';
+    static AttributionDate = '//input[@id="lead_attribution_date"]';
+    static DateLastActive = '//input[@id="lead_last_active"]';
+}
