@@ -21,7 +21,7 @@ module.exports = (on, config) => {
     typescript: resolve.sync('typescript', { baseDir: config.projectRoot }),
   };
   on('file:preprocessor', cucumber(options));
-  const file = 'mautic.' + (config.env.fileConfig || "staging");
+  const file = 'mautic4.' + (config.env.fileConfig || "beta");
 
   return getConfigurationByFile(file);
 };
@@ -33,7 +33,7 @@ const path = require('path');
 function getConfigurationByFile(file) {
   const pathToConfigFile = path.resolve(
     '..',
-    'mc-cs-cypress/cypress/configFiles',
+    'mautic/cypress/configFiles',
     `${file}.json`
   );
 

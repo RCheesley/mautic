@@ -1,0 +1,13 @@
+{
+    "baseUrl": "https://cypress.ddev.site",
+    "userName": "admin",
+    "password": "mautic",
+    "instanceId": "",
+    "env": {
+        "environment": "development",
+        "TAGS": " not @role1",
+        "remoteUrl": "https://docs.google.com/spreadsheets/d/1WXr9byp_l3QWpNgSIczXtL_udVNyq5FzIhySe5W9PiI/edit?usp=sharing",
+        "cron-path": "ddev exec bin/console",
+        "mailtest-path": "https://mailtest.mautic.org/api/v1/mailbox/"
+    }
+}
