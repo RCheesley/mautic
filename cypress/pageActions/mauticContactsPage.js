@@ -15,7 +15,7 @@ export class mauticContactsPage {
         Cutils.typeText(mauticContactsPageElements.title, 'Mr')
         Cutils.typeText(mauticContactsPageElements.firstName, 'testContact')
         Cutils.typeText(mauticContactsPageElements.lastName, 'Data')
-        Cutils.typeText(mauticContactsPageElements.leadEmail, 'testContact@mailtest.mautic.com')
+        Cutils.typeText(mauticContactsPageElements.leadEmail, 'testContact@mailtest.mautic.org')
         Cutils.click(mauticContactsPageElements.SaveButton)
         mauticGlobalPage.waitForPageLoad('testContact Data')
         Cutils.click(mauticContactsPageElements.closeButton)

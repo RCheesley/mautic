@@ -119,9 +119,9 @@ Feature: Campaign regression scenarios
 
         Examples:
             | Contact_Title | Contact_First_Name | Contact_Last_Name | Conatct_email                | Contact_City | Date Field 1 | Date Field 2 | Date Field 3 |
-            | Mr            | Contact1           | Test1             | Contact1@mailtest.mautic.com | Pune         | 2021-05-04   | 2021-05-04   | 2021-05-04   |
-            | Mr            | Contact2           | Test1             | Contact2@mailtest.mautic.com | Pune         | 2021-05-04   | 2021-05-04   | 2021-05-04   |
-            | Mr            | Contact3           | Test1             | Contact3@mailtest.mautic.com | Sangli       | 2021-05-04   | 2021-05-04   | 2021-05-04   |
+            | Mr            | Contact1           | Test1             | Contact1@mailtest.mautic.org | Pune         | 2021-05-04   | 2021-05-04   | 2021-05-04   |
+            | Mr            | Contact2           | Test1             | Contact2@mailtest.mautic.org | Pune         | 2021-05-04   | 2021-05-04   | 2021-05-04   |
+            | Mr            | Contact3           | Test1             | Contact3@mailtest.mautic.org | Sangli       | 2021-05-04   | 2021-05-04   | 2021-05-04   |
 
     @create_new_segement
     Scenario Outline: Add new segment based on Last Name to test campaign scenario

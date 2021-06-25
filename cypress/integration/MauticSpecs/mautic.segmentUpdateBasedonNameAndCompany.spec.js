@@ -34,7 +34,7 @@ context("Verify segment membership Update based on Name and Company", () => {
     contact.title.type("Mr");
     contact.firstName.type(contactFirstName);
     contact.lastName.type("contact1");
-    contact.leadEmail.type(contactFirstName + "contact1@mailtest.mautic.com");
+    contact.leadEmail.type(contactFirstName + "contact1@mailtest.mautic.org");
     contact.leadCity.type("Bidar");
     contact.companySearch.type(companyName);
     contact.companySelector.first().click();
@@ -54,7 +54,7 @@ context("Verify segment membership Update based on Name and Company", () => {
     contact.title.type("Mr");
     contact.firstName.type(contactFirstName);
     contact.lastName.type("contact2");
-    contact.leadEmail.type(contactFirstName + "contact2@mailtest.mautic.com");
+    contact.leadEmail.type(contactFirstName + "contact2@mailtest.mautic.org");
     contact.leadCity.type("Bidar");
     contact.companySearch.type(companyName);
     contact.companySelector.first().click();
@@ -109,7 +109,7 @@ context("Verify segment membership Update based on Name and Company", () => {
     contact.title.type("Mr");
     contact.firstName.type("Third " + contactFirstName);
     contact.lastName.type("contact3");
-    contact.leadEmail.type(contactFirstName + "contact3@mailtest.mautic.com");
+    contact.leadEmail.type(contactFirstName + "contact3@mailtest.mautic.org");
     contact.leadCity.type("Bidar");
     contact.companySearch.type(companyName);
     contact.companySelector.first().click();

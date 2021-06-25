@@ -11,7 +11,7 @@ var emailSubject = "Test Email";
 var sourceLinks;
 var getMailId;
 var TestCampaign = "TestCampaign";
-var mailtestUrl = 'https://mailtest.mautic.com/api/v1/mailbox/'
+var mailtestUrl = 'https://mailtest.mautic.org/api/v1/mailbox/'
 
 context("Create Campaign and verify that uer has received an email in the mailbox", () => {
   

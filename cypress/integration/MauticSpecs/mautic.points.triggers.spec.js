@@ -10,7 +10,7 @@ const search = require("../../Pages/Search");
 var testTrigger = "testTrigger";
 var testTriggerEmail = "TestTriggerEmail";
 var testContact = "testcontact";
-var mailtestUrl = "https://mailtest.mautic.com/api/v1/mailbox/";
+var mailtestUrl = "https://mailtest.mautic.org/api/v1/mailbox/";
 var getMailId;
 
 context("Verify that user is able to create trigger and verify that user has received an email once trigger condition is matched", () => {

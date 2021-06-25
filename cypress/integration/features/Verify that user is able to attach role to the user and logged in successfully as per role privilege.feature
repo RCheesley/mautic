@@ -32,7 +32,7 @@ Feature: Verify that user is able to attach role to the user and logged in succe
         And I type User Last Name as "User" on Users Page
         And I select User Role as "Standard" on Users Page
         And I type User Name as "StandardAccount" on Users Page
-        And I type User email as "user@mailtest.mautic.com" on Users Page
+        And I type User email as "user@mailtest.mautic.org" on Users Page
         And I type User Password as "Standard@12345" on Users Page
         And I confirm User Password as "Standard@12345" on Users Page
         And I click Save And Close Button on Users Page

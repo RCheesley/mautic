@@ -45,7 +45,7 @@ Feature: Verify that user is able to create credentials and update the contact f
         Then I should see Country field is empty
         When I update contact Country field with value "India"
         Then I should see Country field value is updated with value "India"
-        When I make API call to create contact with First Name as "Test2" Last name as "Contact2" emailID as "test2contact2@mailtest.mautic.com"
+        When I make API call to create contact with First Name as "Test2" Last name as "Contact2" emailID as "test2contact2@mailtest.mautic.org"
         Then I should see Contact is Created using API
         When I delete Last Created contact using API
         Then I should see Contact is deleted using API

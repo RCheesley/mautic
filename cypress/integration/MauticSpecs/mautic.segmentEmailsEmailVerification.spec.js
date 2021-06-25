@@ -8,7 +8,7 @@ const search=require("../../Pages/Search");
 var TestContact = "testcontact";
 var getMailId;
 var sourceLinks;
-var mailtestUrl = 'https://mailtest.mautic.com/api/v1/mailbox/'
+var mailtestUrl = 'https://mailtest.mautic.org/api/v1/mailbox/'
 var segmentEmail = "testSegmentEmailCypress";
 
 context("Segment email creation and verify that user has received an email", () => {

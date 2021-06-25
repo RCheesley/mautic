@@ -77,9 +77,9 @@ Feature: Verify that user is able to create segment and test that contacts are g
 
         Examples:
             | Contact_Title | Contact_First_Name | Contact_Last_Name | Conatct_email                | Contact_City | Company_name          | Company_Position | Address_line_1 | Address_line_2 | Contact_Zip_Code | Contact_State | Contact_Country | Contact_Mobile | Contact_Phone | Contact_Points | Contact_Fax | Preferred_Locale | Preferred_Timezone | Website      | Contact_Stage | Tag        | Attribution |
-            | Mr            | Contact1           | Test1             | Contact1@mailtest.mautic.com | Pune         | CompanyAddedByCypress | Developer        | 123 Test       | test road      | 123456           | Maharashtra   | India           | 1234567890     | 0123456789    | 5              | 1023456789  | Marathi          | Kolkata            | www.test.com | TestStages    | Automation | 123         |
-            | Mr            | Contact2           | Test1             | Contact2@mailtest.mautic.com | Pune         | CompanyAddedByCypress | Developer        | 123 Test       | test road      | 123456           | Maharashtra   | India           | 1234567890     | 0123456789    | 5              | 1023456789  | Marathi          | Kolkata            | www.test.com | TestStages    | Automation | 123         |
-            | Mr            | Contact3           | Test2             | Contact3@mailtest.mautic.com | Sangli       | CompanyAddedByCypress | Developer        | 123 Test       | test road      | 123456           | Maharashtra   | India           | 1234567890     | 0123456789    | 5              | 1023456789  | Marathi          | Kolkata            | www.test.com | TestStages    | Automation | 123         |
+            | Mr            | Contact1           | Test1             | Contact1@mailtest.mautic.org | Pune         | CompanyAddedByCypress | Developer        | 123 Test       | test road      | 123456           | Maharashtra   | India           | 1234567890     | 0123456789    | 5              | 1023456789  | Marathi          | Kolkata            | www.test.com | TestStages    | Automation | 123         |
+            | Mr            | Contact2           | Test1             | Contact2@mailtest.mautic.org | Pune         | CompanyAddedByCypress | Developer        | 123 Test       | test road      | 123456           | Maharashtra   | India           | 1234567890     | 0123456789    | 5              | 1023456789  | Marathi          | Kolkata            | www.test.com | TestStages    | Automation | 123         |
+            | Mr            | Contact3           | Test2             | Contact3@mailtest.mautic.org | Sangli       | CompanyAddedByCypress | Developer        | 123 Test       | test road      | 123456           | Maharashtra   | India           | 1234567890     | 0123456789    | 5              | 1023456789  | Marathi          | Kolkata            | www.test.com | TestStages    | Automation | 123         |
 
 
 
@@ -119,7 +119,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
             | testzipcodeequals           | Zip Code           | equals                | 123456                 |
             | testattributionquals        | Attribution        | equals                | 123                    |
             | testattributiondatequals    | Attribution Date   | equals                | Today                  |
-            | testemaildomainequals       | Email Domain       | equals                | mailtest.mautic.com    |
+            | testemaildomainequals       | Email Domain       | equals                | mailtest.mautic.org    |
             | testdateaddedequals         | Date Added         | greater than or equal | Today                  |
             | testdateidentifiedequals    | Date Identified    | greater than or equal | Today                  |
             | testdatelastactiveequals    | Date Last Active   | equals                | Today                  |
@@ -157,7 +157,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
             | testcompanystateequal      | State               | equals           | Maharashtra                  | Primary company | 1        |
             | testwebsiteequal           | Website             | equals           | http://www.test.com          | Primary company | 1        |
             | testcompanyzipcodeeequal   | Zip Code            | equals           | 123456                       | Primary company | 1        |
-            | testcontactemaileequal     | Email               | equals           | Contact1@mailtest.mautic.com | Contact         | 2        |
+            | testcontactemaileequal     | Email               | equals           | Contact1@mailtest.mautic.org | Contact         | 2        |
 
 
 
@@ -289,7 +289,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
         Then I should be on "Contacts" Page
         When I search Contact as "Contact1"
         And I edit the "Contact1" Contact
-        And I type Conatct email as "Contact1@@mailtest.mautic.com"
+        And I type Conatct email as "Contact1@@mailtest.mautic.org"
         And I click Save Button on Contact Page
         And I click Close Button on Contact Page
         Then I should see Contact is Updated as "Contact1"
@@ -361,7 +361,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
         Then I should be on "Contacts" Page
         When I search Contact as "Contact1"
         And I edit the "Contact1" Contact
-        And I type Conatct email as "Contact1@mailtest.mautic.com"
+        And I type Conatct email as "Contact1@mailtest.mautic.org"
         And I click Save Button on Contact Page
         And I click Close Button on Contact Page
         Then I should see Contact is Updated as "Contact1"
@@ -379,7 +379,7 @@ Feature: Verify that user is able to create segment and test that contacts are g
         Then I should be on "Contacts" Page
         When I search Contact as "Contact1"
         And I edit the "Contact1" Contact
-        And I type Conatct email as "Contact12@mailtest.mautic.com"
+        And I type Conatct email as "Contact12@mailtest.mautic.org"
         And I click Save Button on Contact Page
         And I click Close Button on Contact Page
         Then I should see Contact is Updated as "Contact1"

@@ -189,7 +189,7 @@ context("Verify that user is able to create credentials and update the contact f
      {
       "firstname":"Test2",
       "lastname":"Contact2",
-      "email":"test2contact2@mailtest.mautic.com"
+      "email":"test2contact2@mailtest.mautic.org"
      }
     }).then(function(response){
       expect(response.body).to.not.be.null
