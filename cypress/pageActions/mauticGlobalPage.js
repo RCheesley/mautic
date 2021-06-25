@@ -34,9 +34,6 @@ export class mauticGlobalPage {
       case 'Custom Fields':
         input_url = 's/contacts/fields';
         break;
-      case 'Custom Objects':
-        input_url = 's/custom/object';
-        break;
       case 'Landing Pages':
         input_url = 's/pages';
         break;

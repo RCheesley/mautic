@@ -8,47 +8,6 @@ Feature: Campaign regression scenarios
         And I click Login Button
         Then I should be on "Dashboard" Page
 
-    @add_custom_object
-    Scenario: Create a new custom object for campaigns test
-        When I visit "Custom Objects" page
-        Then I should be on "Custom Objects" Page
-        When I click Add New Button on Custom Objects Page
-        And I type Custom Objects Name Singular as "Car"
-        And I type Custom Objects Name Plural as "Cars"
-        And I click "Fields" tab on Custom Objects Page
-        And I select Add a new field as "Multiselect"
-        And I type Label as "Model"
-        And I click "Properties" tab on Custom Objects Page
-        And I click Add a value Button
-        And I type Option "1" Label as "BMW"
-        And I type Option "1" Value as "BMW"
-        And I click Add a value Button
-        And I type Option "2" Label as "Audi"
-        And I type Option "2" Value as "Audi"
-        And I click Add a value Button
-        And I type Option "3" Label as "Honda"
-        And I type Option "3" Value as "Honda"
-        And I click Save And Close Button on Custom Objects Pop up
-        Then I should see "Model" is Created on Custom Objects Page
-        When I select Add a new field as "Number"
-        And I type Label as "Car Number"
-        And I click Save And Close Button on Custom Objects Pop up
-        Then I should see "Car Number" is Created on Custom Objects Page
-        When I click Save And Close Button on Custom Objects Page
-        Then I should see "Cars" Custom Objects is Created
-
-    @add_custom_object_instance
-    Scenario: Add instance to newly added custom object
-        When I click "Custom Objects" option on Dashboard Page
-        And I click "Cars" option on Dashboard Page
-        Then I should be on "Cars" Page
-        When I click Add New Button on Cars page
-        And I type Car Name as "BMW X1"
-        And I "Car Number" as "1234"
-        And I select "Model" as "BMW"
-        And I click Save And Close Button on Cars Page
-        Then I should see "BMW X1" is created on Cars Page
-
     @add_new_email
     Scenario: Add new email to test campaign scenario
         When I visit "Emails" page
@@ -139,36 +98,6 @@ Feature: Campaign regression scenarios
             | Segment_Name                   | filter     | filter_condition | filter_value |
             | segmentForCampaignRegression   | Last Name  | equals           | Test1        |
             | segmentForModifyContactSegment | First Name | equals           | Test1        |
-
-    @link_custom_object
-    Scenario: Create a campaign with action link custom object from the selected segment
-        When I visit "Campaigns" page
-        Then I should be on "Campaigns" Page
-        When I click Add New Button on Campaign page
-        When I type Campaign title as "linkCustomObject_Campaign_With_Segment"
-        And I click on Launch Campaign builder
-        When I select "Contact segments" as campaign source
-        When I Select "segmentForCampaignRegression" as contact source and click on add
-        When I click on campaign event list
-        And I click on "Action" tab of campaign
-        When I select action as "Link contact with" from actions list
-        And I add event name "Link custom object with contact" and Link "BMW X1"
-        And I apply changes to builder and close the builder
-        Then I publish the campaign and save it
-        When I wait for 12 sec to apply campaign action on segments contacts
-        When I click on "Actions" tab
-        Then verify that campaign is executed successfully with "100%" action completion
-        Then I check that campaign triggered successfully with "Link custom object with contact" and event "mautic.campaign.custom_item"
-        When I click on "Contacts" tab
-        When I click on first contact under campaign contacts
-        Then I check "Custom Item Linked" event is triggered for the contact
-        Then I check that events triggered successfully Event Name "BMW X1 was linked." and Event Type "Custom Item Linked" and Event Timestamp "Today"
-        And I check that "Cars" object is linked with car "BMW X1" and car number "1234" and model "BMW"
-        When I visit "Campaigns" page
-        Then I should be on "Campaigns" Page
-        When I search for campaign "linkCustomObject_Campaign_With_Segment"
-        When I delete campaign "linkCustomObject_Campaign_With_Segment"
-        Then I should see campaign "linkCustomObject_Campaign_With_Segment" is deleted
 
     @send_email
     Scenario: Create a campaign with action send Email from the selected segment

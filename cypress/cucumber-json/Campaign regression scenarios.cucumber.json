@@ -1,0 +1,5960 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Campaign regression scenarios",
+    "line": 2,
+    "id": "campaign-regression-scenarios",
+    "tags": [
+      {
+        "name": "@regression",
+        "line": 1
+      },
+      {
+        "name": "@campaigns",
+        "line": 1
+      },
+      {
+        "name": "@customer_scenarios",
+        "line": 1
+      }
+    ],
+    "uri": "Campaign regression scenarios.feature",
+    "elements": [
+      {
+        "id": "campaign-regression-scenarios;add-new-email-to-test-campaign-scenario",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Add new email to test campaign scenario",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@add_new_email",
+            "line": 11
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 4252000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 409000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 466000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 9545000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 31000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I visit \"Emails\" page",
+            "result": {
+              "status": "passed",
+              "duration": 1308000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I should be on \"Emails\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 23000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I click on Add New Email Button",
+            "result": {
+              "status": "passed",
+              "duration": 286000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I select email type as \"Template\"",
+            "result": {
+              "status": "passed",
+              "duration": 9808000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I type email Suject as \"TestEmailForCampaignScenario\"",
+            "result": {
+              "status": "passed",
+              "duration": 1521000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I type email Internal name as \"TestEmailForCampaignScenario\"",
+            "result": {
+              "status": "passed",
+              "duration": 1076000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I click Save and Close Button on emails Page",
+            "result": {
+              "status": "passed",
+              "duration": 460000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I click Close Button on email page",
+            "result": {
+              "status": "passed",
+              "duration": 872000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I should see \"TestEmailForCampaignScenario\" email is created",
+            "result": {
+              "status": "passed",
+              "duration": 549000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-company-to-test-the-campaign-scenarios",
+        "keyword": "Scenario",
+        "line": 34,
+        "name": "Add new company to test the campaign scenarios",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@add_new_company",
+            "line": 23
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1506000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 341000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 321000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 2591000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "I visit \"Companies\" page",
+            "result": {
+              "status": "passed",
+              "duration": 608000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "I should be on \"Companies\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 14000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "I click Add New Company Button",
+            "result": {
+              "status": "passed",
+              "duration": 195000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "I type Company Name as \"Acquia\"",
+            "result": {
+              "status": "passed",
+              "duration": 2354000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "I click Save and Close Button on Companies Page",
+            "result": {
+              "status": "passed",
+              "duration": 349000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "I should see Company is Created as \"Acquia\"",
+            "result": {
+              "status": "passed",
+              "duration": 1173000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-new-stage-to-test-the-campaign-scenarios",
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "Create a new stage to test the campaign scenarios",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@Add_new_stage",
+            "line": 36
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1085000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 315000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 324000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 2304000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 38,
+            "name": "I visit \"Stages\" page",
+            "result": {
+              "status": "passed",
+              "duration": 488000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "I should be on \"Stages\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 27000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "I click Add New Button on Stages Page",
+            "result": {
+              "status": "passed",
+              "duration": 250000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "I type Stages Title as \"Stage 1\"",
+            "result": {
+              "status": "passed",
+              "duration": 2507000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "I type Weight as \"10\" on Stages Page",
+            "result": {
+              "status": "passed",
+              "duration": 453000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "I click Save and Close Button on Stages Page",
+            "result": {
+              "status": "passed",
+              "duration": 193000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "I should see \"Stage 1\" Stages is created",
+            "result": {
+              "status": "passed",
+              "duration": 1052000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-custom-field-for-contact-to-test-campaign-scenario",
+        "keyword": "Scenario",
+        "line": 59,
+        "name": "Add new custom field for contact to test campaign scenario",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@add_custom_field_contact",
+            "line": 46
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1109000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 325000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 324000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 2553000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 9000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "I visit \"Custom Fields\" page",
+            "result": {
+              "status": "passed",
+              "duration": 690000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 49,
+            "name": "I should be on \"Custom Fields\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 19000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "I click Add New Button on Custom Fields Page",
+            "result": {
+              "status": "passed",
+              "duration": 180000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "I type Custom Field Label as \"Date Field 1\"",
+            "result": {
+              "status": "passed",
+              "duration": 2660000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "I select Custom Field Object as \"Contact\"",
+            "result": {
+              "status": "passed",
+              "duration": 1158000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "I select Custom Field Data type as \"Date\"",
+            "result": {
+              "status": "passed",
+              "duration": 1430000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "I click Save And Close Button on Custom Field Page",
+            "result": {
+              "status": "passed",
+              "duration": 306000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "I should see \"Date Field 1\" is Created on Custom Field Page",
+            "result": {
+              "status": "passed",
+              "duration": 714000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-custom-field-for-contact-to-test-campaign-scenario",
+        "keyword": "Scenario",
+        "line": 60,
+        "name": "Add new custom field for contact to test campaign scenario",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@add_custom_field_contact",
+            "line": 46
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 3694000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 314000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 321000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 2730000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 11000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "I visit \"Custom Fields\" page",
+            "result": {
+              "status": "passed",
+              "duration": 746000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 49,
+            "name": "I should be on \"Custom Fields\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 36000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "I click Add New Button on Custom Fields Page",
+            "result": {
+              "status": "passed",
+              "duration": 233000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "I type Custom Field Label as \"Date Field 2\"",
+            "result": {
+              "status": "passed",
+              "duration": 2615000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "I select Custom Field Object as \"Contact\"",
+            "result": {
+              "status": "passed",
+              "duration": 1229000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "I select Custom Field Data type as \"Date\"",
+            "result": {
+              "status": "passed",
+              "duration": 1260000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "I click Save And Close Button on Custom Field Page",
+            "result": {
+              "status": "passed",
+              "duration": 336000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "I should see \"Date Field 2\" is Created on Custom Field Page",
+            "result": {
+              "status": "passed",
+              "duration": 469000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-custom-field-for-contact-to-test-campaign-scenario",
+        "keyword": "Scenario",
+        "line": 61,
+        "name": "Add new custom field for contact to test campaign scenario",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@add_custom_field_contact",
+            "line": 46
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 3674000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 323000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 319000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 3046000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 14000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "I visit \"Custom Fields\" page",
+            "result": {
+              "status": "passed",
+              "duration": 759000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 49,
+            "name": "I should be on \"Custom Fields\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 19000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "I click Add New Button on Custom Fields Page",
+            "result": {
+              "status": "passed",
+              "duration": 239000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "I type Custom Field Label as \"Date Field 3\"",
+            "result": {
+              "status": "passed",
+              "duration": 2939000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "I select Custom Field Object as \"Contact\"",
+            "result": {
+              "status": "passed",
+              "duration": 1304000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "I select Custom Field Data type as \"Date\"",
+            "result": {
+              "status": "passed",
+              "duration": 1751000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "I click Save And Close Button on Custom Field Page",
+            "result": {
+              "status": "passed",
+              "duration": 328000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "I should see \"Date Field 3\" is Created on Custom Field Page",
+            "result": {
+              "status": "passed",
+              "duration": 607000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-custom-field-for-contact-to-test-campaign-scenario",
+        "keyword": "Scenario",
+        "line": 62,
+        "name": "Add new custom field for contact to test campaign scenario",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@add_custom_field_contact",
+            "line": 46
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 4215000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 328000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 327000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 2781000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "I visit \"Custom Fields\" page",
+            "result": {
+              "status": "passed",
+              "duration": 771000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 49,
+            "name": "I should be on \"Custom Fields\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 22000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "I click Add New Button on Custom Fields Page",
+            "result": {
+              "status": "passed",
+              "duration": 209000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "I type Custom Field Label as \"Date Field 4\"",
+            "result": {
+              "status": "passed",
+              "duration": 3013000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "I select Custom Field Object as \"Contact\"",
+            "result": {
+              "status": "passed",
+              "duration": 1301000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "I select Custom Field Data type as \"Date\"",
+            "result": {
+              "status": "passed",
+              "duration": 1302000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "I click Save And Close Button on Custom Field Page",
+            "result": {
+              "status": "passed",
+              "duration": 524000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "I should see \"Date Field 4\" is Created on Custom Field Page",
+            "result": {
+              "status": "passed",
+              "duration": 877000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-contacts-to-test-the-campaign-scenarios",
+        "keyword": "Scenario",
+        "line": 81,
+        "name": "Add new contacts to test the campaign scenarios",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@Add_new_Contacts",
+            "line": 64
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 4012000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 318000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 327000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 2551000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 66,
+            "name": "I visit \"Contacts\" page",
+            "result": {
+              "status": "passed",
+              "duration": 944000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 67,
+            "name": "I should be on \"Contacts\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 23000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 68,
+            "name": "I click Add New Button on Contact Page",
+            "result": {
+              "status": "passed",
+              "duration": 290000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 69,
+            "name": "I type Contact Title as \"Mr\"",
+            "result": {
+              "status": "passed",
+              "duration": 5702000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "I type Contact First Name as \"Contact1\"",
+            "result": {
+              "status": "passed",
+              "duration": 981000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "I type Conact Last Name as \"Test1\"",
+            "result": {
+              "status": "passed",
+              "duration": 998000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "I type Conatct email as \"Contact1@mailtest.mautic.org\"",
+            "result": {
+              "status": "passed",
+              "duration": 1330000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "I type Contact City as \"Pune\"",
+            "result": {
+              "status": "passed",
+              "duration": 1087000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "I type \"2021-05-04\" and \"2021-05-04\" and \"2021-05-04\" values",
+            "result": {
+              "status": "passed",
+              "duration": 3290000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "I click Save Button on Contact Page",
+            "result": {
+              "status": "passed",
+              "duration": 598000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 76,
+            "name": "I click Close Button on Contact Page",
+            "result": {
+              "status": "passed",
+              "duration": 2407000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 77,
+            "name": "I should see \"Contact1\" Contact is Created",
+            "result": {
+              "status": "passed",
+              "duration": 459000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-contacts-to-test-the-campaign-scenarios",
+        "keyword": "Scenario",
+        "line": 82,
+        "name": "Add new contacts to test the campaign scenarios",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@Add_new_Contacts",
+            "line": 64
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1535000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 333000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 334000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 3526000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 66,
+            "name": "I visit \"Contacts\" page",
+            "result": {
+              "status": "passed",
+              "duration": 1064000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 67,
+            "name": "I should be on \"Contacts\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 19000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 68,
+            "name": "I click Add New Button on Contact Page",
+            "result": {
+              "status": "passed",
+              "duration": 243000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 69,
+            "name": "I type Contact Title as \"Mr\"",
+            "result": {
+              "status": "passed",
+              "duration": 7267000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "I type Contact First Name as \"Contact2\"",
+            "result": {
+              "status": "passed",
+              "duration": 954000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "I type Conact Last Name as \"Test1\"",
+            "result": {
+              "status": "passed",
+              "duration": 1054000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "I type Conatct email as \"Contact2@mailtest.mautic.org\"",
+            "result": {
+              "status": "passed",
+              "duration": 1255000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "I type Contact City as \"Pune\"",
+            "result": {
+              "status": "passed",
+              "duration": 1001000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "I type \"2021-05-04\" and \"2021-05-04\" and \"2021-05-04\" values",
+            "result": {
+              "status": "passed",
+              "duration": 3263000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "I click Save Button on Contact Page",
+            "result": {
+              "status": "passed",
+              "duration": 519000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 76,
+            "name": "I click Close Button on Contact Page",
+            "result": {
+              "status": "passed",
+              "duration": 932000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 77,
+            "name": "I should see \"Contact2\" Contact is Created",
+            "result": {
+              "status": "passed",
+              "duration": 441000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-contacts-to-test-the-campaign-scenarios",
+        "keyword": "Scenario",
+        "line": 83,
+        "name": "Add new contacts to test the campaign scenarios",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@Add_new_Contacts",
+            "line": 64
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1210000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 315000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 329000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 3255000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 66,
+            "name": "I visit \"Contacts\" page",
+            "result": {
+              "status": "passed",
+              "duration": 769000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 67,
+            "name": "I should be on \"Contacts\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 18000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 68,
+            "name": "I click Add New Button on Contact Page",
+            "result": {
+              "status": "passed",
+              "duration": 278000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 69,
+            "name": "I type Contact Title as \"Mr\"",
+            "result": {
+              "status": "passed",
+              "duration": 3632000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "I type Contact First Name as \"Contact3\"",
+            "result": {
+              "status": "passed",
+              "duration": 859000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "I type Conact Last Name as \"Test1\"",
+            "result": {
+              "status": "passed",
+              "duration": 1221000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "I type Conatct email as \"Contact3@mailtest.mautic.org\"",
+            "result": {
+              "status": "passed",
+              "duration": 1184000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "I type Contact City as \"Sangli\"",
+            "result": {
+              "status": "passed",
+              "duration": 956000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "I type \"2021-05-04\" and \"2021-05-04\" and \"2021-05-04\" values",
+            "result": {
+              "status": "passed",
+              "duration": 3103000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "I click Save Button on Contact Page",
+            "result": {
+              "status": "passed",
+              "duration": 516000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 76,
+            "name": "I click Close Button on Contact Page",
+            "result": {
+              "status": "passed",
+              "duration": 1134000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 77,
+            "name": "I should see \"Contact3\" Contact is Created",
+            "result": {
+              "status": "passed",
+              "duration": 542000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-segment-based-on-last-name-to-test-campaign-scenario",
+        "keyword": "Scenario",
+        "line": 99,
+        "name": "Add new segment based on Last Name to test campaign scenario",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@create_new_segement",
+            "line": 85
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 2240000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 2144000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 904000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 7089000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 74000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 87,
+            "name": "I visit \"Segments\" page",
+            "result": {
+              "status": "passed",
+              "duration": 2553000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 88,
+            "name": "I should be on \"Contact Segments\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 347000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 89,
+            "name": "I click Add New Button on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 1305000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 90,
+            "name": "I type Segment Name as \"segmentForCampaignRegression\"",
+            "result": {
+              "status": "passed",
+              "duration": 5593000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "I Click on \"Filters\" tab on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 339000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "I choose Filter as \"Last Name\" on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 1584000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 93,
+            "name": "I choose Filter Condition as \"equals\" on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 485000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 94,
+            "name": "I choose Filter Value as \"Test1\" on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 4989000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 95,
+            "name": "I click Save and Close Button on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 2446000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 96,
+            "name": "I should be see Contact Segment \"segmentForCampaignRegression\" is created",
+            "result": {
+              "status": "passed",
+              "duration": 56000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;add-new-segment-based-on-last-name-to-test-campaign-scenario",
+        "keyword": "Scenario",
+        "line": 100,
+        "name": "Add new segment based on Last Name to test campaign scenario",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@create_new_segement",
+            "line": 85
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1280000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 330000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 323000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 2965000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 15000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 87,
+            "name": "I visit \"Segments\" page",
+            "result": {
+              "status": "passed",
+              "duration": 696000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 88,
+            "name": "I should be on \"Contact Segments\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 17000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 89,
+            "name": "I click Add New Button on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 211000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 90,
+            "name": "I type Segment Name as \"segmentForModifyContactSegment\"",
+            "result": {
+              "status": "passed",
+              "duration": 3654000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "I Click on \"Filters\" tab on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 441000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "I choose Filter as \"First Name\" on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 1654000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 93,
+            "name": "I choose Filter Condition as \"equals\" on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 458000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 94,
+            "name": "I choose Filter Value as \"Test1\" on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 4997000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 95,
+            "name": "I click Save and Close Button on Contact Segments page",
+            "result": {
+              "status": "passed",
+              "duration": 2470000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 96,
+            "name": "I should be see Contact Segment \"segmentForModifyContactSegment\" is created",
+            "result": {
+              "status": "passed",
+              "duration": 82000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-send-email-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 133,
+        "name": "Create a campaign with action send Email from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@send_email",
+            "line": 132
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 3373000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 889000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 724000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 3683000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 17000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 134,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 1009000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 135,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 15000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 136,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 351000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 137,
+            "name": "I type Campaign title as \"sendEmail_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 3045000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 138,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 461000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 139,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 2093000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 140,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 3656000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 141,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 452000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 142,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 359000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 143,
+            "name": "I select action as \"Send email\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 1917000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 144,
+            "name": "I add event name \"Send email to segment\" and E-mail \"TestEmailForCampaignScenario\"",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `(//div[@id=\"campaignevent_properties_email_chosen\"]//li[contains(.,'TestEmailForCampaignScenario')])[1]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.click (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:37:14)\n    at Function.Cutils.selectValueFromDropDownNonSelect (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:107:14)\n    at Function.mauticCampaignPage.sendEmail (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:676:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3231:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 145,
+            "name": "I click on new campaign event after action",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 146,
+            "name": "I click on \"Decision\" tab of campaign",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 147,
+            "name": "I select decision as \"Opens email\" from decision list",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 148,
+            "name": "I add event name \"If user open's an Email\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 149,
+            "name": "I click on \"yes\" for condition",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 150,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 151,
+            "name": "I select action as \"Adjust contact points\" from actions list",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 152,
+            "name": "I add event name \"Adjust contact points by 5\" and add \"5\" points",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 153,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 154,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 155,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 156,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 157,
+            "name": "I check the first action tab that campaign is triggered successfully with \"Send email to segment\" and event \"Send or schedule email\" and success percentage \"100%\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 158,
+            "name": "I check the second action tab that campaign is triggered successfully with \"Adjust contact points by 5\" and event \"Adjust contact points\" and success percentage \"0%\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 159,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 160,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 161,
+            "name": "I check \"Email sent\" event is triggered for the contact",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 162,
+            "name": "I check that events triggered successfully Event Name \"TestEmailForCampaignScenario\" and Event Type \"Email sent\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 163,
+            "name": "I check the mailbox of \"contact1\" and verify that contact has received \"TestEmailForCampaignScenario\" email",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 164,
+            "name": "I read the the email of \"contact1\" and delete it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 165,
+            "name": "I visit \"Contacts\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 166,
+            "name": "I should be on \"Contacts\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 167,
+            "name": "I search for contact\"Contact1 Test1\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 168,
+            "name": "I check that contact \"Contact1 Test1\" has received \"5\" points of reading an email",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 169,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 170,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 171,
+            "name": "I search for campaign \"sendEmail_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 172,
+            "name": "I delete campaign \"sendEmail_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 173,
+            "name": "I should see campaign \"sendEmail_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-update-contact-field-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 176,
+        "name": "Create a campaign with action update contact field from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@update_contact",
+            "line": 175
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 3706000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 449000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 460000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 4403000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 11000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 177,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 811000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 178,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 179,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 452000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 180,
+            "name": "I type Campaign title as \"updateContact_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 2906000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 181,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 446000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 182,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 2234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 183,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 3317000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 184,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 645000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 185,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 431000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 186,
+            "name": "I select action as \"Update contact\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 2407000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 187,
+            "name": "I add event name \"Update contact's date fields\" with values of dateField1 \"2021-06-01\" and dateField2 \"+3 days\" and dateField3 \"-2 days\"",
+            "result": {
+              "status": "passed",
+              "duration": 11668000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 188,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//button[contains(text(),\"Apply\")]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.IsVisible (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:55:14)\n    at Function.mauticCampaignPage.applyChangesToBuilder (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:699:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3140:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 189,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 190,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 191,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 192,
+            "name": "verify that campaign is executed successfully with \"100%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 193,
+            "name": "I check that campaign triggered successfully with \"Update contact's date fields\" and event \"Update contact\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 194,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 195,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 196,
+            "name": "I check that events triggered successfully Event Name \"Update contact's date fields / updateContact_Campaign_With_Segment\" and Event Type \"Campaign action triggered\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 197,
+            "name": "I click on contact details link and verify that dateField1 is updated \"2021-06-01\" and dateField2 with \"3\" and dateField3 with \"2\" updated accordingly as per today's date",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 198,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 199,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 200,
+            "name": "I search for campaign \"updateContact_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 201,
+            "name": "I delete campaign \"updateContact_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 202,
+            "name": "I should see campaign \"updateContact_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-change-contact's-stage-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 205,
+        "name": "Create a campaign with action change contact's stage from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@change_contact_stage",
+            "line": 204
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 4449000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1420000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1400000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 3967000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 193000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 206,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 1095000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 207,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 15000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 208,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 581000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 209,
+            "name": "I type Campaign title as \"changeContactStage_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 3198000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 210,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 767000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 211,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 2920000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 212,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 4438000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 213,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 763000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 214,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 596000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 215,
+            "name": "I select action as \"stage\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 2950000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 216,
+            "name": "I add event name \"Change Contact's stage to Stage 1\" and add stage \"Stage 1\"",
+            "result": {
+              "status": "passed",
+              "duration": 7158000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 217,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//button[contains(text(),\"Apply\")]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.IsVisible (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:55:14)\n    at Function.mauticCampaignPage.applyChangesToBuilder (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:699:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3140:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 218,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 219,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 220,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 221,
+            "name": "verify that campaign is executed successfully with \"100%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 222,
+            "name": "I check that campaign triggered successfully with \"Change Contact's stage to Stage 1\" and event \"Change contact's stage\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 223,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 224,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 225,
+            "name": "I check \"Stage changed\" event is triggered for the contact",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 226,
+            "name": "I check that events triggered successfully Event Name \"Stage 1\" and Event Type \"Stage changed\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 227,
+            "name": "I check that \"Stage 1\" present in contact details Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 228,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 229,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 230,
+            "name": "I search for campaign \"changeContactStage_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 231,
+            "name": "I delete campaign \"changeContactStage_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 232,
+            "name": "I should see campaign \"changeContactStage_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-add-to-company-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 235,
+        "name": "Create a campaign with action add to company from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@Add_to_company",
+            "line": 234
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1719000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 2486000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 2553000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 6338000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 103000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 236,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 9519000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 237,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 16000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 238,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 651000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 239,
+            "name": "I type Campaign title as \"addToCompany_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 3484000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 240,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 725000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 241,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 3314000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 242,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 5245000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 243,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 912000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 244,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 639000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 245,
+            "name": "I select action as \"Add to company action\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 3763000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 246,
+            "name": "I add event name \"Add company in the selected segment's contact\" and add company \"Acquia\"",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `(//div[@id=\"campaignevent_properties_company_chosen\"]//li[contains(.,'Acquia')])[1]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.click (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:37:14)\n    at Function.Cutils.selectValueFromDropDownNonSelect (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:107:14)\n    at Function.mauticCampaignPage.selectCompanyToAdd (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:656:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3131:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 247,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 248,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 249,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 250,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 251,
+            "name": "verify that campaign is executed successfully with \"100%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 252,
+            "name": "I check that campaign triggered successfully with \"Add company in the selected segment's contact\" and event \"Add contact to company\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 253,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 254,
+            "name": "I check that company \"Acquia\" is displayed in grid contact",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 255,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 256,
+            "name": "I check that events triggered successfully Event Name \"Add company in the selected segment's contact / addToCompany_Campaign_With_Segment\" and Event Type \"Campaign action triggered\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 257,
+            "name": "I check that \"Acquia\" is present in contact details page as primary company",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 258,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 259,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 260,
+            "name": "I search for campaign \"addToCompany_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 261,
+            "name": "I delete campaign \"addToCompany_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 262,
+            "name": "I should see campaign \"addToCompany_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-update-contact-primary-company-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 265,
+        "name": "Create a campaign with action update contact primary company from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@update_contact_primary_company",
+            "line": 264
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1826000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 314000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 329000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 2476000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 7000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 266,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 1015000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 267,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 9000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 268,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 984000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 269,
+            "name": "I type Campaign title as \"updateContactPrimaryCompany_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 3707000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 270,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 985000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 271,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 4158000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 272,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 6421000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 273,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 1240000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 274,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 776000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 275,
+            "name": "I select action as \"primary company\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 4647000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 276,
+            "name": "I add event name \"Update the company fields with values\" with city as \"Pune\" and country as \"India\" with number of employee \"1000\"",
+            "result": {
+              "status": "passed",
+              "duration": 31125000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 277,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//button[contains(text(),\"Apply\")]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.IsVisible (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:55:14)\n    at Function.mauticCampaignPage.applyChangesToBuilder (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:699:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3140:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 278,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 279,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 280,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 281,
+            "name": "verify that campaign is executed successfully with \"100%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 282,
+            "name": "I check that campaign triggered successfully with \"Update the company fields with values\" and event \"Update contact's primary company\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 283,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 284,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 285,
+            "name": "I check that events triggered successfully Event Name \"Update the company fields with values / updateContactPrimaryCompany_Campaign_With_Segment\" and Event Type \"Campaign action triggered\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 286,
+            "name": "I check that \"Acquia\" is present in contact details page as primary company",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 287,
+            "name": "I visit \"Companies\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 288,
+            "name": "I should be on \"Companies\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 289,
+            "name": "I search Company as \"Acquia\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 290,
+            "name": "I click on company named \"Acquia\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 291,
+            "name": "I check that company city is \"Pune\" and country is \"India\" and no of employee is \"1000\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 292,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 293,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 294,
+            "name": "I search for campaign \"updateContactPrimaryCompany_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 295,
+            "name": "I delete campaign \"updateContactPrimaryCompany_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 296,
+            "name": "I should see campaign \"updateContactPrimaryCompany_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-add-to-company-score-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 299,
+        "name": "Create a campaign with action add to company score from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@Add_to_company_score",
+            "line": 298
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 3799000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 2129000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 1971000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 3777000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 300,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 1265000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 301,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 302,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 1163000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 303,
+            "name": "I type Campaign title as \"addToCompanyScore_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 4279000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 304,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 1449000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 305,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 5595000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 306,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 10128000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 307,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 2528000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 308,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 1551000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 309,
+            "name": "I select action as \"score\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 15122000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 310,
+            "name": "I add event name \"Add to company score in the selected segment's contact company\" and add to the company score \"10\"",
+            "result": {
+              "status": "passed",
+              "duration": 10006000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 311,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//button[contains(text(),\"Apply\")]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.IsVisible (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:55:14)\n    at Function.mauticCampaignPage.applyChangesToBuilder (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:699:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3140:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 312,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 313,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 314,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 315,
+            "name": "verify that campaign is executed successfully with \"100%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 316,
+            "name": "I check that campaign triggered successfully with \"Add to company score in the selected segment's contact company\" and event \"Score company\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 317,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 318,
+            "name": "I check that company \"Acquia\" is displayed in grid contact",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 319,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 320,
+            "name": "I check that events triggered successfully Event Name \"Add to company score in the selected segment's contact company / addToCompanyScore_Campaign_With_Segment\" and Event Type \"Campaign action triggered\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 321,
+            "name": "I check that \"Acquia\" is present in contact details page as primary company",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 322,
+            "name": "I visit \"Companies\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 323,
+            "name": "I should be on \"Companies\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 324,
+            "name": "I search Company as \"Acquia\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 325,
+            "name": "I check company \"Acquia\" score is \"30\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 326,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 327,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 328,
+            "name": "I search for campaign \"addToCompanyScore_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 329,
+            "name": "I delete campaign \"addToCompanyScore_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 330,
+            "name": "I should see campaign \"addToCompanyScore_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-do-not-contact-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 333,
+        "name": "Create a campaign with action do not contact from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@Add_do_not_contact",
+            "line": 332
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 2626000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 318000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 335000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 3246000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 11000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 334,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 2837000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 335,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 336,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 2369000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 337,
+            "name": "I type Campaign title as \"DNC_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 4727000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 338,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 1464000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 339,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 5940000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 340,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 9754000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 341,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 1890000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 342,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 1387000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 343,
+            "name": "I select action as \"Add Do Not Contact\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 6595000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 344,
+            "name": "I add event name \"Add contact's in do not contact\" and channel as \"Email\"",
+            "result": {
+              "status": "passed",
+              "duration": 11579000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 345,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//button[contains(text(),\"Apply\")]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.IsVisible (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:55:14)\n    at Function.mauticCampaignPage.applyChangesToBuilder (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:699:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3140:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 346,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 347,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 348,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 349,
+            "name": "verify that campaign is executed successfully with \"100%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 350,
+            "name": "I check that campaign triggered successfully with \"Add contact's in do not contact\" and event \"mautic.campaign.lead.adddnc\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 351,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 352,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 353,
+            "name": "I check that contact \"have\" do not contact label",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 354,
+            "name": "I check \"Do not contact\" event is triggered for the contact",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 355,
+            "name": "I check that events triggered successfully Event Name \"Email\" and Event Type \"Do not contact\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 356,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 357,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 358,
+            "name": "I search for campaign \"DNC_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 359,
+            "name": "I delete campaign \"DNC_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 360,
+            "name": "I should see campaign \"DNC_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-remove-do-not-contact-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 363,
+        "name": "Create a campaign with action remove do not contact from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@remove_do_not_contact",
+            "line": 362
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 4509000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 402000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 365000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 10433000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 22000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 364,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 2059000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 365,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 11000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 366,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 1511000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 367,
+            "name": "I type Campaign title as \"Remove_DNC_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 5288000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 368,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 1596000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 369,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 7304000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 370,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 10182000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 371,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 2167000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 372,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 1372000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 373,
+            "name": "I select action as \"Remove Do Not Contact\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 7463000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 374,
+            "name": "I add event name \"Remove contacts from DNC\" and channel as \"Email\"",
+            "result": {
+              "status": "passed",
+              "duration": 12421000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 375,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//button[contains(text(),\"Apply\")]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.IsVisible (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:55:14)\n    at Function.mauticCampaignPage.applyChangesToBuilder (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:699:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3140:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 376,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 377,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 378,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 379,
+            "name": "verify that campaign is executed successfully with \"100%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 380,
+            "name": "I check that campaign triggered successfully with \"Remove contacts from DNC\" and event \"mautic.campaign.lead.removednc\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 381,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 382,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 383,
+            "name": "I check that contact \"does not have\" do not contact label",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 384,
+            "name": "I check that events triggered successfully Event Name \"Remove contacts from DNC / Remove_DNC_Campaign_With_Segment\" and Event Type \"Campaign action triggered\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 385,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 386,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 387,
+            "name": "I search for campaign \"Remove_DNC_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 388,
+            "name": "I delete campaign \"Remove_DNC_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 389,
+            "name": "I should see campaign \"Remove_DNC_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-adjust-positive-points-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 392,
+        "name": "Create a campaign with action adjust positive points from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@adjust_positive_points",
+            "line": 391
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 2800000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 334000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 331000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 3520000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 73000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 393,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 1776000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 394,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 11000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 395,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 1592000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 396,
+            "name": "I type Campaign title as \"adjust_PositivePoints_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 7109000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 397,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 3841000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 398,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 12171000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 399,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 22453000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 400,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 2466000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 401,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 1491000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 402,
+            "name": "I select action as \"Adjust contact points\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 7995000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 403,
+            "name": "I add event name \"Adjust contact points by 5\" and add \"5\" points",
+            "result": {
+              "status": "passed",
+              "duration": 15600000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 404,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//button[contains(text(),\"Apply\")]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.IsVisible (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:55:14)\n    at Function.mauticCampaignPage.applyChangesToBuilder (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:699:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3140:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 405,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 406,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 407,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 408,
+            "name": "verify that campaign is executed successfully with \"100%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 409,
+            "name": "I check that campaign triggered successfully with \"Adjust contact points by 5\" and event \"Adjust contact points\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 410,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 411,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 412,
+            "name": "I check that contact has gained \"5 points\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 413,
+            "name": "I check \"Point gained\" event is triggered for the contact",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 414,
+            "name": "I check that events triggered successfully Event Name \"adjust_PositivePoints_Campaign_With_Segment / 5\" and Event Type \"Point gained\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 415,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 416,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 417,
+            "name": "I search for campaign \"adjust_PositivePoints_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 418,
+            "name": "I delete campaign \"adjust_PositivePoints_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 419,
+            "name": "I should see campaign \"adjust_PositivePoints_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-adjust-negative-points-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 422,
+        "name": "Create a campaign with action adjust negative points from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@adjust_negative_points",
+            "line": 421
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 4820000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 350000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 347000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 3680000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 14000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 423,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 2433000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 424,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 9000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 425,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 1784000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 426,
+            "name": "I type Campaign title as \"adjust_NegativePoints_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 6175000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 427,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 1987000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 428,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 8124000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 429,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 14930000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 430,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 2775000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 431,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 1763000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 432,
+            "name": "I select action as \"Adjust contact points\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 15166000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 433,
+            "name": "I add event name \"Adjust contact points by -3\" and add \"-3\" points",
+            "result": {
+              "status": "passed",
+              "duration": 43531000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 434,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//button[contains(text(),\"Apply\")]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.IsVisible (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:55:14)\n    at Function.mauticCampaignPage.applyChangesToBuilder (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:699:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3140:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 435,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 436,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 437,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 438,
+            "name": "verify that campaign is executed successfully with \"100%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 439,
+            "name": "I check that campaign triggered successfully with \"Adjust contact points by -3\" and event \"Adjust contact points\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 440,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 441,
+            "name": "I click on first contact under campaign contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 442,
+            "name": "I check that contact has gained \"2 points\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 443,
+            "name": "I check \"Point gained\" event is triggered for the contact",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 444,
+            "name": "I check that events triggered successfully Event Name \"adjust_NegativePoints_Campaign_With_Segment / -3\" and Event Type \"Point gained\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 445,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 446,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 447,
+            "name": "I search for campaign \"adjust_NegativePoints_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 448,
+            "name": "I delete campaign \"adjust_NegativePoints_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 449,
+            "name": "I should see campaign \"adjust_NegativePoints_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaign-regression-scenarios;create-a-campaign-with-action-modify-contact's-segments-from-the-selected-segment",
+        "keyword": "Scenario",
+        "line": 452,
+        "name": "Create a campaign with action modify contact's segments from the selected segment",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@campaigns",
+            "line": 1
+          },
+          {
+            "name": "@customer_scenarios",
+            "line": 1
+          },
+          {
+            "name": "@modify_contact_segment",
+            "line": 451
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on Mautic Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 4842000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I type User Name on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 325000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I type Password on Login Page",
+            "result": {
+              "status": "passed",
+              "duration": 545000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 4261000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be on \"Dashboard\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 16000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 453,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "passed",
+              "duration": 2845000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 454,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 455,
+            "name": "I click Add New Button on Campaign page",
+            "result": {
+              "status": "passed",
+              "duration": 2104000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 456,
+            "name": "I type Campaign title as \"modify_ContactSegment_Campaign_With_Segment\"",
+            "result": {
+              "status": "passed",
+              "duration": 7351000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 457,
+            "name": "I click on Launch Campaign builder",
+            "result": {
+              "status": "passed",
+              "duration": 2166000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 458,
+            "name": "I select \"Contact segments\" as campaign source",
+            "result": {
+              "status": "passed",
+              "duration": 8234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 459,
+            "name": "I Select \"segmentForCampaignRegression\" as contact source and click on add",
+            "result": {
+              "status": "passed",
+              "duration": 12423000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 460,
+            "name": "I click on campaign event list",
+            "result": {
+              "status": "passed",
+              "duration": 2392000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 461,
+            "name": "I click on \"Action\" tab of campaign",
+            "result": {
+              "status": "passed",
+              "duration": 1794000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 462,
+            "name": "I select action as \"segments\" from actions list",
+            "result": {
+              "status": "passed",
+              "duration": 8243000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 463,
+            "name": "I add event name \"Modify contact's segment\" and choose segment in which i want to add contact \"segmentForModifyContactSegment\" and remove contact's from segment \"segmentForCampaignRegression\"",
+            "result": {
+              "status": "passed",
+              "duration": 21913000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 464,
+            "name": "I apply changes to builder and close the builder",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//button[contains(text(),\"Apply\")]`, but never found it.\n    at Function.Cutils.hightLight (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:156:12)\n    at Function.Cutils.IsVisible (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:55:14)\n    at Function.mauticCampaignPage.applyChangesToBuilder (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:699:25)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:3140:45)\n    at Context.resolveAndRunStepDefinition (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33699:29)\n    at Context.eval (https://cypress.ddev.site/__cypress/tests?p=cypress/integration/features/Campaign%20regression%20scenarios.feature:33031:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 465,
+            "name": "I publish the campaign and save it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 466,
+            "name": "I wait for 12 sec to apply campaign action on segments contacts",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 467,
+            "name": "I click on \"Actions\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 468,
+            "name": "verify that campaign is executed successfully with \"0%\" action completion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 469,
+            "name": "I check that campaign triggered successfully with \"Modify contact's segment\" and event \"Modify contact's segments\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 470,
+            "name": "I click on \"Contacts\" tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 471,
+            "name": "I check that \"No Contacts Found\" is present under contacts tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 472,
+            "name": "I visit \"Segments\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 473,
+            "name": "I should be on \"Contact Segments\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 474,
+            "name": "I search Contact Segment as \"segmentForModifyContactSegment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 475,
+            "name": "I check that \"segmentForModifyContactSegment\" segment contain \"View 3 Contacts\" and I click on it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 476,
+            "name": "I click on first contact from that segment",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 477,
+            "name": "I check \"Segment membership change\" event is triggered for the contact",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 478,
+            "name": "I check that events triggered successfully Event Name \"Contact added to segment, segmentForModifyContactSegment\" and Event Type \"Segment membership change\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 479,
+            "name": "I check that second event triggered successfully Event Name \"Contact removed from segment, segmentForCampaignRegression\" and Event Type \"Segment membership change\" and Event Timestamp \"Today\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 480,
+            "name": "I visit \"Segments\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 481,
+            "name": "I should be on \"Contact Segments\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 482,
+            "name": "I search Contact Segment as \"segmentForCampaignRegression\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 483,
+            "name": "I check that \"segmentForCampaignRegression\" segment contain \"No Contacts\" and I click on it",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 484,
+            "name": "I check that it has no contacts \"No Results Found\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 485,
+            "name": "I visit \"Campaigns\" page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 486,
+            "name": "I should be on \"Campaigns\" Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 487,
+            "name": "I search for campaign \"modify_ContactSegment_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 488,
+            "name": "I delete campaign \"modify_ContactSegment_Campaign_With_Segment\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 489,
+            "name": "I should see campaign \"modify_ContactSegment_Campaign_With_Segment\" is deleted",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
