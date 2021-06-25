@@ -13,6 +13,7 @@ on:
 
 jobs:
   phpunit:
+    needs: cypress
     runs-on: ubuntu-latest
 
     strategy:
@@ -117,6 +118,7 @@ jobs:
         path: ./var/logs/*
 
   misc:
+    needs: cypress
     runs-on: ubuntu-latest
 
     strategy:
@@ -140,6 +142,7 @@ jobs:
       with:
         php-version: 7.4
         extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, mysql, pdo_mysql
+        ini-values: max_execution_time=360
 
     - name: Install dependencies
       run: |
@@ -165,6 +168,109 @@ jobs:
           echo "Invalid command"
           exit 1
         fi
+  cypress:
+    name: Cypress
+    runs-on: ubuntu-20.04
+    env:
+      MAILER_PASSWORD: ${{ secrets.MAILER_PASSWORD }}
+      MAILER_HOST: ${{ secrets.MAILER_HOST }}
+      MAILER_USER: ${{ secrets.MAILER_USER }}
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: mautictest
+        ports:
+          - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set DB port to env
+        run: echo "DB_PORT=${{ job.services.mysql.ports[3306] }}" >> $GITHUB_ENV
+
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          # Note: if you update the PHP version here, make sure to update libapache-mod-php7.4 below as well!
+          php-version: 7.4
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, mysql, pdo_mysql
+          ini-values: max_execution_time=180
+
+      - name: Install Apache
+        run: |
+          sudo add-apt-repository ppa:ondrej/php -y
+          sudo add-apt-repository ppa:ondrej/apache2 -y
+          sudo apt-get install apache2 libapache2-mod-php7.4
+          sudo a2enmod rewrite
+          sudo cp ./.github/workflows/mautic-apache.conf /etc/apache2/conf-available/mautic.conf
+          sudo a2enconf mautic
+          sudo service apache2 restart
+
+      - name: Install dependencies
+        run: |
+          composer validate
+          composer install --prefer-dist --no-progress
+
+      # We need to move files into /var/www/html because the test suite
+      # expects Mautic to run in the root folder http://localhost
+      - name: Move files to web root
+        run: |
+          cp $GITHUB_WORKSPACE/.github/ci-files/local.php $GITHUB_WORKSPACE/app/config/local.php
+          shopt -s dotglob
+          sudo chmod -R 777 /var/www/html
+          sudo chown -R www-data:www-data /var/www/html
+          rm -rf /var/www/html/*
+          mv $GITHUB_WORKSPACE/* /var/www/html
+
+      - name: Install Mautic
+        run: |
+          php bin/console mautic:install --force --mailer_from_name="GitHub Actions" http://localhost
+          php bin/console cache:warmup --no-interaction --env=prod
+          sudo chmod -R 777 /var/www/html
+          sudo chown -R www-data:www-data /var/www/html
+        working-directory: /var/www/html
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          config: baseUrl=http://localhost
+          env: CI=true
+          working-directory: /var/www/html
+          record: true
+          group: 'Mautic Cypress'
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # Recommended: pass the GitHub token lets this action correctly
+          # determine the unique run id necessary to re-run the checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        # If one or more Cypress tests fail, upload screenshots as artifacts
+      - name: Upload Cypress screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: /var/www/html/cypress/screenshots
+
+        # Test run video is always captured, so this action uses the "always()" condition
+      - name: Upload Cypress test run video
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-videos
+          path: /var/www/html/cypress/videos
+
+      - name: Upload Mautic log files as artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: mautic-logs
+          path: /var/www/html/var/logs
 
     - name: Slack Notification if tests fail
       uses: rtCamp/action-slack-notify@v2
