@@ -98,6 +98,13 @@ jobs:
 
         composer test -- plugins/MauticCrmBundle/Tests/Pipedrive
 
+    - name: Find files and list contents
+      if: ${{ matrix.php-versions == '7.4' && matrix.db-types == 'mysql' }}
+      run: |
+        find . -type f -name 'sonar-*'
+        find . -type f -name 'coverage.xml'
+        pwd
+        
     - name: Analyze with SonarCloud
       if: ${{ matrix.php-versions == '7.4' && matrix.db-types == 'mysql' }}
       uses: sonarsource/sonarcloud-github-action@master
