@@ -97,8 +97,9 @@ jobs:
         export DB_PORT=${!DB_PORT_STRING}
 
         composer test -- plugins/MauticCrmBundle/Tests/Pipedrive
-        
+
     - name: Analyze with SonarCloud
+      if: ${{ matrix.php-versions == '7.4' && matrix.db-types == 'mysql' }}
       uses: sonarsource/sonarcloud-github-action@master
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
