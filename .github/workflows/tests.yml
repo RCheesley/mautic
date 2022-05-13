@@ -199,7 +199,15 @@ jobs:
           echo "Invalid command"
           exit 1
         fi
-
+    - name: Save PR number to file
+          if: github.event_name == 'pull_request' && ${{ matrix.php-versions }} == '7.4' && ${{ matrix.db-types }} == 'mysql'
+          run: echo ${{ github.event.number }} > PR_NUMBER.txt
+        - name: Archive PR number
+      if: github.event_name == 'pull_request' && ${{ matrix.php-versions }} == '7.4' && ${{ matrix.db-types }} == 'mysql'
+      uses: actions/upload-artifact@v3
+      with:
+        name: PR_NUMBER
+        path: PR_NUMBER.txt
     - name: Slack Notification if tests fail
       uses: rtCamp/action-slack-notify@v2
       if: ${{ failure() && github.event_name == 'schedule' }}
