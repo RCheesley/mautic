@@ -209,7 +209,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: PR_NUMBER
-        ßpath: PR_NUMBER.txt
+        path: PR_NUMBER.txt
         
     - name: Slack Notification if tests fail
       uses: rtCamp/action-slack-notify@v2
