@@ -13,7 +13,7 @@ on:
 jobs:
   phpunit:
     # We don't want the scheduled jobs to run on forks of Mautic
-    if: (github.event_name == 'schedule' && github.repository_owner == 'mautic') || (github.event_name != 'schedule')
+    if: (github.event_name == 'schedule' && (github.repository == 'mautic/mautic' || github.repository == 'mautic/api-library') ) || (github.event_name != 'schedule')
     runs-on: ubuntu-latest
 
     strategy:
@@ -56,6 +56,13 @@ jobs:
         coverage: pcov
         ini-values: pcov.directory=., pcov.exclude="~tests|themes|vendor~"
     
+    - name: add MySQL config file
+      run: |
+        mysqldump --version
+        mysqldump --print-defaults
+        cp .github/ci-files/.my.cnf ~/.my.cnf
+        mysqldump --print-defaults
+
     - name: Set SYMFONY_ENV to test
       run: echo "SYMFONY_ENV=test" >> $GITHUB_ENV
 
@@ -104,7 +111,7 @@ jobs:
         composer test -- plugins/MauticCrmBundle/Tests/Pipedrive
 
     - name: Upload coverage report
-      if: ${{ matrix.php-versions == '7.4' && matrix.db-types == 'mysql' }}
+      if: ${{ matrix.php-versions == '7.4' && matrix.db-types == 'mysql' && github.repository == 'mautic/mautic'}}
       uses: codecov/codecov-action@v2
       with:
         files: ./coverage.xml
@@ -126,7 +133,7 @@ jobs:
 
   misc:
     # We don't want the scheduled jobs to run on forks of Mautic
-    if: (github.event_name == 'schedule' && github.repository_owner == 'mautic') || (github.event_name != 'schedule')
+    if: (github.event_name == 'schedule' && (github.repository == 'mautic/mautic' || github.repository == 'mautic/api-library') ) || (github.event_name != 'schedule')
     runs-on: ubuntu-latest
 
     strategy:
