@@ -51,6 +51,7 @@ jobs:
         git clean -ffdx && git reset --hard HEAD
     - name: SonarCloud Scan on PR
       if: github.event.workflow_run.event == 'pull_request'
+      uses: sonarsource/sonarcloud-github-action@master
       with:
         projectBaseDir: '.'
         args: >
