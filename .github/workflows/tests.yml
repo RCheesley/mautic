@@ -100,6 +100,7 @@ jobs:
         sed "s|${report_root}|${scanner_root}|g" coverage.xml > clover.xml
         
     - name: Archive code coverage results
+      if: ${{ matrix.php-versions == '7.4' && matrix.db-types == 'mysql' }}
       uses: actions/upload-artifact@v3
       with:
         name: code-coverage-report
