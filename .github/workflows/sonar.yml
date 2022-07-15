@@ -66,7 +66,7 @@ jobs:
               archive_format: 'zip',
           });
           let fs = require('fs');
-          fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/code-coverage-report.zip`, Buffer.from(download.data));
+          fs.writeFileSync('${process.env.GITHUB_WORKSPACE}/code-coverage-report.zip', Buffer.from(download.data));
     - name: 'Unzip code coverage'
       run: unzip code-coverage-report.zip -d coverage
     - name: SonarCloud Scan on PR
