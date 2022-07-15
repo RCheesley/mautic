@@ -98,7 +98,13 @@ jobs:
         report_root="/home/runner/work/rcheesley/mautic"
         scanner_root="/github/workspace"
         sed "s|${report_root}|${scanner_root}|g" coverage.xml > clover.xml
-
+        
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v3
+      with:
+        name: code-coverage-report
+        path: ./clover.xml
+        
     - name: Slack Notification if tests fail
       uses: rtCamp/action-slack-notify@v2
       if: ${{ failure() && github.event_name == 'schedule' }}
