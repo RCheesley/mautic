@@ -95,7 +95,7 @@ jobs:
     - name: Make Coverage report Sonar readable
       if: ${{ matrix.php-versions == '7.4' && matrix.db-types == 'mysql' }}
       run: |
-        report_root="/home/runner/work/mautic/mautic"
+        report_root="/home/runner/work/rcheesley/mautic"
         scanner_root="/github/workspace"
         sed "s|${report_root}|${scanner_root}|g" coverage.xml > clover.xml
 
