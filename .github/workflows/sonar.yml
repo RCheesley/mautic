@@ -69,7 +69,7 @@ jobs:
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact.zip`, Buffer.from(download.data));
             
     - name: 'Unzip code coverage'
-      run: unzip artifact.zip -d coverage
+      run: unzip artifact.zip
       
     - name: SonarCloud Scan on PR
       if: github.event.workflow_run.event == 'pull_request'
