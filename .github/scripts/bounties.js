@@ -2,11 +2,11 @@ const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 async function run() {
-  const issueContext = JSON.parse(process.env.GITHUB_CONTEXT);
-  const issueID = issueContext.issue.number;
-  const issueTitle = issueContext.issue.title;
-  const repoName = issueContext.repository.name;
-  const repoOwner = issueContext.repository.owner.login;
+  const githubContext = JSON.parse(process.env.GITHUB_CONTEXT);
+  const issueID = githubContext.event.issue.number;
+  const issueTitle = githubContext.event.issue.title;
+  const repoName = githubContext.event.repository.name;
+  const repoOwner = githubContext.event.repository.owner.login;
 
   try {
     switch (issueContext.action) {
