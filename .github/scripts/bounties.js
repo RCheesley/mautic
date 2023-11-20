@@ -9,9 +9,9 @@ async function run() {
   const repoOwner = githubContext.event.repository.owner.login;
 
   try {
-    switch (issueContext.action) {
+    switch (githubContext.action) {
       case 'opened':
-        const body = issueContext.issue.body +
+        const body = githubContext.issue.body +
           "\n\n<br /><hr>\nCare about this issue? Want to get it " +
           "resolved sooner? If you are a " +
           "<a href='https://www.mautic.org/become-a-member-of-mautic'>member " +
@@ -29,7 +29,7 @@ async function run() {
         break;
     
       case 'labeled':
-        const labelName = issueContext.label.name;
+        const labelName = githubContext.label.name;
 
         if (labelName === 'bounty') {
           const comment =
