@@ -1,4 +1,4 @@
-name: Bounties
+name: Bounty issues
 on:
   issues:
     types: [opened, labeled]
