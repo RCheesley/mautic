@@ -9,7 +9,7 @@ async function run() {
   const repoOwner = githubContext.event.repository.owner.login;
 
   try {
-    switch (githubContext.action) {
+    switch (githubContext.event.action) {
       case 'opened':
         const body = githubContext.event.issue.body +
           "\n\n<br /><hr>\nCare about this issue? Want to get it " +
