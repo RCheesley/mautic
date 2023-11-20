@@ -1,4 +1,4 @@
-name: Bounty issues
+name: Handle Issues
 on:
   issues:
     types: [opened, labeled]
@@ -17,8 +17,8 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd .github/scripts/
           npm ci
-          npm install @octokit/core axios
     
       - name: Run script
         env:
